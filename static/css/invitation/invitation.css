@@ -396,7 +396,7 @@ html,body {
 }
 .t-ios-main .container .box .wf {
     background-image: url(bg/w.jpg);
-    -webkit-transform: rotateX(0deg) rotateY(90deg) translateZ(-255px);
+    -webkit-transform: rotateX(0deg) rotateY(90deg) translateZ(500px);
 }
 .t-ios-main .container .box .uf {
     background-image: url(bg/u.jpg);
