@@ -1,0 +1,574 @@
+.music-status {
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  right: 20px;
+  top: 20px;
+  background: transparent url("icons/on.png") no-repeat left top;
+  z-index: 9999;
+}
+.music-status-on {
+  -webkit-animation: music 1s 0s linear infinite both;
+  animation: music 1s 0s linear infinite both;
+}
+.music-status {
+  background-size: auto 100% !important;
+}
+.m_off {
+  background: transparent url("icons/off.png") no-repeat left top!important;
+  background-size: auto 100%!important;
+}
+
+#p2 .to-go-wrapper-fade, #p3 .to-go-wrapper-fade, 
+#p4 .to-go-wrapper-fade, #p5 .to-go-wrapper-fade{
+	position: absolute;
+	bottom: 7px;
+}
+
+#p0{
+  background: url(bg/loading.jpg);
+}
+#planet-loading{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+/*	margin-left: -120px;
+	margin-top: -66px;*/
+  margin-left: -35px;
+}
+#loading-text{
+margin-top: -83px;
+  text-align: center;
+  font-size: 40px;
+  line-height: 42px;
+  text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
+#titles{
+	position: absolute;
+	top: 5%;
+  	left: 50%;
+  	margin-left: -230px;
+}
+.i-circle-in, .i-circle-out{
+	position: absolute;
+}
+.i-circle-in{
+	top: 18px;
+  left: 18px;
+}
+#bd-title{
+	/*margin: auto;*/
+	color: #4d4d4d;
+	font-size: 45px;
+	text-align: justify;
+  margin-top: 66px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+
+#bd-sub-title{
+	color: white;
+	font-size: 20px;
+	margin: auto;
+}
+#secret{
+  text-align: left;
+  font-size: 12px;
+  color: #4c5b61;
+  /* width: 200px; */
+  position: absolute;
+  bottom: 42%;
+  left: 6%;
+}
+#planet{
+	position: absolute;
+	top: 15%;
+	right: 4%;
+}
+#tangsen{
+	position: absolute;
+	bottom: 10px;	
+	left: 8%;
+}
+.i-to-go {
+	margin-left: 12px;
+}
+.to-go{
+	margin: 0;
+    margin-bottom: 10px;
+	font-size: 32px;
+	color: #252525;
+  margin-left: 2px;
+}
+#to-go-wrapper{
+  width: 80px;
+  color: #252525;
+  position: absolute;
+  right: 128px;
+  bottom: 7px;
+}
+
+
+/*p2*/
+#xiangcai{
+	width: 200px;
+	height: 200px;
+	background-image: url('animation/xiangcai.png');
+	background-position: 0 0;
+	display: block;
+	position: absolute;
+	left: 260px;
+	top: 117px;
+}
+/*#gaolaozhuang{
+  position: absolute;
+  z-index: 300;
+  height: 240px;
+  width: 300px;
+  left: 46px;
+  top: 432px;
+}*/
+#gaolaozhuang{
+  position: absolute;
+  z-index: 300;
+  height: 300px;
+  width: 400px;
+  left: 0px;
+  top: 393px;  
+  background: url(animation/gaolaozhuang1.png);
+  background-position:0 0;    
+  display: none;
+
+}
+.i-gaolaozhuang-tag{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -23px;
+}
+.i-gaolaozhuang{
+	position: absolute;
+	bottom: 0;
+}
+.t-kouwei{
+  position: absolute;
+  top: 725px;
+  left: 60px;
+}
+#bajie{
+	width: 300px;
+	height: 300px;
+	position: absolute;
+/*	top: 90px;
+	left: 400px;*/
+  top: 50px;
+  left: 350px;
+  background: url(animation/gaobajie1.png);
+  background-position:0 0;    
+  display: none;
+}
+.i-bajie-hand{
+  position: absolute;
+  left: 10px;
+  top: 80px;
+}
+#waimai-text1{
+	text-align: left;
+	/*font-size: 14px;*/
+	position: absolute;
+	left: 60px;
+	top: 40px;
+}
+#waimai-text2{
+	position: absolute;
+	right: 40px;
+	top: 37%;
+}
+#bajie-dialog{
+	position: absolute;
+	width: 400px;
+	top: 25%;
+	left: 3%;
+}
+#bajie-dialog .dialog{
+	position: absolute;
+	top: 16px;
+}
+#bajie-dialog .icon{
+	position: absolute;
+	top: 0px;
+	right: 14px;
+}
+#gaolaozhuang-dialog{
+	position: absolute;
+	width: 400px;
+	top: 54%;
+	left: 54%;
+}
+#gaolaozhuang-dialog .dialog{
+	position: absolute;
+	top: 0px;
+}
+#gaolaozhuang-dialog .icon{
+	position: absolute;
+	top: 42px;
+	left: 14px;
+}
+#pie-chart{
+	height:250px;
+	width:640px;
+	background:url(animation/bing.png);
+	background-position:0 0;  
+	position: absolute;
+	top: 650px;
+	display: none;
+}
+.triangle { /* You'll want this to be a block level element */
+  width: 0px; height: 0px;
+  border-width: 20px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: black;
+}
+#gaobing{
+  /* height: 250px; */
+  height: 600px;
+  width: 600px;
+  /* background: url(animation/gaobing1.png); */
+  /* background: url(animation/gaobing640.png); */
+  /* background-position: 0 0; */
+  position: absolute;
+  top: 470px;
+  left: 180px;
+  z-index: 100;
+   /*display: none; */
+}
+
+.i-pie-chart{
+  position: absolute;
+  bottom: 120px;
+  right: 50px;
+}
+.t-pie{
+  position: absolute;
+  top: 700px;
+  left: 360px;  
+  z-index: 1000;
+}
+#zhongkouwei{
+	color: white;
+	font-size: 16px;
+	font-weight: 700;
+	position: absolute;
+	bottom: 40px;
+	right: 90px;
+}
+/*p3*/
+#modi-text1{
+  position: absolute;
+  width: 300px;
+  right: 50px;
+  top: 40px;
+}
+#modi-text2{
+  position: absolute;
+  width: 460px;
+  left: 40px;
+  top: 480px;
+}
+#modi-text3{
+  position: absolute;
+  left: 100px;
+  top: 760px;
+}
+/*#modi-text3{
+  position: absolute;
+  width: 230px;
+  right: 10px;
+  bottom: 10px;
+}*/
+#modi-analyze{
+  position: absolute;
+  left: -20px;
+  top: 50px;	
+  -webkit-animation-fill-mode: both;
+  -webkit-transform:translate3d(0,0,0);
+  -webkit-perspective: 1000;
+}
+#modi-analyze .icon{
+	-webkit-animation-fill-mode: both;
+	-webkit-transform:translate3d(0,0,0);
+	-webkit-perspective: 1000;
+}
+#modi-analyze li{
+	float: right;
+	border-radius: 50%;
+	color: white;
+  	text-align: center;
+  	padding-top: 20px;
+  	position: relative;
+}
+#baigujing-dialog{
+	position: absolute;
+	width: 400px;
+	top: 34%;
+	left: 60%;
+}
+#baigujing-dialog .dialog{
+	position: absolute;
+	top: 0px;
+}
+#baigujing-dialog .icon{
+	position: absolute;
+	top: 41px;
+	left: 114px;
+}
+#girl-dialogs li{
+	float: left;
+}
+#girl-dialogs{
+  position: absolute;
+  left: -40px;
+  top: -40px;
+}
+
+#baishuju{
+	background: url(animation/bshuju.png);
+	height:400px;
+	width:640px;
+	background-position:0 0;  
+	position: absolute;
+  top: 660px;
+  left: 40px;
+	  display: none;
+}
+#baigudong{
+	background: url(animation/bbaigudong.png);
+	height:400px;
+	width:400px;
+	background-position:0 0;  
+	position: absolute;
+  top: 67px;
+  left: 20px;	  
+  display: none;
+}
+#baigujing{
+	background: url(animation/bbaigujing.png);
+	height:350px;
+	width:250px;
+	background-position:0 0;  
+	position: absolute;
+  top: 360px;
+  left: 400px;
+	  display: none;
+}
+
+.i-girls-big{
+	position: relative;
+	left: 75px;
+}
+
+/*p4*/
+#nvguowang{
+	background: url(animation/nvguowang2.png);
+	height:300px;
+	width:200px;
+	background-position:0 0;  
+	position: absolute;
+	top: 330px;
+	left: 80px;
+	display: none;
+}
+#nverguo{
+	background: url(animation/nverguo.png);
+	height:450px;
+	width:300px;
+	background-position:0 0;  
+	position: absolute;
+	  top: 460px;
+	  left: 320px;	
+	  display: none;
+}
+#nvshuju{
+	background: url(animation/nvshuju.png);
+	height:200px;
+	width:250px;
+	background-position:0 0;  
+	position: absolute;
+  top: 660px;
+  left: 70px;
+	  display: none;
+}
+
+#pp-text1{
+  width: 440px;
+  position: absolute;
+  right: 30px;
+  top: 40px;
+}
+
+#pp-text2{
+  width: 400px;
+  position: absolute;
+  right: 30px;
+  top: 200px;
+}
+#pp-text3{
+  /*width: 180px;*/
+  position: absolute;
+  left: 20px;
+  bottom: 90px;
+}
+#nverguo-dialog{
+	position: absolute;
+	width: 360px;
+	top: 36%;
+	left: 38%;
+}
+#nverguo-dialog .dialog{
+	position: absolute;
+	top: 0px;
+}
+#nverguo-dialog .icon{
+	position: absolute;
+	top: 67px;
+	left: 14px;
+}
+
+/*p5*/
+#mobile-text1{
+  width: 320px;
+  position: absolute;
+  top: 80px;
+  left: 60px;
+}
+#mobile-text1 .icon{
+	margin-top: 10px;
+	margin-left: 15px;
+}
+#mobile-text2{
+  width: 320px;
+  position: absolute;
+  bottom: 28%;
+  right: 20px;
+}
+
+#pansidong-dialog{
+  position: absolute;
+  width: 240px;
+  top: 12%;
+  left: 58%;
+  text-align: justify;
+}
+#pansidong-dialog .dialog{
+	position: absolute;
+	top: 0px;
+}
+#pansidong-dialog .icon{
+	position: absolute;
+	top: 68px;
+	left: 54px;
+}
+#pansidong{
+	background: url(animation/ppansidong.png);
+	height:400px;
+	width:450px;
+	background-position:0 0;  
+	position: absolute;
+  	top: 550px;
+  	left: 0px;
+	display: none;
+}
+
+#zhizhujing{
+	background: url(animation/pzhizhujing.png);
+	height:400px;
+	width:400px;
+	background-position:0 0;  
+	position: absolute;
+  top: 150px;
+  left: 300px;
+	display: none;
+}
+
+/*p6*/
+.zhenjing{
+  background: url('bg/baodian.png');
+  width: 476px;
+  height: 650px;
+  position: absolute;
+  top: 40%;
+  margin-top: -324px;
+  left: 50%;
+  margin-left: -240px;
+}
+.i-cover{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -165px;
+  margin-left: -55px;
+}
+
+.t-zhenjing{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -265px;
+  margin-left: -165px;
+}
+.btns{
+  width: 536px;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  margin-left: -218px;
+}
+.xitian-dialog{
+  position: absolute;
+  bottom: 28%;
+  right: 40px;
+  width: 240px;
+}
+
+.xitian-dialog .dialog{
+  position: absolute;
+	top: 10px;
+}
+
+.xitian-dialog .icon{
+  position: absolute;
+  top: -10px;
+  left: 30px;
+}
+.t-title1{
+  position: absolute;
+  top: 120px;
+}
+
+.t-title2{
+  position: absolute;
+  top: 120px;
+  left: 260px;
+}
+.t-title3{
+  position: absolute;
+  top: 450px;
+  left: 260px;
+}
+
+.t-title4{
+  position: absolute;
+  top: 450px;
+  left: 0px;
+}
+
+.share{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+}

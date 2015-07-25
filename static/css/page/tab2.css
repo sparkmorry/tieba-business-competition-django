@@ -1,0 +1,161 @@
+html{
+	min-height: 100%;
+}
+body{
+	/*background-color: #276b90;*/
+	background-color: white;
+	min-height: 100%;
+}
+.body{
+	/*background-image: url(../bg/tab1.jpg);*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: center;*/
+	/*background-size: 100%;*/
+	width: 980px;
+	height: 800px;
+	/*margin: le;*/
+	position: relative;
+}
+.tab3{
+	background: url("http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/tab3.jpg")
+}
+.tab3-ba-wrapper{
+	position:absolute;
+	top:250px;
+	width:140px;
+	left:65px;
+	/*text-align: center;*/
+}
+.bus-ba{
+	left: 325px;
+}
+.moth-ba{
+	left: 580px;
+}
+.modi-ba{
+	left: 825px;
+}
+
+.tab3-ba-wrapper .single-ba{
+	margin-bottom: 11px;
+}
+.ba-circle{
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	background: url("http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/icons/tab3.png")
+}
+.invist-btn{
+	display: inline-block;
+	background: url("http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/icons/tab3.png");
+	background-position: 0 -370px;
+	width: 80px;
+	height: 60px;	
+	cursor: pointer;
+}
+.ba-total-wrapper, .bas-total-wrapper{
+	position: relative;
+}
+.ba-total{
+	display: inline-block;
+	background: url("http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/icons/tab3.png");
+	background-position: 0 -618px;
+	width: 120px;
+	height: 30px;	
+	margin-left: -30px;	
+}
+.ba-total-number{
+	color: white;
+  	font-size: 12px;
+  	position: absolute;
+  	top: 8px;
+  	left: 24px;
+  	text-align: center;
+  	width: 35px;
+}
+.bas-total{
+	display: inline-block;
+	background: url("http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/icons/tab3.png");
+	width: 190px;
+	height: 30px;	
+ 	margin-left: -60px;
+ 	margin-top: -5px;
+}
+.bas-total-number{
+	/*color: white;*/
+  font-size: 17px;
+  position: absolute;
+  top: 2px;
+  left: 34px;
+  text-align: center;
+  width: 62px;
+}
+
+.ba-1-1{
+	background-position: 0 0;
+}
+.ba-1-2{
+	background-position: 0 -97px;
+}
+.ba-1-3{
+	background-position: 0 -191px;
+}
+.ba-1-4{
+	background-position: 0 -286px;
+}
+.ba-2-1{
+	background-position: -85px 0;
+}
+.ba-2-2{
+	background-position: -85px -97px;
+}
+.ba-2-3{
+	background-position: -85px -191px;
+}
+.ba-2-4{
+	background-position: -85px -286px;
+}
+.ba-3-1{
+	background-position: -167px 0;
+}
+.ba-3-2{
+	background-position: -167px -97px;
+}
+.ba-3-3{
+	background-position: -167px -191px;
+}
+.ba-3-4{
+	background-position: -167px -286px;
+}
+.ba-4-1{
+	background-position: -251px 0;
+}
+.ba-4-2{
+	background-position: -251px -97px;
+}
+.ba-4-3{
+	background-position: -251px -191px;
+}
+.ba-4-4{
+	background-position: -251px -286px;
+}
+.bas-total-1{
+	background-position: 0 -450px;
+}
+.bas-total-2{
+	background-position: 0 -492px;
+}
+.bas-total-3{
+	background-position: 0 -531px;
+}
+.bas-total-4{
+	background-position: 0 -572px;
+}
+.mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}

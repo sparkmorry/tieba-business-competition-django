@@ -1,0 +1,215 @@
+body{
+  -webkit-font-smoothing: antialiased;
+/*  font-family: "Source Han Sans CN";
+  font-family: "noto sans";
+*/  
+  /*font-family: "Microsoft YaHei";*/
+  /*background-color: #e7f2f7;*/
+}
+
+.hide{
+  display: none;
+}
+.btn{
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+  background-color: #43c67f;
+  padding: 12px 0;
+  font-weight: 700;
+  border-radius: 2px;
+  margin: auto;
+  margin-top: 15px;
+}
+.btn-white{
+  display: inline-block;
+  border: solid 1px #333;
+  padding: 0 20px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.btn-black{
+  display: inline-block;
+  /*border: solid 1px #333;*/
+  padding: 0 20px;
+  color: white;
+  background: black;
+  line-height: 40px;
+  cursor: pointer;
+}
+.btn-disable{
+  opacity: 0.4;
+}
+
+.loading-wrapper{
+  text-align: center;
+}
+.loading-full{
+  padding-top: 100px;
+}
+
+.input-border-gray{
+  border: solid 1px #d6d5d5;
+
+}
+
+.input-border-gray:focus{
+    outline: 0;
+}
+
+.no-border{
+  border:0;
+}
+
+.no-border:focus{
+  outline: none;
+}
+
+.err-msg{
+  color: #EF894A;
+}
+
+.banner{
+  padding: 10px 20px;
+  line-height: 1.2em;  
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2em;
+  height: 24px;
+  border-bottom: solid 1px #e6e6e6;
+  background: rgba(255,255,255,0.8);
+  /*margin-bottom: 5px;*/
+}
+
+.fixed-top-tabs.tabs{
+  height: 47px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.9);
+  z-index: 4000;
+}
+.tabs .nav-item{
+  width: 50%;
+  float: left;
+  cursor: pointer;
+}
+
+.tabs .nav-name{
+  display: block;
+  width: 100px;
+  font-size: 1.3em;
+  border-bottom: solid 3px rgba(255,255,255,0);
+  margin: auto;
+  text-align: center;
+  line-height: 45px;
+  color: black;
+  /*line-height: */
+}
+.tabs .selected .nav-name{
+  border-color: #949cff;
+}
+
+.count-box{
+  height: 30px;
+  line-height: 30px;
+  border: solid 1px #999;
+  width: 114px;
+}
+
+.count-box .minuse-btn, .count-box .plus-btn, .count-box .count-input{
+  float: left;
+  font-size: 1.2em;
+  padding: 0 7px ;
+}
+
+.count-input{
+  width: 50px;
+  line-height: 30px;
+  text-align: center;
+  border-left: solid 1px #999;
+  border-right: solid 1px #999;
+}
+
+.tc-bold{
+  font-weight: 700;
+}
+
+.border-btn{
+  display: inline-block;
+  padding: 7px 23px;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #333333;
+  border: solid 1px #333333;
+}
+.bold-num{
+  font-weight: 700;
+  /*font-family: -webkit-pictograph;*/
+}
+.yuan{
+  vertical-align: -2px;
+  margin-right: 2px;
+}
+.item-link-wrapper{
+  display: block;
+  color: #333;
+}
+
+.tab-nav{
+  position: fixed;
+  top: 45px;
+  right: 0px;
+  width: 100px;
+  text-align: center;
+  background: white;
+  z-index: 100;
+}
+.tab-nav li{
+  padding: 10px 0px;
+  border-bottom: solid 1px #e6e6e6;
+  border-left: solid 1px #e6e6e6;
+  color: #333;
+}
+.tab-nav a{
+  color: #333;
+}
+
+/*价格相关*/
+.line-through{
+  text-decoration:line-through;
+  color: #707070;
+  margin-right: 10px;
+  /*font-family: "OpenSans";*/
+}
+.price{
+  font-weight: 500;
+  font-family: "OpenSansBold";
+}
+.price.discount-price{
+  color: #dd4570;
+  margin-bottom: 0;
+}
+.price.no-discount{
+  line-height: 20px;
+}
+
+/*提示条*/
+.note-wrapper{
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 30%;
+  z-index: 400;
+}
+.note{
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(0,0,0,0.7);
+  display: inline-block;
+  color: white;
+}

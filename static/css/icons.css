@@ -1,0 +1,374 @@
+.icon{
+	background: url('icons/icons1.png');
+	display: inline-block;
+	/*background-size: 500px 600px;*/
+}
+.icon2{
+	background: url('icons/icon2.png');
+	display: inline-block;
+	/*background-size: 500px 600px;*/
+}
+.i-planet-loading{
+	width: 230px;
+	height: 134px;
+	background-position: -690px -370px;
+}
+.i-planet{
+	width: 160px;
+	height: 90px;
+	background-position: 0 0;
+}
+.i-circle-in{ 
+  width: 422px;
+  height: 422px;
+  background-position: -16px -4px;
+}
+.i-circle-out{
+  width: 458px;
+  height: 458px;
+  background-position: -4px -440px;
+}
+
+.i-tangsen{
+  width: 340px;
+  height: 310px;
+  background-position: 0 -116px;
+}
+.i-to-go{
+	width: 40px;
+	height: 72px;
+	background-position: 0 -440px;
+}
+.i-cow{
+	width: 240px;
+	height: 30px;
+	background-position: 0 -510px;
+}
+.i-pie-chart{
+	width: 500px;
+	height: 230px;
+	background-position: 0px -868px;	
+}
+.i-girls{
+  width: 280px;
+  height: 100px;
+  background-position: 0 -556px;
+}
+.i-cow{
+	width: 120px;
+	height: 15px;
+	background-position: 0 -255px;
+}
+.i-girls-big{
+	width: 450px;
+	height: 140px;
+	background-position: 0 -660px;
+}
+
+.i-chart{
+	width: 110px;
+	height: 45px;
+	background-position: -85px 0px;
+}
+.i-at-home{
+	width: 280px;
+	height: 100px;
+	background-position: -360px -110px;
+}
+.i-on-bus{
+  width: 280px;
+  height: 110px;
+  background-position: -360px -212px;
+}
+.i-in-restaurant{
+	width: 280px;
+	height: 104px;
+	background-position: -360px -320px;
+}
+.i-arrow-top-right{
+	width: 20px;
+	height: 20px;
+	background-position: 0 -820px;
+	opacity: 0.6;
+
+}
+.i-arrow-bottom-left{
+	width: 20px;
+	height: 20px;
+	background-position: -22px -820px;
+	opacity: 0.6;
+
+}
+.i-arrow-middle{
+	width: 20px;
+	height: 20px;
+	background-position: -44px -820px;
+	opacity: 0.6;
+
+}
+.i-arrow-bottom-right{
+	width: 20px;
+	height: 20px;
+	background-position: -64px -820px;
+	opacity: 0.6;
+}
+
+.i-arrow-top-left{
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  background-position: -86px -820px;
+}
+
+.i-arrow-bottom-right-blue{
+	width: 10px;
+	height: 10px;
+	opacity: 0.6;
+	background-position: -57px -410px;
+}
+
+.i-arrow-bottom-left-blue{
+	width: 10px;
+	height: 10px;
+	background-position: -70px -410px;
+}
+.i-girl1{
+	width: 140px;
+	height: 90px;
+	background-position: 0px -1112px;	
+}
+.i-girl2{
+  width: 130px;
+  height: 90px;
+  background-position: -148px -1112px;
+}
+.i-girl3{
+	width: 116px;
+	height: 90px;
+	background-position: -292px -1112px;	
+}
+.i-girl4{
+  width: 80px;
+  height: 90px;
+  background-position: -410px -1112px;	
+}
+.i-modi1{
+	width: 96px;
+	height: 96px;
+	background-position: -530px -1050px;
+}
+.i-modi2{
+	width: 110px;
+	height: 110px;
+	background-position: -628px -1036px;
+}
+.i-modi3{
+	width: 120px;
+	height: 120px;
+	background-position: -742px -1030px;
+}
+
+
+.i-cover{
+	width: 110px;
+	height: 330px;
+	background-position: -680px -4px;
+}
+
+.i-btn1{
+	width: 438px;
+	height: 78px;
+	background-position: -528px -864px;
+}
+.i-btn2{
+	width: 438px;
+	height: 78px;
+	background-position: -528px -942px;
+}
+
+/*人物和建筑*/
+.i-character{
+	background: url('icons/icon3.png');
+	display: inline-block;
+}
+
+.i-gaolaozhuang-tag{
+	background-position: 0 0;
+	width: 45px;
+	height: 105px;
+}
+.i-baigudong-tag{
+	background-position: -66px 0;
+	width: 51px;
+	height: 118px;
+}
+.i-nverguo-tag{
+	background-position: -140px 0;
+	width: 48px;
+	height: 105px;
+}
+.i-pansidong-tag{
+	background-position: -218px 0;
+	width: 64px;
+	height: 135px;
+}
+.i-gaolaozhuang{
+	background-position: 0 -207px;
+	height: 147px;
+	width: 300px;
+}
+.i-baogudong{
+	background-position: 0 -397px;
+	height: 200px;
+	width: 345px;
+}
+.i-nverguo{
+	background-position: 0 -628px;
+	height: 272px;
+	width: 252px;
+}
+.i-pansidong{
+	background-position: 0 -943px;
+	height: 225px;
+	width: 380px;
+}
+.i-nverguowang{
+	background-position: -435 -559px;
+	height: 274px;
+	width: 165px;
+}
+
+.i-bajie{
+	width: 187px;
+	height: 230px;
+	background-position: -421px -9px;
+}
+.i-bajie-hand{
+	width: 63px;
+	height: 75px;
+	background-position: -666px -15px;
+}
+
+/*文字部分*/
+.text{	
+	background: url('icons/text.png');
+	display: inline-block;
+	/*background-size: 500px 600px;*/
+}
+.t-db{
+	width: 450px;
+	height: 246px;
+	background-position: 0 0;
+}
+.t-db-new{
+  width: 400px;
+  height: 226px;
+  background-position: -460px -2px;
+}
+.t-db-sub{
+	width: 450px;
+	height: 80px;
+	background-position: 0 -246px;
+}
+.t-db-sub-new{
+  width: 450px;
+  height: 120px;
+  background-position: -460px -236px;
+}
+.t-tangsen{
+	width: 300px;
+	height: 54px;
+	background-position: 0 -330px;
+}
+.t-waimai1{
+	width: 276px;
+	height: 220px;
+	background-position: 0 -390px;
+}
+.t-waimai2{
+	width: 324px;
+	height: 156px;
+	background-position: 0 -610px;
+}
+.t-pie{
+  width: 215px;
+  height: 190px;
+  background-position: -994px 0;
+}
+.t-kouwei{
+  width: 461px;
+  height: 90px;
+  background-position: -944px -371px;
+}
+
+.t-waimai3{
+	width: 310px;
+	height: 40px;
+	background-position: 0 -780px;
+}
+
+.t-modi1{
+	width: 300px;
+	/*height: 100px;*/
+	height: 100px;
+	background-position: 0 -824px;
+}
+.t-modi2{
+  width: 300px;
+  height: 64px;
+  background-position: 0 -1024px;
+}
+
+
+.t-pp1{
+  width: 454px;
+  height: 126px;
+  background-position: -346px -400px;
+}
+.t-pp2{
+  width: 454px;
+  height: 146px;
+  background-position: -392px -550px;
+}
+.t-pp3{
+	width: 340px;
+	height: 280px;
+	background-position: -346px -710px;
+}
+
+.t-mobile1{
+	width: 290px;
+	height: 90px;
+	background-position: -366px -1014px;
+}
+.t-mobile2{
+	width: 330px;
+	height: 110px;
+	background-position: -0 -1090px;
+}
+
+.t-zhenjing {
+	width: 340px;
+  height: 530px;
+  background-position: -1458px -1575px;
+}
+.t-title1{
+  width: 230px;
+  height: 80px;
+  background-position: -1458px 0;	
+}
+.t-title2{
+  width: 230px;
+  height: 80px;
+  background-position: -1458px -90px;	
+}
+.t-title3{
+  width: 230px;
+  height: 83px;
+  background-position: -1458px -188px;	
+}
+.t-title4{
+  width: 230px;
+  height: 80px;
+  background-position: -1458px -280px;	
+}

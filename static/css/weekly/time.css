@@ -1,0 +1,207 @@
+.upsidedown{
+	-webkit-animation: updownup 3s linear infinite;
+	-moz-animation: updownup 3s linear infinite;
+	-ms-animation: updownup 3s linear infinite;
+	-o-animation: updownup 3s linear infinite;
+	animation: updownup 3s linear infinite;
+}
+.upsidedown-fade{
+	-webkit-animation: updownup-five 1s linear infinite;
+	-moz-animation: updownup-five 1s linear infinite;
+	-ms-animation: updownup-five 1s linear infinite;
+	-o-animation: updownup-five 1s linear infinite;
+	animation: updownup-five 1s linear infinite;
+}
+
+.music-status {
+background-size: auto 100% !important;
+}
+
+@-webkit-keyframes music{100%{-webkit-transform:rotate(360deg)}}
+
+@keyframes music{100%{transform:rotate(360deg)}}
+.heightBounce{
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+
+    -webkit-animation: heightBounce 0.5s linear 1;    
+}
+.animated0_3{
+	-webkit-animation-duration: 0.3s;
+		animation-duration: 0.3s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+}
+.animated0_5{
+	-webkit-animation-duration: 0.5s;
+		animation-duration: 0.5s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+}
+.animated0_8{
+    -webkit-animation-duration: 0.8s;
+        animation-duration: 0.8s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+}
+.animated1{
+	-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+}
+
+.animated1_5{
+	-webkit-animation-duration: 1.5s;
+		animation-duration: 1.5s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+}
+
+.animated2{
+    -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+}
+
+.delay0_1{
+animation-delay:0.5s;
+-webkit-animation-delay:0.5s;
+}
+.delay0_8{
+animation-delay:0.8s;
+-webkit-animation-delay:0.8s;
+}
+
+.delay1{
+animation-delay:1s;
+-webkit-animation-delay:1s;
+}
+.delay1_1{
+animation-delay:1.5s;
+-webkit-animation-delay:1.5s;
+}
+.delay1_3{
+animation-delay:1.3s;
+-webkit-animation-delay:1.3s;
+}
+
+.delay2{
+animation-delay:2s;
+-webkit-animation-delay:2s;
+}
+.delay2_3{
+animation-delay:2.3s;
+-webkit-animation-delay:2.3s;
+}
+.delay2_1{
+animation-delay:2.5s;
+-webkit-animation-delay:2.5s;
+}
+.delay3{
+animation-delay:3s;
+-webkit-animation-delay:3s;
+}
+
+.delay3_1{
+animation-delay:3.5s;
+-webkit-animation-delay:3.5s;
+}
+.delay3_3{
+animation-delay:3.3s;
+-webkit-animation-delay:3.3s;
+}
+
+.delay3_8{
+animation-delay:3.8s;
+-webkit-animation-delay:3.8s;
+}
+
+.delay4{
+animation-delay:4s;
+-webkit-animation-delay:4s;
+}
+.delay4_1{
+animation-delay:4.5s;
+-webkit-animation-delay:4.5s;
+}
+.delay5{
+animation-delay:5s;
+-webkit-animation-delay:5s;
+}
+.delay5_1{
+animation-delay:5.5s;
+-webkit-animation-delay:5.5s;
+}
+.delay6{
+animation-delay:6s;
+-webkit-animation-delay:6s;
+}
+.delay6_1{
+animation-delay:6.5s;
+-webkit-animation-delay:6.5s;
+}
+.delay7{
+animation-delay:7s;
+-webkit-animation-delay:7s;
+}
+.delay7_1{
+animation-delay:7.5s;
+-webkit-animation-delay:7.5s;
+}
+.delay8{
+animation-delay:8s;
+-webkit-animation-delay:8s;
+}
+
+.delay8_1{
+animation-delay:8.5s;
+-webkit-animation-delay:8.5s;
+}
+.delay9{
+animation-delay:9s;
+-webkit-animation-delay:9s;
+}
+.delay9_1{
+animation-delay:9.5s;
+-webkit-animation-delay:9.5s;
+}
+.delay10{
+animation-delay:10s;
+-webkit-animation-delay:10s;
+}
+.delay10_1{
+animation-delay:10.5s;
+-webkit-animation-delay:10.5s;
+}
+
+.delay11{
+animation-delay:11s;
+-webkit-animation-delay:11s;
+}
+.delay12{
+animation-delay:12s;
+-webkit-animation-delay:12s;
+}
+
+.delay12_1{
+animation-delay:12.5s;
+-webkit-animation-delay:12.5s;
+}
+
+.hide{
+	opacity: 0;
+}
+.show{
+	opacity: 1;
+}
+
+.show-no-fade{
+	-webkit-animation: show 1s linear;
+	-moz-animation: show 1s linear;
+	-ms-animation: show 1s linear;
+	-o-animation: show 1s linear;
+	animation: show 1s linear;
+}
+

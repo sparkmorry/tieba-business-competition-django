@@ -1,0 +1,56 @@
+body{
+	min-height: 100%;
+	position: relative;
+	font-size: 13px;
+	width: 100%;
+/*	background: #fafafa;*/
+}
+html{
+	height: 100%;
+	max-width: 800px;
+	margin: auto;
+}
+
+p{
+	/*line-height: 1.3em;*/
+}
+input{
+  -webkit-appearance: none;
+  border-radius: 0;
+  font-size: 1em;  
+}
+input:focus{
+	font-size: 1em;
+}
+
+.fl{
+	float: left;
+}
+
+.fr{
+	float: right;
+}
+.cf:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+@font-face {
+  font-family: 'Slabo';
+  src: url('../fonts/Slabo27px-Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Bitter';
+  src: url('../fonts/Bitter-Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSans-Regular.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'OpenSansBold';
+  src: url('../fonts/OpenSans-Bold.ttf')  format('truetype');
+}

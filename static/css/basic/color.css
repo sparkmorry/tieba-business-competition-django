@@ -1,0 +1,24 @@
+/* color sheet:;
+ * 紫色(main)： #949cff;
+ * balck: #6a6a6a;
+ 字体颜色：
+        主要 #666;
+        深灰 #999;
+        浅灰 #333;
+*/
+
+.tc-red{
+  color: #eb6100;
+}
+.tc-dark-gray{
+  color: #333;
+}
+.tc-main-gray{
+	color: #666;
+}
+.tc-light-gray{
+  color: #999;
+}
+.tc-main-purple{
+	color: #949cff;
+}

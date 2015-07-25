@@ -1,0 +1,298 @@
+<html>
+<head>
+	<title>贴吧合伙人商业挑战赛</title>
+	<meta charset="utf-8">
+    <meta name="viewport"  content="target-densitydpi=device-dpi, width=640, height=1009, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<link rel="stylesheet" type="text/css" href="static/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/lib/animate.css">
+	<link rel="stylesheet" type="text/css" href="static/css/animate.css">
+	<!-- <link rel="stylesheet" type="text/css" href="static/css/index.css"> -->
+	<link rel="stylesheet" type="text/css" href="static/css/index1.css">
+	<link rel="stylesheet" type="text/css" href="static/css/icons.css">
+	<link rel="stylesheet" type="text/css" href="static/css/layout.css">
+
+	<style type="text/css">
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        background: #eee;
+        /*font-family: Helvetica Neue, Helvetica, Arial, sans-serif;*/
+        font-size: 12px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+        /*text-align: justify;*/
+        /*line-height: 1.1em;*/
+    }
+    *{
+    	margin: 0;
+    	padding: 0;
+    }
+    .tx-1-4{
+		font-size: 1.4em;
+	}
+
+	.tx-1-3{
+		font-size: 1.3em;
+	}
+
+	.tx-1-2{
+		font-size: 1.2em;
+	}
+	.cf:after {
+		content: '';
+		display: block;
+		clear: both;
+		height: 0;
+		overflow: hidden;
+		visibility: hidden;
+	}
+
+
+	.dialog{
+		padding: 10px;
+		background: black;
+		color: white;
+		font-size: 24px;
+		border-radius: 6px;
+		display: inline-block;
+		text-align: justify;
+		line-height: 26px;
+		opacity: 0.6;
+	}
+
+
+	@-webkit-keyframes btnRotate {
+	0% {
+	    -webkit-transform: rotateZ(0deg);
+	    }
+	100% {
+	    -webkit-transform: rotateZ(360deg);
+	    }
+	}
+	.i-circle-in{
+	    -webkit-animation: btnRotate 30s linear infinite;
+	}
+	@-webkit-keyframes btnRotateReserve {
+	0% {
+	    -webkit-transform: rotateZ(0deg);
+	    }
+	100% {
+	    -webkit-transform: rotateZ(-360deg);
+	    }
+	}
+	.i-circle-out{
+	    -webkit-animation: btnRotateReserve 30s linear infinite;
+	}
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        color: white;
+    }
+
+
+	</style>
+</head>
+<body>
+	<div id="audio_pan" class="music-status music-status-on"></div>
+	<div class="swiper-container">
+	    <!-- Additional required wrapper -->
+	    <div class="swiper-wrapper">
+	        <!-- Slides -->
+	        <div class="swiper-slide m1" id="p1">
+	        	<div id="titles">
+	        		<i class="icon2 i-circle-in"></i>
+	        		<i class="icon2 i-circle-out"></i>
+	        		<i id="bd-title" class="text t-db-new"></i>
+		        	<i id="bd-sub-title" class="text t-db-sub-new"></i>	
+	        	</div>
+	        	<i id="planet" class="icon i-planet upsidedown"></i>
+	        	<i id="secret" class="text t-tangsen"></i>
+	        	<i id="tangsen" class="icon i-tangsen"></i>
+	        	<div id="to-go-wrapper">
+	        		<p class="to-go">GO!</p>
+	        		<i class="icon i-to-go upsidedown-fade"></i>
+	        	</div>
+	        </div>
+	        
+ 			<div class="swiper-slide m1" id="p2">
+ 				<div id="gaolaozhuang"></div>
+ 				<div id="bajie"></div>
+				<i class="text t-kouwei"></i>
+				<i class="text t-pie"></i>
+ 				<!-- <div id="gaobing"></div> -->
+ 				<div id="waimai-text1">
+	        		<i class="text t-waimai1"></i>
+	        	</div>
+	        	<div id="bajie-dialog">
+	        		<div class="dialog">怎么他们就成了土豪和白富美了呢，我老猪弄点钱全扔在肚子了，怎么说？</div>
+	        		<i class="icon i-arrow-top-right"></i>
+	        	</div>
+	        	<div id="waimai-text2">
+	        		<i class="text t-waimai2"></i>
+	        	</div>
+	        	<div id="gaolaozhuang-dialog">
+	        		<div class="dialog">八戒，尼玛喊你回家吃饭</div>
+	        		<i class="icon i-arrow-bottom-left"></i>
+	        	</div>
+	        	<i id="zhongkouwei" class="text t-waimai3"></i>
+	        	<canvas id="gaobing" style="width:600px;height:600px" width="600" height="600"></canvas>
+
+	        	<!-- <div id="pie-chart" style=""></div> -->
+	        <div class="to-go-wrapper-fade" style="left:95px">	
+	        	  <i class="icon i-to-go upsidedown-fade"></i>
+	        	</div>
+	        </div>
+	        
+ 			<div class="swiper-slide m1" id="p3">
+ 				<div id="baigudong"></div>
+ 				<div id="baigujing"></div>
+ 				<!-- <div id="baishuju"></div> -->
+ 				<div id="modi-text1">
+ 					<i class="text t-modi1"></i>
+ 					<i class="icon i-girls"></i>
+ 				</div>
+ 				<div id="baigujing-dialog">
+	        		<div class="dialog">我的事业线我做主！</div>
+	        		<i class="icon i-arrow-middle"></i>
+	        	</div>
+
+ 				<div id="modi-text2">
+ 					<i class="text t-modi2"></i>		
+ 					<ul id="modi-analyze" class="cf">
+ 						<li class="i-modi0" style="width:60px;height:40px;background:#665ce1;top:62px">
+ 						</li>
+ 						<li style="left: 5px;top:10px">
+ 							<i class="icon i-modi1"></i> 						
+ 						</li>
+ 						<li style="left: 10px;top:-3px;">
+ 							<i class="icon i-modi2"></i> 						
+ 						</li>
+ 						<li style="left: 25px;top:25px">
+ 							<i class="icon i-modi3"></i> 						
+ 						</li>
+ 					</ul>
+ 				</div>
+ 				<div id="modi-text3">
+ 					<i class="icon i-girl1"></i>
+ 					<i class="icon i-girl2"></i>
+ 					<i class="icon i-girl3"></i>
+ 					<i class="icon i-girl4"></i>
+ 					<i class="icon i-girls-big"></i>
+ 				</div>
+ 				<div class="to-go-wrapper-fade" style="left:95px">	
+	        		<i class="icon i-to-go upsidedown-fade"></i>
+	        	</div>
+
+ 			</div>
+
+ 			<div class="swiper-slide m1" id="p4">
+ 				<div id="nvguowang"></div>
+ 				<div id="nverguo"></div>
+ 				<div id="nvshuju"></div>
+
+ 				<div id="pp-text1">
+ 					<i class="text t-pp1"></i>		
+ 				</div>
+ 				<div id="pp-text2">
+ 					<i class="text t-pp2"></i>		
+ 				</div>
+ 				<div id="nverguo-dialog">
+ 					<div class="dialog">我终于知道为什么红孩儿总是光着屁股了……</div>
+	        		<i class="icon i-arrow-bottom-left"></i>
+ 				</div>
+
+ 				<div id="pp-text3">
+ 					<i class="text t-pp3"></i>		
+ 				</div>
+ 				<div class="to-go-wrapper-fade" style="right:170px">	        	
+ 					<i class="icon i-to-go upsidedown-fade"></i>
+				</div>
+ 			</div>
+ 			<div class="swiper-slide m1" id="p5">
+ 				<div id="pansidong"></div> 	
+ 				<div id="zhizhujing"></div> 				
+
+ 				<div id="mobile-text1">
+ 					<i class="text t-mobile1"></i>		
+ 					<p> <i class="icon i-at-home"></i> </p>
+ 					<p> <i class="icon i-on-bus"></i> </p>
+					<p> <i class="icon i-in-restaurant"></i> </p>
+ 				</div>
+ 				 <div id="pansidong-dialog">
+ 					<div class="dialog">你们不上网会难过，姐不上网会挨饿。</div>
+	        		<i class="icon i-arrow-bottom-right"></i>
+ 				</div>		
+ 				<div id="mobile-text2">
+ 					<i class="text t-mobile2"></i>		
+ 				</div>
+ 				<div class="to-go-wrapper-fade" style="right:105px">	        	  	<i class="icon i-to-go upsidedown-fade"></i>
+ 				</div>
+ 			</div>
+ 			<div class="swiper-slide m1" id="p6">
+ 				<div class="zhenjing">
+ 					<i class="icon i-cover"></i>
+ 					<i class="text t-zhenjing"></i>
+ 					<i class="text t-title1"></i>
+ 					<i class="text t-title2"></i>
+ 					<i class="text t-title3"></i>
+ 					<i class="text t-title4"></i>
+ 				</div>
+ 				<div class="btns">
+ 					<p><i class="icon i-btn1"></i></p>
+ 					<p><i id="j-share" class="icon i-btn2"></i></p>
+ 				</div>
+ 				<div class="xitian-dialog">
+ 					<div class="dialog">商业挑战, 不妨一试?</div>
+	        		<i class="icon i-arrow-top-left"></i>
+ 				</div>
+ 			 	<div class="share" id="j-share-mask">
+ 					<img src="static/images/share.png" style="width:100%">
+ 				</div>		
+
+ 			</div> 	
+ 			<img src="static/images/p3/bai4.gif" style="height:0px">
+	    </div>
+	</div>
+	<audio id='audio1' src="http://7xjv0c.com1.z0.glb.clouddn.com/bg_music.mp3" autoplay="autoplay" loop class="audio"></audio>
+
+	<script type="text/javascript" src="static/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="static/js/swiper.jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/touch.js"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript">
+		wx.config({
+		    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		    appId: 'wx69a1f910a2c01361', // 必填，公众号的唯一标识
+		    timestamp: '{{ jsticket.timestamp }}', // 必填，生成签名的时间戳
+		    nonceStr: '{{ jsticket.nonceStr }}', // 必填，生成签名的随机串
+		    signature: '{{ sig }}',// 必填，签名，见附录1
+		    jsApiList: ['onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+		});
+		wx.onMenuShareAppMessage({		    
+			title: '西游新记－趣味互联网大数据带你降妖除魔', // 分享标题
+		    link: 'http://ssld-vi.com/', // 分享链接
+		    imgUrl: 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/cover.jpg', // 分享图标
+		    desc: '吧啦啦啦啊'
+		    success: function () { 
+		        // 用户确认分享后执行的回调函数
+		    },
+		    cancel: function () { 
+		        // 用户取消分享后执行的回调函数
+		    }
+		});
+		$.post('/share', {}, function(){
+			alert('send!')
+		})
+	</script>
+	<script type="text/javascript" src="static/js/index.js"></script>
+</body>
+</html>

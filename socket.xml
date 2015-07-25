@@ -1,0 +1,7 @@
+<uwsgi>
+    <socket>:8077</socket>
+    <chdir>/Users/sparkmorry/Desktop/pproject/tieba</chdir>
+    <module>django_uwsgi</module>
+    <processes>4</processes> <!-- 进程数 --> 
+    <daemonize>uwsgi.log</daemonize>
+</uwsgi>

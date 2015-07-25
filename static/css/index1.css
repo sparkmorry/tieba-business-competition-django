@@ -1,0 +1,215 @@
+.upsidedown{
+	-webkit-animation: updownup 3s linear infinite;
+	-moz-animation: updownup 3s linear infinite;
+	-ms-animation: updownup 3s linear infinite;
+	-o-animation: updownup 3s linear infinite;
+	animation: updownup 3s linear infinite;
+}
+.upsidedown-fade{
+	-webkit-animation: updownup-five 1s linear infinite;
+	-moz-animation: updownup-five 1s linear infinite;
+	-ms-animation: updownup-five 1s linear infinite;
+	-o-animation: updownup-five 1s linear infinite;
+	animation: updownup-five 1s linear infinite;
+}
+
+.music-status {
+background-size: auto 100% !important;
+}
+
+@-webkit-keyframes music{100%{-webkit-transform:rotate(360deg)}}
+
+@keyframes music{100%{transform:rotate(360deg)}}
+.heightBounce{
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+
+    -webkit-animation: heightBounce 0.5s linear 1;    
+}
+.animated0_3{
+	-webkit-animation-duration: 0.3s;
+		animation-duration: 0.3s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+}
+.animated0_5{
+	-webkit-animation-duration: 0.5s;
+		animation-duration: 0.5s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+}
+.animated0_8{
+    -webkit-animation-duration: 0.8s;
+        animation-duration: 0.8s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+}
+.animated1{
+	-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+}
+
+.animated1_5{
+	-webkit-animation-duration: 1.5s;
+		animation-duration: 1.5s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+}
+
+.animated2{
+    -webkit-animation-duration: 2s;
+        animation-duration: 2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+}
+
+.delay0_1{
+animation-delay:0.5s;
+-webkit-animation-delay:0.5s;
+}
+
+.delay1{
+animation-delay:1s;
+-webkit-animation-delay:1s;
+}
+.delay1_1{
+animation-delay:1.5s;
+-webkit-animation-delay:1.5s;
+}
+.delay2{
+animation-delay:2s;
+-webkit-animation-delay:2s;
+}
+.delay2_1{
+animation-delay:2.5s;
+-webkit-animation-delay:2.5s;
+}
+.delay3{
+animation-delay:3s;
+-webkit-animation-delay:3s;
+}
+
+.delay3_1{
+animation-delay:3.5s;
+-webkit-animation-delay:3.5s;
+}
+.delay4{
+animation-delay:4s;
+-webkit-animation-delay:4s;
+}
+.delay4_1{
+animation-delay:4.5s;
+-webkit-animation-delay:4.5s;
+}
+.delay5{
+animation-delay:5s;
+-webkit-animation-delay:5s;
+}
+.delay5_1{
+animation-delay:5.5s;
+-webkit-animation-delay:5.5s;
+}
+.delay6{
+animation-delay:6s;
+-webkit-animation-delay:6s;
+}
+.delay6_1{
+animation-delay:6.5s;
+-webkit-animation-delay:6.5s;
+}
+.delay7{
+animation-delay:7s;
+-webkit-animation-delay:7s;
+}
+.delay7_1{
+animation-delay:7.5s;
+-webkit-animation-delay:7.5s;
+}
+.delay8{
+animation-delay:8s;
+-webkit-animation-delay:8s;
+}
+
+.delay8_1{
+animation-delay:8.5s;
+-webkit-animation-delay:8.5s;
+}
+.delay9{
+animation-delay:9s;
+-webkit-animation-delay:9s;
+}
+.delay9_1{
+animation-delay:9.5s;
+-webkit-animation-delay:9.5s;
+}
+.delay10{
+animation-delay:10s;
+-webkit-animation-delay:10s;
+}
+.delay10_1{
+animation-delay:10.5s;
+-webkit-animation-delay:10.5s;
+}
+
+.delay11{
+animation-delay:11s;
+-webkit-animation-delay:11s;
+}
+
+
+    #p1, #p2, #p3, #p4, #p5, #p6{
+    	background-repeat: no-repeat;
+    	background-position:center;
+        -webkit-background-size: cover;
+        background-size: cover;
+        /*-webkit-background-size: auto 100%;*/
+        /*background-size: auto 100%; */
+    }
+    #p0{
+    	background: #d9d9d9;
+    }
+    #p1{
+    	background-color: #d9d9d9;
+    	background-image: url('bg/p1.jpg');
+    }
+    #p2{
+    	background-image: url('bg/transparent/p2.png'), -webkit-gradient(linear, left top, left bottom, from(#31ccc0), to(#2897ca)); 
+    	background-image: url('bg/transparent/p2.png'), -webkit-linear-gradient(to bottom, #31ccc0, #2897ca);
+    	background-image: url('bg/transparent/p2.png'), -moz-linear-gradient(to bottom, #31ccc0, #2897ca);    	
+    	background-image: url('bg/transparent/p2.png'), linear-gradient(to bottom, #31ccc0, #2897ca);
+    	background-image: url('bg/transparent/p2.png'), -o-linear-gradient(to bottom, #31ccc0, #2897ca);    	
+    }    
+    #p3{
+    	background-image: url('bg/transparent/p3.png'), -webkit-gradient(linear, left top, left bottom, from(#3493d0), to(#c179f4)); 
+    	background-image: url('bg/transparent/p3.png'), -webkit-linear-gradient(to bottom, #3493d0, #c179f4);
+    	background-image: url('bg/transparent/p3.png'), -moz-linear-gradient(to bottom, #3493d0, #c179f4);    	
+    	background-image: url('bg/transparent/p3.png'), linear-gradient(to bottom, #3493d0, #c179f4);
+    	background-image: url('bg/transparent/p3.png'), -o-linear-gradient(to bottom, #3493d0, #c179f4);    	    	
+/*    	background-image: url('static/css/bg/p3.jpg'), linear-gradient(to bottom, #3493d0, #c179f4);*/
+	}
+    #p4{
+    	background-image: url('bg/transparent/p4.png'), -webkit-gradient(linear, left top, left bottom, from(#ca73e7), to(#f04b3e)); 
+    	background-image: url('bg/transparent/p4.png'), -webkit-linear-gradient(to bottom, #ca73e7, #f04b3e);
+    	background-image: url('bg/transparent/p4.png'), -moz-linear-gradient(to bottom, #ca73e7, #f04b3e);    	
+    	background-image: url('bg/transparent/p4.png'), linear-gradient(to bottom, #ca73e7, #f04b3e);
+    	background-image: url('bg/transparent/p4.png'), -o-linear-gradient(to bottom, #ca73e7, #f04b3e);    	    	
+    }
+    #p5{
+    	background-image: url('bg/transparent/p5.png'), -webkit-gradient(linear, left top, left bottom, from(#f14f3a), to(#f1973a)); 
+    	background-image: url('bg/transparent/p5.png'), -webkit-linear-gradient(to bottom, #f14f3a, #f1973a);
+    	background-image: url('bg/transparent/p5.png'), -moz-linear-gradient(to bottom, #f14f3a, #f1973a);    	
+    	background-image: url('bg/transparent/p5.png'), linear-gradient(to bottom, #f14f3a, #f1973a);
+    	background-image: url('bg/transparent/p5.png'), -o-linear-gradient(to bottom, #f14f3a, #f1973a);    	    	    	
+    	/*background-image: url('static/css/bg/p5.jpg'), linear-gradient(to bottom, #f14f3a, #f1973a);*/
+    }    
+    #p6{
+    	background-image: url('bg/p6.jpg'), -webkit-gradient(linear, left top, left bottom, from(#f2a339), to(#fefc26)); 
+    	background-image: url('bg/p6.jpg'), -webkit-linear-gradient(to bottom, #f2a339, #fefc26);
+    	background-image: url('bg/p6.jpg'), -moz-linear-gradient(to bottom, #f2a339, #fefc26);    	
+    	background-image: url('bg/p6.jpg'), linear-gradient(to bottom, #f2a339, #fefc26);
+    	background-image: url('bg/p6.jpg'), -o-linear-gradient(to bottom, #f2a339, #fefc26);    	    	    	
+
+    	/*background-image: url('static/css/bg/p6.jpg'), linear-gradient(to bottom, #f2a339, #fefc26);*/
+    }    

@@ -1,0 +1,43 @@
+.icon{
+	background: url('icon.png');
+	display: inline-block;
+	background-size: 590px;
+}
+/*.logo{
+	width: 867px;
+	height: 860px;
+	background-position: 0 0;
+}
+.btn{
+	width: 350px;
+	height: 100px;
+	background-position: -192px -859px;
+}
+
+.cover-text{
+	width: 360px;
+	height: 100px;
+	background-position: -190px -1048px;
+}*/
+
+.logo-title{
+	width: 433px;
+	height: 430px;
+	background-position: 0 0;
+}
+.slide-btn{
+	width: 175px;
+	height: 50px;
+	background-position: -96px -430px;
+}
+
+.cover-text{
+	width: 180px;
+	height: 50px;
+	background-position: -95px -524px;
+}
+/*.metro{
+	width: 150px;
+	height: 230px;
+	background-position: -420px -350px;
+}*/
