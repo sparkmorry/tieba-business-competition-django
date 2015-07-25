@@ -7,6 +7,7 @@
 	<meta name="format-detection" content="telephone=no,address=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/invitation/invitation.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/invitation/icon.css">
 
@@ -38,6 +39,68 @@
 		</div>
 	</div>
 
+	<!-- 弹出框 -->
+	<div class="t-info">
+		<div class="info-box">
+			<!--大赛介绍-->
+			<div class="info-content info-content-intro">
+				<img class="img-content" src="/static/css/invitation/content/intro.png">
+			</div>
+			<!--团队风采-->
+			<div class="info-content info-content-team">
+			    <img class="team-title" src="/static/css/invitation/content/team/title.png">
+				<div id="team-content" class="team-content-slide swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide">
+			            	<img class="team-img" src="/static/css/invitation/content/team/1.png">
+			            </div>
+			            <div class="swiper-slide">
+			            	<img class="team-img" src="/static/css/invitation/content/team/2.png">
+			            </div>
+			            <div class="swiper-slide">
+			            	<img class="team-img" src="/static/css/invitation/content/team/3.png">
+			            </div>
+			            <div class="swiper-slide">
+			            	<img class="team-img" src="/static/css/invitation/content/team/4.png">
+			            </div>
+			        </div>
+			    </div>
+			    <img id="team-arrow" class="slide-arrow" src="/static/css/invitation/content/arrow.png">
+			</div>
+			<!--导师阵容-->
+			<div class="info-content info-content-tutor">
+			    <img class="tutor-title" src="/static/css/invitation/content/team/title.png">
+				<div id="tutor-content" class="tutor-content-slide swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide">
+			            	<img class="tutor-img" src="/static/css/invitation/content/tutor/1.png">
+			            </div>
+			            <div class="swiper-slide">
+			            	<img class="tutor-img" src="/static/css/invitation/content/tutor/2.png">
+			            </div>
+			            <div class="swiper-slide">
+			            	<img class="tutor-img" src="/static/css/invitation/content/tutor/3.png">
+			            </div>
+			            <div class="swiper-slide">
+			            	<img class="tutor-img" src="/static/css/invitation/content/tutor/4.png">
+			            </div>
+			        </div>
+			    	<div class="swiper-pagination"></div>
+			    </div>
+			</div>
+			<!--行业数据-->
+			<div class="info-content info-content-data">
+				<img class="img-content" src="/static/css/invitation/content/none.png">
+			</div>
+			<!--颁奖盛典-->
+			<div class="info-content info-content-prize">
+				<img class="img-content" src="/static/css/invitation/content/none.png">
+			</div>
+			<a class="btn-close" data-class="intro"></a>
+		</div>
+	</div>
+
+	<!-- 星空 -->
 	<div id="comos" class="comos t-ios-main">
 		<div class="container">
 			<div class="box">
@@ -93,37 +156,11 @@
 				<div class="mark"></div>
 			</div>
 		</div>
-		<div class="t-info">
-			<div class="info-box">
-				<!--大赛介绍-->
-				<div class="info-content info-content-intro" style="display:none">
-					<img class="img-content" src="/static/css/invitation/content/intro.png">
-				</div>
-				<!--团队风采-->
-				<div class="info-content info-content-team" style="display:none">
-					<img class="img-content" src="/static/css/invitation/content/team.png">	
-				</div>
-				<!--导师阵容-->
-				<div class="info-content info-content-tutor" style="display:none">
-					<img class="img-content" src="/static/css/invitation/content/tutor.png">
-				</div>
-				<!--行业数据-->
-				<div class="info-content info-content-data" style="display:none">
-					<img class="img-content" src="/static/css/invitation/content/none.png">
-				</div>
-				<!--颁奖盛典-->
-				<div class="info-content info-content-prize" style="display:none">
-					<img class="img-content" src="/static/css/invitation/content/none.png">
-				</div>
-				<a class="btn-close" data-class="intro"></a>
-			</div>
-		</div>
-
 	</div>
 
-	<!--script type="text/javascript" src="/static/js/invitation/zepto.min.js"></script-->
-	<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
-
+	<script type="text/javascript" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/js/swiper.jquery.min.js"></script>
+	<script type="text/javascript" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/js/touch.js"></script>	
 	<!-- 函数库 -->
 	<script type="text/javascript" src="/static/js/invitation/math.js"></script>
 	<!-- 工具库 -->
@@ -134,7 +171,7 @@
 	<script type="text/javascript" src="/static/js/invitation/motion.js"></script>
 
 	<script type="text/javascript" src="/static/js/invitation/iscroll.js"></script>
-	<script type="text/javascript" src="/static/js/touch.js"></script>
+
 	<script type="text/javascript" src="/static/js/invitation/main.js"></script>
 </body>
 </html>

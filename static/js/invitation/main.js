@@ -41,6 +41,19 @@ touch.on('#circle-open', 'rotate', function(ev){
     // this.style.webkitTransform = ;
 });
 
+function slideInit(){
+    var teamSwiper = new Swiper('.team-content-slide', {
+    	direction: 'vertical',
+		moveStartThreshold:400,
+    	paginationClickable :true,
+        nextButton: '#team-arrow',
+    });				
+    var tutorSwiper = new Swiper('.tutor-content-slide', {
+        pagination: '.swiper-pagination',
+		moveStartThreshold: 400,
+        paginationClickable: '.swiper-pagination',
+    });				
+}
 
 var user = new UserSupport(); //	Create new User for device/lang/prefix detection
 var vec3 = new Vector3(); //	3D vector object
@@ -150,6 +163,8 @@ var imageLoader = new LoadImages();
 		user.addEventListener('supportStatusUpdate', onSupportUpdate);
 
 		//图片加载完成之后，执行设备测试:1
+		coverFade();
+		slideInit();
 		user.test();
 
 		//绑定弹窗点击事件
@@ -157,8 +172,7 @@ var imageLoader = new LoadImages();
 			if(user.device.model == 'android'){
 				$('.t-ios-main').show();
 				$('.mask').hide();
-			}			
-			$('.info-content').hide();
+			}
 			$('.t-info').removeClass('show');	
 		});
 
@@ -168,9 +182,9 @@ var imageLoader = new LoadImages();
 				$('.mask').show();
 			}	
 			var className = $(this).data('class');	
-			$('.t-info').addClass('show')
-						.css('-webkit-transform','translate3d(0px, 0px, 200px)');
-			$('.info-content-'+className).show();
+			$('.t-info').addClass('show');
+			$('.info-content').removeClass('show');
+			$('.info-content-'+className).addClass('show');
 		});				
 
 		$('.t-ios-main').delegate('.btn-mid-open', 'click',function(e){		
@@ -179,10 +193,9 @@ var imageLoader = new LoadImages();
 				$('.mask').show();
 			}	
 			var className = $(this).attr('data-class');	
-			$('.t-info').addClass('show')
-						.css('-webkit-transform','translate3d(0px, 0px, 200px)');
-			$('.info-content-'+className).show();
-			// onKillMotion();
+			$('.t-info').addClass('show');
+			$('.info-content').removeClass('show');
+			$('.info-content-'+className).addClass('show');
 		});				
 	})();
 

@@ -63,7 +63,7 @@ html,body {
     background: url(comos_bg.jpg) repeat center;
     /*background-size: 160% auto;*/
     background-size: 650px auto;
-    z-index:98; 
+    z-index:980; 
     overflow: hidden;
     animation: move 28s linear infinite;
     -webkit-animation: move 28s linear infinite;
@@ -287,8 +287,8 @@ html,body {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-transform: translate3d(0px, 0px, 0px);
-    z-index: 1;
+    /*-webkit-transform: translate3d(0px, 0px, 0px);*/
+    z-index: 100;
     /*display: none;*/
     opacity: 0;
     /*background: url(bg/n.png);*/
@@ -480,9 +480,9 @@ html,body {
 }
 .btn-data{
   right: 0px;
-  height: 50px;
+  height: 40px;
   left: 30px;
-  top: 0px;
+  top: -10px;
 }
 
 .btn-tutor{
@@ -540,19 +540,32 @@ html,body {
     left: 45px;
     top: 306px;
 }
+.swiper-pagination-bullet, .swiper-pagination-bullet-active {
+  background: white;
+}
+
 .t-info{
-    display: none;
+    /*display: none;*/
+    opacity: 0;
     position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-    z-index: 98;
+    z-index: 9;
     cursor: auto;
 }
+.hideop{
+  opacity: 0;
+}
 .t-info.show {
-    display: -webkit-box;
+    /*display: block;*/
+    opacity: 1;
+    z-index: 100000;
+}
+.t-info.hide {
+    /*display: block;*/
+    opacity: 0;
+    z-index: 1;
 }
 .mask{
     position: absolute;
@@ -591,10 +604,15 @@ html,body {
 }
 
 .t-info .info-content{
-  /* width: 290px; */
-  height: 95%;
-  /* margin-top: 10px; */
-  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+.t-info .info-content.show{
+  opacity: 1;
 }
 .t-info .info-content img.img-content{
   height: 85%;
@@ -602,9 +620,30 @@ html,body {
   margin: auto;
   margin-top: 10%;
 }
-
-
-
+.slide-arrow{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 50px;
+  margin-left: -25px;
+  z-index: 999;
+}
+.team-img, .tutor-img{
+  width: 80%;
+  margin: auto;
+  margin-top: 45%;
+  display: block;
+}
+.team-title, .tutor-title{
+  width: 150px;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  margin-left: -75px;
+}
+.swiper-container-horizontal>.swiper-pagination{
+  bottom: 100px;
+}
 /*tracker*/
 .t-track {
     position: absolute;
