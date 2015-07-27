@@ -108,7 +108,7 @@ var imageLoader = new LoadImages();
 	 *
 	 */
 	var onMotion = function(e) {
-		console.log(vec3);
+		// console.log(vec3);
 		vec3.set(e.vec3.x, e.vec3.y, e.vec3.z);
 		if (range) vec3 = blocker.block(vec3);
 		rotate(vec3);
@@ -116,7 +116,7 @@ var imageLoader = new LoadImages();
 	var box = $('.t-ios-main .box');
 	var track = $('.t-track .track-inner');
 	// var rotateStr = 'translate3d(0, 0, 500px) rotateZ({2}deg) rotateX(-90deg) rotateX({0}deg) rotateY({1}deg) rotateY(0deg)';
-	var rotateStr = 'translate3d({3}px, 0, 500px) rotateZ({2}deg) rotateX(0deg) rotateX({0}deg) rotateY({1}deg)';
+	var rotateStr = 'translate3d({3}px, 0, 500px) rotateZ({2}deg) rotateX({0}deg) rotateY({1}deg)';
 	var trackStr = 'rotateX({0}deg) rotate({1}deg)';
 	var rotate = function(e){	
 		var rotateY = e.x * -1;

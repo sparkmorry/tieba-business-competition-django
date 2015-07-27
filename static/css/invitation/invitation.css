@@ -179,7 +179,7 @@ html,body {
   width: 250px;
   left: 50%;
   margin-left: -125px;
-  font-size: 1.1em;
+  /*font-size: 1.1em;*/
   background: -webkit-gradient(
     linear,left top,right top,color-stop(0, #B8B6B6),
     color-stop(0.4, #B8B6B6),color-stop(0.5, white),
