@@ -15,6 +15,10 @@ function coverFade(){
 	setTimeout(function(){
 		jQcover.remove();
 	}, 1000);
+	var btns = $('.btn-open');
+	setTimeout(function(){
+		$(btns[0]).click();	
+	},2000);
 }
 // jQunlock.bind('click', function(){
 // 	coverAnimate();
@@ -42,6 +46,12 @@ touch.on('#circle-open', 'rotate', function(ev){
 });
 
 function slideInit(){
+    var teamSwiper = new Swiper('.intro-content-slide', {
+    	direction: 'vertical',
+		moveStartThreshold:400,
+    	paginationClickable :true,
+        nextButton: '#intro-arrow',
+    });				
     var teamSwiper = new Swiper('.team-content-slide', {
     	direction: 'vertical',
 		moveStartThreshold:400,
@@ -198,7 +208,7 @@ var imageLoader = new LoadImages();
 			$('.t-info').addClass('show');
 			$('.info-content').removeClass('show');
 			$('.info-content-'+className).addClass('show');
-		});				
+		});		
 	})();
 
 

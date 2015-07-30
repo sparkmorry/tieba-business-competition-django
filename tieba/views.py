@@ -242,7 +242,8 @@ def tab3(request):
 	all_tieba = Ba.objects.all()
 	ba_total_votes = []
 	COST = 1000
-	step1 = [297, 73, 24, 16, 249, 209, 64, 49, 130, 61, 822, 25, 55, 6, 76, 80]
+	# step1 = [297, 73, 24, 16, 249, 209, 64, 49, 130, 61, 822, 25, 55, 6, 76, 80]
+	step1 = [297, 73, 24, 16, 549, 509, 264, 249, 130, 61, 822, 25, 55, 6, 76, 80]
 	my_tieba_votes_list = []
 	for ba in all_tieba:
 		ba_index = ba.id - 1

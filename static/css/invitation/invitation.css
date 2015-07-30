@@ -124,7 +124,7 @@ html,body {
   width: 480px;
   position: absolute;
   left: 50%;
-  margin-left: -240px;
+  margin-left: -242px;
   top: -70px;
 }
 .cover-arrow{
@@ -347,12 +347,12 @@ html,body {
     -webkit-backface-visibility: hidden;
     /*background-size: 512px;*/
     /*background-size: 520px;*/
-    background-size: 1100px;
+    background-size: 800px;
     background-repeat: no-repeat;
    z-index: 1;
 }
 .t-ios-main .container .box .nf {
-    background-image: url(bg/n.jpg);
+    background-image: url(bg/n2.jpg);
     -webkit-transform: rotateX(0deg) rotateY(0deg) translateZ(-255px);
 }
 .t-ios-main .container .box .mf {
@@ -439,14 +439,14 @@ html,body {
 .btn-mid-open{
     position: absolute;
 } 
-.btn-mid-intro{
+.btn-mid-invitation{
   left: 240px;
   top: 0px;
   width: 100px;
   height: 400px;
   display: block; 
 }
-.btn-mid-prize{
+.btn-mid-intro{
   left: 365px;
   top: -20px;
   width: 35px;
@@ -478,13 +478,13 @@ html,body {
 
 
 
-.btn-intro{
+.btn-invitation{
   width: 80px;
   height: 130px;
   left: 60px;
   top: 60px;
 }
-.btn-prize{
+.btn-intro{
   width: 40px;
   height: 50px;
   left: 30px;
@@ -638,6 +638,101 @@ html,body {
   margin: auto;
   margin-top: 10%;
 }
+
+/*.intro-logo{
+  width: 100%;
+  position: absolute;
+  top: -55px;
+}*/
+.comos-bg{
+  background: url(/static/css/invitation/content/logo.png);
+  background-size: 100% auto;
+  position: absolute;
+  top: -55px;
+  width: 100%;
+  height: 712px;
+}
+@-webkit-keyframes float-ten {
+    0% {
+        margin-top: 0px;
+    }
+    20%{
+       margin-top: -10px;       
+    }
+    50%{
+       margin-top: 0px;       
+    }
+    70%{
+       margin-top: 10px;       
+    }
+    100%{
+       margin-top: 0px;       
+   }
+}
+@-webkit-keyframes float-fifteen {
+    0% {
+        margin-top: 0px;
+    }
+    20%{
+       margin-top: 10px;       
+    }
+    50%{
+       margin-top: 0px;       
+    }
+    70%{
+       margin-top: -10px;       
+    }
+    100%{
+       margin-top: 0px;       
+   }
+}
+
+.invitation-planet1{
+  position: absolute;
+  width: 98%;
+  top: -10px;
+  margin-left: -49%;
+  left: 50%;
+  -webkit-animation: float-ten 3s linear infinite;
+
+}
+.invitation-planet2{
+  position: absolute;
+  width: 120px;
+  top: 120px;
+  left: 20px;
+  -webkit-animation: float-fifteen 4s linear infinite;
+}
+.invitation-planet3{
+  position: absolute;
+  width: 140px;
+  top: 80px;
+  right: 20px;
+  -webkit-animation: float-ten 4s linear infinite;
+}
+.invitation-planet4{
+  position: absolute;
+  width: 100px;
+  top: 100px;
+  left: -20px;
+  -webkit-animation: float-fifteen 3s linear infinite;
+}
+.invitation-planet5{
+  position: absolute;
+  width: 110px;
+  top: 140px;
+  right: 5px; 
+  -webkit-animation: float-ten 3s linear infinite;
+}
+
+.intro-invitation{
+  width: 80%;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -40%;
+}
+
 .slide-arrow{
   position: absolute;
   bottom: 20px;
