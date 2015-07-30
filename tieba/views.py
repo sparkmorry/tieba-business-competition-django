@@ -307,9 +307,41 @@ def weekly(request):
 	# return render_to_response('index.html')
 	return render_to_response('weekly/week3.html', {'jsticket' : tick, 'sig': sig})
 
+def weekly4(request):
+	now = int(time.time())
+	global EXPIRETIME
+	global TICKET
+	if(now>EXPIRETIME):		
+		print APPID
+		print APPSECRET
+		tokenurl = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='+APPID+'&secret='+APPSECRET
+		serialized_data = urllib2.urlopen(tokenurl).read()
+		data = json.loads(serialized_data)	
+		ACCESS_TOKEN = data['access_token']
+		tickeurl = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+ACCESS_TOKEN+'&type=jsapi'
+		ticket_data = urllib2.urlopen(tickeurl).read()
+		ticket = json.loads(ticket_data)	
+		TICKET = ticket['ticket']
+		EXPIRETIME = now + 7000
+		print EXPIRETIME
+		print TICKET
+
+	url = 'http://ssld-vi.com/tieba/weekly/4'
+	if len(request.GET) > 0:
+		url = url + "?" + urllib.urlencode(request.GET)
+	sign = Sign(TICKET, url)
+	tick = sign.sign()
+	tick['appId'] = APPID
+	sig = tick['signature']
+
+	print sig	
+	return render_to_response('weekly/week4.html', {'jsticket' : tick, 'sig': sig})
 
 def invitation(request):
 	return render_to_response('invitation.html')
+
+def anniversary(request):
+	return render_to_response('anniversary.html')
 
 
 	

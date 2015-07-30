@@ -1,0 +1,48 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.m1{
+    position: relative;
+}
+.m1{
+	background: url(bg/bg.jpg);
+	background-size: 100% auto;
+	text-align: center;
+}
+.decrator{
+	position: absolute;
+  	width: 80%;
+  	left: 50%;
+  	top: 2%;
+  	margin-left: -40%;
+}
+#p1 .icon1{
+  	position: absolute;
+  	left: 50%;	
+}
+.p1-title1{
+  	margin-left: -230px;
+  	top: 13%;
+} 
+.p1-tieba{
+	bottom: 40px;
+	margin-left: -81px;
+}
+.p1-go{
+	bottom: 160px;
+	margin-left: -85px;
+}
+.p1-arrow-down{
+	top: 60%;
+	margin-left: -50px;
+}
+
+
+/*p2*/
+#p2 .decrator{
+	top: 6%;
+}
+
+

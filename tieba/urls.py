@@ -13,7 +13,9 @@ urlpatterns = patterns('',
     url(r'^tieba/tab2/$', 'tieba.views.tab2', name='tab2'),
     url(r'^tieba/tab3/$', 'tieba.views.tab3', name='tab3'),
     url(r'^tieba/weekly$', 'tieba.views.weekly', name='weekly'),
+    url(r'^tieba/weekly/4$', 'tieba.views.weekly4', name='weekly4'),
     url(r'^tieba/invitation$', 'tieba.views.invitation', name='invitation'),
+    url(r'^tieba/anniversary$', 'tieba.views.anniversary', name='anniversary'),
 
 
     # url(r'^blog/', include('blog.urls')),
