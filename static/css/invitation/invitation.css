@@ -647,6 +647,7 @@ html,body {
 .comos-bg{
   background: url(/static/css/invitation/content/logo.png);
   background-size: 100% auto;
+  background-repeat: no-repeat;
   position: absolute;
   top: -55px;
   width: 100%;
@@ -724,11 +725,37 @@ html,body {
   right: 5px; 
   -webkit-animation: float-ten 3s linear infinite;
 }
+#invitation-p1, #invitation-p2{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.invitation-title{
+  width: 80%;
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  margin-left: -40%;
+}
+
+.invitation-btn{
+  width: 60%;
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  margin-left: -30%;
+  z-index: 10000;
+}
+#invitation-p2{
+  display: none;
+}
 
 .intro-invitation{
   width: 80%;
   position: absolute;
-  bottom: 10px;
+  top: 60px;
   left: 50%;
   margin-left: -40%;
 }

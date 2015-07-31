@@ -19,6 +19,11 @@ function coverFade(){
 	setTimeout(function(){
 		$(btns[0]).click();	
 	},2000);
+
+	$(".invitation-btn").bind('click', function(){
+		$("#invitation-p1").hide();
+		$("#invitation-p2").show();
+	})
 }
 // jQunlock.bind('click', function(){
 // 	coverAnimate();
@@ -45,13 +50,7 @@ touch.on('#circle-open', 'rotate', function(ev){
     // this.style.webkitTransform = ;
 });
 
-function slideInit(){
-    var teamSwiper = new Swiper('.intro-content-slide', {
-    	direction: 'vertical',
-		moveStartThreshold:400,
-    	paginationClickable :true,
-        nextButton: '#intro-arrow',
-    });				
+function slideInit(){		
     var teamSwiper = new Swiper('.team-content-slide', {
     	direction: 'vertical',
 		moveStartThreshold:400,
