@@ -69,7 +69,7 @@ function slideInit(){
         		$(".line1").addClass('linedrawing delay1');
         		var l1 = document.querySelector('#intro-content .line1'); 
 					l1.addEventListener("webkitAnimationEnd", function(){ //动画结束时事件 
-					$('.line1').css({'width': '150px'});
+					$('.line1').css({'width': '130px'});
 				}, false); 
         		$(".process2").addClass('fadeIn animated delay1_1');
         		$(".line2").addClass('linedrawing_height delay2');
@@ -81,7 +81,7 @@ function slideInit(){
         		$(".line3").addClass('linedrawing delay3');
         		var l3 = document.querySelector('#intro-content .line3'); 
 					l3.addEventListener("webkitAnimationEnd", function(){ //动画结束时事件 
-					$('.line3').css({'width': '150px'});
+					$('.line3').css({'width': '130px'});
 				}, false);
         		$(".process4").addClass('fadeIn animated delay3_1');
 

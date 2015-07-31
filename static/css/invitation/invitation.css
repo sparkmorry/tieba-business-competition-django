@@ -636,23 +636,24 @@ html,body {
   z-index: 99999;
 }
 .process{
-  width: 100px;
+  width: 90px;
   position: absolute;
 }
 .process-line, .line2-wrapper{
   position: absolute;
-  background-size: 150px auto;
-  height: 30px;
+  background-size: 130px auto;
+  height: 25px;
   width: 0px;
-  left: 110px;
+  /*left: 110px;*/
+  left: 95px;
 }
 .line1{
   background-image: url(/static/css/invitation/content/invitation/process/line1.png);
-  top: 98px;
+  top: 90px;
 }
 .line2-wrapper{
-  top: 226px;
-  width: 150px;
+  top: 204px;
+  width: 130px;
 }
 .line2{
   background-image: url(/static/css/invitation/content/invitation/process/line2.png);
@@ -666,7 +667,7 @@ html,body {
 }
 .line3{
   background-image: url(/static/css/invitation/content/invitation/process/line3.png);
-  top: 353px;
+  top: 319px;
 }
 
 .linedrawing{
