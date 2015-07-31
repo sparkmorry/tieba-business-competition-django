@@ -193,7 +193,10 @@ var imageLoader = new LoadImages();
 				$('.mask').show();
 			}	
 			var className = $(this).data('class');	
-			$('.t-info').addClass('show');
+			if(className == 'invitation'){
+				$("#invitation-p1").show();
+				$("#invitation-p2").hide();
+			}			$('.t-info').addClass('show');
 			$('.info-content').removeClass('show');
 			$('.info-content-'+className).addClass('show');
 		});				
@@ -204,6 +207,10 @@ var imageLoader = new LoadImages();
 				$('.mask').show();
 			}	
 			var className = $(this).attr('data-class');	
+			if(className == 'invitation'){
+				$("#invitation-p1").show();
+				$("#invitation-p2").hide();
+			}
 			$('.t-info').addClass('show');
 			$('.info-content').removeClass('show');
 			$('.info-content-'+className).addClass('show');
