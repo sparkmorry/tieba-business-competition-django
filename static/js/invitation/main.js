@@ -62,6 +62,31 @@ function slideInit(){
 		moveStartThreshold:400,
     	paginationClickable :true,
         nextButton: '#intro-arrow',
+        onSlideChangeStart: function(swiper) {
+        	var current = $('#intro-content .swiper-slide-active').attr('id');
+        	if(current == 'intro-p2'){
+        		$(".process1").addClass('fadeIn animated delay0_1');
+        		$(".line1").addClass('linedrawing delay1');
+        		var l1 = document.querySelector('#intro-content .line1'); 
+					l1.addEventListener("webkitAnimationEnd", function(){ //动画结束时事件 
+					$('.line1').css({'width': '150px'});
+				}, false); 
+        		$(".process2").addClass('fadeIn animated delay1_1');
+        		$(".line2").addClass('linedrawing_height delay2');
+        		 var l2 = document.querySelector('#intro-content .line2'); 
+					l2.addEventListener("webkitAnimationEnd", function(){ //动画结束时事件 
+					$('.line2').css({'height': '30px'});
+				}, false);
+        		$(".process3").addClass('fadeIn animated delay2_1');
+        		$(".line3").addClass('linedrawing delay3');
+        		var l3 = document.querySelector('#intro-content .line3'); 
+					l3.addEventListener("webkitAnimationEnd", function(){ //动画结束时事件 
+					$('.line3').css({'width': '150px'});
+				}, false);
+        		$(".process4").addClass('fadeIn animated delay3_1');
+
+        	}
+        }
     });						
     var tutorSwiper = new Swiper('.tutor-content-slide', {
         pagination: '.swiper-pagination',
