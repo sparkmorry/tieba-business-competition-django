@@ -56,7 +56,13 @@ function slideInit(){
 		moveStartThreshold:400,
     	paginationClickable :true,
         nextButton: '#team-arrow',
-    });				
+    });		
+    var introSwiper = new Swiper('.intro-content-slide', {
+    	direction: 'vertical',
+		moveStartThreshold:400,
+    	paginationClickable :true,
+        nextButton: '#intro-arrow',
+    });						
     var tutorSwiper = new Swiper('.tutor-content-slide', {
         pagination: '.swiper-pagination',
 		moveStartThreshold: 400,
