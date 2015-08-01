@@ -356,7 +356,7 @@ html,body {
     -webkit-transform: rotateX(0deg) rotateY(0deg) translateZ(-255px);
 }
 .t-ios-main .container .box .mf {
-    background-image: url(circle/track.png);
+    background-image: url(planet/material/track.png);
     -webkit-transform: rotateX(-100deg) rotateY(0deg) translateZ(290px) translateX(200px);
     -webkit-backface-visibility: visible;
     background-size: 550px;
@@ -384,12 +384,12 @@ html,body {
 }
 .planet-1{
     width: 200px;
-    margin-top: -100px;
+    margin-top: -90px;
     margin-left: -160px;
     -webkit-transform: rotateX(0deg) rotateY(0deg) translateZ(-100px);
 }
 .planet-2{
-    background: url(/static/css/invitation/planet/3_2.png);
+    background: url(/static/css/invitation/planet/material/2.png);
     background-size: 100px auto;
     width: 100px;
     height: 100px;
@@ -407,7 +407,7 @@ html,body {
     -webkit-transform: rotateX(0deg) rotateY(0deg) translateZ(-100px);
 }
 .planet-5{
-    background: url(/static/css/invitation/planet/3_5.png);
+    background: url(/static/css/invitation/planet/material/5.png);
     background-size: 100px auto;
     height: 100px;
     margin-top: -30px;
@@ -454,8 +454,8 @@ html,body {
   left: 240px;
   top: 0px;
   width: 100px;
-  height: 400px;
-  display: block; 
+  height: 600px;
+  display: block;
 }
 .btn-mid-intro{
   left: 365px;
@@ -535,44 +535,7 @@ html,body {
 /*    left: 128px;
     top: 300px;*/
 }
-.t-ios-main .btn-course{
-    left: 313px;
-    top: 185px;
-}
-.t-ios-main .btn-connect{
-    left: 215px;
-    top: 215px;
-    background: none;
-    opacity: 0;
-}
-.t-ios-main .btn-weixin{
-    left: 252px;
-    top: 15px;
-}
-.t-ios-main .btn-tool{
-    left: 400px;
-    top: 245px;
-}
-.t-ios-main .btn-message{
-    left: 180px;
-    top: 100px;
-}
-.t-ios-main .btn-qq{
-    left: 470px;
-    top: 305px;
-}
-.t-ios-main .btn-cht{
-    left: 210px;
-    top: 225px;
-}
-.t-ios-main .btn-huyu{
-    left: 475px;
-    top: 68px;
-}
-.t-ios-main .btn-qzone{
-    left: 45px;
-    top: 306px;
-}
+
 .swiper-pagination-bullet, .swiper-pagination-bullet-active {
   background: white;
 }
@@ -770,9 +733,9 @@ html,body {
 
 .invitation-planet1{
   position: absolute;
-  width: 98%;
-  top: -10px;
-  margin-left: -49%;
+  width: 300px;
+  top: -50px;
+  margin-left: -150px;
   left: 50%;
   -webkit-animation: float-ten 5s linear infinite;
 
@@ -787,7 +750,7 @@ html,body {
 .invitation-title{
   width: 80%;
   position: absolute;
-  top: 200px;
+  top: 220px;
   left: 50%;
   margin-left: -40%;
 }
@@ -795,7 +758,7 @@ html,body {
 .invitation-btn{
   width: 60%;
   position: absolute;
-  top: 400px;
+  top: 410px;
   left: 50%;
   margin-left: -30%;
   z-index: 10000;
@@ -805,11 +768,11 @@ html,body {
 }
 
 .intro-invitation{
-  width: 80%;
+  width: 78%;
   position: absolute;
-  top: 40px;
+  top: 45px;
   left: 50%;
-  margin-left: -40%;
+  margin-left: -39%;
 }
 
 .slide-arrow{
@@ -828,10 +791,10 @@ html,body {
 }
 .content-planet{
   position: absolute;
-  top: 10px;
+  top: -50px;
   left: 50%;
-  width: 150px;
-  margin-left: -75px;
+  width: 250px;
+  margin-left: -125px;
   -webkit-animation: float-fifteen 4s linear infinite;
 }
 .team-title, .tutor-title{

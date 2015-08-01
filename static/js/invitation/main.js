@@ -23,6 +23,33 @@ function coverFade(){
 	$(".invitation-btn").bind('click', function(){
 		$("#invitation-p1").hide();
 		$("#invitation-p2").show();
+		// 点动画
+		$(".i-dot1").addClass('dot1 animated');
+		$(".i-dot2").addClass('dot2 animated delay1');
+		$(".i-dot3").addClass('dot3 animated delay2');
+		$(".i-dot4").addClass('dot4 animated delay3');
+		$(".i-dot5").addClass('dot5 animated delay4');
+		$(".i-dot6").addClass('dot6 animated delay5');
+		$(".i-dot7").addClass('dot7 animated delay6');
+		$(".i-dot8").addClass('dot8 animated delay7');
+		// 线动画
+		$(".i-line1").addClass('fadeIn animated delay1');
+		$(".i-line2").addClass('fadeIn animated delay2');
+		$(".i-line3").addClass('fadeIn animated delay3');
+		$(".i-line4").addClass('fadeIn animated delay4');
+		$(".i-line5").addClass('fadeIn animated delay5');
+		$(".i-line6").addClass('fadeIn animated delay6');
+		$(".i-line7").addClass('fadeIn animated delay7');
+		$(".i-line8").addClass('fadeIn animated delay8');
+		// 字动画
+		$(".i-text1").addClass('fadeIn animated delay0_1');
+		$(".i-text2").addClass('fadeIn animated delay1_1');
+		$(".i-text3").addClass('fadeIn animated delay2_1');
+		$(".i-text4").addClass('fadeIn animated delay3_1');
+		$(".i-text5").addClass('fadeIn animated delay4_1');
+		$(".i-text6").addClass('fadeIn animated delay5_1');
+		$(".i-text7").addClass('fadeIn animated delay6_1');
+		$(".i-text8").addClass('fadeIn animated delay7_1');
 	})
 }
 // jQunlock.bind('click', function(){

@@ -7,42 +7,53 @@
     position: relative;
 }
 .m1{
-	background: url(bg/bg.jpg);
+	background: url(bg/bg-black.jpg);
 	background-size: 100% auto;
 	text-align: center;
 }
-.decrator{
-	position: absolute;
-  	width: 80%;
-  	left: 50%;
-  	top: 2%;
-  	margin-left: -40%;
-}
+/*p1*/
 #p1 .icon1{
-  	position: absolute;
-  	left: 50%;	
+	position: absolute;
 }
-.p1-title1{
-  	margin-left: -230px;
-  	top: 13%;
-} 
-.p1-tieba{
-	bottom: 40px;
-	margin-left: -81px;
+.brand{
+	top: 0;
+	right: 20px;
 }
-.p1-go{
+.title{
+  top: 370px;
+  left: 190px;
+}
+.text1{
+	left: 50%;
+	margin-left: -350px;
+	top: 750px;
+}
+.gear1{
+	left: 225px;
+	top: 85px;
+}
+.gear2{
+	left: 10px;
+	top: 140px;
+}
+.gear3{
+	right: 55px;
+	top: 600px;
+}
+.cone1{
+	top: 30px;
+	right: 114px;
+}
+.cone2{
+	left: 50px;
+	bottom: 200px;
+}
+.go{
 	bottom: 160px;
-	margin-left: -85px;
+	left: 50%;
+	margin-left: -90px;
 }
-.p1-arrow-down{
-	top: 60%;
-	margin-left: -50px;
+.cube1{
+	bottom: 60px;
+	right: 60px;
 }
-
-
-/*p2*/
-#p2 .decrator{
-	top: 6%;
-}
-
-

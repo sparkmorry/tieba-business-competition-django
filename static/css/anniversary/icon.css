@@ -1,37 +1,55 @@
 .icon1{
-	background: url(icon/icon.png);
+	background: url(icon/black/icon1.png);
 	display: inline-block;
 }
-.p1-title1{
-	width: 465px;
-	height: 465px;
-	background-position: 0 0;
+.gear1{
+	width: 140px;
+	height: 140px;
+	background-position: 0 -46px;
+}
+.gear2{
+	width: 280px;
+	height: 280px;
+	background-position: 0 -208px;
+}
+.gear3{
+	width: 150px;
+	height: 150px;
+	background-position: -180px -530px;
+}
+.cone1{
+	width: 138px;
+	height: 146px;
+	background-position: 0 -520px;
+}
+.cone2{
+	width: 150px;
+	height: 146px;
+	background-position: -6px -835px;
 }
 
-.p1-arrow-down{
-	width: 100px;
-	height: 84px;
-	background-position: 0 -467px;
+.text1{
+	width: 720px;
+	height: 120px;
+	background-position: 0 -700px;
 }
-.p1-go{
-	width: 170px;
-	height: 178px;
-	background-position: 0 -560px;
+.go{
+	width: 180px;
+	height: 180px;
+	background-position: -180px -830px;
 }
-.p1-tieba{
-	width: 162px;
-	height: 58px;
-	background-position: 0 -750px;
+.cube1{
+	width: 165px;
+	height: 175px;
+	background-position: -390px -830px;
 }
-
-.p2-arrow{
-	width: 200px;
-	height: 45px;
-	background-position: 0 -823px;
+.title{
+	width: 390px;
+	height: 270px;
+	background-position: 0 -1040px;
 }
-
-.p2-card{
-	width: 350px;
-	height: 222px;
-	background-position: -510px 0;
+.brand{
+	width: 630px;
+	height: 700px;
+	background-position: -500px 0;
 }
