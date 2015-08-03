@@ -75,6 +75,17 @@ body{
 	top:500px;
 	margin-left: -237px;
 }
+.p2-black-triangle{
+  top: 600px;
+  margin-left: -90px;
+  z-index: 100;
+}
+.p2-green-triangle{
+  top: 530px;
+  margin-left: -155px;
+  z-index: 100;
+}
+
 .p2-3{
 	top: 300px;
 	margin-left: -304px;
@@ -111,16 +122,19 @@ body{
 	top: 55%;
 	margin-left: -220px;
 }
-.i-arrow-left, .i-arrow-right, .i-arrow-middle{
+
+.i-arrow-left, .i-arrow-right, .i-arrow-middle,
+.i-arrow-left-pressed, .i-arrow-right-pressed, 
+.i-arrow-middle-pressed{
 	bottom: 14%;
 }
-.i-arrow-left{
+.i-arrow-left, .i-arrow-left-pressed{
 	margin-left: -300px;
 }
-.i-arrow-right{
+.i-arrow-right, .i-arrow-right-pressed{
 	margin-left: 150px;
 }
-.i-arrow-middle{
+.i-arrow-middle, .i-arrow-middle-pressed{
 	margin-left: -167px;
 }
 .i-selected-card{
@@ -131,15 +145,33 @@ body{
   top: 30%;
   z-index: 100;
 }
-.i-card2{
+.c-card1, .c-card2, .c-card3{
+	position: absolute;
+	left: 50%;
+	width: 150px;
+  	top: 30%;
+  	z-index: 100;
+}
+.c-card2{
+	width: 100px;
+}
+.i-card2, .c-card2{
   top: 25%;
   margin-left: -77px;
 }
-.i-card1{
-  margin-left: -350px;
+
+.i-card1, .c-card1{
+  margin-left: -340px;
 }
-.i-card3{
+.i-card3, .c-card3{
   margin-left: 200px;
+}
+.selected-card{
+	-webkit-transform: scale(1.5); 
+}
+.selected-card.c-card2{
+  top: 28%;
+  margin-left: -55px;
 }
 
 /*p4*/
