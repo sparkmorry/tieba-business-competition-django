@@ -119,7 +119,7 @@ body{
 .p2-dec1{
   top: 15px;
   left: -5px;
-  z-index: 100;
+  z-index: 1000;
 }
 .p2-dec2{
 	right: 30px;
@@ -211,9 +211,14 @@ body{
 
 
 /*p4*/
+.i-title4{
+	position: absolute;
+  top: 20%;
+  margin-left: -180px;
+}
 .posback{
   position: absolute;
-  top: 38%;
+  top: 48%;
   left: 50%;
   margin-left: -160px;
 }
@@ -221,7 +226,7 @@ body{
   position: absolute;
   left: 50%;
   margin-left: -172px;
-  top: 38%;
+  top: 48%;
 }
 .pos-text{
   position: absolute;
@@ -235,7 +240,7 @@ body{
  }
 #play-area{
   position: absolute;
-  top: 28%;
+  top: 38%;
   left: 0;
   right: 0;
 
@@ -247,6 +252,6 @@ body{
 }
 .i-prize{
   margin-left: -184px;
-  top: 60px;
+  top: -600px;
   z-index: 100;
 }

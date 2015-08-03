@@ -56,9 +56,9 @@
 	        	<i class="card i-selected-card"></i>
 	        </div>
 	        <div class="swiper-slide m1" id="p4">
-	        	<i class="card i-prize1 i-prize"></i>
 				<i class="card i-red-line"></i>
 	        	<i class="icon1 p2-dec1"></i>
+	        	<i class="icon2 i-title4"></i>
 	        	<i class="icon1 flash-fast p2-dec2"></i>
 	        	<i class="icon1 flash p2-dec3"></i>	  
 	        	<img class="posback" src="/static/css/anniversary/icon/black/posback.png">
@@ -83,6 +83,7 @@
 			direction: 'vertical',  //vertical,horizontal
 			effect : 'fade',
 			speed: 700,
+			onlyExternal: true,
 
 		});	
 		$("#go").bind('click', function(){
@@ -112,7 +113,6 @@
 			ev.preventDefault();
 		});
 		var target = document.getElementById("j-swipe-card");
-		target.style.webkitTransition = 'all ease 0.2s';
 
 		// touch.on(target, 'swiperight', function(ev){
 		// 	console.log(ev);
@@ -124,6 +124,23 @@
 		// 	// log("向左滑动.");
 		// 	this.style.webkitTransform = "translate3d(-" + this.offsetLeft + "px,0,0)";
 		// });
+		var swipeTime = 0;
+		var jQmoney = $('#j-money');
+		var jQp4 = $('#p4');
+		touch.on(target, 'swiperight', function(ev){
+			var jQself = $(this);
+			swipeTime++;
+			money = swipeTime * 3000;
+			jQmoney.text(money);
+			var prizeNo = parseInt(Math.random()*10);
+			jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
+			jQself.addClass('transition0_5');
+			jQself.css({'left': '100%'});
+			setTimeout(function (argument) {
+				jQself.removeClass('transition0_5')
+				jQself.css({'left': '10%'});
+			}, 800);
+		});
 
 		$('.j-banka').bind('click', function() {
 			var jQself = $(this);

@@ -64,6 +64,7 @@
 	width: 171px;
 	height: 136px;
 	background-position: -860px -840px;
+	z-index: 1400;
 }
 .p2-dec3{
 	width: 130px;
@@ -165,6 +166,7 @@
 	width: 486px;
 	height: 56px;
 	background-position: -717px -14px;
+	z-index: 1000;
 }
 .i-selected-card{
 	width: 370px;
@@ -177,6 +179,11 @@
 .i-prize7, .i-prize8{
 	width: 368px;
 	height: 213px;
+}
+.i-title4{
+	width: 356px;
+	height: 106px;
+	background-position: -716px -542px;
 }
 .i-prize1{
 	background-position: -718px -101px;

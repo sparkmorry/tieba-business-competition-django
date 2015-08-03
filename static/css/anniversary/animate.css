@@ -126,3 +126,17 @@
     opacity:1
   }
 }
+.transition0_5{
+    -webkit-transition: all ease 0.5s
+}
+.drop{
+    -webkit-animation: drop 1.5s linear;   
+}
+@-webkit-keyframes drop {
+  0% {
+    top: -600px;
+  }
+  100% {
+    top: 2000px;
+  }
+}
