@@ -102,6 +102,7 @@ body{
   top: 530px;
   margin-left: -155px;
   z-index: 100;
+  opacity: 0;
 }
 
 .p2-3{

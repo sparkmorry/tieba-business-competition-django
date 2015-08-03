@@ -43,7 +43,7 @@
 	        <!-- 中信 -->
 	        <div class="swiper-slide m1" id="p3">
 	        	<i class="card i-red-line"></i>
-	        	<i class="icon1 floating4 p2-dec1"></i>
+	        	<i class="icon1 p2-dec1"></i>
 	        	<i class="icon1 flash-fast p2-dec2"></i>
 	        	<i class="icon1 flash-middle p2-dec3"></i>
 	        	<img class="c-card1" src="/static/css/anniversary/card/1.png"data-no="1">
@@ -58,7 +58,7 @@
 	        <div class="swiper-slide m1" id="p4">
 	        	<i class="card i-prize1 i-prize"></i>
 				<i class="card i-red-line"></i>
-	        	<i class="icon1 floating4 p2-dec1"></i>
+	        	<i class="icon1 p2-dec1"></i>
 	        	<i class="icon1 flash-fast p2-dec2"></i>
 	        	<i class="icon1 flash p2-dec3"></i>	  
 	        	<img class="posback" src="/static/css/anniversary/icon/black/posback.png">
@@ -81,10 +81,22 @@
 	<script type="text/javascript">
 		var swiper = new Swiper('.swiper-container',{
 			direction: 'vertical',  //vertical,horizontal
+			effect : 'fade',
+			speed: 700,
+
 		});	
 		$("#go").bind('click', function(){
 			swiper.slideNext();
 		});
+		$('.tb3').bind('click', function() {
+			$('.p2-black-triangle').hide()
+			$('.p2-green-triangle').addClass('fadeIn');
+			setTimeout(function (argument) {
+				swiper.slideNext();
+			}, 1100)
+
+		});
+
 		touch.on('#j-swipe-card', 'touchstart', function(ev){
 			ev.preventDefault();
 		});
@@ -102,16 +114,16 @@
 		var target = document.getElementById("j-swipe-card");
 		target.style.webkitTransition = 'all ease 0.2s';
 
-		touch.on(target, 'swiperight', function(ev){
-			console.log(ev);
-			this.style.webkitTransform = "translate3d(" + rt + "px,0,0)";
-			// log("向右滑动.");
-		});
+		// touch.on(target, 'swiperight', function(ev){
+		// 	console.log(ev);
+		// 	this.style.webkitTransform = "translate3d(" + rt + "px,0,0)";
+		// 	// log("向右滑动.");
+		// });
 
-		touch.on(target, 'swipeleft', function(ev){
-			// log("向左滑动.");
-			this.style.webkitTransform = "translate3d(-" + this.offsetLeft + "px,0,0)";
-		});
+		// touch.on(target, 'swipeleft', function(ev){
+		// 	// log("向左滑动.");
+		// 	this.style.webkitTransform = "translate3d(-" + this.offsetLeft + "px,0,0)";
+		// });
 
 		$('.j-banka').bind('click', function() {
 			var jQself = $(this);
@@ -121,6 +133,9 @@
 			jQself.addClass(pressClass).removeClass(currentClass);
 			setTimeout(function(){
 				jQself.removeClass(pressClass).addClass(currentClass);
+				if(type == 'middle'){
+					swiper.slideNext();
+				}
 			},300);
 			var currentCardNo, nextCardNo, prevCardNo;
 			currentCardNo = $('.selected-card').data('no');
