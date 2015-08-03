@@ -128,7 +128,7 @@
 	background-position: -491px -626px;
 }
 .i-arrow-middle{
-	width: 334px;
+	width: 310px;
 	height: 134px;
 	background-position: -170px -626px;
 }
@@ -137,8 +137,49 @@
 	height: 56px;
 	background-position: -717px -14px;
 }
-.i-slected-card{
+.i-selected-card{
 	width: 370px;
 	height: 376px;
 	background-position: -16px -788px;
+}
+.i-prize1, .i-prize2, 
+.i-prize3, .i-prize4,
+.i-prize5, .i-prize6,
+.i-prize7, .i-prize8{
+	width: 368px;
+	height: 213px;
+}
+.i-prize1{
+	background-position: -718px -101px;
+}
+.i-prize2{
+	background-position: -718px -333px;
+}
+.i-prize3{
+	background-position: -718px -567px;
+}
+.i-prize4{
+	background-position: -718px -797px;
+}
+.i-prize5{
+	background-position: -718px -1030px;
+}
+.i-prize6{
+	background-position: -718px -1260px;
+}
+.i-prize7{
+	background-position: -718px -101px;
+}
+.i-prize8{
+	background-position: -40px -1224px;
+}
+.i-prize9{
+	width: 167px;
+	height: 204px;
+	background-position: -457px -800px;
+}
+.i-prize10{
+	width: 167px;
+	height: 274px;
+	background-position: -457px -1027px;
 }

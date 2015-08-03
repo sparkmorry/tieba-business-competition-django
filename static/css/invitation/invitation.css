@@ -590,13 +590,14 @@ html,body {
 
 .t-info .btn-close{
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -18px;
+  right: -18px;
   width: 80px;
   height: 80px;
   background: url(btn-close.png) no-repeat center;
-  background-size: 27px auto;
+  background-size: 25px auto;
   z-index: 99999;
+
 }
 .process{
   width: 90px;
@@ -734,7 +735,7 @@ html,body {
 .invitation-planet1{
   position: absolute;
   width: 300px;
-  top: -50px;
+  top: -60px;
   margin-left: -150px;
   left: 50%;
   -webkit-animation: float-ten 5s linear infinite;
@@ -748,17 +749,17 @@ html,body {
   right: 0;
 }
 .invitation-title{
-  width: 280px;
+  width: 220px;
   position: absolute;
-  top: 220px;
+  top: 190px;
   left: 50%;
-  margin-left: -140px;
+  margin-left: -110px;
 }
 
 .invitation-btn{
   width: 200px;
   position: absolute;
-  bottom: 60px;
+  bottom: 30px;
   left: 50%;
   margin-left: -100px;
   z-index: 10000;
@@ -768,11 +769,11 @@ html,body {
 }
 
 .intro-invitation{
-  width: 290px;
+  width: 240px;
   position: absolute;
   top: 45px;
   left: 50%;
-  margin-left: -145px;
+  margin-left: -120px;
 }
 
 .slide-arrow{

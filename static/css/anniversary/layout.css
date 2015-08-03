@@ -2,14 +2,18 @@
 	margin: 0;
 	padding: 0;
 }
-
+body{
+	background-color: black;
+}
 .m1{
     position: relative;
 }
 .m1{
 	background: url(bg/bg-black.jpg);
-	background-size: 100% auto;
+	/*background-size: 100% auto;*/
+	background-size: 1500px auto;
 	text-align: center;
+	background-color: black;
 }
 /*p1*/
 #p1 .icon1{
@@ -56,4 +60,107 @@
 .cube1{
 	bottom: 60px;
 	right: 60px;
+}
+
+/*p2*/
+#p2 .icon2{
+	position: absolute;
+	left: 50%;
+}
+.p2-title{
+	top: 150px;
+	margin-left: -175px;
+}
+.p2-triangle{
+	top:500px;
+	margin-left: -237px;
+}
+.p2-3{
+	top: 300px;
+	margin-left: -304px;
+}
+
+/*p3*/
+#p3 .icon1, #p4 .icon1{
+	position: absolute;
+}
+.p2-dec1{
+  top: 15px;
+  left: -5px;
+  z-index: 100;
+}
+.p2-dec2{
+	right: 30px;
+	top: 580px;
+}
+.p2-dec3{
+	left: 70px;
+	bottom: 50px;
+}
+#p3 .card, #p4 .card{
+	position: absolute;
+	left: 50%;
+}
+.i-red-line{
+	top: 60px;
+	margin-left: -203px;
+}
+.p3-tilte3{
+	top: 55%;
+	margin-left: -220px;
+}
+.i-arrow-left, .i-arrow-right, .i-arrow-middle{
+	bottom: 14%;
+}
+.i-arrow-left{
+	margin-left: -300px;
+}
+.i-arrow-right{
+	margin-left: 150px;
+}
+.i-arrow-middle{
+	margin-left: -167px;
+}
+.i-selected-card{
+  top: 20%;
+  margin-left: -185px;
+}
+.i-card2, .i-card1, .i-card3{
+  top: 30%;
+  z-index: 100;
+}
+.i-card2{
+  top: 25%;
+  margin-left: -77px;
+}
+.i-card1{
+  margin-left: -350px;
+}
+.i-card3{
+  margin-left: 200px;
+}
+
+/*p4*/
+.posback{
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  margin-left: -160px;
+}
+.pos{
+  position: absolute;
+  left: 50%;
+  margin-left: -172px;
+  top: 38%;
+}
+
+.card1{
+  position: absolute;
+  top: 28%;
+  left: 40%;
+}
+.i-prize{
+  margin-left: -184px;
+  top: 60px;
+  z-index: 100;
 }
