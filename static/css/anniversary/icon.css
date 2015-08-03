@@ -53,3 +53,92 @@
 	height: 700px;
 	background-position: -500px 0;
 }
+
+/*p2*/
+.p2-dec1{
+	width: 240px;
+	height: 136px;
+	background-position: -592px -840px;
+}
+.p2-dec2{
+	width: 171px;
+	height: 136px;
+	background-position: -860px -840px;
+}
+.p2-dec3{
+	width: 130px;
+	height: 146px;
+	background-position: -496px -1020px;
+}
+
+.icon2{
+	background-image: url(icon/black/icon2.png);
+	display: inline-block;
+}
+.p2-title{
+  width: 351px;
+  height: 95px;
+  background-position: -135px 0;
+  border-top: solid 3px #898989;
+}
+.p2-3{
+	width: 609px;
+	height: 561px;
+	background-position: 0 -164px;
+}
+.p2-triangle{
+	width: 474px;
+	height: 413px;
+	background-position: -79px -777px;
+}
+
+/*p3 办卡大厅*/
+.card{
+	background-image: url(icon/black/card.png);
+	display: inline-block;
+}
+.i-card1{
+	width: 154px;
+	height: 100px;
+	background-position: 0 -75px;
+}
+.i-card2{
+	width: 160px;
+	height: 252px;
+	background-position: -243px 0px;
+}
+.i-card3{
+	width: 154px;
+	height: 100px;
+	background-position: -499px -75px;
+}
+.p3-tilte3{
+	width: 440px;
+	height: 128px;
+	background-position: -106px -396px;
+}
+.i-arrow-left{
+	width: 132px;
+	height: 134px;
+	background-position: -33px -626px;
+}
+.i-arrow-right{
+	width: 132px;
+	height: 134px;
+	background-position: -491px -626px;
+}
+.i-arrow-middle{
+	width: 334px;
+	height: 134px;
+	background-position: -170px -626px;
+}
+.i-red-line{
+	width: 486px;
+	height: 56px;
+	background-position: -717px -14px;
+}
+.i-slected-card{
+	width: 370px;
+	height: 376px;
+	background-position: -16px -788px;
+}

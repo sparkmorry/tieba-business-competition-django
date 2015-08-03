@@ -748,19 +748,19 @@ html,body {
   right: 0;
 }
 .invitation-title{
-  width: 80%;
+  width: 280px;
   position: absolute;
   top: 220px;
   left: 50%;
-  margin-left: -40%;
+  margin-left: -140px;
 }
 
 .invitation-btn{
-  width: 60%;
+  width: 200px;
   position: absolute;
-  top: 410px;
+  bottom: 60px;
   left: 50%;
-  margin-left: -30%;
+  margin-left: -100px;
   z-index: 10000;
 }
 #invitation-p2{
