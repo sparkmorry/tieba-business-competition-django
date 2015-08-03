@@ -78,6 +78,8 @@ body{
 .p2-3{
 	top: 300px;
 	margin-left: -304px;
+	z-index: 100;
+	-webkit-transform-origin: 50% 60%;
 }
 
 /*p3*/
@@ -157,7 +159,7 @@ body{
 .card1{
   position: absolute;
   top: 28%;
-  left: 40%;
+  left: 10%;
 }
 .i-prize{
   margin-left: -184px;

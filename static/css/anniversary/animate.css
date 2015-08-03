@@ -1,0 +1,116 @@
+/*上下摆动*/
+.floating2{
+    -webkit-animation: floating 2s linear infinite;
+}
+.floating3{
+    -webkit-animation: floating 3s linear infinite;
+}
+.floating4{
+    -webkit-animation: floating 4s linear infinite;
+}
+.floating5{
+    -webkit-animation: floating 4s linear infinite;
+}
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translate(0, 0px);
+  }
+  30% {
+    -webkit-transform: translate(0, 15px);
+  }
+  50% {
+    -webkit-transform: translate(0, 0px);
+  }
+  80% {
+    -webkit-transform: translate(0, -15px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0px);
+  } 
+}
+.downup{
+    -webkit-animation: downup 2s linear infinite;
+}
+@-webkit-keyframes downup {
+  0% {
+    opacity: 0.3;
+    -webkit-transform: translate(0, 10px);
+    -moz-transform: translate(0, 10px);
+    -ms-transform: translate(0, 10px);
+    -o-transform: translate(0, 10px);
+    transform: translate(0, 10px); }
+  50% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0px);
+    -moz-transform: translate(0, 0px);
+    -ms-transform: translate(0, 0px);
+    -o-transform: translate(0, 0px);
+    transform: translate(0, 0px); }
+  100% {
+    opacity: 0.3;
+    -webkit-transform: translate(0, -10px);
+    -moz-transform: translate(0, -10px);
+    -ms-transform: translate(0, -10px);
+    -o-transform: translate(0, -10px);
+    transform: translate(0, -10px); } 
+}
+/*360度旋转*/
+.rotate{
+    -webkit-animation: Rotate 20s linear infinite;
+}
+@-webkit-keyframes Rotate {
+    0% {
+        -webkit-transform: rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(360deg);
+    }
+}
+.rotate-reverse{
+    -webkit-animation: RotateReserve 20s linear infinite;
+}
+@-webkit-keyframes RotateReserve {
+0% {
+    -webkit-transform: rotateZ(0deg);
+    }
+100% {
+    -webkit-transform: rotateZ(-360deg);
+    }
+}
+.flash{
+    -webkit-animation: Flash 2s linear infinite;
+}
+@-webkit-keyframes Flash {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.flash-fast{
+    -webkit-animation: FlashFast 1s linear infinite;
+}
+.flash-middle{
+    -webkit-animation: FlashFast 2s linear infinite;
+}
+@-webkit-keyframes FlashFast {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}

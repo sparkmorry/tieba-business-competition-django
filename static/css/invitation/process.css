@@ -2,7 +2,7 @@
 /*邀请函流程图*/
 .invitation-process{
   position: absolute;
-  top: 240px;
+  top: 234px;
   left: 50%;
   margin-left: -65px;
   width: 131px;
@@ -78,19 +78,25 @@
 }
 .i-text5{
   height: 24px;
-  background-position: -59px -100px;
+  background-position: -59px -97px;
 }
 .i-text6{
   height: 24px;
-  background-position: -59px -126px;
+  background-position: -59px -121px;
 }
 .i-text7{
   height: 25px;
-  background-position: -59px -149px;
+  background-position: -59px -144px;
 }
 .i-text8{
-  background-position: -59px -175px;
+  background-position: -59px -169px;
   height: 27px;
+}
+.i-text9{
+  background-position: -59px -209px;
+  height: 20px;
+  position: absolute;
+  top: 216px;
 }
 .i-dot{
   width: 7px;

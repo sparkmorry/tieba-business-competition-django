@@ -82,9 +82,13 @@
   border-top: solid 3px #898989;
 }
 .p2-3{
-	width: 609px;
+/*	width: 609px;
 	height: 561px;
 	background-position: 0 -164px;
+*/
+  width: 609px;
+  height: 609px;
+  background-position: 0 -140px;
 }
 .p2-triangle{
 	width: 474px;

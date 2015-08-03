@@ -50,6 +50,7 @@ function coverFade(){
 		$(".i-text6").addClass('fadeIn animated delay5_1');
 		$(".i-text7").addClass('fadeIn animated delay6_1');
 		$(".i-text8").addClass('fadeIn animated delay7_1');
+		$(".i-text9").addClass('fadeIn animated delay8');
 	})
 }
 // jQunlock.bind('click', function(){
