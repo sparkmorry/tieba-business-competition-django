@@ -124,7 +124,7 @@ html,body {
   width: 560px;
   position: absolute;
   left: 50%;
-  margin-left: -278px;
+  margin-left: -279px;
   top: -65px;
 }
 .cover-arrow{
@@ -132,7 +132,7 @@ html,body {
   position: absolute;
   left: 50%;
   margin-left: -145px;
-  top: 10px;
+  top: 12px;
   -webkit-animation: btnRotate 18s linear infinite;
 }
 .cover-circle{
@@ -768,11 +768,11 @@ html,body {
 }
 
 .intro-invitation{
-  width: 78%;
+  width: 290px;
   position: absolute;
   top: 45px;
   left: 50%;
-  margin-left: -39%;
+  margin-left: -145px;
 }
 
 .slide-arrow{

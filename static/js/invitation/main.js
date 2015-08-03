@@ -33,14 +33,14 @@ function coverFade(){
 		$(".i-dot7").addClass('dot7 animated delay6');
 		$(".i-dot8").addClass('dot8 animated delay7');
 		// 线动画
-		$(".i-line1").addClass('fadeIn animated delay1');
-		$(".i-line2").addClass('fadeIn animated delay2');
-		$(".i-line3").addClass('fadeIn animated delay3');
-		$(".i-line4").addClass('fadeIn animated delay4');
-		$(".i-line5").addClass('fadeIn animated delay5');
-		$(".i-line6").addClass('fadeIn animated delay6');
-		$(".i-line7").addClass('fadeIn animated delay7');
-		$(".i-line8").addClass('fadeIn animated delay8');
+		$(".i-line1").addClass('fadeIn animated delay0_1');
+		$(".i-line2").addClass('fadeIn animated delay1_1');
+		$(".i-line3").addClass('fadeIn animated delay2_1');
+		$(".i-line4").addClass('fadeIn animated delay3_1');
+		$(".i-line5").addClass('fadeIn animated delay4_1');
+		$(".i-line6").addClass('fadeIn animated delay5_1');
+		$(".i-line7").addClass('fadeIn animated delay6_1');
+		$(".i-line8").addClass('fadeIn animated delay7_1');
 		// 字动画
 		$(".i-text1").addClass('fadeIn animated delay0_1');
 		$(".i-text2").addClass('fadeIn animated delay1_1');
@@ -73,7 +73,7 @@ touch.on('#circle-open', 'rotate', function(ev){
         }
     }
     var rotateStr = 'rotate(' + totalAngle + 'deg)';
-    $('#circle-open').css({'webkit-transform' : rotateStr});
+    $('.cover-circle').css({'webkit-transform' : rotateStr});
     // this.style.webkitTransform = ;
 });
 

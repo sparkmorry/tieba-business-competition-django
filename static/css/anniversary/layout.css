@@ -16,17 +16,17 @@
 	position: absolute;
 }
 .brand{
-	top: 0;
+	top: -50px;
 	right: 20px;
 }
 .title{
-  top: 370px;
+  top: 320px;
   left: 190px;
 }
 .text1{
 	left: 50%;
 	margin-left: -350px;
-	top: 750px;
+	top: 700px;
 }
 .gear1{
 	left: 225px;
@@ -38,7 +38,7 @@
 }
 .gear3{
 	right: 55px;
-	top: 600px;
+	top: 550px;
 }
 .cone1{
 	top: 30px;
