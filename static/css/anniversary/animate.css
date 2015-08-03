@@ -130,7 +130,7 @@
     -webkit-transition: all ease 0.5s
 }
 .drop{
-    -webkit-animation: drop 1.5s linear;   
+    -webkit-animation: drop 2.5s linear;   
 }
 @-webkit-keyframes drop {
   0% {

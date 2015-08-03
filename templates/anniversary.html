@@ -127,6 +127,7 @@
 		var swipeTime = 0;
 		var jQmoney = $('#j-money');
 		var jQp4 = $('#p4');
+
 		touch.on(target, 'swiperight', function(ev){
 			var jQself = $(this);
 			swipeTime++;
@@ -135,6 +136,7 @@
 			var prizeNo = parseInt(Math.random()*10);
 			jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
 			jQself.addClass('transition0_5');
+
 			jQself.css({'left': '100%'});
 			setTimeout(function (argument) {
 				jQself.removeClass('transition0_5')
@@ -142,6 +144,7 @@
 			}, 800);
 		});
 
+		var currentCardNo, nextCardNo, prevCardNo;
 		$('.j-banka').bind('click', function() {
 			var jQself = $(this);
 			var type = jQself.data("type");
@@ -151,10 +154,15 @@
 			setTimeout(function(){
 				jQself.removeClass(pressClass).addClass(currentClass);
 				if(type == 'middle'){
+					if(currentCardNo != 2){
+						var src = '/static/css/anniversary/card/'+currentCardNo+'.png'
+					}else{
+						var src = '/static/css/anniversary/icon/black/card1.png'
+					}		
+					$('#j-swipe-card').attr('src', src);
 					swiper.slideNext();
 				}
 			},300);
-			var currentCardNo, nextCardNo, prevCardNo;
 			currentCardNo = $('.selected-card').data('no');
 			nextCardNo = (currentCardNo == 3)? 1: currentCardNo+1;
 			prevCardNo = (currentCardNo == 1)?3: currentCardNo-1;
