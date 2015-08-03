@@ -255,3 +255,11 @@ body{
   top: -600px;
   z-index: 100;
 }
+.i-prize9, .i-prize10{
+  margin-left: -84px;
+}
+.i-stop-swipe{
+	position: absolute;
+	margin-left: 200px;
+	bottom: 50px;
+}
