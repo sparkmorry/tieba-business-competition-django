@@ -80,6 +80,24 @@ body{
   margin-left: -90px;
   z-index: 100;
 }
+.triangle-btn{
+  position: absolute;
+  width: 220px;
+  height: 230px;
+  cursor: pointer;
+}
+.tb1{
+  top: 0;
+  left: 200px;
+}
+.tb2{
+  top: 380px;
+  left: 0;
+}
+.tb3{
+  top: 380px;
+  right: -20px;
+}
 .p2-green-triangle{
   top: 530px;
   margin-left: -155px;
@@ -204,10 +222,26 @@ body{
   margin-left: -172px;
   top: 38%;
 }
-
-.card1{
+.pos-text{
+  position: absolute;
+  width: 300px;
+  color: white;
+  top: 100px;
+  text-align: left;
+  left: 80px;
+  line-height: 30px;
+  font-size: 1.2em;
+ }
+#play-area{
   position: absolute;
   top: 28%;
+  left: 0;
+  right: 0;
+
+}
+.card1{
+  position: absolute;
+  /*top: 28%;*/
   left: 10%;
 }
 .i-prize{

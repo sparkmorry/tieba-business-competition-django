@@ -33,7 +33,11 @@
 				<i class="icon2 p2-title"></i>
 				<i class="icon2 p2-black-triangle"></i>
 				<i class="icon2 p2-green-triangle"></i>
-	        	<i class="icon2 rotate p2-3"></i>
+				<div class="icon2 rotate p2-3">
+					<div class="triangle-btn tb1"></div>
+					<div class="triangle-btn tb2"></div>
+					<div class="triangle-btn tb3"></div>
+				</div>
 	        	<i class="icon2 p2-triangle"></i>
 	        </div>
 	        <!-- 中信 -->
@@ -42,9 +46,6 @@
 	        	<i class="icon1 floating4 p2-dec1"></i>
 	        	<i class="icon1 flash-fast p2-dec2"></i>
 	        	<i class="icon1 flash-middle p2-dec3"></i>
-	        	<!-- i class="card i-card1" data-no="1"></i>
-	        	<i class="card i-card2 selected-card" data-no="2"></i>
-	        	<i class="card i-card3" data-no="3"></i> -->	
 	        	<img class="c-card1" src="/static/css/anniversary/card/1.png"data-no="1">
 	        	<img class="c-card2 selected-card" src="/static/css/anniversary/card/2.png"data-no="2">
 	        	<img class="c-card3" src="/static/css/anniversary/card/3.png"data-no="3">        			
@@ -59,10 +60,18 @@
 				<i class="card i-red-line"></i>
 	        	<i class="icon1 floating4 p2-dec1"></i>
 	        	<i class="icon1 flash-fast p2-dec2"></i>
-	        	<i class="icon1 flash p2-dec3"></i>	        
+	        	<i class="icon1 flash p2-dec3"></i>	  
 	        	<img class="posback" src="/static/css/anniversary/icon/black/posback.png">
-	        	<img class="card1" id="j-swipe-card" src="/static/css/anniversary/icon/black/card1.png">
-	        	<img class="pos" src="/static/css/anniversary/icon/black/pos.png">
+	        	<div id="play-area">   
+	        		<img class="card1" id="j-swipe-card" src="/static/css/anniversary/icon/black/card1.png">
+	        	</div> 
+	        	<div class="pos">
+	        		<img src="/static/css/anniversary/icon/black/pos.png">
+	        		<div class="pos-text">
+		        		<p>已消费：¥<span id="j-money"></span></p>
+		        		<p>您已达到人均月消费金额。</p>	        
+		        	</div>
+	        	</div>	        		      	
 	        </div>
 	    </div>
 	</div>
@@ -80,18 +89,28 @@
 			ev.preventDefault();
 		});
 
+		var w = 168;
+		var playArea = document.querySelector("#play-area");
+		var tw = playArea.offsetWidth;
+		
+		var lf = document.getElementById("j-swipe-card").offsetLeft;
+		var rt = tw - w - lf;
+
+		touch.on('#j-swipe-card', 'touchstart', function(ev){
+			ev.preventDefault();
+		});
 		var target = document.getElementById("j-swipe-card");
 		target.style.webkitTransition = 'all ease 0.2s';
 
 		touch.on(target, 'swiperight', function(ev){
 			console.log(ev);
-			// this.style.webkitTransform = "translate3d(" + rt + "px,0,0)";
+			this.style.webkitTransform = "translate3d(" + rt + "px,0,0)";
 			// log("向右滑动.");
 		});
 
 		touch.on(target, 'swipeleft', function(ev){
 			// log("向左滑动.");
-			// this.style.webkitTransform = "translate3d(-" + this.offsetLeft + "px,0,0)";
+			this.style.webkitTransform = "translate3d(-" + this.offsetLeft + "px,0,0)";
 		});
 
 		$('.j-banka').bind('click', function() {
