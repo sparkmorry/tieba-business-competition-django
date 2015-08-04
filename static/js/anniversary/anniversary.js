@@ -79,10 +79,10 @@ $('.j-banka').bind('click', function() {
 			swiper.slideNext();
 			//结束刷卡
 			var swipeCb = function(){
-				if(swipeTime>4){
+				if(swipeTime>4 && swipeTime<8){
 					zhongxinLevel = 2;
 					$("#j-zhongxin-result").attr('src', '/static/css/anniversary/result/zhongxin/2.png');
-				}else if(zhongxinLevel>8){
+				}else if(swipeTime>=8){
 					zhongxinLevel=3;
 					$("#j-zhongxin-result").attr('src', '/static/css/anniversary/result/zhongxin/3.png');
 				};
@@ -110,7 +110,7 @@ $('.j-banka').bind('click', function() {
 });
 
 var zhongXinCB = function(){
-	if(shakeTimes>4){
+	if(shakeTimes>4 && shakeTimes<8){
 		jindongLevel = 2;
 		var src = '/static/css/anniversary/result/jingdong/2.png';
 		$("#j-jd-result").attr('src', src);
@@ -166,7 +166,7 @@ $('.i-test-face').bind('click', function(){
 	$('.i-blue-line').addClass('downup');
 	setTimeout(function(){
 		swiper.slideNext();
-	}, 2000);
+	}, 4000);
 });
 $('.j-go-beauty').bind('click', function(){
 	swiper.slideNext();

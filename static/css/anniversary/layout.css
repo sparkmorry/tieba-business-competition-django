@@ -352,10 +352,11 @@ body{
 }*/
 .j-go-beauty{
   position: absolute;
-  bottom: 0px;
+  /*bottom: 0px;*/
+  bottom: 5px;
   right: 0px;
-  width: 350px;
-  height: 170px;
+  /*width: 350px;*/
+  /*height: 170px;*/
   text-align: center;
 }
 /*颜值*/
