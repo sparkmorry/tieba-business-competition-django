@@ -160,7 +160,10 @@ $('.i-test-face').bind('click', function(){
 		var src = '/static/css/anniversary/result/face/3.png';
 	}
 	$("#j-face-result").attr('src', src);
-	swiper.slideNext();
+	$('.i-blue-line').addClass('downup');
+	setTimeout(function(){
+		swiper.slideNext();
+	}, 2000);
 });
 $('.j-go-beauty').bind('click', function(){
 	swiper.slideNext();

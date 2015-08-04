@@ -42,25 +42,16 @@
 @-webkit-keyframes downup {
   0% {
     opacity: 0.3;
-    -webkit-transform: translate(0, 10px);
-    -moz-transform: translate(0, 10px);
-    -ms-transform: translate(0, 10px);
-    -o-transform: translate(0, 10px);
-    transform: translate(0, 10px); }
+    -webkit-transform: translate(0, 0px);
+  }
   50% {
     opacity: 1;
     -webkit-transform: translate(0, 0px);
-    -moz-transform: translate(0, 0px);
-    -ms-transform: translate(0, 0px);
-    -o-transform: translate(0, 0px);
-    transform: translate(0, 0px); }
+  }
   100% {
     opacity: 0.3;
-    -webkit-transform: translate(0, -10px);
-    -moz-transform: translate(0, -10px);
-    -ms-transform: translate(0, -10px);
-    -o-transform: translate(0, -10px);
-    transform: translate(0, -10px); } 
+    -webkit-transform: translate(0, -530px);
+  } 
 }
 /*360度旋转*/
 .rotate{
