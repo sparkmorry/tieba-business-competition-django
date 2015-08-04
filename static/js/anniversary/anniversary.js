@@ -55,12 +55,11 @@ touch.on(target, 'swipeleft', function(ev){
 		prizeNo = 1;
 	}
 	jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
-	jQself.css({'left': '-10%'});
+	jQself.css({'left': '-5%'});
 });
 
-var shakeTimes = 0;
 var currentCardNo, nextCardNo, prevCardNo;
-var zhongxinLevel = 1, jindongLevel = 1;
+var zhongxinLevel = 1, jindongLevel = 1, faceLevel = 1;
 $('.j-banka').bind('click', function() {
 	var jQself = $(this);
 	var type = jQself.data("type");
@@ -110,16 +109,15 @@ $('.j-banka').bind('click', function() {
 	}
 });
 
-$('.i-stop-swipe').bind('click', function(){
-	swiper.slideNext();
-});
 var zhongXinCB = function(){
 	if(shakeTimes>4){
 		jindongLevel = 2;
 		var src = '/static/css/anniversary/result/jingdong/2.png';
+		$("#j-jd-result").attr('src', src);
 	}else if(shakeTimes>=8){
 		jindongLevel = 3;
 		var src = '/static/css/anniversary/result/jingdong/3.png'
+		$("#j-jd-result").attr('src', src);
 	}
 	swiper.slideNext();
 }
@@ -130,15 +128,10 @@ $('.zhongxin-next').bind('click', function(){
 		zhongXinCB();
 	}, 10000);
 });
-$('.i-jd-reminder').bind('click', function(){
-	removeShake();
-	swiper.slideNext();
-});
 $('.jingdong-next').bind('click', function(){
 	swiper.slideNext();
 });
 
-var jQuploadInput = $('#j-image');
 var jQcameraInput = $('#cameraInput');
 var jQprevImg = $(".uploaded-img");
 function readFile(){
@@ -153,21 +146,23 @@ function readFile(){
     	jQprevImg.attr('src', this.result).show();
     }
 }
-jQuploadInput.bind('change', readFile);
 jQcameraInput.bind('change', readFile);
-// $('.i-upload-btn').bind('click', function(){
-// 	jQuploadInput.click();
-// });
-// $('.i-takephoto-btn').bind('click', function(){
-// 	jQcameraInput.click();
-// })
-$('.i-uploadtake-btn').bind('click', function(){
+$('.i-upload-take-btn').bind('click', function(){
 	jQcameraInput.click();
-})
+});
 $('.i-test-face').bind('click', function(){
+	faceLevel = parseInt(Math.random()*3)+1;
+	if(faceLevel == 1){
+		var src = '/static/css/anniversary/result/face/1.png';
+	}else if(faceLevel == 2){
+		var src = '/static/css/anniversary/result/face/2.png';
+	}else if(faceLevel == 3){
+		var src = '/static/css/anniversary/result/face/3.png';
+	}
+	$("#j-face-result").attr('src', src);
 	swiper.slideNext();
 });
-$('.i-go-beauty').bind('click', function(){
+$('.j-go-beauty').bind('click', function(){
 	swiper.slideNext();
 });
 $('.i-switch-off').bind('click', function(){

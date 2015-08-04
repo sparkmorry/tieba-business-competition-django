@@ -345,12 +345,19 @@ body{
   bottom: 50px;
   left: 50px;
 }
-.i-go-beauty{
+/*.i-go-beauty{
   position: absolute;
   bottom: 50px;
   right: 50px;	
+}*/
+.j-go-beauty{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 350px;
+  height: 170px;
+  text-align: center;
 }
-
 /*颜值*/
 .icon4{
 	position: absolute;
@@ -358,7 +365,7 @@ body{
 }
 .i-take-photo{
   margin-left: -305px;
-  top: 200px;
+  top: 170px;
 }
 .i-upload-btn{
   top: 900px;
@@ -369,12 +376,12 @@ body{
   margin-left: 90px;
 }
 .i-upload-take-btn{
-  top: 1000px;
+  top: 980px;
   margin-left: -210px;
 }
 .i-test-face{
   /*top: 890px;*/
-  top: 850px;
+  top: 820px;
   margin-left: -60px;
 }
 .uploaded-img{
@@ -382,7 +389,7 @@ body{
   height: 580px;
    display: none; 
   position: absolute;
-  top: 215px;
+  top: 185px;
    z-index: 10000; 
   left: 50%;
   margin-left: -290px;

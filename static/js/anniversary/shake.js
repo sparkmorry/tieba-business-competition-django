@@ -15,6 +15,7 @@ function removeShake(){
     }
 }
 var jQp6 = $('#p6');
+shakeTimes = 0;
 function deviceMotionHandler(eventData) {  
     var acceleration = eventData.accelerationIncludingGravity;  
     var curTime = new Date().getTime();  
