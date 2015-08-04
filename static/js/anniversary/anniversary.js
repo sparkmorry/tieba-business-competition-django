@@ -43,24 +43,53 @@ var target = document.getElementById("j-swipe-card");
 // 	// log("向左滑动.");
 // 	this.style.webkitTransform = "translate3d(-" + this.offsetLeft + "px,0,0)";
 // });
-var swipeTime = 0;
+var swipeTime = 0, prizeNo=0;
 var jQmoney = $('#j-money');
 var jQp4 = $('#p4');
 
 touch.on(target, 'swiperight', function(ev){
 	var jQself = $(this);
 	swipeTime++;
+	prizeNo++;
 	money = swipeTime * 3000;
+	if(swipeTime == 2){
+		money = 6500;
+		$('#average').show();
+	}
 	jQmoney.text(money);
-	var prizeNo = parseInt(Math.random()*10)+1;
+	if(prizeNo > 10){
+		prizeNo = 1;
+	}
 	jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
 	jQself.addClass('transition0_5');
 
-	jQself.css({'left': '100%'});
-	setTimeout(function (argument) {
-		jQself.removeClass('transition0_5')
-		jQself.css({'left': '10%'});
-	}, 800);
+	jQself.css({'left': '90%'});
+	// setTimeout(function (argument) {
+	// 	jQself.removeClass('transition0_5')
+	// 	jQself.css({'left': '10%'});
+	// }, 800);
+});
+touch.on(target, 'swipeleft', function(ev){
+	var jQself = $(this);
+	swipeTime++;
+	prizeNo++;
+	money = swipeTime * 3000;
+	if(swipeTime == 2){
+		money = 6500;
+		$('#average').show();
+	}
+	jQmoney.text(money);
+	if(prizeNo > 10){
+		prizeNo = 1;
+	}
+	jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
+	jQself.addClass('transition0_5');
+
+	jQself.css({'left': '-20%'});
+	// setTimeout(function (argument) {
+	// 	jQself.removeClass('transition0_5')
+	// 	jQself.css({'left': '10%'});
+	// }, 800);
 });
 
 var currentCardNo, nextCardNo, prevCardNo;
@@ -130,10 +159,13 @@ function readFile(){
 }
 jQuploadInput.bind('change', readFile);
 jQcameraInput.bind('change', readFile);
-$('.i-upload-btn').bind('click', function(){
-	jQuploadInput.click();
-});
-$('.i-takephoto-btn').bind('click', function(){
+// $('.i-upload-btn').bind('click', function(){
+// 	jQuploadInput.click();
+// });
+// $('.i-takephoto-btn').bind('click', function(){
+// 	jQcameraInput.click();
+// })
+$('.i-uploadtake-btn').bind('click', function(){
 	jQcameraInput.click();
 })
 $('.i-test-face').bind('click', function(){
