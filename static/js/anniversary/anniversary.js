@@ -6,13 +6,15 @@ var swiper = new Swiper('.swiper-container',{
 
 });	
 $("#go").bind('click', function(){
-	swiper.slideNext();
+	swiper.slideTo(1);
 });
 $('.tb3').bind('click', function() {
+	// 去除第一页动画
+	$('.gear1, .gear2, .gear3, .cone1, .cone2, .cube1, .title').remove();
 	$('.p2-black-triangle').hide()
 	$('.p2-green-triangle').addClass('fadeIn');
 	setTimeout(function (argument) {
-		swiper.slideNext();
+		swiper.slideTo(2);
 	}, 1100);
 });
 
@@ -61,6 +63,8 @@ touch.on(target, 'swipeleft', function(ev){
 var currentCardNo, nextCardNo, prevCardNo;
 var zhongxinLevel = 1, jindongLevel = 1, faceLevel = 1;
 $('.j-banka').bind('click', function() {
+	// 去除第二页动画
+	$('.p2-3').remove();
 	var jQself = $(this);
 	var type = jQself.data("type");
 	currentClass = 'i-arrow-'+ type;
@@ -76,7 +80,7 @@ $('.j-banka').bind('click', function() {
 				var src = '/static/css/anniversary/icon/card1.png';
 			}		
 			$('#j-swipe-card').attr('src', src);
-			swiper.slideNext();
+			swiper.slideTo(3);
 			//结束刷卡
 			var swipeCb = function(){
 				if(swipeTime>4 && swipeTime<8){
@@ -88,7 +92,7 @@ $('.j-banka').bind('click', function() {
 				};
 			};
 			var swipecardTimer = setTimeout(function(){
-				swiper.slideNext();
+				swiper.slideTo(4)
 				swipeCb();
 			}, 10000);
 		}
@@ -119,20 +123,28 @@ var zhongXinCB = function(){
 		var src = '/static/css/anniversary/result/jingdong/3.png'
 		$("#j-jd-result").attr('src', src);
 	}
-	swiper.slideNext();
+	swiper.slideTo(6);
 }
-$('.zhongxin-next').bind('click', function(){
+var jingdongTimer;
+$('#j-zhongxin-next').bind('click', function(){
+	// 初始化摇一摇
 	init();
-	swiper.slideNext();
-	var jingdongTimer = setTimeout(function(){
+	// 去除第三页动画
+	$('#p3 .p2-dec2, #p3 .p2-dec1, #p3 .p2-dec3').remove();
+	$('#p4 .p2-dec2, #p4 .p2-dec1, #p4 .p2-dec3').remove();
+	swiper.slideTo(5);
+	jingdongTimer = setTimeout(function(){
 		zhongXinCB();
+		clearTimeout(jingdongTimer);
 	}, 10000);
 });
-$('.jingdong-next').bind('click', function(){
+$('#j-jingdong-next').bind('click', function(){
 	if(jindongLevel==3 && zhongxinLevel==3){
 		$('#j-money-result').text('100%，作为一名土豪，又会省钱，你命中注定是有钱人，去测试一下颜值，看能否变成白富美(高富帅）。')
+	}else{
+		$('#j-money-result').text('50%，你是个屌丝，还不知道怎么省钱，彗星撞地球也挽救不了你的贫穷，看看能否用颜值改变自己的命运。')
 	}
-	swiper.slideNext();
+	swiper.slideTo(7);
 });
 
 var jQcameraInput = $('#cameraInput');
@@ -164,15 +176,13 @@ $('.i-test-face').bind('click', function(){
 	}
 	$("#j-face-result").attr('src', src);
 	$('.i-blue-line').addClass('downup');
-	setTimeout(function(){
-		swiper.slideNext();
-	}, 4000);
+	var faceTimer = setTimeout(function(){
+		swiper.slideTo(11);
+	}, 2500);
 });
 $('.j-go-beauty').bind('click', function(){
-	swiper.slideNext();
+	swiper.slideTo(8);
 });
-var singCD = 30;
-var text;
 var jQcd = $('#j-sing-countdown');
 var singLevel = 1;
 var singCallBack = function(){
@@ -185,21 +195,30 @@ var singCallBack = function(){
 		var src = '/static/css/anniversary/result/sing/3.png';
 	}
 	$("#j-sing-result").attr('src', src);
-	swiper.slideNext();
+	swiper.slideTo(9);
 }
+
+var singTimer;
+var singCD = 30;
+var text;
+var countdown = function(){
+	if(singCD < 2){
+		clearInterval(singTimer);
+		singCallBack();
+	}
+	singCD--;
+	if(singCD < 10){
+		text = '0'+singCD;
+		jQcd.text(text);
+	}else{
+		jQcd.text(singCD);
+	}
+}
+
 $('.i-switch-off').bind('click', function(){
 	$(this).removeClass('i-switch-off').addClass('i-switch-on');
-	var singTimer = setInterval(function(){
-		if(singCD <= 0){
-			clearInterval(singTimer);
-			singCallBack();
-		}
-		singCD--;
-		if(singCD < 10){
-			text = '0'+singCD;
-			jQcd.text(text);
-		}else{
-			jQcd.text(singCD);
-		}
-	}, 1000)
+	singTimer = setInterval(countdown, 1000);
 });
+$('#j-sing-next').bind('click', function(){
+	swiper.slideTo(10)
+})

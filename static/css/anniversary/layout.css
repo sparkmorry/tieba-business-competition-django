@@ -358,6 +358,7 @@ body{
   /*width: 350px;*/
   /*height: 170px;*/
   text-align: center;
+  z-index: 100000;
 }
 /*颜值*/
 .icon4{
@@ -391,7 +392,7 @@ body{
    display: none; 
   position: absolute;
   top: 185px;
-   z-index: 10000; 
+   z-index: 1000; 
   left: 50%;
   margin-left: -290px;
 
@@ -401,6 +402,7 @@ body{
   margin-left: -345px;
   top: 700px;
   opacity: 0;
+  z-index: 5000;
 }
 
 /*我是歌手*/
@@ -408,7 +410,7 @@ body{
   font-family: 'OpenSans-Light';
   src: url('fonts/OpenSans-Light.ttf')  format('truetype');
 }
-#p10. .i-dec9{
+#p9. .i-dec9{
   right: 20px;
   bottom: 30px;
 }
@@ -425,7 +427,7 @@ body{
   margin-left: 40px;
 }
 .i-sing-reminder{
-  bottom: 80px;
+  bottom: 30px;
   margin-left: -228px;
 }
 .i-microphone{
@@ -456,6 +458,7 @@ body{
   font-size: 35px;
   text-align: left;
   line-height: 45px;
+  z-index: 100000;
 }
 .sing-count-down{
   font-family: 'OpenSans-Light';
