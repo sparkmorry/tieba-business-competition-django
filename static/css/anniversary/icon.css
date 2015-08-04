@@ -1,5 +1,5 @@
 .icon1{
-	background: url(icon/black/icon1.png);
+	background: url(icon/icon1.png);
 	display: inline-block;
 }
 .gear1{
@@ -73,7 +73,7 @@
 }
 
 .icon2{
-	background-image: url(icon/black/icon2.png);
+	background-image: url(icon/icon2.png);
 	display: inline-block;
 }
 .p2-title{
@@ -109,7 +109,7 @@
 
 /*p3 办卡大厅*/
 .card{
-	background-image: url(icon/black/card.png);
+	background-image: url(icon/card.png);
 	display: inline-block;
 }
 .i-card1{
@@ -224,4 +224,157 @@
 	width: 140px;
 	height: 76px;
 	background-position: -480px -1355px;
+}
+
+/*p5*/
+/*京东*/
+.decr{
+	background: url(icon/decrator.png);
+	display: inline-block;		
+}
+.i-dec6{
+	width: 64px;
+	height: 64px;
+	background-position: -25px -21px;
+}
+.i-dec7{
+	width: 214px;
+	height: 157px;
+	background-position: 0px -107px;
+}
+.i-dec8{
+	width: 150px;
+	height: 182px;
+	background-position: -14px -275px;
+}
+.i-dec9{
+	width: 138px;
+	height: 152px;
+	background-position: -276px -8px;
+}
+.i-dec10{
+	width: 112px;
+	height: 120px;
+	background-position: -292px -184px;
+}
+.i-dec11{
+	width: 152px;
+	height: 162px;
+	background-position: -273px -319px;
+}
+
+.icon3{
+	background: url(icon/icon3.png);
+	display: inline-block;	
+}
+.i-droplet{
+	width: 392px;
+	height: 185px;
+	background-position: 0 0;
+}
+.i-shake-circle{
+	width: 546px;
+	height: 546px;
+	background-position: 0 -286px;
+}
+.i-jd-reminder{
+	width: 456px;
+	height: 139px;
+	background-position: -20px -864px;
+}
+.i-jd-quan1, .i-jd-quan2, .i-jd-quan3,
+.i-jd-quan4, .i-jd-quan5, .i-jd-quan6{
+	width: 544px;
+	height: 232px;
+}
+.i-jd-quan1{
+	background-position: -39px -1027px;
+}
+.i-jd-quan2{
+	background-position: -614px 0px;
+}
+.i-jd-quan3{
+	background-position: -614px -257px;
+}
+.i-jd-quan4{
+	background-position: -614px -513px;
+}
+.i-jd-quan5{
+	background-position: -614px -763px;
+}
+.i-jd-quan6{
+	background-position: -614px -1026px;
+}
+
+/*颜值*/
+.icon4{
+	background: url(icon/icon4.png);
+	display: inline-block;	
+}
+.i-take-photo{
+	width: 610px;
+	height: 610px;
+	background-position: -14px -11px;
+}
+.i-upload-btn{
+	width: 226px;
+	height: 116px;
+	background-position: -23px -685px;
+}
+.i-takephoto-btn{
+	width: 226px;
+	height: 116px;
+	background-position: -23px -827px;
+}
+.i-test-face{
+	width: 137px;
+	height: 137px;
+	background-position: -67px -969px;
+}
+.i-blue-line{
+	width: 694px;
+	height: 35px;
+	background-position: -14px -1155px;
+}
+
+/*我是歌手*/
+.i-radio{
+	width: 622px;
+	height: 763px;
+	background-position: -649px -15px;
+}
+.i-sing-reminder{
+	width: 457px;
+	height: 106px;
+	background-position: -648px -792px;
+}
+.i-radio-wheel1{
+	width: 320px;
+	height: 320px;
+	background-position: -285px -656px;
+}
+.i-radio-wheel2{
+	width: 320px;
+	height: 320px;
+	background-position: -774px -934px;
+}
+.i-switch-on{
+	width: 190px;
+	height: 86px;
+	background-position: -267px -1022px;
+}
+.i-switch-off{
+	width: 190px;
+	height: 86px;
+	background-position: -507px -1022px;
+}
+.i-wave{
+	width: 1210px;
+	height: 154px;
+	background-position: 0 -1280px;
+}
+.i-microphone{
+	width: 100px;
+	height: 354px;
+	background-position: -1144px -815px;
 }

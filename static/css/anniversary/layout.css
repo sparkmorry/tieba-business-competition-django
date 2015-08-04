@@ -263,3 +263,117 @@ body{
 	margin-left: 200px;
 	bottom: 50px;
 }
+
+/*装饰物*/
+.decr{
+	position: absolute;
+}
+.i-dec6{
+	right: 10px;
+	top: 20px;
+}
+.i-dec7{
+  right: 10px;
+  bottom: 6%;
+}
+.i-dec8{
+	left: 20px;
+    top: 50%;
+}
+.i-dec9{
+	left: 20px;
+    top: 30px;
+}
+.i-dec10{
+  right: 2px;
+  top: 30%;
+}
+.i-dec11{
+	left: 30px;
+    bottom: 50px;
+}
+/*京东*/
+#p6 .icon3{
+	position: absolute;
+	left: 50%;
+}
+.i-droplet{
+	top: -5px;
+	margin-left: -196px;
+}
+.i-shake-circle{
+	margin-left: -273px;
+	top: 20%;
+}
+.i-jd-reminder{
+	margin-left: -228px;
+	bottom: 200px;
+}
+.i-jd-quan{
+	margin-left: -272px;
+	top: 30%;
+}
+
+/*颜值*/
+.icon4{
+	position: absolute;
+	left: 50%;
+}
+.i-take-photo{
+  margin-left: -305px;
+  top: 200px;
+}
+.i-upload-btn{
+  top: 900px;
+  margin-left: -300px;
+}
+.i-takephoto-btn{
+  top: 900px;
+  margin-left: 90px;
+}
+.i-test-face{
+  top: 890px;
+  margin-left: -60px;
+}
+
+/*我是歌手*/
+#p9. .i-dec9{
+  right: 20px;
+  bottom: 30px;
+}
+.i-radio{
+  top: 180px;
+  margin-left: -311px;
+}
+.i-radio-wheel1{
+  top: 50px;
+  margin-left: -360px;
+}
+.i-radio-wheel2{
+  top: 50px;
+  margin-left: 40px;
+}
+.i-sing-reminder{
+  bottom: 150px;
+  margin-left: -228px;
+}
+.i-microphone{
+  top: 710px;
+  margin-left: -200px;
+}
+.i-switch-off, .i-switch-on{
+  top: 820px;
+  margin-left: 30px;
+}
+.wave-wrapper{
+  position: absolute;
+  top: 554px;
+  width: 583px;
+  margin-left: -291px;
+  left: 50%;
+  overflow: hidden;
+  height: 150px;
+}
+.i-wave{
+	margin-left: 200px;
+}

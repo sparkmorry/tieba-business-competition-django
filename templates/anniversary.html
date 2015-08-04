@@ -61,12 +61,12 @@
 	        	<i class="icon2 i-title4"></i>
 	        	<i class="icon1 flash-fast p2-dec2"></i>
 	        	<i class="icon1 flash p2-dec3"></i>	  
-	        	<img class="posback" src="/static/css/anniversary/icon/black/posback.png">
+	        	<img class="posback" src="/static/css/anniversary/icon/posback.png">
 	        	<div id="play-area">   
-	        		<img class="card1" id="j-swipe-card" src="/static/css/anniversary/icon/black/card1.png">
+	        		<img class="card1" id="j-swipe-card" src="/static/css/anniversary/icon/card1.png">
 	        	</div> 
 	        	<div class="pos">
-	        		<img src="/static/css/anniversary/icon/black/pos.png">
+	        		<img src="/static/css/anniversary/icon/pos.png">
 	        		<div class="pos-text">
 		        		<p>已消费：¥<span id="j-money"></span></p>
 		        		<p>您已达到人均月消费金额。</p>	        
@@ -74,112 +74,53 @@
 	        	</div>	
 	        	<i class="card i-stop-swipe"></i>        		      	
 	        </div>
+	        <!-- <div class="swiper-slide m1" id="p5">
+	        </div> -->
+	        <!-- 京东 -->
+	        <div class="swiper-slide m1" id="p6">
+	        	<i class="decr i-dec6"></i>
+	        	<i class="decr flash-fast i-dec7"></i>
+	        	<i class="decr flash-middle i-dec8"></i>
+	        	<i class="icon3 i-droplet"></i>
+	        	<i class="icon3 i-shake-circle"></i>
+	        	<i class="icon3 i-jd-reminder"></i>
+	        	<i class="icon3 i-jd-quan i-jd-quan1"></i>
+	        </div>
+	        <!-- <div class="swiper-slide m1" id="p7"></div>	  -->
+	        <!-- 颜值    -->
+	        <div class="swiper-slide m1" id="p8">
+	        	<i class="decr i-dec9"></i>
+	        	<i class="decr i-dec10"></i>
+	        	<i class="decr i-dec11"></i>
+	        	<i class="icon4 i-take-photo"></i>
+	        	<i class="icon4 i-upload-btn"></i>
+	        	<i class="icon4 i-takephoto-btn"></i>
+	        	<i class="icon4 i-test-face"></i>
+	        	<i class="icon4 i-blue-line"></i>
+	        </div>
+	        <!-- 我是歌手 -->
+	        <div class="swiper-slide m1" id="p9">
+	        	<i class="decr i-dec9"></i>
+	        	<i class="decr i-dec10"></i>
+	        	<!-- <i class="decr i-dec11"></i> -->
+	        	<i class="icon4 i-radio"></i>
+	        	<i class="icon4 i-radio-wheel1"></i>
+	        	<i class="icon4 i-radio-wheel2"></i>
+	        	<i class="icon4 i-sing-reminder"></i>
+	        	<!-- <i class="icon4 i-switch-on"></i> -->
+	        	<i class="icon4 i-switch-off"></i>
+	        	<div class="wave-wrapper">
+	        		<i class="icon4 i-wave"></i>
+	        	</div>
+	        	<i class="icon4 i-microphone"></i>
+	        </div>
+	        <div class="swiper-slide m1" id="p10">
+	        </div>	        
 	    </div>
 	</div>
 	<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="/static/js/swiper.jquery.min.js"></script>
 	<script type="text/javascript" src="/static/js/touch.js"></script>	
-	<script type="text/javascript">
-		var swiper = new Swiper('.swiper-container',{
-			direction: 'vertical',  //vertical,horizontal
-			effect : 'fade',
-			speed: 700,
-			onlyExternal: true,
-
-		});	
-		$("#go").bind('click', function(){
-			swiper.slideNext();
-		});
-		$('.tb3').bind('click', function() {
-			$('.p2-black-triangle').hide()
-			$('.p2-green-triangle').addClass('fadeIn');
-			setTimeout(function (argument) {
-				swiper.slideNext();
-			}, 1100)
-
-		});
-
-		touch.on('#j-swipe-card', 'touchstart', function(ev){
-			ev.preventDefault();
-		});
-
-		var w = 168;
-		var playArea = document.querySelector("#play-area");
-		var tw = playArea.offsetWidth;
-		
-		var lf = document.getElementById("j-swipe-card").offsetLeft;
-		var rt = tw - w - lf;
-
-		touch.on('#j-swipe-card', 'touchstart', function(ev){
-			ev.preventDefault();
-		});
-		var target = document.getElementById("j-swipe-card");
-
-		// touch.on(target, 'swiperight', function(ev){
-		// 	console.log(ev);
-		// 	this.style.webkitTransform = "translate3d(" + rt + "px,0,0)";
-		// 	// log("向右滑动.");
-		// });
-
-		// touch.on(target, 'swipeleft', function(ev){
-		// 	// log("向左滑动.");
-		// 	this.style.webkitTransform = "translate3d(-" + this.offsetLeft + "px,0,0)";
-		// });
-		var swipeTime = 0;
-		var jQmoney = $('#j-money');
-		var jQp4 = $('#p4');
-
-		touch.on(target, 'swiperight', function(ev){
-			var jQself = $(this);
-			swipeTime++;
-			money = swipeTime * 3000;
-			jQmoney.text(money);
-			var prizeNo = parseInt(Math.random()*10);
-			jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
-			jQself.addClass('transition0_5');
-
-			jQself.css({'left': '100%'});
-			setTimeout(function (argument) {
-				jQself.removeClass('transition0_5')
-				jQself.css({'left': '10%'});
-			}, 800);
-		});
-
-		var currentCardNo, nextCardNo, prevCardNo;
-		$('.j-banka').bind('click', function() {
-			var jQself = $(this);
-			var type = jQself.data("type");
-			currentClass = 'i-arrow-'+ type;
-			pressClass= 'i-arrow-'+type+'-pressed';
-			jQself.addClass(pressClass).removeClass(currentClass);
-			setTimeout(function(){
-				jQself.removeClass(pressClass).addClass(currentClass);
-				if(type == 'middle'){
-					if(currentCardNo != 2){
-						var src = '/static/css/anniversary/card/'+currentCardNo+'.png'
-					}else{
-						var src = '/static/css/anniversary/icon/black/card1.png'
-					}		
-					$('#j-swipe-card').attr('src', src);
-					swiper.slideNext();
-				}
-			},300);
-			currentCardNo = $('.selected-card').data('no');
-			nextCardNo = (currentCardNo == 3)? 1: currentCardNo+1;
-			prevCardNo = (currentCardNo == 1)?3: currentCardNo-1;
-			if(type == 'left'){
-				$('.c-card'+currentCardNo).addClass('position1').removeClass('position3 selected-card');
-				// 后一张卡左移
-				$('.c-card'+nextCardNo).removeClass('position1 position3').addClass('selected-card');
-				$('.c-card'+prevCardNo).removeClass('position1').addClass('position3');
-			}else if(type=='right'){
-				$('.c-card'+currentCardNo).addClass('position3').removeClass('position1 selected-card');
-				// 前一张卡右移
-				$('.c-card'+prevCardNo).removeClass('position1 position3').addClass('selected-card');
-				$('.c-card'+nextCardNo).removeClass('position3').addClass('position1');
-			}
-		})
-
-	</script>
+	<script type="text/javascript" src="/static/js/anniversary.js"></script>
 </body>
 </html>
