@@ -168,9 +168,35 @@ $('.i-test-face').bind('click', function(){
 $('.j-go-beauty').bind('click', function(){
 	swiper.slideNext();
 });
+var singCD = 30;
+var text;
+var jQcd = $('#j-sing-countdown');
+var singLevel = 1;
+var singCallBack = function(){
+	singLevel = parseInt(Math.random()*3)+1;
+	if(singLevel == 1){
+		var src = '/static/css/anniversary/result/sing/1.png';
+	}else if(singLevel == 2){
+		var src = '/static/css/anniversary/result/sing/2.png';
+	}else if(singLevel == 3){
+		var src = '/static/css/anniversary/result/sing/3.png';
+	}
+	$("#j-sing-result").attr('src', src);
+	swiper.slideNext();
+}
 $('.i-switch-off').bind('click', function(){
 	$(this).removeClass('i-switch-off').addClass('i-switch-on');
-	// setTimeout(function(){
-	// 	swiper.slideNext();
-	// }, 200);
+	var singTimer = setInterval(function(){
+		if(singCD <= 0){
+			clearInterval(singTimer);
+			singCallBack();
+		}
+		singCD--;
+		if(singCD < 10){
+			text = '0'+singCD;
+			jQcd.text(text);
+		}else{
+			jQcd.text(singCD);
+		}
+	}, 1000)
 });
