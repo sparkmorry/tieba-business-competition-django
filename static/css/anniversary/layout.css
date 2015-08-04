@@ -113,7 +113,7 @@ body{
 }
 
 /*p3*/
-#p3 .icon1, #p4 .icon1{
+.icon1{
 	position: absolute;
 }
 .p2-dec1{
@@ -335,6 +335,21 @@ body{
 	margin-left: -272px;
 	top: 30%;
 }
+.i-tv{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.i-poor{
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+.i-go-beauty{
+  position: absolute;
+  bottom: 50px;
+  right: 50px;	
+}
 
 /*颜值*/
 .icon4{
@@ -353,8 +368,13 @@ body{
   top: 900px;
   margin-left: 90px;
 }
+.i-upload-take-btn{
+  top: 1000px;
+  margin-left: -210px;
+}
 .i-test-face{
-  top: 890px;
+  /*top: 890px;*/
+  top: 850px;
   margin-left: -60px;
 }
 .uploaded-img{
@@ -374,7 +394,7 @@ body{
   font-family: 'OpenSans-Light';
   src: url('fonts/OpenSans-Light.ttf')  format('truetype');
 }
-#p9. .i-dec9{
+#p10. .i-dec9{
   right: 20px;
   bottom: 30px;
 }

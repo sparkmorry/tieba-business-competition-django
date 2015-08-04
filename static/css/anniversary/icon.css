@@ -306,6 +306,27 @@
 	background-position: -614px -1026px;
 }
 
+/*金钱结果*/
+.result{
+	background: url(result/result.png);
+	display: inline-block;	
+}
+.i-tv{
+	width: 720px;
+	height: 1115px;
+	background-position: 0 0;
+}
+.i-poor{
+	height: 110px;
+	width: 270px;
+	background-position: -800px -37px;
+}
+.i-go-beauty{
+	height: 110px;
+	width: 270px;
+	background-position: -800px -207px;
+}
+
 /*颜值*/
 .icon4{
 	background: url(icon/icon4.png);
@@ -315,6 +336,11 @@
 	width: 610px;
 	height: 610px;
 	background-position: -14px -11px;
+}
+.i-upload-take-btn{
+	width: 420px;
+	height: 110px;
+	background-position: 0 -1474px;
 }
 .i-upload-btn{
 	width: 226px;

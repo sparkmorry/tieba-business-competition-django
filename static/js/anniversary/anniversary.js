@@ -139,6 +139,9 @@ $('.i-takephoto-btn').bind('click', function(){
 $('.i-test-face').bind('click', function(){
 	swiper.slideNext();
 });
+$('.i-go-beauty').bind('click', function(){
+	swiper.slideNext();
+});
 $('.i-switch-off').bind('click', function(){
 	$(this).removeClass('i-switch-off').addClass('i-switch-on');
 	// setTimeout(function(){
