@@ -263,7 +263,20 @@ body{
 	margin-left: 200px;
 	bottom: 50px;
 }
-
+.zhongxin-result{
+  width: 450px;
+  position: absolute;
+  top: 200px;
+  margin-left: -225px;
+  left: 50%;
+}
+.zhongxin-next{
+  width: 200px;
+  position: absolute;
+  top: 760px;
+  left: 50%;
+  margin-left: -100px;
+}
 /*装饰物*/
 .decr{
 	position: absolute;

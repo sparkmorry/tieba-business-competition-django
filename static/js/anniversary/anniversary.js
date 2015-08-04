@@ -1,36 +1,3 @@
-var SHAKE_THRESHOLD = 2000;  
-var last_update = 0;  
-var x = y = z = last_x = last_y = last_z = 0;  
-
-function init() { 
-    alert('hsajkhsakj'); 
-    if (window.DeviceMotionEvent) {  
-    	alert('dbasj');
-        window.addEventListener('devicemotion', deviceMotionHandler, false);  
-    } else {  
-        alert('您的手机不支持摇一摇功能！');  
-    }  
-}  
-function deviceMotionHandler(eventData) {  
-    var acceleration = eventData.accelerationIncludingGravity;  
-    var curTime = new Date().getTime();  
-    if ((curTime - last_update) > 100) {  
-        var diffTime = curTime - last_update;  
-        last_update = curTime;  
-        x = acceleration.x;  
-        y = acceleration.y;  
-        z = acceleration.z;  
-        var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;  
-
-        if (speed > SHAKE_THRESHOLD) {  
-        	alert("摇动了");
-        }  
-        last_x = x;  
-        last_y = y;  
-        last_z = z;  
-    }  
-}
-
 var swiper = new Swiper('.swiper-container',{
 	direction: 'vertical',  //vertical,horizontal
 	effect : 'fade',
@@ -138,7 +105,8 @@ $('.zhongxin-next').bind('click', function(){
 	init();
 	swiper.slideNext();
 });
-$('.i-jd-quan').bind('click', function(){
+$('.i-jd-reminder').bind('click', function(){
+	removeShake();
 	swiper.slideNext();
 });
 $('.i-test-face').bind('click', function(){
