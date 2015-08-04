@@ -444,6 +444,18 @@ body{
   overflow: hidden;
   height: 150px;
 }
+.part-result{
+  width: 420px;
+  height: 400px;
+  position: absolute;
+  top: 340px;
+  left: 50%;
+  margin-left: -210px;
+  color: white;
+  font-size: 35px;
+  text-align: left;
+  line-height: 45px;
+}
 .sing-count-down{
   font-family: 'OpenSans-Light';
   font-size: 80px;

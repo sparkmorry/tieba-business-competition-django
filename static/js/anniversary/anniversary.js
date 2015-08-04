@@ -129,6 +129,9 @@ $('.zhongxin-next').bind('click', function(){
 	}, 10000);
 });
 $('.jingdong-next').bind('click', function(){
+	if(jindongLevel==3 && zhongxinLevel==3){
+		$('#j-money-result').text('100%，作为一名土豪，又会省钱，你命中注定是有钱人，去测试一下颜值，看能否变成白富美(高富帅）。')
+	}
 	swiper.slideNext();
 });
 
