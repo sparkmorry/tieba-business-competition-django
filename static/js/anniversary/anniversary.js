@@ -13,38 +13,16 @@ $('.tb3').bind('click', function() {
 	$('.p2-green-triangle').addClass('fadeIn');
 	setTimeout(function (argument) {
 		swiper.slideNext();
-	}, 1100)
-
+	}, 1100);
 });
-
-touch.on('#j-swipe-card', 'touchstart', function(ev){
-	ev.preventDefault();
-});
-
-var w = 168;
-var playArea = document.querySelector("#play-area");
-var tw = playArea.offsetWidth;
-
-var lf = document.getElementById("j-swipe-card").offsetLeft;
-var rt = tw - w - lf;
 
 touch.on('#j-swipe-card', 'touchstart', function(ev){
 	ev.preventDefault();
 });
 var target = document.getElementById("j-swipe-card");
-
-// touch.on(target, 'swiperight', function(ev){
-// 	console.log(ev);
-// 	this.style.webkitTransform = "translate3d(" + rt + "px,0,0)";
-// 	// log("向右滑动.");
-// });
-
-// touch.on(target, 'swipeleft', function(ev){
-// 	// log("向左滑动.");
-// 	this.style.webkitTransform = "translate3d(-" + this.offsetLeft + "px,0,0)";
-// });
 var swipeTime = 0, prizeNo=0;
 var jQmoney = $('#j-money');
+var jQaverage = $('#average');
 var jQp4 = $('#p4');
 
 touch.on(target, 'swiperight', function(ev){
@@ -54,20 +32,14 @@ touch.on(target, 'swiperight', function(ev){
 	money = swipeTime * 3000;
 	if(swipeTime == 2){
 		money = 6500;
-		$('#average').show();
+		jQaverage.show();
 	}
 	jQmoney.text(money);
 	if(prizeNo > 10){
 		prizeNo = 1;
 	}
 	jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
-	jQself.addClass('transition0_5');
-
-	jQself.css({'left': '90%'});
-	// setTimeout(function (argument) {
-	// 	jQself.removeClass('transition0_5')
-	// 	jQself.css({'left': '10%'});
-	// }, 800);
+	jQself.css({'left': '80%'});
 });
 touch.on(target, 'swipeleft', function(ev){
 	var jQself = $(this);
@@ -76,23 +48,19 @@ touch.on(target, 'swipeleft', function(ev){
 	money = swipeTime * 3000;
 	if(swipeTime == 2){
 		money = 6500;
-		$('#average').show();
+		jQaverage.show();
 	}
 	jQmoney.text(money);
 	if(prizeNo > 10){
 		prizeNo = 1;
 	}
 	jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
-	jQself.addClass('transition0_5');
-
-	jQself.css({'left': '-20%'});
-	// setTimeout(function (argument) {
-	// 	jQself.removeClass('transition0_5')
-	// 	jQself.css({'left': '10%'});
-	// }, 800);
+	jQself.css({'left': '-10%'});
 });
 
+var shakeTimes = 0;
 var currentCardNo, nextCardNo, prevCardNo;
+var zhongxinLevel = 1, jindongLevel = 1;
 $('.j-banka').bind('click', function() {
 	var jQself = $(this);
 	var type = jQself.data("type");
@@ -102,13 +70,28 @@ $('.j-banka').bind('click', function() {
 	setTimeout(function(){
 		jQself.removeClass(pressClass).addClass(currentClass);
 		if(type == 'middle'){
+			//进入刷卡
 			if(currentCardNo != 2){
-				var src = '/static/css/anniversary/card/'+currentCardNo+'.png'
+				var src = '/static/css/anniversary/card/'+currentCardNo+'.png';
 			}else{
-				var src = '/static/css/anniversary/icon/card1.png'
+				var src = '/static/css/anniversary/icon/card1.png';
 			}		
 			$('#j-swipe-card').attr('src', src);
 			swiper.slideNext();
+			//结束刷卡
+			var swipeCb = function(){
+				if(swipeTime>4){
+					zhongxinLevel = 2;
+					$("#j-zhongxin-result").attr('src', '/static/css/anniversary/result/zhongxin/2.png');
+				}else if(zhongxinLevel>8){
+					zhongxinLevel=3;
+					$("#j-zhongxin-result").attr('src', '/static/css/anniversary/result/zhongxin/3.png');
+				};
+			};
+			var swipecardTimer = setTimeout(function(){
+				swiper.slideNext();
+				swipeCb();
+			}, 10000);
 		}
 	},300);
 	currentCardNo = $('.selected-card').data('no');
@@ -130,9 +113,22 @@ $('.j-banka').bind('click', function() {
 $('.i-stop-swipe').bind('click', function(){
 	swiper.slideNext();
 });
+var zhongXinCB = function(){
+	if(shakeTimes>4){
+		jindongLevel = 2;
+		var src = '/static/css/anniversary/result/jingdong/2.png';
+	}else if(shakeTimes>=8){
+		jindongLevel = 3;
+		var src = '/static/css/anniversary/result/jingdong/3.png'
+	}
+	swiper.slideNext();
+}
 $('.zhongxin-next').bind('click', function(){
 	init();
 	swiper.slideNext();
+	var jingdongTimer = setTimeout(function(){
+		zhongXinCB();
+	}, 10000);
 });
 $('.i-jd-reminder').bind('click', function(){
 	removeShake();

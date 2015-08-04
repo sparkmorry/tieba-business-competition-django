@@ -14,6 +14,7 @@ function removeShake(){
         window.removeEventListener('devicemotion', deviceMotionHandler, false);
     }
 }
+var jQp6 = $('#p6');
 function deviceMotionHandler(eventData) {  
     var acceleration = eventData.accelerationIncludingGravity;  
     var curTime = new Date().getTime();  
@@ -28,13 +29,18 @@ function deviceMotionHandler(eventData) {
         if (speed > SHAKE_THRESHOLD) {  
             jQshake.hide();
             var rs = randomResult(6, '<i class="icon3 i-jd-quan i-jd-quan{n}"></i>');
-            var jQquan = $(rs);
-            $('#p6').append(jQquan);
+            var domStr = rs['domStr'];
+            var jQquan = $(domStr);
+            jQp6.append(jQquan);
+            var n = rs['n'];
+            if(n !=1){
+                shakeTimes++;
+            }
             //todo: 加入这次没有展示完不会再次触发
             var shaketimer = setTimeout(function(){
                 jQquan.hide();
                 jQshake.show();
-            }, 800)
+            }, 1100)
         }  
         last_x = x;  
         last_y = y;  
