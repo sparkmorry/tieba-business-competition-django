@@ -187,6 +187,8 @@ body{
   	top: 30%;
     transition: margin-left 0.5s;
     transition-timing-function: ease;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 .c-card2{
 	width: 100px;
@@ -277,6 +279,13 @@ body{
   left: 50%;
   margin-left: -100px;
 }
+.jingdong-next{
+  width: 400px;
+  position: absolute;
+  top: 760px;
+  left: 50%;
+  margin-left: -200px;
+}
 /*装饰物*/
 .decr{
 	position: absolute;
@@ -348,8 +357,23 @@ body{
   top: 890px;
   margin-left: -60px;
 }
+.uploaded-img{
+  width: 580px;
+  height: 580px;
+   display: none; 
+  position: absolute;
+  top: 215px;
+   z-index: 10000; 
+  left: 50%;
+  margin-left: -290px;
+
+}
 
 /*我是歌手*/
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('fonts/OpenSans-Light.ttf')  format('truetype');
+}
 #p9. .i-dec9{
   right: 20px;
   bottom: 30px;
@@ -375,7 +399,7 @@ body{
   margin-left: -200px;
 }
 .i-switch-off, .i-switch-on{
-  top: 820px;
+  top: 840px;
   margin-left: 30px;
 }
 .wave-wrapper{
@@ -387,6 +411,18 @@ body{
   overflow: hidden;
   height: 150px;
 }
+.sing-count-down{
+  font-family: 'OpenSans-Light';
+  font-size: 80px;
+  color: #f33579;
+  position: absolute;
+  top: 720px;
+  height: 100px;
+  width: 400px;
+  left: 300px;
+  z-index: 1000;
+  display: block;
+}
 .i-wave{
-	margin-left: 200px;
+	margin-left: 0px;
 }

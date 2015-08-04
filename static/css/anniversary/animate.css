@@ -1,15 +1,23 @@
 /*上下摆动*/
 .floating2{
-    -webkit-animation: floating 2s linear infinite;
+  -webkit-animation: floating 2s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 .floating3{
-    -webkit-animation: floating 3s linear infinite;
+  -webkit-animation: floating 3s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 .floating4{
-    -webkit-animation: floating 4s linear infinite;
+  -webkit-animation: floating 4s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 .floating5{
-    -webkit-animation: floating 4s linear infinite;
+  -webkit-animation: floating 4s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 @-webkit-keyframes floating {
   0% {
@@ -78,7 +86,9 @@
     }
 }
 .flash{
-    -webkit-animation: Flash 2s linear infinite;
+  -webkit-animation: Flash 2s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 @-webkit-keyframes Flash {
     0% {
@@ -92,10 +102,15 @@
     }
 }
 .flash-fast{
-    -webkit-animation: FlashFast 1s linear infinite;
+  -webkit-animation: FlashFast 1s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+
 }
 .flash-middle{
-    -webkit-animation: FlashFast 2s linear infinite;
+  -webkit-animation: FlashFast 2s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 @-webkit-keyframes FlashFast {
     0% {
@@ -127,10 +142,14 @@
   }
 }
 .transition0_5{
-    -webkit-transition: all ease 0.5s
+  -webkit-transition: all ease 0.5s;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 .drop{
-    -webkit-animation: drop 2.5s linear;   
+  -webkit-animation: drop 2.5s linear; 
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);  
 }
 @-webkit-keyframes drop {
   0% {
@@ -138,5 +157,19 @@
   }
   100% {
     top: 2000px;
+  }
+}
+
+.wave{
+  -webkit-animation: wave 10s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+@-webkit-keyframes wave {
+  0% {
+    margin-left:-310px;
+  }
+  100% {
+    margin-left: -910px;
   }
 }

@@ -109,12 +109,39 @@ $('.i-jd-reminder').bind('click', function(){
 	removeShake();
 	swiper.slideNext();
 });
+$('.jingdong-next').bind('click', function(){
+	swiper.slideNext();
+});
+
+var jQuploadInput = $('#j-image');
+var jQcameraInput = $('#cameraInput');
+var jQprevImg = $(".uploaded-img");
+function readFile(){
+    file = jQcameraInput.get(0).files[0];
+    if(!/image\/\w+/.test(file.type)){
+        alert("请上传图片类型的文件~");
+        return false;
+    }
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(e){
+    	jQprevImg.attr('src', this.result).show();
+    }
+}
+jQuploadInput.bind('change', readFile);
+jQcameraInput.bind('change', readFile);
+$('.i-upload-btn').bind('click', function(){
+	jQuploadInput.click();
+});
+$('.i-takephoto-btn').bind('click', function(){
+	jQcameraInput.click();
+})
 $('.i-test-face').bind('click', function(){
 	swiper.slideNext();
 });
 $('.i-switch-off').bind('click', function(){
 	$(this).removeClass('i-switch-off').addClass('i-switch-on');
-	setTimeout(function(){
-		swiper.slideNext();
-	}, 200);
+	// setTimeout(function(){
+	// 	swiper.slideNext();
+	// }, 200);
 });

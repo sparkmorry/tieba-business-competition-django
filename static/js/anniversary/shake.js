@@ -11,7 +11,7 @@ function init() {
 }  
 function removeShake(){
     if(window.DeviceMotionEvent){
-        window.removeEventListener('devicemotion', deviceMotionHandler);
+        window.removeEventListener('devicemotion', deviceMotionHandler, false);
     }
 }
 function deviceMotionHandler(eventData) {  
