@@ -426,8 +426,6 @@ touch.on('.m1', 'swipedown', function(ev){
 		p5Animate();
 		p6RemoveAnimate();
 	}
-
-
 	swiper.slidePrev();
 
 });
