@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^tieba/weekly$', 'tieba.views.weekly', name='weekly'),
     url(r'^tieba/weekly/4$', 'tieba.views.weekly4', name='weekly4'),
     url(r'^tieba/invitation$', 'tieba.views.invitation', name='invitation'),
+    url(r'^tieba/invitation2$', 'tieba.views.invitation2', name='invitation2'),
     url(r'^tieba/anniversary$', 'tieba.views.anniversary', name='anniversary'),
 
 

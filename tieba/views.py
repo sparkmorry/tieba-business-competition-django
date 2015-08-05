@@ -341,6 +341,9 @@ def weekly4(request):
 def invitation(request):
 	return render_to_response('invitation.html')
 
+def invitation2(request):
+	return render_to_response('invitation2.html')
+
 def anniversary(request):
 	return render_to_response('anniversary.html')
 
