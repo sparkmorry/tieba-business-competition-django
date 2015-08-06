@@ -245,6 +245,10 @@ $("#j-voice-next").bind('click', function(){
 $("#j-get-user-result").bind('click', function(){
 	swiper.slideNext();
 });
+$("#j-user-next").bind('click', function(){
+	swiper.slideNext();
+});
+
 var wave = 1, waveTimer=0, waveTimes=0, jQwave=$(".i-voice-wave");
 $('#j-voice-microphone').bind('click', function(){
 	waveTimer = setInterval(function(){
@@ -267,12 +271,13 @@ $('#j-voice-microphone').bind('click', function(){
 });
 
 // 数据显示
-$(".data-btn").bind('click', function(){
+$(".data-btn, .part-data-btn").bind('click', function(){
 	var jQself = $(this);
 	var jQm = jQself.closest('.m1');
 	var jQdata = jQm.find('.data-img');
 	jQdata.show();
 });
+
 var jQdatas = $(".data-img");
 jQdatas.bind('click', function(){
 	$(this).hide()

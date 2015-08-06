@@ -59,6 +59,10 @@ html,body {
   margin-top: -600px; 
   display: none; 
 }
+#user-result .data-btn, #user-result .next-btn{
+  top: auto;
+  bottom: 110px;
+}
 /*p1*/
 #p1 .icon1{
 	position: absolute;
@@ -622,4 +626,17 @@ html,body {
   bottom: 100px; 
   left: 50%;
   margin-left: -100px;
+}
+
+/*最终结果*/
+.final-result{
+  color: #00f100;
+  font-size: 30px;
+  text-align: center;
+  width: 400px;
+  position: absolute;
+  line-height: 40px;
+  left: 50%;
+  margin-left: -200px;
+  top: 410px;
 }
