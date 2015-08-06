@@ -8,14 +8,20 @@ var swiper = new Swiper('.swiper-container',{
 $("#go").bind('click', function(){
 	swiper.slideTo(1);
 });
+var greenFade;
 $('.tb3').bind('click', function() {
 	// 去除第一页动画
-	$('.gear1, .gear2, .gear3, .cone1, .cone2, .cube1, .title').remove();
+	$('#p1 .gear1, #p1 .gear2, #p1 .gear3, #p1 .cone1, #p1 .cone2, #p1 .cube1, #p1 .title').remove();
 	$('.p2-black-triangle').hide()
 	$('.p2-green-triangle').addClass('fadeIn');
-	setTimeout(function (argument) {
+	greenFade = setTimeout(function (argument) {
 		swiper.slideTo(2);
+		clearTimeout(greenFade);
 	}, 1100);
+});
+
+$('body').bind('touchmove',function(event){
+	event.preventDefault();
 });
 
 touch.on('#j-swipe-card', 'touchstart', function(ev){
@@ -26,6 +32,10 @@ var swipeTime = 0, prizeNo=0;
 var jQmoney = $('#j-money');
 var jQaverage = $('#average');
 var jQp4 = $('#p4');
+
+// var shakeDuration = 10000;
+var shakeDuration = 1000;
+
 
 touch.on(target, 'swiperight', function(ev){
 	var jQself = $(this);
@@ -94,7 +104,7 @@ $('.j-banka').bind('click', function() {
 			var swipecardTimer = setTimeout(function(){
 				swiper.slideTo(4)
 				swipeCb();
-			}, 10000);
+			}, shakeDuration);
 		}
 	},300);
 	currentCardNo = $('.selected-card').data('no');
@@ -136,7 +146,7 @@ $('#j-zhongxin-next').bind('click', function(){
 	jingdongTimer = setTimeout(function(){
 		zhongXinCB();
 		clearTimeout(jingdongTimer);
-	}, 10000);
+	}, shakeDuration);
 });
 $('#j-jingdong-next').bind('click', function(){
 	if(jindongLevel==3 && zhongxinLevel==3){
@@ -198,8 +208,9 @@ var singCallBack = function(){
 	swiper.slideTo(9);
 }
 
+// 唱歌部分逻辑
 var singTimer;
-var singCD = 30;
+var singCD = 10;
 var text;
 var countdown = function(){
 	if(singCD < 2){
@@ -221,4 +232,26 @@ $('.i-switch-off').bind('click', function(){
 });
 $('#j-sing-next').bind('click', function(){
 	swiper.slideTo(10)
-})
+});
+
+// 叫喊部分逻辑
+
+$("#j-face-next").bind('click', function(){
+	swiper.slideTo(12)
+});
+var wave = 1, waveTimer=0, waveTimes=0, jQwave=$(".i-voice-wave");
+$('#j-voice-microphone').bind('click', function(){
+	waveTimer = setInterval(function(){
+		wave++;
+		waveTimes++;
+		if(waveTimes >= 7){
+			clearInterval(waveTimer);
+			$("#raida").css({'-webkit-transform': 'rotate(200deg)'});
+			return;
+		}
+		if(wave>3){
+			wavw=1;
+		}
+		jQwave.removeClass('i-voice-wave1').removeClass('i-voice-wave2').removeClass('i-voice-wave3').addClass('i-voice-wave'+wave)
+	}, 500)
+});

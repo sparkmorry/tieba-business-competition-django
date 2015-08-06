@@ -404,3 +404,53 @@
 	height: 354px;
 	background-position: -1144px -815px;
 }
+
+/*一呼百应*/
+.icon5{
+	background: url(icon/icon5.png);
+	display: inline-block;	
+}
+.i-voice-wave{
+	width: 536px;
+	height: 86px;
+}
+.i-voice-wave1{
+	background-position: -1px -1px;
+}
+.i-voice-wave2{
+	background-position: -1px -101px;
+}
+.i-voice-wave3{
+	background-position: -1px -200px;
+}
+.i-voice-reminder{
+	width: 512px;
+	height: 128px;
+	background-position: -1px -298px;
+}
+.i-voice-microphone{
+	width: 69px;
+	height: 115px;
+	background-position: -532px -302px;
+}
+
+/*最终结果*/
+.icon6{
+	background: url(icon/icon6.png);
+	display: inline-block;		
+}
+.i-final{
+	width: 730px;
+	height: 688px;
+	background-position: 0 0 ;
+}
+.i-share-msg{
+	width: 274px;
+	height: 85px;
+	background-position: -86px -772px;
+}
+.i-share-timeline{
+	width: 274px;
+	height: 85px;
+	background-position: -391px -772px;
+}

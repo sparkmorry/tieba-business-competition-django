@@ -8,8 +8,8 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/layout.css?v=1.2">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/animate.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/layout.css?v=1.2">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/icon.css">
 </head>
 <body>
@@ -115,7 +115,7 @@
 	        	<i class="icon4 rotate-reverse i-radio-wheel2"></i>
 	        	<i class="icon4 i-sing-reminder"></i>
 	        	<i class="icon4 i-switch-off"></i>
-	        	<p class="sing-count-down">00:<span id="j-sing-countdown">30</span></p>
+	        	<p class="sing-count-down">00:<span id="j-sing-countdown">10</span></p>
 	        	<div class="wave-wrapper">
 	        		<i class="icon4 i-wave wave"></i>
 	        	</div>
@@ -140,13 +140,38 @@
 	        	<i class="icon4 i-blue-line"></i>
 	        	<input type="file" style="display:none" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" class="sign_file"/>
 	        </div>
+	        <!-- 颜值结果 -->
 	        <div class="swiper-slide m1" id="p12">
 	        	<i class="decr i-dec9"></i>
 	        	<i class="decr i-dec10"></i>
 	        	<i class="decr i-dec11"></i>        	
 	        	<img id="j-face-result" class="zhongxin-result" src="/static/css/anniversary/result/face/1.png">
-	        	<img class="zhongxin-next" src="/static/css/anniversary/result/face/next.png">	        	
-	        </div>	 	     
+	        	<img id="j-face-next" class="zhongxin-next" src="/static/css/anniversary/result/face/next.png">        	
+	        </div>
+	        <!-- 叫喊测试 -->
+	        <div class="swiper-slide m1" id="voice">
+	        	<img id="raida" src="/static/css/anniversary/icon/raida.png">
+	        	<i class="icon5 i-voice-wave i-voice-wave1"></i> 
+	        	<i class="icon5 i-voice-reminder"></i> 
+	        	<!-- <i id="hold-microphone" class="icon5 i-voice-microphone"></i> --> 	<img id="j-voice-microphone" class="voice-microphone" src="/static/css/anniversary/icon/microphone.png">    	      	
+	        </div>	
+	        <!-- 用户画像   -->
+	        <div class="swiper-slide m1" id="user-image">
+	        	<img id="raida" src="/static/css/anniversary/icon/raida.png">
+	        	<i class="icon5 i-voice-wave i-voice-wave1"></i> 
+	        	<i class="icon5 i-voice-reminder"></i> 
+	        	<i class="icon5 i-voice-microphone"></i> 	        	      	
+	        </div>	
+	        <!-- 最终结果 -->
+	        <div class="swiper-slide m1" id="final">
+	        	<i class="icon1 rotate gear1"></i>
+	        	<i class="icon1 rotate-reverse gear3"></i>
+	        	<i class="icon1 floating5 cone2"></i>
+	        	<i class="icon1 floating3 cube1"></i>
+	        	<i class="icon6 i-final"></i> 
+	        	<i class="icon6 i-share-msg"></i> 
+	        	<i class="icon6 i-share-timeline"></i> 	        	      	
+	        </div>		        
 	    </div>
 	</div>
 	<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>

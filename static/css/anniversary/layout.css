@@ -5,15 +5,24 @@
 body{
 	background-color: black;
 }
+html,body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
 .m1{
     position: relative;
 }
 .m1{
-	background: url(bg/bg-black.jpg);
+	background: url(bg/bg-black2.jpg);
 	/*background-size: 100% auto;*/
 	background-size: 1500px auto;
 	text-align: center;
 	background-color: black;
+
+}
+#voice{
+  background: url(bg/bg-voice.png);
 }
 /*p1*/
 #p1 .icon1{
@@ -474,4 +483,56 @@ body{
 }
 .i-wave{
 	margin-left: 0px;
+}
+
+
+/*一呼百应*/
+.icon5{
+  position: absolute;
+  left: 50%;
+}
+.i-voice-reminder{
+  margin-left: -256px;
+  top: 70px;
+}
+.i-voice-microphone{
+  bottom: 60px;
+  margin-left: -35px;
+}
+.voice-microphone{
+  position: absolute;
+  left: 50%;
+  margin-left: -145px;
+  bottom: 30px;
+  width: 290px;
+}
+.i-voice-wave{
+  bottom: 70px;
+  margin-left: -270px;
+}
+#raida{
+  position: absolute;
+  left: 50%;
+  margin-left: -292px;
+  top: 289px;
+  -webkit-transition: -webkit-transform 2s;
+}
+
+/*最终结果*/
+.icon6{
+  position: absolute;
+}
+.i-final{
+  left: 0;
+  top: 200px;
+}
+.i-share-msg, .i-share-timeline{
+  left: 50%;
+  bottom: 100px;
+}
+.i-share-msg{
+  margin-left: -300px;
+}
+.i-share-timeline{
+  margin-left: 30px;
 }
