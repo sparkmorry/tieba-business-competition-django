@@ -33,8 +33,8 @@ var jQmoney = $('#j-money');
 var jQaverage = $('#average');
 var jQp4 = $('#p4');
 
-// var shakeDuration = 10000;
-var shakeDuration = 1000;
+var shakeDuration = 10000;
+// var shakeDuration = 1000;
 
 
 touch.on(target, 'swiperight', function(ev){
