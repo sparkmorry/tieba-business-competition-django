@@ -24,6 +24,41 @@ html,body {
 #voice{
   background: url(bg/bg-voice.png);
 }
+
+.data-btn{
+  position: absolute;
+  top: 760px;
+  left: 100px;
+}
+.next-btn{
+  height: 70px;
+  position: absolute;
+  top: 760px;
+  left: 500px;
+}
+.part-result-btn{
+  width: 400px;
+  position: absolute;
+  top: 860px;
+  left: 50%;
+  margin-left: -200px;  
+}
+.part-data-btn{
+  width: 400px;
+  position: absolute;
+  top: 750px;
+  left: 50%;
+  margin-left: -200px;    
+}
+.data-img{
+  z-index: 10000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -600px; 
+  display: none; 
+}
 /*p1*/
 #p1 .icon1{
 	position: absolute;
@@ -41,6 +76,7 @@ html,body {
 	margin-left: -350px;
 	top: 700px;
 }
+
 .gear1{
 	left: 225px;
 	top: 85px;
@@ -134,6 +170,9 @@ html,body {
 	right: 30px;
 	top: 700px;
 }
+#p5 .p2-dec2{
+  top: 500px;
+}
 .p2-dec3{
 	left: 70px;
 	bottom: 50px;
@@ -196,8 +235,7 @@ html,body {
   	top: 30%;
     transition: margin-left 0.5s;
     transition-timing-function: ease;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+
 }
 .c-card2{
 	width: 100px;
@@ -535,4 +573,53 @@ html,body {
 }
 .i-share-timeline{
   margin-left: 30px;
+}
+
+/*用户画像*/
+.user-img{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.user-input{
+  position: absolute;
+  bottom: 530px;
+  width: 320px;
+  padding: 10px 0;
+  height: 60px;
+  background: rgba(0,0,0,0);
+  border: none;
+  left: 180px;
+  font-size: 40px;
+}
+.user-input:focus{
+  outline: none;
+}
+.user-go{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 505px;  
+  left: 500px;
+}
+.user-reminder{
+  width: 450px;
+  position: absolute;
+  bottom: 130px; 
+  left: 50%;
+  margin-left: -225px;
+}
+.user-result{
+  position: absolute;
+  bottom: 443px;
+  left: 50%;
+  margin-left: -276px; 
+}
+.user-next{
+  width: 200px;
+  position: absolute;
+  bottom: 100px; 
+  left: 50%;
+  margin-left: -100px;
 }

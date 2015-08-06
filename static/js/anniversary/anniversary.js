@@ -237,7 +237,13 @@ $('#j-sing-next').bind('click', function(){
 // 叫喊部分逻辑
 
 $("#j-face-next").bind('click', function(){
-	swiper.slideTo(12)
+	swiper.slideTo(12);
+});
+$("#j-voice-next").bind('click', function(){
+	swiper.slideNext();
+});
+$("#j-get-user-result").bind('click', function(){
+	swiper.slideNext();
 });
 var wave = 1, waveTimer=0, waveTimes=0, jQwave=$(".i-voice-wave");
 $('#j-voice-microphone').bind('click', function(){
@@ -247,11 +253,27 @@ $('#j-voice-microphone').bind('click', function(){
 		if(waveTimes >= 7){
 			clearInterval(waveTimer);
 			$("#raida").css({'-webkit-transform': 'rotate(200deg)'});
+			setTimeout(function(){
+
+				swiper.slideNext();
+			}, 2000);
 			return;
 		}
 		if(wave>3){
-			wavw=1;
+			wave=1;
 		}
 		jQwave.removeClass('i-voice-wave1').removeClass('i-voice-wave2').removeClass('i-voice-wave3').addClass('i-voice-wave'+wave)
 	}, 500)
 });
+
+// 数据显示
+$(".data-btn").bind('click', function(){
+	var jQself = $(this);
+	var jQm = jQself.closest('.m1');
+	var jQdata = jQm.find('.data-img');
+	jQdata.show();
+});
+var jQdatas = $(".data-img");
+jQdatas.bind('click', function(){
+	$(this).hide()
+})
