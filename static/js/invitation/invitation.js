@@ -60,11 +60,10 @@ $('body').bind('touchmove',function(event){
 
 touch.on('.m1', 'swipeup', function(ev){
 	var current = $('.swiper-slide-active.m1').attr('id');
-	if(current == 'transition'){
-		return;
-	}else{
-		swiper.slideNext();
+	if(current == 'p2'){
+		process();
 	}
+	swiper.slideNext();
 });
 
 touch.on('.m1', 'swipedown', function(ev){
