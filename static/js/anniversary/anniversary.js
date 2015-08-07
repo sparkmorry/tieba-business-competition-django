@@ -30,13 +30,17 @@ $('.triangle-btn').bind('click', function() {
 	}, 1100);
 });
 
+var testedCount=1;
 $('.j-go-beauty').bind('click', function(){
+	testedCount++;
 	swiper.slideTo(8);
 });
 $("#j-go-money").bind('click', function(){
+	testedCount++;
 	swiper.slideTo(2);
 });
 $("#j-go-auth").bind('click', function(){
+	testedCount++;
 	swiper.slideTo(13);
 });
 $('body').bind('touchmove',function(event){
@@ -48,6 +52,8 @@ var zhongxinLevel = 1, jindongLevel = 1;
 var singLevel = 1, faceLevel = 1;
 var voiceLevel = 1, userLevel = 1;
 
+var moneyLevel=0, faceLevel=0, authLevel=0;
+
 touch.on('#j-swipe-card', 'touchstart', function(ev){
 	ev.preventDefault();
 });
@@ -57,8 +63,8 @@ var jQmoney = $('#j-money');
 var jQaverage = $('#average');
 var jQp4 = $('#p4');
 
-var shakeDuration = 10000;
-// var shakeDuration = 1000;
+// var shakeDuration = 10000;
+var shakeDuration = 1000;
 
 
 touch.on(target, 'swiperight', function(ev){
@@ -173,9 +179,14 @@ $('#j-zhongxin-next').bind('click', function(){
 });
 $('#j-jingdong-next').bind('click', function(){
 	if(jindongLevel==3 && zhongxinLevel==3){
+		moneyLevel = 1;
 		$('#j-money-result').text('100%，作为一名土豪，又会省钱，你命中注定是有钱人，去测试一下颜值，看能否变成白富美(高富帅）。')
 	}else{
 		$('#j-money-result').text('50%，你是个屌丝，还不知道怎么省钱，彗星撞地球也挽救不了你的贫穷，看看能否用颜值改变自己的命运。')
+	}
+	if(testedCount==3){
+		$(".j-go-beauty").remove();
+		$("#p8").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
 	}
 	swiper.slideTo(7);
 });
@@ -255,12 +266,19 @@ $('#j-sing-next').bind('click', function(){
 	swiper.slideTo(10)
 });
 
-// 叫喊部分逻辑
 
 $("#j-face-next").bind('click', function(){
+	if(testedCount==3){
+		$("#j-go-auth").remove();
+		$("#p13").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
+	}
 	swiper.slideTo(12);
 });
 $("#j-voice-next").bind('click', function(){
+	if(testedCount==3){
+		$("#j-user-next").remove();
+		$("#p14").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
+	}
 	swiper.slideNext();
 });
 $("#j-get-user-result").bind('click', function(){
@@ -272,6 +290,7 @@ $("#j-user-next").bind('click', function(){
 	swiper.slideNext();
 });
 
+// 叫喊部分逻辑
 var wave = 1, waveTimes=0, jQwave=$(".i-voice-wave"), voiceClicked=false;
 var waveTimer;
 $('#j-voice-microphone').bind('click', function(){
@@ -314,3 +333,6 @@ jQdatas.bind('click', function(){
 $(".j-go-result").bind('click', function(){
 	swiper.slideTo(18);
 });
+$("body").delegate('.j-test-over', 'click', function(){
+	swiper.slideTo(18);
+})
