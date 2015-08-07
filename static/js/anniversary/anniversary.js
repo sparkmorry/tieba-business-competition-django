@@ -292,6 +292,15 @@ $("#j-voice-next").bind('click', function(){
 	swiper.slideNext();
 });
 $("#j-get-user-result").bind('click', function(){
+	userLevel = parseInt(Math.random()*3)+1;
+	if(userLevel == 1){
+		var src = '/static/css/anniversary/result/user/1.png';
+	}else if(userLevel == 2){
+		var src = '/static/css/anniversary/result/user/2.png';
+	}else if(userLevel == 3){
+		var src = '/static/css/anniversary/result/user/3.png';
+	}
+	$("#j-user-result").attr('src', src);	
 	swiper.slideNext();
 });
 
@@ -322,9 +331,19 @@ $('#j-voice-microphone').bind('click', function(){
 		waveTimes++;
 		if(waveTimes >= 7){
 			clearInterval(waveTimer);
-			$("#raida").css({'-webkit-transform': 'rotate(200deg)'});
+			voiceLevel = parseInt(Math.random()*3)+1;
+			if(voiceLevel == 1){
+				var src = '/static/css/anniversary/result/voice/1.png';
+				$("#raida").css({'-webkit-transform': 'rotate(80deg)'});
+			}else if(voiceLevel == 2){
+				var src = '/static/css/anniversary/result/voice/2.png';
+				$("#raida").css({'-webkit-transform': 'rotate(190deg)'});
+			}else if(voiceLevel == 3){
+				var src = '/static/css/anniversary/result/voice/3.png';
+				$("#raida").css({'-webkit-transform': 'rotate(280deg)'});
+			}
+			$("#j-voice-result").attr('src', src);
 			setTimeout(function(){
-
 				swiper.slideNext();
 			}, 2000);
 			return;
