@@ -43,6 +43,7 @@ html,body {
   left: 50%;
   margin-left: -200px;  
 }
+
 .part-data-btn{
   width: 400px;
   position: absolute;
@@ -50,6 +51,15 @@ html,body {
   left: 50%;
   margin-left: -200px;    
 }
+#user-result .part-data-btn{
+  top: auto;
+  bottom: 150px;
+}
+#user-result .part-result-btn{
+  top: auto;
+  bottom: 50px;
+}
+
 .data-img{
   z-index: 10000;
   position: absolute;

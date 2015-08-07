@@ -52,7 +52,7 @@ var zhongxinLevel = 1, jindongLevel = 1;
 var singLevel = 1, faceLevel = 1;
 var voiceLevel = 1, userLevel = 1;
 
-var moneyLevel=0, faceLevel=0, authLevel=0;
+var moneyLevel=0, faceTotalLevel=0, authLevel=0;
 
 touch.on('#j-swipe-card', 'touchstart', function(ev){
 	ev.preventDefault();
@@ -182,6 +182,7 @@ $('#j-jingdong-next').bind('click', function(){
 		moneyLevel = 1;
 		$('#j-money-result').text('100%，作为一名土豪，又会省钱，你命中注定是有钱人，去测试一下颜值，看能否变成白富美(高富帅）。')
 	}else{
+		moneyLevel = 0;
 		$('#j-money-result').text('50%，你是个屌丝，还不知道怎么省钱，彗星撞地球也挽救不了你的贫穷，看看能否用颜值改变自己的命运。')
 	}
 	if(testedCount==3){
@@ -262,7 +263,16 @@ $('.i-switch-off').bind('click', function(){
 	$(this).removeClass('i-switch-off').addClass('i-switch-on');
 	singTimer = setInterval(countdown, 1000);
 });
+
+// 结束唱歌，查看颜值部分结果
 $('#j-sing-next').bind('click', function(){
+	if(singLevel == 3 && faceLevel == 3){
+		faceTotalLevel = 1;
+		$('#j-face-result').text('100%，你的美貌就像天使，且喉清韵雅，去看看是否智慧和美貌并存')
+	}else{
+		faceTotalLevel = 0;
+		$('#j-face-result').text('50%，你相貌平平，声音也像乌鸦叫，要想出人头地，还是另择途径吧')	
+	}
 	swiper.slideTo(12)
 });
 
@@ -284,9 +294,18 @@ $("#j-voice-next").bind('click', function(){
 $("#j-get-user-result").bind('click', function(){
 	swiper.slideNext();
 });
+
+// 用户画像结束，查看权利部分结果
 $("#j-user-next").bind('click', function(){
 	var usr = $("#j-user-name-input").val();
 	$("#j-user-name").text(usr);
+	if(voiceLevel == 3 && userLevel == 3){
+		authLevel = 1;
+		$("#j-auth-result").text(' 100%，你虽然一呼百应，高权在握，但还是很羡慕国民老公王思聪')
+	}else{
+		authLevel = 0;
+		$("#j-auth-result").text('50%，你卑微如尘，天天在家玩泥巴不觉得厌倦么?出去试一试自己的财运吧！');
+	}
 	swiper.slideNext();
 });
 
@@ -330,7 +349,28 @@ jQdatas.bind('click', function(){
 	$(this).hide()
 });
 
+var jQfinal = $("#j-final-result");
 $(".j-go-result").bind('click', function(){
+
+	if(moneyLevel == 0 && faceTotalLevel == 1 && authLevel == 1){
+		jQfinal.empty()
+		jQfinal.append('<p>你长得正点，又有权有势</p><p>武媚娘想请你喝茶</p>')
+	}else if(moneyLevel == 0 && faceTotalLevel == 1 && authLevel == 0){
+		jQfinal.empty()
+		jQfinal.append('<p>恭喜你刷脸成功</p><p>成为新一代中老年过目难忘的偶像</p>')
+	}else if(moneyLevel == 0 && faceTotalLevel == 0 && authLevel == 1){
+		jQfinal.empty()
+		jQfinal.append('<p>你凭借天生的霸气</p><p>打破了这个世界看脸规则</p>')
+	}else if(moneyLevel == 0 && faceTotalLevel == 0 && authLevel == 0){
+		jQfinal.empty()
+		jQfinal.append('<p>你属于天煞孤星和丧门星和扫把星三星合体</p><p>天赋秉异，所向无敌</p>')
+	}else if(moneyLevel == 1 && faceTotalLevel == 0 && authLevel == 0){
+		jQfinal.empty()
+		jQfinal.append('<p>你天生财运旺盛</p><p>几乎完胜国民老公王思聪</p>')
+	}else if(moneyLevel == 1 && faceTotalLevel == 0 && authLevel == 1){
+		jQfinal.empty()
+		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半</p><p>改善一下自己的基因，完全不是问题。</p>')
+	}
 	swiper.slideTo(18);
 });
 $("body").delegate('.j-test-over', 'click', function(){

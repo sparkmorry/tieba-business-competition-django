@@ -389,14 +389,14 @@ def anniversary(request):
 		print EXPIRETIME
 		print TICKET
 
-	url = 'http://ssld-vi.com/tieba/invitation2'
+	url = 'http://ssld-vi.com/tieba/anniversary'
 	if len(request.GET) > 0:
 		url = url + "?" + urllib.urlencode(request.GET)
 	sign = Sign(TICKET, url)
 	tick = sign.sign()
 	tick['appId'] = APPID
 	sig = tick['signature']
-	
+
 	return render_to_response('anniversary.html', {'jsticket' : tick, 'sig': sig})
 
 
