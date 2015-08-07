@@ -9,13 +9,21 @@ $("#go").bind('click', function(){
 	swiper.slideTo(1);
 });
 var greenFade;
-$('.tb3').bind('click', function() {
+$('.triangle-btn').bind('click', function() {
 	// 去除第一页动画
 	$('#p1 .gear1, #p1 .gear2, #p1 .gear3, #p1 .cone1, #p1 .cone2, #p1 .cube1, #p1 .title').remove();
+	var jQself = $(this);
+	var type = jQself.data('type');
 	$('.p2-black-triangle').hide()
 	$('.p2-green-triangle').addClass('fadeIn');
 	greenFade = setTimeout(function (argument) {
-		swiper.slideTo(2);
+		if(type == 'money'){
+			swiper.slideTo(2);
+		}else if(type=='face'){
+			swiper.slideTo(8);
+		}else if(type=='auth'){
+			swiper.slideTo(13);
+		}
 		clearTimeout(greenFade);
 	}, 1100);
 });
@@ -33,8 +41,8 @@ var jQmoney = $('#j-money');
 var jQaverage = $('#average');
 var jQp4 = $('#p4');
 
-var shakeDuration = 10000;
-// var shakeDuration = 1000;
+// var shakeDuration = 10000;
+var shakeDuration = 1000;
 
 
 touch.on(target, 'swiperight', function(ev){
@@ -246,11 +254,18 @@ $("#j-get-user-result").bind('click', function(){
 	swiper.slideNext();
 });
 $("#j-user-next").bind('click', function(){
+	var usr = $("#j-user-name-input").val();
+	$("#j-user-name").text(usr);
 	swiper.slideNext();
 });
 
-var wave = 1, waveTimer=0, waveTimes=0, jQwave=$(".i-voice-wave");
+var wave = 1, waveTimes=0, jQwave=$(".i-voice-wave"), voiceClicked=false;
+var waveTimer;
 $('#j-voice-microphone').bind('click', function(){
+	if(voiceClicked){
+		return;
+	}
+	voiceClicked=true;
 	waveTimer = setInterval(function(){
 		wave++;
 		waveTimes++;
@@ -281,4 +296,8 @@ $(".data-btn, .part-data-btn").bind('click', function(){
 var jQdatas = $(".data-img");
 jQdatas.bind('click', function(){
 	$(this).hide()
-})
+});
+
+$(".j-go-result").bind('click', function(){
+	swiper.slideTo(18);
+});

@@ -396,18 +396,17 @@ html,body {
   bottom: 50px;
   left: 50px;
 }
-/*.i-go-beauty{
+.go-next{
   position: absolute;
-  bottom: 50px;
-  right: 50px;	
-}*/
-.j-go-beauty{
-  position: absolute;
-  /*bottom: 0px;*/
   bottom: 5px;
   right: 0px;
-  /*width: 350px;*/
-  /*height: 170px;*/
+  text-align: center;
+  z-index: 100000;
+}
+.go-final{
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
   text-align: center;
   z-index: 100000;
 }

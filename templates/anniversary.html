@@ -9,12 +9,13 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/animate.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/layout.css?v=1.2">
+	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/layout.css?v=1.5">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/icon.css">
 </head>
 <body>
 	<div class="swiper-container">
 	    <div class="swiper-wrapper">
+	    	<!-- 0 -->
 	        <div class="swiper-slide m1" id="p1">
 	        	<i class="icon1 rotate gear1"></i>
 	        	<i class="icon1 rotate-reverse gear2"></i>
@@ -27,18 +28,19 @@
 	        	<i class="icon1 text1"></i>
 	        	<i class="icon1 go" id="go"></i>
 	        </div>
+	        <!-- 1 -->
 	        <div class="swiper-slide m1" id="p2">
 				<i class="icon2 p2-title"></i>
 				<i class="icon2 p2-black-triangle"></i>
 				<i class="icon2 p2-green-triangle"></i>
 				<div class="icon2 rotate p2-3">
-					<div class="triangle-btn tb1"></div>
-					<div class="triangle-btn tb2"></div>
-					<div class="triangle-btn tb3"></div>
+					<div class="triangle-btn tb1" data-type="face"></div>
+					<div class="triangle-btn tb2" data-type="auth"></div>
+					<div class="triangle-btn tb3" data-type="money"></div>
 				</div>
 	        	<i class="icon2 p2-triangle"></i>
 	        </div>
-	        <!-- 中信办卡 -->
+	        <!-- 中信办卡2 -->
 	        <div class="swiper-slide m1" id="p3">
 	        	<i class="card i-red-line"></i>
 	        	<i class="icon1 p2-dec1"></i>
@@ -54,7 +56,7 @@
 	        	<i class="card i-selected-card"></i>
 	        </div>
 
-	        <!-- 中信刷卡 -->
+	        <!-- 中信刷卡3 -->
 	        <div class="swiper-slide m1" id="p4">
 				<i class="card i-red-line"></i>
 	        	<i class="icon1 p2-dec1"></i>
@@ -73,7 +75,7 @@
 		        	</div>
 	        	</div>	
 	        </div>
-	        <!-- 中信结果 -->
+	        <!-- 中信结果4 -->
 	        <div class="swiper-slide m1" id="p5">
 	        	<i class="icon1 p2-dec1"></i>
 	        	<i class="icon1 flash-fast p2-dec2"></i>
@@ -83,7 +85,7 @@
 	        	<img id="j-zhongxin-next" class="next-btn" src="/static/css/anniversary/result/zhongxin/next.png">
 	        	<img id="j-zhongxin-data" class="data-img" src="/static/css/anniversary/data/zhongxin.png">
 	        </div>
-	        <!-- 京东 -->
+	        <!-- 京东5 -->
 	        <div class="swiper-slide m1" id="p6">
 	        	<i class="decr i-dec6"></i>
 	        	<i class="decr flash-fast i-dec7"></i>
@@ -92,7 +94,7 @@
 	        	<i class="icon3 i-shake-circle"></i>
 	        	<i class="icon3 i-jd-reminder"></i>        	
 	        </div>
-	        <!-- 京东结果 -->
+	        <!-- 京东结果6 -->
 	        <div class="swiper-slide m1" id="p7">
 	        	<i class="decr i-dec6"></i>
 	        	<i class="decr flash-fast i-dec7"></i>
@@ -102,18 +104,15 @@
 	        	<img id="j-jingdong-data" class="part-data-btn" src="/static/css/anniversary/data/btn.png">
 	        	<img id="j-jingdong-data" class="data-img" src="/static/css/anniversary/data/jingdong.png">
 	        </div>	 
-	        <!-- 金钱结果 -->
+	        <!-- 金钱结果7 -->
 	        <div class="swiper-slide m1" id="p8">
 	        	<i class="result i-tv"></i>
-	        	<i class="result i-poor"></i>
 	        	<p id="j-money-result" class="part-result">50%，你是个屌丝，还不知道怎么省钱，彗星撞地球也挽救不了你的贫穷，看看能否用颜值改变自己的命运。
 	        	</p>
-	        	<img class="j-go-beauty" src="/static/css/anniversary/result/face.png">
-	        	<!-- <div class="j-go-beauty">
-	        		<i class="result i-go-beauty"></i>
-	        	</div> -->
+	        	<img class="j-go-result go-final" src="/static/css/anniversary/result/money-final.png">
+	        	<img class="j-go-beauty go-next" src="/static/css/anniversary/result/face.png">
 	        </div>
-	        <!-- 我是歌手 -->
+	        <!-- 我是歌手8 -->
 	        <div class="swiper-slide m1" id="p9">
 	        	<i class="decr i-dec9"></i>
 	        	<i class="decr i-dec10"></i>
@@ -128,7 +127,7 @@
 	        	</div>
 	        	<i class="icon4 i-microphone"></i>
 	        </div>
-	        <!-- 唱歌结果 -->
+	        <!-- 唱歌结果9 -->
 	        <div class="swiper-slide m1" id="p10">
 	        	<i class="decr i-dec9"></i>
 	        	<i class="decr i-dec10"></i>
@@ -138,7 +137,7 @@
 	        	<img id="j-sing-next" class="next-btn" src="/static/css/anniversary/result/zhongxin/next.png"> 
 	        	<img id="j-sing-data" class="data-img" src="/static/css/anniversary/data/sing.png">       	
 	        </div>	       	    
-	        <!-- 颜值    -->
+	        <!-- 颜值10    -->
 	        <div class="swiper-slide m1" id="p11">
 	        	<i class="decr i-dec9"></i>
 	        	<i class="decr i-dec10"></i>
@@ -150,7 +149,7 @@
 	        	<i class="icon4 i-blue-line"></i>
 	        	<input type="file" style="display:none" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" class="sign_file"/>
 	        </div>
-	        <!-- 颜值结果 -->
+	        <!-- 颜值结果11 -->
 	        <div class="swiper-slide m1" id="p12">
 	        	<i class="decr i-dec9"></i>
 	        	<i class="decr i-dec10"></i>
@@ -160,17 +159,22 @@
 	        	<img id="j-face-next" class="next-btn" src="/static/css/anniversary/result/zhongxin/next.png">
 	        	<img id="j-face-data" class="data-img" src="/static/css/anniversary/data/face.png">        	
 	        </div>
-	        <!-- 颜值部分结果 -->
-<!-- 	        <div class="swiper-slide m1" id="p12">
-	        </div> -->
-	        <!-- 叫喊测试 -->
+	        <!-- 颜值部分结果12 -->
+	        <div class="swiper-slide m1" id="p13">
+	        	<i class="result i-tv"></i>
+	        	<p id="j-face-result" class="part-result">50%，你相貌平平，声音也像乌鸦叫，要想出人头地，还是另择途径吧
+	        	</p>
+	        	<img class="j-go-result go-final" src="/static/css/anniversary/result/face-final.png">
+	        	<img class="go-next" src="/static/css/anniversary/result/auth.png">
+	        </div>
+	        <!-- 叫喊测试13 -->
 	        <div class="swiper-slide m1" id="voice">
 	        	<img id="raida" src="/static/css/anniversary/icon/raida.png">
 	        	<i class="icon5 i-voice-wave i-voice-wave1"></i> 
 	        	<i class="icon5 i-voice-reminder"></i> 
 	        	<img id="j-voice-microphone" class="voice-microphone" src="/static/css/anniversary/icon/microphone.png">    	      	
 	        </div>	
-	        <!-- 叫喊结果 -->
+	        <!-- 叫喊结果14 -->
 	        <div class="swiper-slide m1" id="voice-result">
 	        	<i class="decr i-dec9"></i>
 	        	<i class="decr i-dec10"></i>
@@ -180,14 +184,14 @@
 	        	<img id="j-voice-next" class="next-btn" src="/static/css/anniversary/result/zhongxin/next.png">   
 	        	<img id="j-voice-data" class="data-img" src="/static/css/anniversary/data/voice.png">      	
 	        </div>	        
-	        <!-- 用户画像   -->
+	        <!-- 用户画像15   -->
 	        <div class="swiper-slide m1" id="user-image">
 	        	<img class="user-img" src="/static/css/anniversary/icon/user-image.png">
-				<input class="user-input" type="text" />	
+				<input id="j-user-name-input" class="user-input" type="text" />	
 				<div id="j-get-user-result" class="user-go"></div>
 	        	<img class="user-reminder" src="/static/css/anniversary/icon/user-reminder.png">        	
 	        </div>	
-	        <!-- 用户画像结果 -->
+	        <!-- 用户画像结果16 -->
 	        <div class="swiper-slide m1" id="user-result">
 	        	<img class="user-img" src="/static/css/anniversary/icon/user-image.png">
 	        	<img id="j-user-result" class="user-result" src="/static/css/anniversary/result/user/1.png">
@@ -195,7 +199,15 @@
 	        	<img id="j-user-next" class="next-btn" src="/static/css/anniversary/result/zhongxin/next.png"> 
 	        	<img id="j-user-data" class="data-img" src="/static/css/anniversary/data/user.png">        	
 	        </div>	
-	        <!-- 最终结果 -->
+	        <!-- 权利结果17 -->
+	        <div class="swiper-slide m1" id="p14">
+	        	<i class="result i-tv"></i>
+	        	<p id="j-auth-result" class="part-result">50%，你卑微如尘，天天在家玩泥巴不觉得厌倦么?出去试一试自己的财运吧！
+	        	</p>
+	        	<img class="j-go-result go-final" src="/static/css/anniversary/result/auth-final.png">
+	        	<img class="go-next" src="/static/css/anniversary/result/money.png">
+	        </div>	        
+	        <!-- 最终结果18 -->
 	        <div class="swiper-slide m1" id="final">
 	        	<i class="icon1 rotate gear2"></i>
 	        	<i class="icon1 rotate-reverse gear3"></i>
@@ -203,7 +215,7 @@
 	        	<i class="icon1 floating3 cube1"></i>
 	        	<i class="icon6 i-final"></i> 
 	        	<div class="final-result">
-	        		<p>龙东强</p>
+	        		<p id="j-user-name"></p>
 	        		<p>你凭借超高的颜值</p>
 	        		<p>玩转金钱与权力游刃有余</p>
 	        	</div>
@@ -217,6 +229,6 @@
 	<script type="text/javascript" src="/static/js/touch.js"></script>	
 	<script type="text/javascript" src="/static/js/anniversary/util.js"></script>
 	<script type="text/javascript" src="/static/js/anniversary/shake.js"></script>
-	<script type="text/javascript" src="/static/js/anniversary/anniversary.js?v=1.2"></script>
+	<script type="text/javascript" src="/static/js/anniversary/anniversary.js?v=1.5"></script>
 </body>
 </html>
