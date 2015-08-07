@@ -63,8 +63,8 @@ var jQmoney = $('#j-money');
 var jQaverage = $('#average');
 var jQp4 = $('#p4');
 
-// var shakeDuration = 10000;
-var shakeDuration = 1000;
+var shakeDuration = 10000;
+// var shakeDuration = 1000;
 
 
 touch.on(target, 'swiperight', function(ev){
@@ -221,7 +221,7 @@ $('.i-test-face').bind('click', function(){
 	$("#j-face-result").attr('src', src);
 	$('.i-blue-line').addClass('downup');
 	var faceTimer = setTimeout(function(){
-		swiper.slideTo(11);
+		swiper.slideTo(9);
 	}, 2500);
 });
 
@@ -237,7 +237,7 @@ var singCallBack = function(){
 		var src = '/static/css/anniversary/result/sing/3.png';
 	}
 	$("#j-sing-result").attr('src', src);
-	swiper.slideTo(9);
+	swiper.slideTo(11);
 }
 
 // 唱歌部分逻辑
@@ -263,7 +263,7 @@ $('.i-switch-off').bind('click', function(){
 	singTimer = setInterval(countdown, 1000);
 });
 $('#j-sing-next').bind('click', function(){
-	swiper.slideTo(10)
+	swiper.slideTo(12)
 });
 
 
@@ -272,7 +272,7 @@ $("#j-face-next").bind('click', function(){
 		$("#j-go-auth").remove();
 		$("#p13").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
 	}
-	swiper.slideTo(12);
+	swiper.slideTo(10);
 });
 $("#j-voice-next").bind('click', function(){
 	if(testedCount==3){

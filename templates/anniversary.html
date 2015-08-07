@@ -9,7 +9,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/animate.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/layout.css?v=1.5">
+	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/layout.css?v=1.6">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/icon.css">
 </head>
 <body>
@@ -111,8 +111,30 @@
 	        	</p>
 	        	<img class="j-go-result go-final" src="/static/css/anniversary/result/money-final.png">
 	        	<img class="j-go-beauty go-next" src="/static/css/anniversary/result/face.png">
+	        </div>	       	    
+	        <!-- 颜值8    -->
+	        <div class="swiper-slide m1" id="p11">
+	        	<i class="decr i-dec9"></i>
+	        	<i class="decr i-dec10"></i>
+	        	<i class="decr i-dec11"></i>
+	        	<i class="icon4 i-take-photo"></i>
+	        	<img class="uploaded-img" src="">
+	        	<i class="icon4 i-upload-take-btn"></i>
+	        	<i class="icon4 i-test-face"></i>
+	        	<i class="icon4 i-blue-line"></i>
+	        	<input type="file" style="display:none" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" class="sign_file"/>
 	        </div>
-	        <!-- 我是歌手8 -->
+	        <!-- 颜值结果9 -->
+	        <div class="swiper-slide m1" id="p12">
+	        	<i class="decr i-dec9"></i>
+	        	<i class="decr i-dec10"></i>
+	        	<i class="decr i-dec11"></i>        	
+	        	<img id="j-face-result" class="zhongxin-result" src="/static/css/anniversary/result/face/1.png">
+	        	<img id="j-face-data" class="data-btn" src="/static/css/anniversary/data/btn.png">
+	        	<img id="j-face-next" class="next-btn" src="/static/css/anniversary/result/zhongxin/next.png">
+	        	<img id="j-face-data" class="data-img" src="/static/css/anniversary/data/face.png">        	
+	        </div>
+	        <!-- 我是歌手10 -->
 	        <div class="swiper-slide m1" id="p9">
 	        	<i class="decr i-dec9"></i>
 	        	<i class="decr i-dec10"></i>
@@ -127,7 +149,7 @@
 	        	</div>
 	        	<i class="icon4 i-microphone"></i>
 	        </div>
-	        <!-- 唱歌结果9 -->
+	        <!-- 唱歌结果11 -->
 	        <div class="swiper-slide m1" id="p10">
 	        	<i class="decr i-dec9"></i>
 	        	<i class="decr i-dec10"></i>
@@ -136,29 +158,7 @@
 	        	<img id="j-sing-data" class="data-btn" src="/static/css/anniversary/data/btn.png">
 	        	<img id="j-sing-next" class="next-btn" src="/static/css/anniversary/result/zhongxin/next.png"> 
 	        	<img id="j-sing-data" class="data-img" src="/static/css/anniversary/data/sing.png">       	
-	        </div>	       	    
-	        <!-- 颜值10    -->
-	        <div class="swiper-slide m1" id="p11">
-	        	<i class="decr i-dec9"></i>
-	        	<i class="decr i-dec10"></i>
-	        	<i class="decr i-dec11"></i>
-	        	<i class="icon4 i-take-photo"></i>
-	        	<img class="uploaded-img" src="">
-	        	<i class="icon4 i-upload-take-btn"></i>
-	        	<i class="icon4 i-test-face"></i>
-	        	<i class="icon4 i-blue-line"></i>
-	        	<input type="file" style="display:none" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" class="sign_file"/>
-	        </div>
-	        <!-- 颜值结果11 -->
-	        <div class="swiper-slide m1" id="p12">
-	        	<i class="decr i-dec9"></i>
-	        	<i class="decr i-dec10"></i>
-	        	<i class="decr i-dec11"></i>        	
-	        	<img id="j-face-result" class="zhongxin-result" src="/static/css/anniversary/result/face/1.png">
-	        	<img id="j-face-data" class="data-btn" src="/static/css/anniversary/data/btn.png">
-	        	<img id="j-face-next" class="next-btn" src="/static/css/anniversary/result/zhongxin/next.png">
-	        	<img id="j-face-data" class="data-img" src="/static/css/anniversary/data/face.png">        	
-	        </div>
+	        </div>	        
 	        <!-- 颜值部分结果12 -->
 	        <div class="swiper-slide m1" id="p13">
 	        	<i class="result i-tv"></i>
@@ -209,18 +209,20 @@
 	        </div>	        
 	        <!-- 最终结果18 -->
 	        <div class="swiper-slide m1" id="final">
-	        	<i class="icon1 rotate gear2"></i>
-	        	<i class="icon1 rotate-reverse gear3"></i>
-	        	<i class="icon1 floating5 cone2"></i>
-	        	<i class="icon1 floating3 cube1"></i>
+	        	<i class="icon1 gear2"></i>
+	        	<i class="icon1 gear3"></i>
+	        	<i class="icon1 cone2"></i>
+	        	<i class="icon1 cube1"></i>
 	        	<i class="icon6 i-final"></i> 
 	        	<div class="final-result">
 	        		<p id="j-user-name"></p>
 	        		<p>你凭借超高的颜值</p>
 	        		<p>玩转金钱与权力游刃有余</p>
 	        	</div>
-	        	<i class="icon6 i-share-msg"></i> 
-	        	<i class="icon6 i-share-timeline"></i>	        	      	
+	        	<!-- <i class="icon6 i-share-msg"></i>  -->
+	        	<!-- <i class="icon6 i-share-timeline"></i>	        	      	 -->
+	        	<img class="share-btn" src="/static/css/anniversary/icon/share.png">
+	        	<img class="more-btn" src="/static/css/anniversary/icon/more.png">
 	        </div>		        
 	    </div>
 	</div>
@@ -229,6 +231,37 @@
 	<script type="text/javascript" src="/static/js/touch.js"></script>	
 	<script type="text/javascript" src="/static/js/anniversary/util.js"></script>
 	<script type="text/javascript" src="/static/js/anniversary/shake.js"></script>
-	<script type="text/javascript" src="/static/js/anniversary/anniversary.js?v=1.6"></script>
+	<script type="text/javascript" src="/static/js/anniversary/anniversary.js?v=1.7"></script>
+	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script type="text/javascript">
+		wx.config({
+		    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		    appId: 'wxfb2f5ab1e2f95ee5', // 必填，公众号的唯一标识
+		    timestamp: '{{ jsticket.timestamp }}', // 必填，生成签名的时间戳
+		    nonceStr: '{{ jsticket.nonceStr }}', // 必填，生成签名的随机串
+		    signature: '{{ sig }}',// 必填，签名，见附录1
+		    jsApiList: ['onMenuShareAppMessage', 'onMenuShareTimeline'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+		});
+		wx.ready(function () {
+			wx.onMenuShareAppMessage({		    
+				title: '贴吧企业平台一周年', // 分享标题
+			    link: 'http://ssld-vi.com/tieba/anniversary', // 分享链接		
+			    imgUrl: 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/user-image.png' ,  
+			    desc: '我凭借超高的颜值，玩转金钱与权力游刃有余',
+			    success: function () { 
+			        // 用户确认分享后执行的回调函数
+			    },
+			    cancel: function () { 
+			        // 用户取消分享后执行的回调函数
+			    }
+			});
+		    wx.onMenuShareTimeline({
+		        title: '你凭借超高的颜值，玩转金钱与权力游刃有余', // 分享标题
+		        desc: '',
+		        link: 'http://ssld-vi.com/tieba/anniversary', // 分享链接
+		        imgUrl: 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/user-image.png', // 分享图标
+		    });
+		});		
+	</script>	
 </body>
 </html>

@@ -533,7 +533,8 @@ html,body {
   left: 50%;
 }
 .i-voice-reminder{
-  margin-left: -256px;
+  /*margin-left: -256px;*/
+  margin-left: -290px;
   top: 70px;
 }
 .i-voice-microphone{
@@ -559,24 +560,7 @@ html,body {
   -webkit-transition: -webkit-transform 2s;
 }
 
-/*最终结果*/
-.icon6{
-  position: absolute;
-}
-.i-final{
-  left: 0;
-  top: 200px;
-}
-.i-share-msg, .i-share-timeline{
-  left: 50%;
-  bottom: 100px;
-}
-.i-share-msg{
-  margin-left: -300px;
-}
-.i-share-timeline{
-  margin-left: 30px;
-}
+
 
 /*用户画像*/
 .user-img{
@@ -637,5 +621,41 @@ html,body {
   line-height: 40px;
   left: 50%;
   margin-left: -200px;
-  top: 410px;
+  top: 310px;
+}
+/*最终结果*/
+.icon6{
+  position: absolute;
+}
+.i-final{
+  left: 0;
+  top: 100px;
+}
+.i-share-msg, .i-share-timeline{
+  left: 50%;
+  bottom: 100px;
+}
+.i-share-msg{
+  margin-left: -300px;
+}
+.i-share-timeline{
+  margin-left: 30px;
+}
+#final .gear2{
+  top: 50px;
+}
+#final .gear3{
+  top: 440px;
+}
+
+.share-btn, .more-btn{
+  position: absolute;
+  left: 50%;
+  margin-left: -202px;
+}
+.share-btn{
+  bottom: 270px;
+}
+.more-btn{
+  bottom: 120px;
 }

@@ -424,9 +424,12 @@
 	background-position: -1px -200px;
 }
 .i-voice-reminder{
-	width: 512px;
+/*	width: 512px;
 	height: 128px;
-	background-position: -1px -298px;
+	background-position: -1px -298px;*/
+	width: 577px;
+	height: 128px;
+	background-position: 0 -445px;
 }
 .i-voice-microphone{
 	width: 69px;
