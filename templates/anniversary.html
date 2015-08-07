@@ -221,8 +221,11 @@
 	        			<p>玩转金钱与权力游刃有余</p>
 	        		</div>        		
 	        	</div>
-	        	<img class="share-btn" src="/static/css/anniversary/icon/share.png">
+	        	<img class="share-btn" id="j-share-btn" src="/static/css/anniversary/icon/share.png">
 	        	<a href="weixin://contacts/profile/tb-qiye"><img class="more-btn" src="/static/css/anniversary/icon/more.png"></a>
+				<div class="share" id="j-share-mask">
+			 		<img src="/static/images/share.png" style="width:100%">
+			 	</div>	        	
 	        </div>		        
 	    </div>
 	</div>
@@ -247,7 +250,7 @@
 				title: '贴吧企业平台一周年', // 分享标题
 			    link: 'http://ssld-vi.com/tieba/anniversary', // 分享链接		
 			    imgUrl: 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/user-image.png' ,  
-			    desc: '我凭借超高的颜值，玩转金钱与权力游刃有余',
+			    desc: '我你属于天煞孤星和丧门星和扫把星三星合体，天赋秉异，所向无敌，转发给大家看看吧。',
 			    success: function () { 
 			        // 用户确认分享后执行的回调函数
 			    },
@@ -255,12 +258,12 @@
 			        // 用户取消分享后执行的回调函数
 			    }
 			});
-		    wx.onMenuShareTimeline({
-		        title: '你凭借超高的颜值，玩转金钱与权力游刃有余', // 分享标题
-		        desc: '',
-		        link: 'http://ssld-vi.com/tieba/anniversary', // 分享链接
-		        imgUrl: 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/user-image.png', // 分享图标
-		    });
+		    // wx.onMenuShareTimeline({
+		    //     title: '你属于天煞孤星和丧门星和扫把星三星合体，天赋秉异，所向无敌，转发给大家看看吧。', // 分享标题
+		    //     desc: '',
+		    //     link: 'http://ssld-vi.com/tieba/anniversary', // 分享链接
+		    //     imgUrl: 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/user-image.png', // 分享图标
+		    // });
 		});		
 	</script>	
 </body>

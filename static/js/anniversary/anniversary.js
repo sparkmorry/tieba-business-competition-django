@@ -337,7 +337,7 @@ $('#j-voice-microphone').bind('click', function(){
 				$("#raida").css({'-webkit-transform': 'rotate(80deg)'});
 			}else if(voiceLevel == 2){
 				var src = '/static/css/anniversary/result/voice/2.png';
-				$("#raida").css({'-webkit-transform': 'rotate(190deg)'});
+				$("#raida").css({'-webkit-transform': 'rotate(180deg)'});
 			}else if(voiceLevel == 3){
 				var src = '/static/css/anniversary/result/voice/3.png';
 				$("#raida").css({'-webkit-transform': 'rotate(280deg)'});
@@ -369,6 +369,7 @@ jQdatas.bind('click', function(){
 });
 
 var jQfinal = $("#j-final-result");
+var shareText = '';
 $(".j-go-result").bind('click', function(){
 
 	if(moneyLevel == 0 && faceTotalLevel == 1 && authLevel == 1){
@@ -390,8 +391,28 @@ $(".j-go-result").bind('click', function(){
 		jQfinal.empty()
 		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半</p><p>改善一下自己的基因，完全不是问题。</p>')
 	}
+	wx.onMenuShareAppMessage({		    
+		title: '贴吧企业平台一周年', // 分享标题
+	    link: 'http://ssld-vi.com/tieba/anniversary', // 分享链接
+	    imgUrl: 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/user-image.png', // 分享图标
+	    desc: shareText,
+	    success: function () { 
+	        // 用户确认分享后执行的回调函数
+	    },
+	    cancel: function () { 
+	        // 用户取消分享后执行的回调函数
+	    }
+	});
 	swiper.slideTo(18);
 });
 $("body").delegate('.j-test-over', 'click', function(){
 	swiper.slideTo(18);
+});
+
+var jQshareMask=$("#j-share-mask");
+$("#j-share-btn").bind('click', function(){
+	jQshareMask.show();
+});
+jQshareMask.bind('click', function(){
+	jQshareMask.hide();
 })

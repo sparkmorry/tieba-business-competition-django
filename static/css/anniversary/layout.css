@@ -669,3 +669,12 @@ html,body {
 .more-btn{
   bottom: 120px;
 }
+.share{
+  display: none;
+  z-index: 10000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
