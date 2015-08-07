@@ -8,6 +8,8 @@ var swiper = new Swiper('.swiper-container',{
 $("#go").bind('click', function(){
 	swiper.slideTo(1);
 });
+
+// 不同人生主题
 var greenFade;
 $('.triangle-btn').bind('click', function() {
 	// 去除第一页动画
@@ -28,9 +30,23 @@ $('.triangle-btn').bind('click', function() {
 	}, 1100);
 });
 
+$('.j-go-beauty').bind('click', function(){
+	swiper.slideTo(8);
+});
+$("#j-go-money").bind('click', function(){
+	swiper.slideTo(2);
+});
+$("#j-go-auth").bind('click', function(){
+	swiper.slideTo(13);
+});
 $('body').bind('touchmove',function(event){
 	event.preventDefault();
 });
+
+//每个case的等级
+var zhongxinLevel = 1, jindongLevel = 1;
+var singLevel = 1, faceLevel = 1;
+var voiceLevel = 1, userLevel = 1;
 
 touch.on('#j-swipe-card', 'touchstart', function(ev){
 	ev.preventDefault();
@@ -41,8 +57,8 @@ var jQmoney = $('#j-money');
 var jQaverage = $('#average');
 var jQp4 = $('#p4');
 
-// var shakeDuration = 10000;
-var shakeDuration = 1000;
+var shakeDuration = 10000;
+// var shakeDuration = 1000;
 
 
 touch.on(target, 'swiperight', function(ev){
@@ -79,7 +95,6 @@ touch.on(target, 'swipeleft', function(ev){
 });
 
 var currentCardNo, nextCardNo, prevCardNo;
-var zhongxinLevel = 1, jindongLevel = 1, faceLevel = 1;
 $('.j-banka').bind('click', function() {
 	// 去除第二页动画
 	$('.p2-3').remove();
@@ -198,11 +213,9 @@ $('.i-test-face').bind('click', function(){
 		swiper.slideTo(11);
 	}, 2500);
 });
-$('.j-go-beauty').bind('click', function(){
-	swiper.slideTo(8);
-});
+
+
 var jQcd = $('#j-sing-countdown');
-var singLevel = 1;
 var singCallBack = function(){
 	singLevel = parseInt(Math.random()*3)+1;
 	if(singLevel == 1){

@@ -529,10 +529,10 @@ img.img-content{
 }
 .content-planet{
   position: absolute;
-  top: -50px;
+  top: 20px;
   left: 50%;
-  width: 250px;
-  margin-left: -125px;
+  width: 300px;
+  margin-left: -150px;
   -webkit-animation: float-fifteen 4s linear infinite;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0);
