@@ -212,6 +212,22 @@ html,body {
   top: 63%;
  
 }
+.left-arrow{
+  position: absolute;
+  left: 10px;
+  top: 40%;
+  height: 27px;
+}
+.right-arrow{
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  height: 27px;
+}
+
+#p4 .left-arrow, #p4 .right-arrow{
+  top: 55%;
+}
 
 @-webkit-keyframes slidetounlock {
   0% {

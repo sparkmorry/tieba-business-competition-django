@@ -373,22 +373,32 @@ var shareText = '';
 $(".j-go-result").bind('click', function(){
 
 	if(moneyLevel == 0 && faceTotalLevel == 1 && authLevel == 1){
-		jQfinal.empty()
-		jQfinal.append('<p>你长得正点，又有权有势</p><p>武媚娘想请你喝茶</p>')
+		jQfinal.empty();
+		jQfinal.append('<p>我长得正点，又有权有势</p><p>武媚娘想请你喝茶</p>');
+		shareText = '你长得正点，又有权有势，武媚娘想请你喝茶'
+	}else if(moneyLevel == 1 && faceTotalLevel == 1 && authLevel == 1){
+		jQfinal.empty();
+		jQfinal.append('<p>你凭借超高的颜值</p><p>玩转金钱与权力游刃有余</p>');
+		shareText = '我凭借超高的颜值，玩转金钱与权力游刃有余';
 	}else if(moneyLevel == 0 && faceTotalLevel == 1 && authLevel == 0){
-		jQfinal.empty()
-		jQfinal.append('<p>恭喜你刷脸成功</p><p>成为新一代中老年过目难忘的偶像</p>')
+		jQfinal.empty();
+		jQfinal.append('<p>恭喜你刷脸成功</p><p>成为新一代中老年过目难忘的偶像</p>');
+		shareText = '我刷脸成功，成为新一代中老年过目难忘的偶像，转发给大家看看吧。';
 	}else if(moneyLevel == 0 && faceTotalLevel == 0 && authLevel == 1){
-		jQfinal.empty()
-		jQfinal.append('<p>你凭借天生的霸气</p><p>打破了这个世界看脸规则</p>')
+		jQfinal.empty();
+		jQfinal.append('<p>你凭借天生的霸气</p><p>打破了这个世界看脸规则</p>');
+		shareText = '我凭借天生的霸气，打破了这个世界看脸规则';
 	}else if(moneyLevel == 0 && faceTotalLevel == 0 && authLevel == 0){
-		jQfinal.empty()
+		jQfinal.empty();
+		shareText = '我属于天煞孤星和丧门星和扫把星三星合体，天赋秉异，所向无敌';
 		jQfinal.append('<p>你属于天煞孤星和丧门星和扫把星三星合体</p><p>天赋秉异，所向无敌</p>')
 	}else if(moneyLevel == 1 && faceTotalLevel == 0 && authLevel == 0){
-		jQfinal.empty()
+		jQfinal.empty();
+		shareText = '我天生财运旺盛，几乎完胜国民老公王思聪';
 		jQfinal.append('<p>你天生财运旺盛</p><p>几乎完胜国民老公王思聪</p>')
 	}else if(moneyLevel == 1 && faceTotalLevel == 0 && authLevel == 1){
-		jQfinal.empty()
+		jQfinal.empty();
+		shareText = '我有钱有权，找一个漂亮的另一半 ，改善一下自己的基因，完全不是问题。';
 		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半</p><p>改善一下自己的基因，完全不是问题。</p>')
 	}
 	wx.onMenuShareAppMessage({		    

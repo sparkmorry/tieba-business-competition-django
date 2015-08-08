@@ -40,17 +40,22 @@ var teamSwiper = new Swiper('#team-content',{
 	direction: 'horizontal',  //vertical,horizontal
 	speed: 700,
 	// onlyExternal: true,
+	autoplay : 1000,
     paginationClickable: '.swiper-pagination-team',
 	pagination: '.swiper-pagination-team',
-
+	prevButton:'.team-prev-btn',
+	nextButton:'.team-next-btn',
 });	
 
 var tutorSwiper = new Swiper('#tutor-content',{
 	direction: 'horizontal',  //vertical,horizontal
 	speed: 700,
+	autoplay : 1000,
 	// onlyExternal: true,
     paginationClickable: '.swiper-pagination-tutor',
 	pagination: '.swiper-pagination-tutor',
+	prevButton:'.tutor-prev-btn',
+	nextButton:'.tutor-next-btn',
 
 });	
 
@@ -62,7 +67,12 @@ touch.on('.m1', 'swipeup', function(ev){
 	var current = $('.swiper-slide-active.m1').attr('id');
 	if(current == 'p2'){
 		process();
+	}else if(current == 'p6'){
+		tutorSwiper.startAutoplay();
+	}else if(current == 'p3'){
+		teamSwiper.startAutoplay();
 	}
+
 	swiper.slideNext();
 });
 
