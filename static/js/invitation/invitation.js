@@ -39,6 +39,7 @@ var swiper = new Swiper('#main',{
 var teamSwiper = new Swiper('#team-content',{
 	direction: 'horizontal',  //vertical,horizontal
 	speed: 700,
+	loop: true,
 	// onlyExternal: true,
 	autoplay : 1000,
     paginationClickable: '.swiper-pagination-team',
@@ -52,6 +53,7 @@ var tutorSwiper = new Swiper('#tutor-content',{
 	speed: 700,
 	autoplay : 1000,
 	// onlyExternal: true,
+	loop: true,
     paginationClickable: '.swiper-pagination-tutor',
 	pagination: '.swiper-pagination-tutor',
 	prevButton:'.tutor-prev-btn',
