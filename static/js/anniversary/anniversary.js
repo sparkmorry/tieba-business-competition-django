@@ -31,7 +31,7 @@ $('.triangle-btn').bind('click', function() {
 });
 
 var testedCount=1;
-$('#j-go-beauty').bind('click', function(){
+$('#j-go-face').bind('click', function(){
 	testedCount++;
 	swiper.slideTo(8);
 });
@@ -204,10 +204,6 @@ $('#j-jingdong-next').bind('click', function(){
 		moneyLevel = 4;
 		moneyFinalLevel=1;
 		$('#j-money-result').text('100%，作为一名土豪，又会省钱，你命中注定是有钱人，去测试一下颜值，看能否变成白富美(高富帅）')
-	}
-	if(testedCount==3){
-		$(".j-go-beauty").remove();
-		$("#p8").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
 	}
 	swiper.slideTo(7);
 });
@@ -436,8 +432,8 @@ var shareText = '';
 var finalCal = function(){
 	if(moneyFinalLevel == 0 && faceFinalLevel == 1 && authFinalLevel == 1){
 		jQfinal.empty();
-		jQfinal.append('<p>我长得正点，又有权有势</p><p>武媚娘想请你喝茶</p>');
-		shareText = '你长得正点，又有权有势，武媚娘想请你喝茶'
+		jQfinal.append('<p>你长得正点，又有权有势</p><p>武媚娘想请你喝茶</p>');
+		shareText = '我长得正点，又有权有势，武媚娘想请我喝茶'
 	}else if(moneyFinalLevel == 1 && faceFinalLevel == 1 && authFinalLevel == 1){
 		jQfinal.empty();
 		jQfinal.append('<p>你凭借超高的颜值</p><p>玩转金钱与权力游刃有余</p>');
