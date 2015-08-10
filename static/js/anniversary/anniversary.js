@@ -31,7 +31,7 @@ $('.triangle-btn').bind('click', function() {
 });
 
 var testedCount=1;
-$('.j-go-beauty').bind('click', function(){
+$('#j-go-beauty').bind('click', function(){
 	testedCount++;
 	swiper.slideTo(8);
 });
@@ -51,6 +51,9 @@ $('body').bind('touchmove',function(event){
 var zhongxinLevel = 1, jindongLevel = 1;
 var singLevel = 1, faceLevel = 1;
 var voiceLevel = 1, userLevel = 1;
+
+var jingdongTimer;
+
 
 var moneyLevel=1, faceTotalLevel=1, authLevel=1;
 var moneyFinalLevel=0, faceFinalLevel=0, authFinalLevel=0;
@@ -165,14 +168,20 @@ var zhongXinCB = function(){
 	}
 	swiper.slideTo(6);
 }
-var jingdongTimer;
+
 $('#j-zhongxin-next').bind('click', function(){
 	// 初始化摇一摇
 	init();
 	// 去除第三页动画
 	$('#p3 .p2-dec2, #p3 .p2-dec1, #p3 .p2-dec3').remove();
 	$('#p4 .p2-dec2, #p4 .p2-dec1, #p4 .p2-dec3').remove();
+	// 如果到金钱的时候已经测完3次，金钱部分替换为结束
+	if(testedCount==3){
+		$("#j-go-face").remove();
+		$("#p8").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
+	}
 	swiper.slideTo(5);
+
 	jingdongTimer = setTimeout(function(){
 		zhongXinCB();
 		clearTimeout(jingdongTimer);
@@ -295,7 +304,7 @@ $('.i-switch-off').bind('click', function(){
 // 结束唱歌，查看颜值部分结果
 var jQfaceResult = $('#j-face-final-result');
 $('#j-sing-next').bind('click', function(){
-	if(singLevel != 3 && faceLevel == 3){
+	if(singLevel != 3 && faceLevel == 1){
 		faceTotalLevel = 1;
 		// 颜值一般，声音还难听
 		jQfaceResult.text('20%，你是巴黎圣母院的敲钟人，就别做明星梦了，还是去看看有没有别的机会吧')
@@ -319,6 +328,7 @@ $('#j-sing-next').bind('click', function(){
 
 $("#j-face-next").bind('click', function(){
 	if(testedCount==3){
+		// 如果颜值完了已经测试3次，颜值部分替换为结束
 		$("#j-go-auth").remove();
 		$("#p13").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
 	}
@@ -327,10 +337,13 @@ $("#j-face-next").bind('click', function(){
 $("#j-voice-next").bind('click', function(){
 	if(testedCount==3){
 		$("#j-user-next").remove();
-		$("#p14").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
+		$("#p16").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
 	}
 	swiper.slideNext();
 });
+// $("#j-zhongxin-next").bind('click', function(){
+// });
+
 $("#j-get-user-result").bind('click', function(){
 	userLevel = parseInt(Math.random()*3)+1;
 	if(userLevel == 1){
@@ -390,7 +403,7 @@ $('#j-voice-microphone').bind('click', function(){
 				$("#raida").css({'-webkit-transform': 'rotate(180deg)'});
 			}else if(voiceLevel == 3){
 				var src = '/static/css/anniversary/result/voice/3.png';
-				$("#raida").css({'-webkit-transform': 'rotate(280deg)'});
+				$("#raida").css({'-webkit-transform': 'rotate(270deg)'});
 			}
 			$("#j-voice-result").attr('src', src);
 			setTimeout(function(){
@@ -420,8 +433,7 @@ jQdatas.bind('click', function(){
 
 var jQfinal = $("#j-final-result");
 var shareText = '';
-$(".j-go-result").bind('click', function(){
-
+var finalCal = function(){
 	if(moneyFinalLevel == 0 && faceFinalLevel == 1 && authFinalLevel == 1){
 		jQfinal.empty();
 		jQfinal.append('<p>我长得正点，又有权有势</p><p>武媚娘想请你喝茶</p>');
@@ -464,8 +476,12 @@ $(".j-go-result").bind('click', function(){
 	    }
 	});
 	swiper.slideTo(18);
-});
+
+}
+$(".j-go-result").bind('click', finalCal);
+
 $("body").delegate('.j-test-over', 'click', function(){
+	finalCal();
 	swiper.slideTo(18);
 });
 
