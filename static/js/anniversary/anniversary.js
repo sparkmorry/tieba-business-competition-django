@@ -191,16 +191,16 @@ $('#j-jingdong-next').bind('click', function(){
 	if(jindongLevel==1 && zhongxinLevel==1){
 		moneyLevel = 1;
 		$('#j-money-result').text('20%，你是个屌丝，还不知道怎么省钱，彗星撞地球也挽救不了你的贫穷，看看能否用颜值改变自己的命运')
-	}else if(jindongLevel!=1 && zhongxinLevel!=3){
+	}else if(zhongxinLevel!=3 && jindongLevel!=1){
 		// 不是土豪，但是会省钱
 		moneyLevel = 2;
 		$('#j-money-result').text('50%，你虽然属于无产阶级，但是由于比较会抠门儿，有暴发户的嫌疑，还是注意一下自己的形象吧')
-	}else if(zhongxinLevel!=1 && jindongLevel!=3){
+	}else if(zhongxinLevel!=1 && jindongLevel==1){
 		// 土豪但是不会省钱
 		moneyLevel = 3;
 		moneyFinalLevel=1;
 		$('#j-money-result').text('70%，作为一名土豪，你并不会省钱，迟早会成为坑爹二代，还是去看看颜值能否挽救你')
-	}else if(zhongxinLevel==3 && jindongLevel==3){
+	}else if(zhongxinLevel==3 && jindongLevel!=1){
 		moneyLevel = 4;
 		moneyFinalLevel=1;
 		$('#j-money-result').text('100%，作为一名土豪，又会省钱，你命中注定是有钱人，去测试一下颜值，看能否变成白富美(高富帅）')
