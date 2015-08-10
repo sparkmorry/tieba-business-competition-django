@@ -52,7 +52,8 @@ var zhongxinLevel = 1, jindongLevel = 1;
 var singLevel = 1, faceLevel = 1;
 var voiceLevel = 1, userLevel = 1;
 
-var moneyLevel=0, faceTotalLevel=0, authLevel=0;
+var moneyLevel=1, faceTotalLevel=1, authLevel=1;
+var moneyFinalLevel=0, faceFinalLevel=0, authFinalLevel=0;
 
 touch.on('#j-swipe-card', 'touchstart', function(ev){
 	ev.preventDefault();
@@ -178,12 +179,22 @@ $('#j-zhongxin-next').bind('click', function(){
 	}, shakeDuration);
 });
 $('#j-jingdong-next').bind('click', function(){
-	if(jindongLevel==3 && zhongxinLevel==3){
+	if(jindongLevel==1 && zhongxinLevel==1){
 		moneyLevel = 1;
-		$('#j-money-result').text('100%，作为一名土豪，又会省钱，你命中注定是有钱人，去测试一下颜值，看能否变成白富美(高富帅）。')
-	}else{
-		moneyLevel = 0;
-		$('#j-money-result').text('50%，你是个屌丝，还不知道怎么省钱，彗星撞地球也挽救不了你的贫穷，看看能否用颜值改变自己的命运。')
+		$('#j-money-result').text('20%，你是个屌丝，还不知道怎么省钱，彗星撞地球也挽救不了你的贫穷，看看能否用颜值改变自己的命运')
+	}else if(jindongLevel!=1 && zhongxinLevel!=3){
+		// 不是土豪，但是会省钱
+		moneyLevel = 2;
+		$('#j-money-result').text('50%，你虽然属于无产阶级，但是由于比较会抠门儿，有暴发户的嫌疑，还是注意一下自己的形象吧')
+	}else if(zhongxinLevel!=1 && jindongLevel!=3){
+		// 土豪但是不会省钱
+		moneyLevel = 3;
+		moneyFinalLevel=1;
+		$('#j-money-result').text('70%，作为一名土豪，你并不会省钱，迟早会成为坑爹二代，还是去看看颜值能否挽救你')
+	}else if(zhongxinLevel==3 && jindongLevel==3){
+		moneyLevel = 4;
+		moneyFinalLevel=1;
+		$('#j-money-result').text('100%，作为一名土豪，又会省钱，你命中注定是有钱人，去测试一下颜值，看能否变成白富美(高富帅）')
 	}
 	if(testedCount==3){
 		$(".j-go-beauty").remove();
@@ -245,14 +256,15 @@ $('.i-test-face').bind('click', function(){
 
 var jQcd = $('#j-sing-countdown');
 var singCallBack = function(){
-	// singLevel = parseInt(Math.random()*3)+1;	
-	if(faceLevel == 1 || faceLevel==2){
-		singLevel == 1;
+	singLevel = parseInt(Math.random()*3)+1;	
+	if(singLevel==1){
 		var src = '/static/css/anniversary/result/sing/1.png';
-	}else if(faceLevel == 3){
-		singLevel == 3
+	}else if(singLevel == 2){
+		var src = '/static/css/anniversary/result/sing/2.png';
+	}else if(singLevel == 3){
 		var src = '/static/css/anniversary/result/sing/3.png';
 	}	
+	
 	$("#j-sing-result").attr('src', src);
 	swiper.slideTo(11);
 }
@@ -281,13 +293,25 @@ $('.i-switch-off').bind('click', function(){
 });
 
 // 结束唱歌，查看颜值部分结果
+var jQfaceResult = $('#j-face-final-result');
 $('#j-sing-next').bind('click', function(){
-	if(singLevel == 3 && faceLevel == 3){
+	if(singLevel != 3 && faceLevel == 3){
 		faceTotalLevel = 1;
-		$('#j-face-result').text('100%，你的美貌就像天使，且喉清韵雅，去看看是否智慧和美貌并存')
-	}else{
-		faceTotalLevel = 0;
-		$('#j-face-result').text('50%，你相貌平平，声音也像乌鸦叫，要想出人头地，还是另择途径吧')	
+		// 颜值一般，声音还难听
+		jQfaceResult.text('20%，你是巴黎圣母院的敲钟人，就别做明星梦了，还是去看看有没有别的机会吧')
+	}else if(singLevel != 3 && faceLevel != 1){
+		// 有颜值但没好声音
+		faceTotalLevel = 2;
+		jQfaceResult.text('50%，你虽然相貌不错，但是声音像乌鸦叫，要想出人头地，还是另择途径吧')	
+	}else if(singLevel == 3 && faceLevel != 3){
+		// 声音好听但颜值不行
+		faceTotalLevel = 3;
+		faceFinalLevel = 1;		
+		jQfaceResult.text('70%，你虽然相貌平平，但是声音却悦耳动听，不过在这个看脸的世界，还是寻找更适合自己的路吧。')	
+	}else if(singLevel == 3 && faceLevel == 3){
+		faceTotalLevel = 4;
+		faceFinalLevel = 1;		
+		jQfaceResult.text('100%，你的美貌就像天使，且喉清韵雅，去看看是否智慧和美貌并存')	
 	}
 	swiper.slideTo(12)
 });
@@ -321,16 +345,26 @@ $("#j-get-user-result").bind('click', function(){
 });
 
 // 用户画像结束，查看权利部分结果
+var jQauthResult = $("#j-auth-result");
 $("#j-user-next").bind('click', function(){
 	var usr = $("#j-user-name-input").val();
 	$("#j-user-name").text(usr);
-	if(voiceLevel == 3 && userLevel == 3){
+	if(voiceLevel != 3 && userLevel == 1){
 		authLevel = 1;
-		$("#j-auth-result").text(' 100%，你虽然一呼百应，高权在握，但还是很羡慕国民老公王思聪')
-	}else{
-		authLevel = 0;
-		$("#j-auth-result").text('50%，你卑微如尘，天天在家玩泥巴不觉得厌倦么?出去试一试自己的财运吧！');
+		jQauthResult.text('20%，你人缘太差，又呆在一个鸟不拉屎的地方，仕途跟你没半毛钱的关系，还是看看财运如何吧')
+	}else if(voiceLevel == 3 && userLevel != 3 ){
+		authLevel = 2;
+		jQauthResult.text('50%，你有一定的号召力，不过乡土气息有点浓厚，难以hold住大场面，还是看看自己的 财运吧');
+	}else if(userLevel != 1 && voiceLevel != 3 ){
+		authLevel = 3;
+		authFinalLevel = 1;
+		jQauthResult.text('70%，你虽然位高权重，但却没什么号召力，只能当个傀儡，出去试一试自己的财运吧！');
+	}else if(voiceLevel == 3 && userLevel != 1 ){
+		authLevel = 4;
+		authFinalLevel = 1;
+		jQauthResult.text('100%，你虽然一呼百应，高权在握，但还是很羡慕国民老公王思聪，不如试一试金钱运如何？');
 	}
+
 	swiper.slideNext();
 });
 
@@ -361,7 +395,7 @@ $('#j-voice-microphone').bind('click', function(){
 			$("#j-voice-result").attr('src', src);
 			setTimeout(function(){
 				swiper.slideNext();
-			}, 2000);
+			}, 2300);
 			return;
 		}
 		if(wave>3){
@@ -388,31 +422,31 @@ var jQfinal = $("#j-final-result");
 var shareText = '';
 $(".j-go-result").bind('click', function(){
 
-	if(moneyLevel == 0 && faceTotalLevel == 1 && authLevel == 1){
+	if(moneyFinalLevel == 0 && faceFinalLevel == 1 && authFinalLevel == 1){
 		jQfinal.empty();
 		jQfinal.append('<p>我长得正点，又有权有势</p><p>武媚娘想请你喝茶</p>');
 		shareText = '你长得正点，又有权有势，武媚娘想请你喝茶'
-	}else if(moneyLevel == 1 && faceTotalLevel == 1 && authLevel == 1){
+	}else if(moneyFinalLevel == 1 && faceFinalLevel == 1 && authFinalLevel == 1){
 		jQfinal.empty();
 		jQfinal.append('<p>你凭借超高的颜值</p><p>玩转金钱与权力游刃有余</p>');
 		shareText = '我凭借超高的颜值，玩转金钱与权力游刃有余';
-	}else if(moneyLevel == 0 && faceTotalLevel == 1 && authLevel == 0){
+	}else if(moneyFinalLevel == 0 && faceFinalLevel == 1 && authFinalLevel == 0){
 		jQfinal.empty();
 		jQfinal.append('<p>恭喜你刷脸成功</p><p>成为新一代中老年过目难忘的偶像</p>');
 		shareText = '我刷脸成功，成为新一代中老年过目难忘的偶像，转发给大家看看吧。';
-	}else if(moneyLevel == 0 && faceTotalLevel == 0 && authLevel == 1){
+	}else if(moneyFinalLevel == 0 && faceFinalLevel == 0 && authFinalLevel == 1){
 		jQfinal.empty();
 		jQfinal.append('<p>你凭借天生的霸气</p><p>打破了这个世界看脸规则</p>');
 		shareText = '我凭借天生的霸气，打破了这个世界看脸规则';
-	}else if(moneyLevel == 0 && faceTotalLevel == 0 && authLevel == 0){
+	}else if(moneyFinalLevel == 0 && faceFinalLevel == 0 && authFinalLevel == 0){
 		jQfinal.empty();
 		shareText = '我属于天煞孤星和丧门星和扫把星三星合体，天赋秉异，所向无敌';
 		jQfinal.append('<p>你属于天煞孤星和丧门星和扫把星三星合体</p><p>天赋秉异，所向无敌</p>')
-	}else if(moneyLevel == 1 && faceTotalLevel == 0 && authLevel == 0){
+	}else if(moneyFinalLevel == 1 && faceFinalLevel == 0 && authFinalLevel == 0){
 		jQfinal.empty();
 		shareText = '我天生财运旺盛，几乎完胜国民老公王思聪';
 		jQfinal.append('<p>你天生财运旺盛</p><p>几乎完胜国民老公王思聪</p>')
-	}else if(moneyLevel == 1 && faceTotalLevel == 0 && authLevel == 1){
+	}else if(moneyFinalLevel == 1 && faceFinalLevel == 0 && authFinalLevel == 1){
 		jQfinal.empty();
 		shareText = '我有钱有权，找一个漂亮的另一半 ，改善一下自己的基因，完全不是问题。';
 		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半</p><p>改善一下自己的基因，完全不是问题。</p>')
