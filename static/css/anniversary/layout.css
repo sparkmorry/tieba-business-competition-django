@@ -433,6 +433,13 @@ html,body {
   top: 900px;
   margin-left: -300px;
 }
+.upload-reminder{
+  position: absolute;
+  top: 500px;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+}
 .i-takephoto-btn{
   top: 900px;
   margin-left: 90px;

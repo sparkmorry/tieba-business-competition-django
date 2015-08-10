@@ -86,6 +86,12 @@
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
+.flash-warning{
+  -webkit-animation: Flash 0.2s linear 2;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+
 @-webkit-keyframes Flash {
     0% {
         opacity: 1;

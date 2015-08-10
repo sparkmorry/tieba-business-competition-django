@@ -210,7 +210,23 @@ jQcameraInput.bind('change', readFile);
 $('.i-upload-take-btn').bind('click', function(){
 	jQcameraInput.click();
 });
+var jQuploadReminder = $(".upload-reminder");
 $('.i-test-face').bind('click', function(){
+	var file = jQcameraInput.get(0).files[0];
+	if(!file){
+		if(jQuploadReminder.attr('src') == '/static/css/anniversary/icon/upload-blue.png'){
+			jQuploadReminder.attr('src', '/static/css/anniversary/icon/upload-red.png');			
+		}
+		if(jQuploadReminder.hasClass('flash-warning')){
+			jQuploadReminder.removeClass('flash-warning');
+		}
+		setTimeout(function(){
+			jQuploadReminder.addClass('flash-warning');
+		}, 300);
+		return;
+	}else{
+		jQuploadReminder.attr('src', '/static/css/anniversary/icon/upload-blue.png')
+	}
 	faceLevel = parseInt(Math.random()*3)+1;
 	if(faceLevel == 1){
 		var src = '/static/css/anniversary/result/face/1.png';
@@ -229,14 +245,14 @@ $('.i-test-face').bind('click', function(){
 
 var jQcd = $('#j-sing-countdown');
 var singCallBack = function(){
-	singLevel = parseInt(Math.random()*3)+1;
-	if(singLevel == 1){
+	// singLevel = parseInt(Math.random()*3)+1;	
+	if(faceLevel == 1 || faceLevel==2){
+		singLevel == 1;
 		var src = '/static/css/anniversary/result/sing/1.png';
-	}else if(singLevel == 2){
-		var src = '/static/css/anniversary/result/sing/2.png';
-	}else if(singLevel == 3){
+	}else if(faceLevel == 3){
+		singLevel == 3
 		var src = '/static/css/anniversary/result/sing/3.png';
-	}
+	}	
 	$("#j-sing-result").attr('src', src);
 	swiper.slideTo(11);
 }
