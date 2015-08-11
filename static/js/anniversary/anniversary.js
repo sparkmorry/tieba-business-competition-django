@@ -6,6 +6,7 @@ var swiper = new Swiper('.swiper-container',{
 
 });	
 $("#go").bind('click', function(){
+	$('#p1 .gear1, #p1 .gear2, #p1 .gear3, #p1 .cone1, #p1 .cone2, #p1 .cube1, #p1 .title').remove();
 	swiper.slideTo(1);
 });
 
@@ -13,7 +14,6 @@ $("#go").bind('click', function(){
 var greenFade;
 $('.triangle-btn').bind('click', function() {
 	// 去除第一页动画
-	$('#p1 .gear1, #p1 .gear2, #p1 .gear3, #p1 .cone1, #p1 .cone2, #p1 .cube1, #p1 .title').remove();
 	var jQself = $(this);
 	var type = jQself.data('type');
 	$('.p2-black-triangle').hide()
@@ -462,6 +462,10 @@ var finalCal = function(){
 		shareText = '我天生财运旺盛，几乎完胜国民老公王思聪';
 		jQfinal.append('<p>你天生财运旺盛</p><p>几乎完胜国民老公王思聪</p>')
 	}else if(moneyFinalLevel == 1 && faceFinalLevel == 0 && authFinalLevel == 1){
+		jQfinal.empty();
+		shareText = '我有钱有权，找一个漂亮的另一半 ，改善一下自己的基因，完全不是问题。';
+		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半，改善一下自己的基因，完全不是问题。</p>')
+	}else if(moneyFinalLevel == 1 && faceFinalLevel == 1 && authFinalLevel == 0){
 		jQfinal.empty();
 		shareText = '我有钱有权，找一个漂亮的另一半 ，改善一下自己的基因，完全不是问题。';
 		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半，改善一下自己的基因，完全不是问题。</p>')
