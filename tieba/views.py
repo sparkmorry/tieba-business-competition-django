@@ -263,6 +263,31 @@ def tab3(request):
 	return render_to_response('tab3.html', {'tieba_list': all_tieba, 'ba_total_votes': ba_total_votes, 'cost': COST, 'my_tieba_votes_list': my_tieba_votes_list})
 
 @xframe_options_exempt
+def tab4(request):
+	all_tieba = Ba.objects.all()
+	ba_total_votes = []
+	COST = 1000
+	# step1 = [297, 73, 24, 16, 249, 209, 64, 49, 130, 61, 822, 25, 55, 6, 76, 80]
+	step1 = [297, 73, 24, 16, 549, 509, 264, 249, 130, 61, 822, 25, 55, 6, 76, 80]
+	my_tieba_votes_list = []
+	for ba in all_tieba:
+		ba_index = ba.id - 1
+		temp_vote = step1[ba_index]*1000 + (ba.votes-step1[ba_index])*10
+		my_tieba_votes_list.append(temp_vote)
+
+	v1 = (my_tieba_votes_list[0] + my_tieba_votes_list[1] + my_tieba_votes_list[2]+ my_tieba_votes_list[3])
+	v2 = (my_tieba_votes_list[4] + my_tieba_votes_list[5] + my_tieba_votes_list[6]+ my_tieba_votes_list[7])
+	v3 = (my_tieba_votes_list[8] + my_tieba_votes_list[9] + my_tieba_votes_list[10]+ my_tieba_votes_list[11])
+	v4 = (my_tieba_votes_list[12] + my_tieba_votes_list[13] + my_tieba_votes_list[14]+ my_tieba_votes_list[15])
+	ba_total_votes.append(v1)
+	ba_total_votes.append(v2)
+	ba_total_votes.append(v3)
+	ba_total_votes.append(v4)
+
+	# print all_tieba
+	return render_to_response('tab4.html', {'tieba_list': all_tieba, 'ba_total_votes': ba_total_votes, 'cost': COST, 'my_tieba_votes_list': my_tieba_votes_list})
+
+@xframe_options_exempt
 def weekly(request):
 	now = int(time.time())
 	global EXPIRETIME

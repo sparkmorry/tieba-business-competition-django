@@ -1,0 +1,406 @@
+<html>
+<head>
+	<title>贴吧合伙人商业挑战赛</title>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" type="text/css" href="/static/css/basic/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/page/tab.css?v=1.5">
+	<style type="text/css">
+		.unslider-arrow{
+			position: absolute;
+			z-index: 1000;
+			top: 350px;
+		}
+		.prev{
+			left: 920px;
+		}
+		.next{
+			left: 10px;
+		}
+		.unslider-arrow img{
+			width: 40px;
+		}
+		.hide{
+			display: none;
+		}
+		.tabs { position: relative; overflow: auto; }
+		.tabs li { list-style: none; }
+	    .tabs ul li { float: left; }
+		.dots {
+		  position: absolute;
+		  left: 900px;
+		  bottom: 20px;
+		  display: none;
+		}
+		.tabs .dots li {
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin: 0 4px;
+
+			text-indent: -999em;
+
+			border: 2px solid #fff;
+			border-radius: 6px;
+
+			cursor: pointer;
+			opacity: .4;
+
+			-webkit-transition: background .5s, opacity .5s;
+			-moz-transition: background .5s, opacity .5s;
+			transition: background .5s, opacity .5s;
+		}
+		.tabs .dots li.active {
+			background: #fff;
+			opacity: 1;
+		}	    
+	</style>
+</head>
+<body>
+	<div class="navigator">
+		<ul>
+			<li class="current" id="nav-tab1">大赛首页</li>
+			<li id="nav-tab2">本周战况</li>
+			<li id="nav-tab3">虚拟招商会</li>
+			<li id="nav-tab4">颁奖盛典</li>
+		</ul>
+	</div>
+	<div class="tabs">
+    	<ul>
+    		<li>
+    			<div class="body tab">	
+					<img class="title" src="/static/images/title.png">
+					<div class="main">
+						<div class="video">
+							<!-- <iframe frameborder="0" width="260" height="221" src="http://v.qq.com/iframe/player.html?vid=m0158m3zemm&tiny=0&auto=1" allowfullscreen></iframe> -->
+							<img style="  position:absolute; top: 180px; right: -5px;" src="/static/images/video_img.png">
+						</div>				
+						<div class="tutor-wrapper">
+							<a href="http://tieba.baidu.com/p/3861473060" target="_blank"><img class="tutor" src="/static/images/tutor/3.png" alt="徐扬" style="left:0px; top:0px;"></a>
+							<a href="http://tieba.baidu.com/p/3861438968" target="_blank"><img class="tutor" src="/static/images/tutor/4.png" alt="宇见" style="left:95px; top:13px;"></a>
+							<a href="http://tieba.baidu.com/p/3861481556" target="_blank"><img class="tutor" src="/static/images/tutor/2.png" alt="唐兴通" style="left:380px; top:0px;"></a>
+							<a href="http://tieba.baidu.com/p/3861455759" target="_blank"><img class="tutor" src="/static/images/tutor/1.png" alt="刘鹏" style="left:250px; top:15px;"></a>
+						</div>
+						<div class="ba-btn-wrapper" style="left:30px;top:-10px;">
+							<a href="http://tieba.baidu.com/f?kw=备孕" target="_blank"><div class="ba-btn">备孕吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=月子" target="_blank"><div class="ba-btn">月子吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=三亚婚纱摄影" target="_blank"><div class="ba-btn">三亚婚纱摄影吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=破碎机" target="_blank"><div class="ba-btn">破碎机吧</div></a>
+						</div>
+						<div class="ba-btn-wrapper" style="left:120px;top:200px;">
+							<a href="http://tieba.baidu.com/f?kw=高考吧" target="_blank"><div class="ba-btn">高考吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=美国留学吧" target="_blank"><div class="ba-btn">美国留学吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=新加坡留学吧" target="_blank"><div class="ba-btn">新加坡留学吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=芽苗菜吧" target="_blank"><div class="ba-btn">芽苗菜吧</div></a>
+						</div>
+						<div class="ba-btn-wrapper" style="right:30px;top:-10px;">
+							<a href="http://tieba.baidu.com/f?kw=整形吧" target="_blank"><div class="ba-btn">整形吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=隆鼻吧" target="_blank"><div class="ba-btn">隆鼻吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=美容吧" target="_blank"><div class="ba-btn">美容吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=婚纱照吧" target="_blank"><div class="ba-btn">婚纱照吧</div></a>
+						</div>
+						<div class="ba-btn-wrapper" style="right:130px;top:200px;">
+							<a href="http://tieba.baidu.com/f?kw=火锅吧" target="_blank"><div class="ba-btn">火锅吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=小吃加盟吧" target="_blank"><div class="ba-btn">小吃加盟吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=奶茶加盟吧" target="_blank"><div class="ba-btn">奶茶加盟吧</div></a>
+							<a href="http://tieba.baidu.com/f?kw=SEO吧" target="_blank"><div class="ba-btn">SEO吧</div></a>
+						</div>
+						<div class="intro-wrapper" style="left:20px; top:130px;">
+							<h3>母婴婚嫁战队</h3>
+							<h4>导师 徐扬</h4>
+							<p>北京讯达网脉科技有限公司-微播易CEO</p>
+						</div>
+						<div class="intro-wrapper" style="left:325px; top:250px;">
+							<h3>教育留学战队</h3>
+							<h4>导师 宇见</h4>
+							<p>知名营销专家</p>
+							<p>发现营销SDi提出者</p>
+						</div>
+						<div class="intro-wrapper" style="right:20px; top:130px;">
+							<h3>整形美容战队</h3>
+							<h4>导师 唐兴通</h4>
+							<p>资深互联网咨询顾问</p>
+						</div>
+						<div class="intro-wrapper" style="right:320px; top:250px;">
+							<h3>招商加盟战队</h3>
+							<h4>导师 刘鹏</h4>
+							<p>全国最大试用平台-</p>
+							<p>极果创始人</p>
+						</div>
+					</div>
+				
+				 	<div class="footer" style="position:relative;">
+						<img src="/static/images/footer1.png">
+						<a href="http://tieba.baidu.com/p/3863778152" style="position: absolute;bottom: 11px;font-size: 12px;right: 330px;" target="_blank">了解更多>></a>
+					</div>
+				</div>
+
+    		</li>
+    		<li>
+    			<div class="body tab">
+					<img src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/tab2_week2.jpg">
+				</div>
+    		</li>
+    		<li>
+				<div class="body tab3">	
+					<div class="edu-ba tab3-ba-wrapper">
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=高考" target="_blank"><i class="ba-circle ba-1-1"></i></a><span data-id="1" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.0}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=美国留学" target="_blank"><i class="ba-circle ba-1-2"></i></a><span data-id="2" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.1}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=新加坡留学" target="_blank"><i class="ba-circle ba-1-3"></i></a><span data-id="3" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.2}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=芽苗菜" target="_blank"><i class="ba-circle ba-1-4"></i></a><span data-id="4" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.3}}</span></p>			
+						</div>
+						<p class="bas-total-wrapper">
+							<i class="bas-total bas-total-1"></i><span class="bas-total-number" style="color:#24728f">{{ba_total_votes.0}}</span>
+						</p>
+					</div>
+
+					<div class="bus-ba tab3-ba-wrapper">
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=火锅" target="_blank"><i class="ba-circle ba-2-1"></i></a><span data-id="5" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.4}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=小吃加盟" target="_blank"><i class="ba-circle ba-2-2"></i></a><span data-id="6" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.5}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=奶茶加盟" target="_blank"><i class="ba-circle ba-2-3"></i></a><span data-id="7" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.6}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=SEO" target="_blank"><i class="ba-circle ba-2-4"></i></a><span data-id="8" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.7}}</span></p>			
+						</div>
+						<p class="bas-total-wrapper">
+							<i class="bas-total bas-total-2"></i><span class="bas-total-number" style="color:#44ab7b">{{ba_total_votes.1}}</span>
+						</p>
+					</div>
+
+					<div class="moth-ba tab3-ba-wrapper">
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=备孕" target="_blank"><i class="ba-circle ba-3-1"></i></a><span data-id="9" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.8}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=月子" target="_blank"><i class="ba-circle ba-3-2"></i></a><span data-id="10" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.9}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=三亚婚纱摄影" target="_blank"><i class="ba-circle ba-3-3"></i></a><span data-id="11" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.10}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=破碎机" target="_blank"><i class="ba-circle ba-3-4"></i></a><span data-id="12" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.11}}</span></p>			
+						</div>
+						<p class="bas-total-wrapper">
+							<i class="bas-total bas-total-3"></i><span class="bas-total-number" style="color:#e56925">{{ba_total_votes.2}}</span>
+						</p>
+					</div>
+					<div class="modi-ba tab3-ba-wrapper">
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=整形" target="_blank"><i class="ba-circle ba-4-1"></i></a><span data-id="13" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.12}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=隆鼻" target="_blank"><i class="ba-circle ba-4-2"></i></a><span data-id="14" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.13}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=美容" target="_blank"><i class="ba-circle ba-4-3"></i></a><span data-id="15" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.14}}</span></p>
+						</div>
+						<div class="single-ba">
+							<p><a href="http://tieba.baidu.com/f?kw=婚纱照" target="_blank"><i class="ba-circle ba-4-4"></i></a><span data-id="16" class="invist-btn"></span></p>
+							<p class="ba-total-wrapper"><i class="ba-total"></i><span class="ba-total-number">{{ my_tieba_votes_list.15}}</span></p>			
+						</div>
+						<p class="bas-total-wrapper">
+							<i class="bas-total bas-total-4"></i><span class="bas-total-number" style="color:#e75992">{{ba_total_votes.3}}</span>
+						</p>
+					</div>
+					<div class="mask">					
+						<img src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/tab3-mask.png">
+						<a id="close-mask" href="javascript:void(0)"></a>	
+					</div>	
+					<div class="result-mask result-ok-mask">
+						<img class="alert-ok" src="/static/images/alert-ok.png">
+						<p id="remain-vest"></p>
+						<a class="choujiang" href="javascript:void(0)"></a>
+						<a class="toupiao" href="javascript:void(0)"></a>
+						<img class="x-close-mask" src="/static/images/x.png">
+					</div>		
+					<div class="result-mask result-fail-mask">
+						<img class="alert-ok" src="/static/images/tab3-fail.png">
+						<a class="close-result-mask" href="javascript:void(0)"></a>
+						<img class="x-close-mask" src="/static/images/x.png">
+					</div>				
+				</div>
+    		</li>
+    		<li>
+    			<div class="body tab">
+					<img src="/static/images/tab4.jpg">
+				</div>
+    		</li>
+    	</ul>
+    </div>
+	<script type="text/javascript" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="/static/js/unslider.js"></script>
+	<script type="text/javascript">
+		$(function() {
+		    var unslider = $('.tabs').unslider({
+				speed: 700,               //  The speed to animate each slide (in milliseconds)
+				delay: 9000,              //  The delay between slide animations (in milliseconds)
+				complete: function() {
+					var index = $(".tabs").find('.dot.active').text();
+					if(index == 2){
+						$("#nav-tab1").removeClass("current");
+						$("#nav-tab3").removeClass("current");
+						$("#nav-tab4").removeClass("current");
+						$("#nav-tab2").addClass("current");
+
+					}else if(index == 1){
+						$("#nav-tab2").removeClass("current");
+						$("#nav-tab3").removeClass("current");
+						$("#nav-tab4").removeClass("current");
+
+						$("#nav-tab1").addClass("current");
+					}else if(index == 3){
+						$("#nav-tab1").removeClass("current");
+						$("#nav-tab2").removeClass("current");
+						$("#nav-tab4").removeClass("current");
+
+						$("#nav-tab3").addClass("current");
+					}else if(index == 4){
+						$("#nav-tab1").removeClass("current");
+						$("#nav-tab2").removeClass("current");
+						$("#nav-tab3").removeClass("current");
+						
+						$("#nav-tab4").addClass("current");
+					}
+
+				},  //  A function that gets called after every slide animation
+				keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+				dots: true,               //  Display dot navigation
+				fluid: false              //  Support responsive design. May break non-responsive designs
+			});
+
+			var index = $(".tabs").find('.dot');
+			// $(index[2]).click();
+			
+			$("#nav-tab1").bind('click', function(){
+				$(index[0]).click();
+			});
+			$("#nav-tab2").bind('click', function(){
+				$(index[1]).click();
+			});		
+			$("#nav-tab3").bind('click', function(){
+				$(index[2]).click();
+			});	
+			$("#nav-tab4").bind('click', function(){
+				$(index[3]).click();
+			});						
+		});
+	</script>
+	<script type="text/javascript">
+		var getCookie = function(c_name){
+			if (document.cookie.length>0){
+			  c_start=document.cookie.indexOf(c_name + "=")
+			  if (c_start!=-1){ 
+			    c_start=c_start + c_name.length+1 
+			    c_end=document.cookie.indexOf(";",c_start)
+			    if (c_end==-1) c_end=document.cookie.length
+			    return unescape(document.cookie.substring(c_start,c_end))
+			    } 
+			  }
+			return ""
+		}
+
+	  function setCookie(cname, cvalue, exdays) {
+	  	var exdate=new Date();
+	  	var expires;
+	  	if(exdays){
+			exdate.setDate(exdate.getDate() + exdays);
+			expires = exdate.toUTCString();
+	  	}else{
+	  		expires = exdate;
+	  	}
+	    document.cookie = cname + "=" + encodeURIComponent(cvalue) + "; path=/" +"; expires="+expires;
+	  }	
+	</script>
+	<script type="text/javascript">
+		$("#close-mask").bind('click', function(){
+			$(".mask").hide();
+			setCookie('mask-showed', true);
+		});
+		if(getCookie('mask-showed')){
+			$(".mask").hide();
+		};
+		var jQresultOkMask = $(".result-ok-mask");
+		var jQresultFailMask = $(".result-fail-mask");
+		var jQresultMask = $(".result-mask");
+		$(".close-result-mask").bind('click', function(){
+			jQresultMask.hide();
+		});
+		$(".x-close-mask").bind('click', function(){
+			jQresultMask.hide();
+		});
+		$(".choujiang").bind('click', function(){
+			window.open('http://tieba.baidu.com/p/3910090679', '_blank');
+		});
+		$(".toupiao").bind('click', function(){
+			jQresultMask.hide();
+		});
+		$("#close-mask").bind('click', function(){
+			$(".mask").hide();
+			setCookie('mask-showed', true);
+		});
+		$(".invist-btn").bind('click', function() {
+		  	var jQself = $(this);
+			var jQtotalVotes = jQself.closest(".single-ba").find(".ba-total-number");
+			var jQalltotalVotes = jQself.closest(".tab3-ba-wrapper").find(".bas-total-number");
+			var tiebaId	= jQself.data("id");
+			var jQremainVest = $("#remain-vest");
+			$.post('/tieba/vote', {
+				tiebaId: tiebaId
+			}, function(ret){
+				if(ret.code == 0){
+					var votes = ret.votes;
+					var COST = 10;
+					var totalVotes = parseInt(jQalltotalVotes.text()) + COST;
+					jQtotalVotes.text(votes);
+					jQalltotalVotes.text(totalVotes);	
+					var remain = ret.remain;
+					jQremainVest.text(remain);
+					jQresultOkMask.show();
+					// alert("投资成功");
+
+				}else{
+					jQresultFailMask.show();
+				}
+			})
+		})
+	</script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-48160253-3', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</body>
+</html>

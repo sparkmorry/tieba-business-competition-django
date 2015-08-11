@@ -199,7 +199,7 @@ $('#j-jingdong-next').bind('click', function(){
 		// 土豪但是不会省钱
 		moneyLevel = 3;
 		moneyFinalLevel=1;
-		$('#j-money-result').text('70%，作为一名土豪，你并不会省钱，迟早会成为坑爹二代，还是去看看颜值能否挽救你')
+		$('#j-money-result').text('70%，作为一个有钱人，你并不会省钱，迟早会成为坑爹二代，还是去看看颜值能否挽救你')
 	}else if(zhongxinLevel==3 && jindongLevel!=1){
 		moneyLevel = 4;
 		moneyFinalLevel=1;
@@ -332,8 +332,8 @@ $("#j-face-next").bind('click', function(){
 });
 $("#j-voice-next").bind('click', function(){
 	if(testedCount==3){
-		$("#j-user-next").remove();
-		$("#p16").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
+		$("#j-go-money").remove();
+		$("#p14").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
 	}
 	swiper.slideNext();
 });
@@ -436,8 +436,8 @@ var finalCal = function(){
 		shareText = '我长得正点，又有权有势，武媚娘想请我喝茶'
 	}else if(moneyFinalLevel == 1 && faceFinalLevel == 1 && authFinalLevel == 1){
 		jQfinal.empty();
-		jQfinal.append('<p>你凭借超高的颜值</p><p>玩转金钱与权力游刃有余</p>');
-		shareText = '我凭借超高的颜值，玩转金钱与权力游刃有余';
+		jQfinal.append('<p>你凭借自己的颜值</p><p>玩转金钱与权力游刃有余</p>');
+		shareText = '我凭借自己的颜值，玩转金钱与权力游刃有余';
 	}else if(moneyFinalLevel == 0 && faceFinalLevel == 1 && authFinalLevel == 0){
 		jQfinal.empty();
 		jQfinal.append('<p>恭喜你刷脸成功</p><p>成为新一代中老年过目难忘的偶像</p>');
@@ -457,7 +457,7 @@ var finalCal = function(){
 	}else if(moneyFinalLevel == 1 && faceFinalLevel == 0 && authFinalLevel == 1){
 		jQfinal.empty();
 		shareText = '我有钱有权，找一个漂亮的另一半 ，改善一下自己的基因，完全不是问题。';
-		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半</p><p>改善一下自己的基因，完全不是问题。</p>')
+		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半，改善一下自己的基因，完全不是问题。</p>')
 	}
 	wx.onMenuShareAppMessage({		    
 		title: '贴吧企业平台一周年', // 分享标题
