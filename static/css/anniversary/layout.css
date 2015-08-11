@@ -53,11 +53,12 @@ html,body {
 }
 #user-result .part-data-btn{
   top: auto;
-  bottom: 150px;
+  bottom: 180px;
 }
 #user-result .part-result-btn{
   top: auto;
   bottom: 50px;
+  z-index: 10000;
 }
 
 .data-img{
@@ -408,14 +409,14 @@ html,body {
 }
 .go-next{
   position: absolute;
-  bottom: 5px;
+  top: 800px;
   right: 0px;
   text-align: center;
   z-index: 100000;
 }
 .go-final{
   position: absolute;
-  bottom: 5px;
+  top: 800px;
   left: 0px;
   text-align: center;
   z-index: 100000;

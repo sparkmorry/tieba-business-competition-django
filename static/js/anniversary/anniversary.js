@@ -126,7 +126,10 @@ $('.j-banka').bind('click', function() {
 			swiper.slideTo(3);
 			//结束刷卡
 			var swipeCb = function(){
-				if(swipeTime>4 && swipeTime<8){
+				if(swipeTime<4){
+					zhongxinLevel = 1;
+					$("#j-zhongxin-result").attr('src', '/static/css/anniversary/result/zhongxin/1.png');
+				}else if(swipeTime>4 && swipeTime<8){
 					zhongxinLevel = 2;
 					$("#j-zhongxin-result").attr('src', '/static/css/anniversary/result/zhongxin/2.png');
 				}else if(swipeTime>=8){
@@ -157,7 +160,11 @@ $('.j-banka').bind('click', function() {
 });
 
 var zhongXinCB = function(){
-	if(shakeTimes>4 && shakeTimes<8){
+	if(shakeTimes<4){
+		jindongLevel = 1;
+		var src = '/static/css/anniversary/result/jingdong/1new.png';
+		$("#j-jd-result").attr('src', src);
+	}else if(shakeTimes>4 && shakeTimes<8){
 		jindongLevel = 2;
 		var src = '/static/css/anniversary/result/jingdong/2.png';
 		$("#j-jd-result").attr('src', src);
@@ -460,10 +467,10 @@ var finalCal = function(){
 		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半，改善一下自己的基因，完全不是问题。</p>')
 	}
 	wx.onMenuShareAppMessage({		    
-		title: '贴吧企业平台一周年', // 分享标题
+		title: shareText, // 分享标题
 	    link: 'http://ssld-vi.com/tieba/anniversary', // 分享链接
-	    imgUrl: 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/user-image.png', // 分享图标
-	    desc: shareText,
+	    imgUrl: 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/ann_cover.jpg' , // 分享图标
+	    desc: '如果上天给你重新改变命运的机会，你会……',
 	    success: function () { 
 	        // 用户确认分享后执行的回调函数
 	    },
