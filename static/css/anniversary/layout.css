@@ -12,6 +12,8 @@ html,body {
 }
 .m1{
     position: relative;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s linear;
 }
 .m1{
 	background: url(bg/bg-black2.jpg);
@@ -28,13 +30,13 @@ html,body {
 .data-btn{
   position: absolute;
   top: 760px;
-  left: 100px;
+  left: 90px;
 }
 .next-btn{
   height: 70px;
   position: absolute;
   top: 760px;
-  left: 500px;
+  left: 510px;
 }
 .part-result-btn{
   width: 400px;
@@ -131,12 +133,17 @@ html,body {
 	top: 150px;
 	margin-left: -175px;
 }
+.p2-title2{
+  top: 150px;
+  margin-left: -245px;
+}
+
 .p2-triangle{
-	top:500px;
+	top:540px;
 	margin-left: -237px;
 }
 .p2-black-triangle{
-  top: 600px;
+  top: 640px;
   margin-left: -90px;
   z-index: 100;
 }
@@ -159,14 +166,22 @@ html,body {
   right: -20px;
 }
 .p2-green-triangle{
-  top: 530px;
+  top: 570px;
   margin-left: -155px;
   z-index: 100;
   opacity: 0;
 }
-
+.tb2 .hand{
+  margin-left: -40px;
+}
+.hand{
+    position: absolute;
+  bottom: -20px;
+  left: 50%;
+  margin-left: -29px;
+}
 .p2-3{
-	top: 300px;
+	top: 335px;
 	margin-left: -304px;
 	z-index: 100;
 	-webkit-transform-origin: 50% 60%;
@@ -279,6 +294,11 @@ html,body {
 	position: absolute;
   top: 20%;
   margin-left: -180px;
+}
+.i-title42{
+  position: absolute;
+  top: 180px;
+  margin-left: -205px;
 }
 .posback{
   position: absolute;

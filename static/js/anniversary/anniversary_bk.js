@@ -1,14 +1,11 @@
 var swiper = new Swiper('.swiper-container',{
 	direction: 'vertical',  //vertical,horizontal
-	// effect : 'fade',
-	speed: 0,
+	effect : 'fade',
+	// fade: {
+	// 	crossFade: true
+	// },
+	speed: 700,
 	onlyExternal: true,
-	onSlideChangeStart: function(swiper){
-		var dom = $('.swiper-slide')[swiper.activeIndex];
-		var domPrev = $('.swiper-slide')[swiper.activeIndex-1];
-		domPrev.style.opacity = 0;
-		dom.style.opacity = 1
-	}
 
 });	
 $("#go").bind('click', function(){
@@ -20,7 +17,6 @@ $("#go").bind('click', function(){
 var greenFade;
 $('.triangle-btn').bind('click', function() {
 	// 去除第一页动画
-	$(".hand").remove();
 	var jQself = $(this);
 	var type = jQself.data('type');
 	$('.p2-black-triangle').hide()
@@ -306,7 +302,12 @@ var countdown = function(){
 	}
 }
 
+var singClicked = false;
 $('.i-switch-off').bind('click', function(){
+	if(singClicked){
+		return;
+	}
+	singClicked = true;
 	$(this).removeClass('i-switch-off').addClass('i-switch-on');
 	singTimer = setInterval(countdown, 1000);
 });
@@ -474,8 +475,8 @@ var finalCal = function(){
 		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半，改善一下自己的基因，完全不是问题。</p>')
 	}else if(moneyFinalLevel == 1 && faceFinalLevel == 1 && authFinalLevel == 0){
 		jQfinal.empty();
-		shareText = '我有钱有权，找一个漂亮的另一半 ，改善一下自己的基因，完全不是问题。';
-		jQfinal.append('<p>你有钱有权，找一个漂亮的另一半，改善一下自己的基因，完全不是问题。</p>')
+		shareText = '我财貌双全，刷卡不行就刷脸，可以横行世界了！';
+		jQfinal.append('<p>你财貌双全，刷卡不行就刷脸，可以横行世界了！</p>')
 	}
 	wx.onMenuShareAppMessage({		    
 		title: shareText, // 分享标题

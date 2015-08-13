@@ -82,6 +82,12 @@
   background-position: -135px 0;
   border-top: solid 3px #898989;
 }
+
+.p2-title2{
+  width: 490px;
+  height: 134px;
+  background-position: -658px -779px;
+}
 .p2-black-triangle{
 	width: 180px;
 	height: 150px;
@@ -184,6 +190,11 @@
 	width: 356px;
 	height: 106px;
 	background-position: -716px -542px;
+}
+.i-title42{
+	width: 410px;
+	height: 205px;
+	background-position: -650px -950px;
 }
 .i-prize1{
 	background-position: -718px -101px;
