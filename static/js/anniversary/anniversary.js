@@ -1,3 +1,16 @@
+var mPart1 = document.getElementById("music-part1");
+var mPart2 = document.getElementById("music-part2");
+var mPart3 = document.getElementById("music-part3");
+var mPart4 = document.getElementById("music-part4");
+var mTrans1 = document.getElementById("music-trans1");
+var mTrans2 = document.getElementById("music-trans2");
+
+var mRaida = document.getElementById("music-raida");
+var mSwipecard = document.getElementById("music-swipeacrd");
+
+mPart1.play();
+// stats = audio1.paused;
+
 var swiper = new Swiper('.swiper-container',{
 	direction: 'vertical',  //vertical,horizontal
 	// effect : 'fade',
@@ -26,29 +39,40 @@ $('.triangle-btn').bind('click', function() {
 	$('.p2-black-triangle').hide()
 	$('.p2-green-triangle').addClass('fadeIn');
 	greenFade = setTimeout(function (argument) {
+		mPart1.pause();
 		if(type == 'money'){
 			swiper.slideTo(2);
+			mPart2.play();
 		}else if(type=='face'){
 			swiper.slideTo(8);
+			mPart3.play();
 		}else if(type=='auth'){
 			swiper.slideTo(13);
+			mPart4.play();
 		}
 		clearTimeout(greenFade);
 	}, 1100);
 });
 
+//结束每部分测试
 var testedCount=1;
 $('#j-go-face').bind('click', function(){
 	testedCount++;
 	swiper.slideTo(8);
+	mPart3.pause();
+	mPart2.play();
 });
 $("#j-go-money").bind('click', function(){
 	testedCount++;
 	swiper.slideTo(2);
+	mPart4.pause();
+	mPart3.play();
 });
 $("#j-go-auth").bind('click', function(){
 	testedCount++;
 	swiper.slideTo(13);
+	mPart2.pause();
+	mPart4.play();
 });
 $('body').bind('touchmove',function(event){
 	event.preventDefault();
@@ -79,6 +103,7 @@ var shakeDuration = 10000;
 
 
 touch.on(target, 'swiperight', function(ev){
+	mSwipecard.play();
 	var jQself = $(this);
 	swipeTime++;
 	prizeNo++;
@@ -95,6 +120,7 @@ touch.on(target, 'swiperight', function(ev){
 	jQself.css({'left': '80%'});
 });
 touch.on(target, 'swipeleft', function(ev){
+	mSwipecard.play();
 	var jQself = $(this);
 	swipeTime++;
 	prizeNo++;
@@ -335,7 +361,6 @@ $('#j-sing-next').bind('click', function(){
 	swiper.slideTo(12)
 });
 
-
 $("#j-face-next").bind('click', function(){
 	if(testedCount==3){
 		// 如果颜值完了已经测试3次，颜值部分替换为结束
@@ -405,6 +430,7 @@ $('#j-voice-microphone').bind('click', function(){
 		if(waveTimes >= 7){
 			clearInterval(waveTimer);
 			voiceLevel = parseInt(Math.random()*3)+1;
+			mRaida.play();
 			if(voiceLevel == 1){
 				var src = '/static/css/anniversary/result/voice/1.png';
 				$("#raida").css({'-webkit-transform': 'rotate(80deg)'});
@@ -444,6 +470,11 @@ jQdatas.bind('click', function(){
 var jQfinal = $("#j-final-result");
 var shareText = '';
 var finalCal = function(){
+	mPart2.pause();
+	mPart3.pause();
+	mPart4.pause();
+
+	mTrans1.play();
 	if(moneyFinalLevel == 0 && faceFinalLevel == 1 && authFinalLevel == 1){
 		jQfinal.empty();
 		jQfinal.append('<p>你长得正点，又有权有势</p><p>武媚娘想请你喝茶</p>');

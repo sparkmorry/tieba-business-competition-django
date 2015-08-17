@@ -422,6 +422,8 @@ def anniversary(request):
 	tick['appId'] = APPID
 	sig = tick['signature']
 
+	# return render_to_response('anniversary.html', {})
+
 	return render_to_response('anniversary.html', {'jsticket' : tick, 'sig': sig})
 
 
