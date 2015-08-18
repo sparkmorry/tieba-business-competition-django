@@ -86,7 +86,7 @@ html,body {
 }
 .title{
   top: 320px;
-  left: 190px;
+  left: 165px;
 }
 .text1{
 	left: 50%;
@@ -118,6 +118,11 @@ html,body {
 	bottom: 160px;
 	left: 50%;
 	margin-left: -90px;
+}
+.go-stere, .go-flat{
+  bottom: 160px;
+  left: 50%;
+  margin-left: -95px;
 }
 .cube1{
 	bottom: 60px;
