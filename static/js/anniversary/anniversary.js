@@ -71,11 +71,13 @@ $('#j-go-face').bind('click', function(){
 });
 $("#j-go-money").bind('click', function(){
 	testedCount++;
-	swiper.slideTo(2);
+	btnPress('#j-go-money .go-next');
+	delaySlide(2);
 });
 $("#j-go-auth").bind('click', function(){
 	testedCount++;
-	swiper.slideTo(13);
+	btnPress('#j-go-auth .go-next');
+	delaySlide(13);
 });
 $('body').bind('touchmove',function(event){
 	event.preventDefault();
@@ -248,7 +250,7 @@ $('#j-zhongxin-next').bind('click', function(){
 	// 如果到金钱的时候已经测完3次，金钱部分替换为结束
 	if(testedCount==3){
 		$("#j-go-face").remove();
-		$("#p8").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
+		$("#j-money-next-text").text('查看命运');
 	}
 	delaySlide(5);
 	jingdongTimer = setTimeout(function(){
@@ -405,7 +407,7 @@ $("#j-face-next").bind('click', function(){
 	if(testedCount==3){
 		// 如果颜值完了已经测试3次，颜值部分替换为结束
 		$("#j-go-auth").remove();
-		$("#p13").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
+		$("#j-face-next-text").text('查看命运');	
 	}
 	// swiper.slideTo(10);
 	delaySlide(10);
@@ -414,13 +416,10 @@ $("#j-voice-next").bind('click', function(){
 	btnPress(this);
 	if(testedCount==3){
 		$("#j-go-money").remove();
-		$("#p14").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
+		$("#j-auth-next-text").text('查看命运');
 	}
-	delaySlide(14);
-	// swiper.slideNext();
+	delaySlide(15);
 });
-// $("#j-zhongxin-next").bind('click', function(){
-// });
 
 $("#j-get-user-result").bind('click', function(){
 	userLevel = parseInt(Math.random()*3)+1;
@@ -443,16 +442,19 @@ $("#j-user-next").bind('click', function(){
 	$("#j-user-name").text(usr);
 	if(voiceLevel != 3 && userLevel == 1){
 		authLevel = 1;
-
+		$("#j-auth-next-text").text('出门捡钱');
 		jQauthResult.text('20%，你人缘太差，又呆在一个鸟不拉屎的地方，仕途跟你没半毛钱的关系，还是看看财运如何吧')
 	}else if(voiceLevel == 3 && userLevel != 3 ){
 		authLevel = 2;
+		$("#j-auth-next-text").text('当土老财');
 		jQauthResult.text('50%，你有一定的号召力，不过乡土气息有点浓厚，难以hold住大场面，还是看看自己的 财运吧');
 	}else if(userLevel != 1 && voiceLevel != 3 ){
+		$("#j-auth-next-text").text('以财破局');
 		authLevel = 3;
 		authFinalLevel = 1;
 		jQauthResult.text('70%，你虽然位高权重，但却没什么号召力，只能当个傀儡，出去试一试自己的财运吧！');
 	}else if(voiceLevel == 3 && userLevel != 1 ){
+		$("#j-auth-next-text").text('荣华富贵');
 		authLevel = 4;
 		authFinalLevel = 1;
 		jQauthResult.text('100%，你虽然一呼百应，高权在握，但还是很羡慕国民老公王思聪，不如试一试金钱运如何？');

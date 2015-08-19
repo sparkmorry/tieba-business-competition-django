@@ -58,7 +58,7 @@ html,body {
 }
 #user-result .part-result-btn{
   top: auto;
-  bottom: 50px;
+  bottom: 150px;
   z-index: 10000;
 }
 
@@ -691,6 +691,27 @@ html,body {
   margin-left: -100px;
 }
 
+.auth-data-star1{
+  position: absolute;
+  top: 80px;
+  left: 20px;
+}
+.auth-data-star2{
+  position: absolute;
+  top: 55px;
+  left: 120px;
+}
+.auth-data-star3{
+  position: absolute;
+  top: 15px;
+  left: 60px;
+}
+.auth-data-star4{
+  position: absolute;
+  top: 115px;
+  left: 70px;
+}
+
 /*最终结果*/
 .final-result{
   color: #00f100;
@@ -727,7 +748,7 @@ html,body {
 #final .gear3{
   top: 440px;
 }
-#p8 .gear2{
+#p8 .gear2, #p14 .gear2{
   bottom: 150px;
   top: auto;
 }
