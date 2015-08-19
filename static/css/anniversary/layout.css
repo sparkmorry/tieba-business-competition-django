@@ -355,8 +355,28 @@ html,body {
   z-index: 100000;
 }
 .i-prize9, .i-prize10{
+  top: 200px;
   margin-left: -84px;
 }
+.i-new-prize{
+  margin-left: -184px;
+  top: -600px;
+  z-index: 100000;
+}
+.i-new-prize9, .i-new-prize10{
+  margin-left: -84px;
+}
+
+.i-new-prize5, .i-new-prize6{
+  margin-left: 84px;
+}
+.i-new-prize2, .i-new-prize3{
+  margin-left: 124px;
+}
+.i-new-prize7, .i-new-prize8{
+  margin-left: -234px;
+}
+
 .i-stop-swipe{
 	position: absolute;
 	margin-left: 200px;

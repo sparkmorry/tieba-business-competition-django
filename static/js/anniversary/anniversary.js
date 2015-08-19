@@ -120,7 +120,8 @@ touch.on(target, 'swiperight', function(ev){
 	if(prizeNo > 10){
 		prizeNo = 1;
 	}
-	jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
+	// jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
+	jQp4.append('<i class="card i-new-prize'+prizeNo+' i-new-prize drop"></i>');
 	jQself.css({'left': '80%'});
 	mSwipecard.play();
 });
@@ -137,7 +138,7 @@ touch.on(target, 'swipeleft', function(ev){
 	if(prizeNo > 10){
 		prizeNo = 1;
 	}
-	jQp4.append('<i class="card i-prize'+prizeNo+' i-prize drop"></i>');
+	jQp4.append('<i class="card i-new-prize'+prizeNo+' i-new-prize drop"></i>');
 	jQself.css({'left': '-5%'});
 	mSwipecard.play();
 });
@@ -249,7 +250,7 @@ $('#j-zhongxin-next').bind('click', function(){
 	btnPress(this);
 	// 如果到金钱的时候已经测完3次，金钱部分替换为结束
 	if(testedCount==3){
-		$("#j-go-face").remove();
+		// $("#j-go-face").remove();
 		$("#j-money-next-text").text('查看命运');
 	}
 	delaySlide(5);
@@ -406,7 +407,7 @@ $("#j-face-next").bind('click', function(){
 	btnPress(this);
 	if(testedCount==3){
 		// 如果颜值完了已经测试3次，颜值部分替换为结束
-		$("#j-go-auth").remove();
+		// $("#j-go-auth").remove();
 		$("#j-face-next-text").text('查看命运');	
 	}
 	// swiper.slideTo(10);
@@ -415,7 +416,7 @@ $("#j-face-next").bind('click', function(){
 $("#j-voice-next").bind('click', function(){
 	btnPress(this);
 	if(testedCount==3){
-		$("#j-go-money").remove();
+		// $("#j-go-money").remove();
 		$("#j-auth-next-text").text('查看命运');
 	}
 	delaySlide(15);
