@@ -9,7 +9,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/animate.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/layout.css?v=2.5">
+	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/layout.css?v=2.7">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/icon.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary/prize.css">
 
@@ -32,22 +32,26 @@
 	        </div>
 	        <!-- 1 -->
 	        <div class="swiper-slide m1" id="p2">
-				<i class="icon2 p2-title2"></i>
+				<!-- <i class="icon2 p2-title2"></i> -->
+
 				<i class="icon2 p2-black-triangle"></i>
 				<i class="icon2 p2-green-triangle"></i>
 				<div class="icon2 p2-3">
 					<div class="triangle-btn tb1" data-type="face">
 	        			<div class="circle-btn circle-popular-flat"></div>
-						<img class="hand flash" src="/static/css/anniversary/icon/hand.png">
+						<img class="hand flash" style="-webkit-transform: rotate(-90deg);bottom: 80px; margin-left: 70px;" src="/static/css/anniversary/icon/hand.png">
+						<p class="p2-reminder" style="position: absolute;top: 40px;left: 250px;">去刷一刷脸</p>
 					</div>
 
 					<div class="triangle-btn tb2" data-type="auth">
 						<img class="hand flash"  src="/static/css/anniversary/icon/hand.png">
 						<div class="circle-btn circle-auth-flat"></div>
+						<p class="p2-reminder">去吼一嗓子</p>
 					</div>
 					<div class="triangle-btn tb3" data-type="money">
 						<img class="hand flash" src="/static/css/anniversary/icon/hand.png">
 	        			<div class="circle-btn circle-money-flat"></div>
+						<p class="p2-reminder">去爆信用卡</p>
 					</div>
 				</div>
 	        	<i class="icon2 p2-triangle"></i>      	
@@ -171,13 +175,12 @@
 	        	<i class="decr i-dec11"></i>	
 	        	<img id="j-sing-result" class="zhongxin-result" src="/static/css/anniversary/result/sing/1.png">
 	        	<img id="j-sing-next" class="part-result-btn" src="/static/css/anniversary/result/sing/next.png"> 
-	        	<img class="data-img" src="/static/css/anniversary/data/sing.png">       	
 	        </div>	        
 	        <!-- 颜值部分结果12 -->
 	        <div class="swiper-slide m1" id="p13">
 	        	<i class="result i-tv"></i>
 	        	<p id="j-face-final-result" class="part-result"></p>
-	        	<i class="icon gear2"></i>
+	        	<i class="icon1 gear2"></i>
 	        	<div class="go-next-wrapper" id="j-go-auth" >
 	        		<img class="go-next" src="/static/css/anniversary/result/next.png">
 	        		<p class="go-next-text" id="j-face-next-text"></p>
@@ -261,15 +264,12 @@
 	<audio id="music-raida" src="/media/raida.mp3"></audio>
 	<audio id="music-swipecard" src="/media/swipecard.mp3"></audio>
 
-
-
-
 	<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="/static/js/swiper.jquery.min.js"></script>
 	<script type="text/javascript" src="/static/js/touch.js"></script>	
 	<script type="text/javascript" src="/static/js/anniversary/util.js"></script>
 	<script type="text/javascript" src="/static/js/anniversary/shake.js"></script>
-	<script type="text/javascript" src="/static/js/anniversary/anniversary.js?v=3.5"></script>
+	<script type="text/javascript" src="/static/js/anniversary/anniversary.js?v=3.8"></script>
 	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script type="text/javascript">
 		wx.config({

@@ -26,6 +26,10 @@ html,body {
 #voice{
   background: url(bg/bg-voice.png);
 }
+
+#p2{
+  background: url(bg/bgp2.png);
+}
 .data-btn{
   position: absolute;
   top: 50px;
@@ -127,6 +131,16 @@ html,body {
 }
 
 /*p2*/
+.p2-reminder{
+  background: rgba(0,0,0,0.5);
+  color: white;
+  font-size: 2em;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  margin-top: 40px;
+  border: solid 1px #aaa;
+}
 #p2 .icon2{
 	position: absolute;
 	left: 50%;
@@ -140,11 +154,11 @@ html,body {
   margin-left: -245px;
 }
 .p2-triangle{
-	top:540px;
+	top:440px;
 	margin-left: -237px;
 }
 .p2-black-triangle{
-  top: 640px;
+  top: 540px;
   margin-left: -90px;
   z-index: 100;
 }
@@ -167,7 +181,7 @@ html,body {
   right: -20px;
 }
 .p2-green-triangle{
-  top: 570px;
+  top: 470px;
   margin-left: -155px;
   z-index: 100;
   opacity: 0;
@@ -182,7 +196,7 @@ html,body {
   margin-left: -29px;
 }
 .p2-3{
-	top: 335px;
+	top: 235px;
 	margin-left: -304px;
 	z-index: 100;
 	-webkit-transform-origin: 50% 60%;
@@ -768,7 +782,7 @@ html,body {
 #final .gear3{
   top: 440px;
 }
-#p8 .gear2, #p14 .gear2{
+#p8 .gear2, #p13 .gear2, #p14 .gear2, #final .gear2{
   bottom: 150px;
   top: auto;
 }

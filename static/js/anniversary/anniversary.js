@@ -4,7 +4,7 @@ var mTrans1 = document.getElementById("music-trans1");
 var mRaida = document.getElementById("music-raida");
 var mSwipecard = document.getElementById("music-swipecard");
 
-// mPart1.play();
+mPart1.play();
 // stats = audio1.paused;
 
 var swiper = new Swiper('.swiper-container',{
@@ -65,19 +65,28 @@ $('.triangle-btn').bind('click', function() {
 //结束每部分测试
 var testedCount=1;
 $('#j-go-face').bind('click', function(){
-	testedCount++;
 	btnPress('#j-go-face .go-next');
-	delaySlide(8);
+	if(testedCount !=3){
+		delaySlide(8);
+	}
+	testedCount++;
+	
 });
 $("#j-go-money").bind('click', function(){
-	testedCount++;
 	btnPress('#j-go-money .go-next');
-	delaySlide(2);
+	if(testedCount !=3){
+		delaySlide(2);
+	}
+	testedCount++;
+
 });
 $("#j-go-auth").bind('click', function(){
-	testedCount++;
 	btnPress('#j-go-auth .go-next');
-	delaySlide(13);
+	if(testedCount !=3){
+		delaySlide(13);
+	}
+	testedCount++;
+
 });
 $('body').bind('touchmove',function(event){
 	event.preventDefault();
@@ -237,7 +246,7 @@ var delaySlide = function(slideNum){
 	var delay = setTimeout(function(){
 		swiper.slideTo(slideNum);
 		clearTimeout(delay)
-	},300);
+	},500);
 
 }
 
@@ -248,11 +257,6 @@ $('#j-zhongxin-next').bind('click', function(){
 	$('#p3 .p2-dec2, #p3 .p2-dec1, #p3 .p2-dec3').remove();
 	$('#p4 .p2-dec2, #p4 .p2-dec1, #p4 .p2-dec3').remove();
 	btnPress(this);
-	// 如果到金钱的时候已经测完3次，金钱部分替换为结束
-	if(testedCount==3){
-		// $("#j-go-face").remove();
-		$("#j-money-next-text").text('查看命运');
-	}
 	delaySlide(5);
 	jingdongTimer = setTimeout(function(){
 		zhongXinCB();
@@ -281,6 +285,13 @@ $('#j-jingdong-next').bind('click', function(){
 		$("#j-money-next-text").text('变高富帅');
 		moneyFinalLevel=1;
 		$('#j-money-result').text('100%，作为一名土豪，又会省钱，你命中注定是有钱人，去测试一下颜值，看能否变成白富美(高富帅）')
+	}
+	// 如果到金钱的时候已经测完3次，金钱部分替换为结束
+	if(testedCount==3){
+		// $("#j-go-face").remove();
+		$("#j-money-next-text").text('查看命运');
+		$("#j-go-face").addClass('j-test-over');
+		// return;
 	}
 	delaySlide(7);
 });
@@ -400,25 +411,21 @@ $('#j-sing-next').bind('click', function(){
 		faceFinalLevel = 1;		
 		jQfaceResult.text('100%，你的美貌就像天使，且喉清韵雅，去看看是否智慧和美貌并存')	
 	}
-	delaySlide(12)
+	if(testedCount==3){
+		// 如果颜值完了已经测试3次，颜值部分替换为结束
+		// $("#j-go-auth").remove();
+		$("#j-face-next-text").text('查看命运');
+		$("#j-go-auth").addClass('j-test-over').attr('id', '');
+	}
+	delaySlide(12);
 });
 
 $("#j-face-next").bind('click', function(){
 	btnPress(this);
-	if(testedCount==3){
-		// 如果颜值完了已经测试3次，颜值部分替换为结束
-		// $("#j-go-auth").remove();
-		$("#j-face-next-text").text('查看命运');	
-	}
-	// swiper.slideTo(10);
 	delaySlide(10);
 });
 $("#j-voice-next").bind('click', function(){
 	btnPress(this);
-	if(testedCount==3){
-		// $("#j-go-money").remove();
-		$("#j-auth-next-text").text('查看命运');
-	}
 	delaySlide(15);
 });
 
@@ -459,6 +466,12 @@ $("#j-user-next").bind('click', function(){
 		authLevel = 4;
 		authFinalLevel = 1;
 		jQauthResult.text('100%，你虽然一呼百应，高权在握，但还是很羡慕国民老公王思聪，不如试一试金钱运如何？');
+	}
+	if(testedCount==3){
+		// $("#j-go-money").remove();
+		$("#j-auth-next-text").text('查看命运');
+		$("#j-go-money").addClass('j-test-over');
+		// return;
 	}
 	delaySlide(17);
 	// swiper.slideNext();
@@ -511,8 +524,8 @@ $(".data-btn, .part-data-btn").bind('click', function(){
 });
 
 var jQdatas = $(".data-img");
-jQdatas.bind('click', function(){
-	$(this).hide()
+$(".m1").bind('click', function(){
+	jQdatas.hide();
 });
 
 var jQfinal = $("#j-final-result");
@@ -581,4 +594,8 @@ $("#j-share-btn").bind('click', function(){
 });
 jQshareMask.bind('click', function(){
 	jQshareMask.hide();
+})
+
+$("#finger").bind('click', function(){
+	swiper.slideTo(19);
 })
