@@ -64,13 +64,11 @@ html,body {
 }
 
 .data-img{
-  z-index: 10000;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  margin-top: -600px; 
-  display: none; 
+  left: 95px;
+  top: 85px;
+  display: none;  
+  z-index: 1000; 
 }
 #user-result .data-btn, #user-result .next-btn{
   top: auto;
@@ -142,7 +140,6 @@ html,body {
   top: 150px;
   margin-left: -245px;
 }
-
 .p2-triangle{
 	top:540px;
 	margin-left: -237px;
@@ -305,6 +302,20 @@ html,body {
   top: 180px;
   margin-left: -205px;
 }
+
+.zhongxin-count-down{
+  text-align: center;
+  color: white;
+  font-size: 6em;
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 200px;
+  font-family: 'OpenSans-Light';
+
+}
+
 .posback{
   position: absolute;
   top: 48%;
@@ -460,6 +471,20 @@ html,body {
   text-align: center;
   z-index: 100000;
 }
+
+.money-data-lucky{
+  position: absolute;
+  top: 50px;
+  left: 100px;
+}
+.money-data-shine{
+  position: absolute;
+  top: 0px;
+  left: 10px;
+}
+
+
+
 /*颜值*/
 .icon4{
 	position: absolute;
@@ -706,6 +731,7 @@ html,body {
 }
 #p8 .gear2{
   bottom: 150px;
+  top: auto;
 }
 
 .share-btn, .more-btn{

@@ -161,11 +161,12 @@ $('.j-banka').bind('click', function() {
 			$('#j-swipe-card').attr('src', src);
 			swiper.slideTo(3);
 			// 文案提示
-			var timer = setTimeout(function(){
-				$('#j-zhongxin-time-reminder').remove();
-				clearTimeout(timer);
-			}, 2000);
-
+			// var timer = setTimeout(function(){
+			// 	$('#j-zhongxin-time-reminder').remove();
+			// 	$(".zhongxin-count-down").show();
+			// 	clearTimeout(timer);
+			// }, 2000);
+			
 			//结束刷卡
 			var swipeCb = function(){
 				if(swipeTime<4){
