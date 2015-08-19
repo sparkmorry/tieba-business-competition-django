@@ -33,15 +33,15 @@ html,body {
   left: 90px;
 }
 .next-btn{
-  height: 70px;
+  height: 55px;
   position: absolute;
   top: 760px;
-  left: 510px;
+  left: 180px;
 }
 .part-result-btn{
   width: 400px;
   position: absolute;
-  top: 860px;
+  top: 800px;
   left: 50%;
   margin-left: -200px;  
 }
@@ -353,10 +353,10 @@ html,body {
 	bottom: 50px;
 }
 .zhongxin-result{
-  width: 450px;
+  width: 520px;
   position: absolute;
   top: 200px;
-  margin-left: -225px;
+  margin-left: -260px;
   left: 50%;
 }
 .zhongxin-next{
@@ -432,12 +432,26 @@ html,body {
   bottom: 50px;
   left: 50px;
 }
+.go-next-wrapper{
+  width: 350px;
+  height: 300px;
+  position: absolute;
+  top: 840px;
+  right: 0px;
+  z-index: 100000; 
+}
 .go-next{
   position: absolute;
-  top: 800px;
-  right: 0px;
+  bottom: 0;
+  left: 0;
+}
+.go-next-text{
+  position: absolute;
+  top: 125px;
+  right: 120px;
   text-align: center;
-  z-index: 100000;
+  color: white;
+  font-size: 2.5em;
 }
 .go-final{
   position: absolute;
@@ -689,6 +703,9 @@ html,body {
 }
 #final .gear3{
   top: 440px;
+}
+#p8 .gear2{
+  bottom: 150px;
 }
 
 .share-btn, .more-btn{

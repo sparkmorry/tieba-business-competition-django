@@ -66,7 +66,8 @@ $('.triangle-btn').bind('click', function() {
 var testedCount=1;
 $('#j-go-face').bind('click', function(){
 	testedCount++;
-	swiper.slideTo(8);
+	btnPress('#j-go-face .go-next');
+	delaySlide(8);
 });
 $("#j-go-money").bind('click', function(){
 	testedCount++;
@@ -159,6 +160,12 @@ $('.j-banka').bind('click', function() {
 			}		
 			$('#j-swipe-card').attr('src', src);
 			swiper.slideTo(3);
+			// 文案提示
+			var timer = setTimeout(function(){
+				$('#j-zhongxin-time-reminder').remove();
+				clearTimeout(timer);
+			}, 2000);
+
 			//结束刷卡
 			var swipeCb = function(){
 				if(swipeTime<4){
@@ -197,7 +204,7 @@ $('.j-banka').bind('click', function() {
 var zhongXinCB = function(){
 	if(shakeTimes<4){
 		jindongLevel = 1;
-		var src = '/static/css/anniversary/result/jingdong/1new.png';
+		var src = '/static/css/anniversary/result/jingdong/1.png';
 		$("#j-jd-result").attr('src', src);
 	}else if(shakeTimes>4 && shakeTimes<8){
 		jindongLevel = 2;
@@ -211,43 +218,67 @@ var zhongXinCB = function(){
 	swiper.slideTo(6);
 }
 
+var btnPress = function(that){
+	var jQdom = $(that);
+	var data=jQdom.data('click') || false;
+	if(data){
+		return;
+	}
+	jQdom.data('click', true);
+	var btnUrl = jQdom.attr('src');
+	btnUrl = btnUrl.replace('next', 'nextp');
+	$(that).attr('src', btnUrl);
+}
+var delaySlide = function(slideNum){
+	var delay = setTimeout(function(){
+		swiper.slideTo(slideNum);
+		clearTimeout(delay)
+	},300);
+
+}
+
 $('#j-zhongxin-next').bind('click', function(){
 	// 初始化摇一摇
 	init();
 	// 去除第三页动画
 	$('#p3 .p2-dec2, #p3 .p2-dec1, #p3 .p2-dec3').remove();
 	$('#p4 .p2-dec2, #p4 .p2-dec1, #p4 .p2-dec3').remove();
+	btnPress(this);
 	// 如果到金钱的时候已经测完3次，金钱部分替换为结束
 	if(testedCount==3){
 		$("#j-go-face").remove();
 		$("#p8").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
 	}
-	swiper.slideTo(5);
-
+	delaySlide(5);
 	jingdongTimer = setTimeout(function(){
 		zhongXinCB();
 		clearTimeout(jingdongTimer);
 	}, shakeDuration);
 });
 $('#j-jingdong-next').bind('click', function(){
+	btnPress(this);
 	if(jindongLevel==1 && zhongxinLevel==1){
 		moneyLevel = 1;
+		$("#j-money-next-text").text('出去刷脸');
 		$('#j-money-result').text('20%，你是个屌丝，还不知道怎么省钱，彗星撞地球也挽救不了你的贫穷，看看能否用颜值改变自己的命运')
 	}else if(zhongxinLevel!=3 && jindongLevel!=1){
 		// 不是土豪，但是会省钱
 		moneyLevel = 2;
+		$("#j-money-next-text").text('学做儒商');
 		$('#j-money-result').text('50%，你虽然属于无产阶级，但是由于比较会抠门儿，有暴发户的嫌疑，还是注意一下自己的形象吧')
 	}else if(zhongxinLevel!=1 && jindongLevel==1){
 		// 土豪但是不会省钱
 		moneyLevel = 3;
+		$("#j-money-next-text").text('出去卖脸');
 		moneyFinalLevel=1;
 		$('#j-money-result').text('70%，作为一个有钱人，你并不会省钱，迟早会成为坑爹二代，还是去看看颜值能否挽救你')
 	}else if(zhongxinLevel==3 && jindongLevel!=1){
 		moneyLevel = 4;
+		$("#j-money-next-text").text('变高富帅');
 		moneyFinalLevel=1;
 		$('#j-money-result').text('100%，作为一名土豪，又会省钱，你命中注定是有钱人，去测试一下颜值，看能否变成白富美(高富帅）')
 	}
-	swiper.slideTo(7);
+	delaySlide(7);
 });
 
 var jQcameraInput = $('#cameraInput');
