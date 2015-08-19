@@ -36,6 +36,24 @@
     -webkit-transform: translate(0, 0px);
   } 
 }
+
+.beat{
+  -webkit-animation: beat 1.3s ease-in-out infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+}
+@-webkit-keyframes beat {
+  0% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+  } 
+}
+
 .downup{
     -webkit-animation: downup 2s linear infinite;
 }

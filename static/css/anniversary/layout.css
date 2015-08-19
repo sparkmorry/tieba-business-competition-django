@@ -26,11 +26,10 @@ html,body {
 #voice{
   background: url(bg/bg-voice.png);
 }
-
 .data-btn{
   position: absolute;
-  top: 760px;
-  left: 90px;
+  top: 50px;
+  left: 50px;
 }
 .next-btn{
   height: 55px;
@@ -68,7 +67,7 @@ html,body {
   left: 95px;
   top: 85px;
   display: none;  
-  z-index: 1000; 
+  z-index: 100000; 
 }
 #user-result .data-btn, #user-result .next-btn{
   top: auto;
@@ -471,7 +470,6 @@ html,body {
   text-align: center;
   z-index: 100000;
 }
-
 .money-data-lucky{
   position: absolute;
   top: 50px;

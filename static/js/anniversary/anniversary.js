@@ -166,7 +166,7 @@ $('.j-banka').bind('click', function() {
 			// 	$(".zhongxin-count-down").show();
 			// 	clearTimeout(timer);
 			// }, 2000);
-			
+
 			//结束刷卡
 			var swipeCb = function(){
 				if(swipeTime<4){
@@ -374,41 +374,50 @@ $('.i-switch-off').bind('click', function(){
 // 结束唱歌，查看颜值部分结果
 var jQfaceResult = $('#j-face-final-result');
 $('#j-sing-next').bind('click', function(){
+	btnPress(this);
 	if(singLevel != 3 && faceLevel == 1){
 		faceTotalLevel = 1;
 		// 颜值一般，声音还难听
+		$("#j-face-next-text").text('挖掘潜力');
 		jQfaceResult.text('20%，你是巴黎圣母院的敲钟人，就别做明星梦了，还是去看看有没有别的机会吧')
 	}else if(singLevel != 3 && faceLevel != 1){
 		// 有颜值但没好声音
+		$("#j-face-next-text").text('拒做鸟人');
 		faceTotalLevel = 2;
 		jQfaceResult.text('50%，你虽然相貌不错，但是声音像乌鸦叫，要想出人头地，还是另择途径吧')	
 	}else if(singLevel == 3 && faceLevel != 3){
 		// 声音好听但颜值不行
+		$("#j-face-next-text").text('另寻出路');
 		faceTotalLevel = 3;
 		faceFinalLevel = 1;		
 		jQfaceResult.text('70%，你虽然相貌平平，但是声音却悦耳动听，不过在这个看脸的世界，还是寻找更适合自己的路吧。')	
 	}else if(singLevel == 3 && faceLevel == 3){
+		$("#j-face-next-text").text('长点脑子');	
 		faceTotalLevel = 4;
 		faceFinalLevel = 1;		
 		jQfaceResult.text('100%，你的美貌就像天使，且喉清韵雅，去看看是否智慧和美貌并存')	
 	}
-	swiper.slideTo(12)
+	delaySlide(12)
 });
 
 $("#j-face-next").bind('click', function(){
+	btnPress(this);
 	if(testedCount==3){
 		// 如果颜值完了已经测试3次，颜值部分替换为结束
 		$("#j-go-auth").remove();
 		$("#p13").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
 	}
-	swiper.slideTo(10);
+	// swiper.slideTo(10);
+	delaySlide(10);
 });
 $("#j-voice-next").bind('click', function(){
+	btnPress(this);
 	if(testedCount==3){
 		$("#j-go-money").remove();
 		$("#p14").append('<img class="j-test-over go-next" src="/static/css/anniversary/result/final-btn.png">')
 	}
-	swiper.slideNext();
+	delaySlide(14);
+	// swiper.slideNext();
 });
 // $("#j-zhongxin-next").bind('click', function(){
 // });
@@ -429,10 +438,12 @@ $("#j-get-user-result").bind('click', function(){
 // 用户画像结束，查看权利部分结果
 var jQauthResult = $("#j-auth-result");
 $("#j-user-next").bind('click', function(){
+	btnPress(this);
 	var usr = $("#j-user-name-input").val();
 	$("#j-user-name").text(usr);
 	if(voiceLevel != 3 && userLevel == 1){
 		authLevel = 1;
+
 		jQauthResult.text('20%，你人缘太差，又呆在一个鸟不拉屎的地方，仕途跟你没半毛钱的关系，还是看看财运如何吧')
 	}else if(voiceLevel == 3 && userLevel != 3 ){
 		authLevel = 2;
@@ -446,8 +457,8 @@ $("#j-user-next").bind('click', function(){
 		authFinalLevel = 1;
 		jQauthResult.text('100%，你虽然一呼百应，高权在握，但还是很羡慕国民老公王思聪，不如试一试金钱运如何？');
 	}
-
-	swiper.slideNext();
+	delaySlide(17);
+	// swiper.slideNext();
 });
 
 // 叫喊部分逻辑
