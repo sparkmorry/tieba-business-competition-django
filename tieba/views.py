@@ -426,5 +426,7 @@ def anniversary(request):
 
 	return render_to_response('anniversary.html', {'jsticket' : tick, 'sig': sig})
 
+def anniversary2(request):
+	return render_to_response('anniversary2.html')
 
 	

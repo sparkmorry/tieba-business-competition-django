@@ -1,0 +1,125 @@
+.icon1{
+	background: url(icon/icon1.png);
+	display: inline-block;
+}
+.i-small-star{
+	width: 40px;
+	height: 45px;
+	background-position: -140px -506px;
+}
+.i-title1{
+	width: 360px;
+	height: 180px;
+	background-position: 0 -680px;
+}
+.i-title2{
+	width: 650px;
+	height: 130px;
+	background-position: 0 -870px;
+}
+.i-hero{
+	width: 100px;
+	height: 170px;
+	background-position: 0 -504px;
+}
+
+.i-superman{
+	width: 495px;
+	height: 445px;
+	background-position: 0 0;
+}
+
+.i-loading{
+	width: 440px;
+	height: 155px;
+	background-position: -526px 0; 
+}
+.i-cloud{
+	width: 465px;
+	height: 360px;
+	background-position: -535px -160px;
+}
+
+/*p2*/
+.icon2{
+	background: url(icon/icon2.png);
+	display: inline-block;
+}
+.i-sudden{
+	width: 470px;
+	height: 110px;
+	background-position: -480px -14px;
+}
+.i-ship{
+	width: 326px;
+	height: 300px;
+	background-position: 0 0 ;
+}
+
+.i-black-cloud{
+	width: 180px;
+	height: 100px;
+	background-position: 0 -320px;
+}
+.i-moon{
+	width: 170px;
+	height: 160px;
+	background-position: 0 -431px;
+}
+.i-stars{
+	width: 690px;
+	height: 550px;
+	background-position: -304px -155px;
+}
+.i-trees{
+	width: 750px;
+	height: 226px;
+	background-position: 0 -775px;
+}
+
+.icon3{
+	background: url(icon/icon3.png);
+	display: inline-block;
+}
+.i-invitation{
+	width: 606px;
+	height: 353px;
+	background-position: 0 0;
+}
+.i-black-cloud-big{
+	width: 350px;
+	height: 184px;
+	background-position: -18px -394px;
+}
+.i-moon-big{
+	width: 194px;
+	height: 210px;
+	background-position: 0 -619px;
+}
+.i-go{
+	width: 184px;
+	height: 108px;
+	background-position: -670px -73px;
+}
+.i-stars2{
+	width: 750px;
+	height: 350px;
+	background-position: -230px -620px;
+}
+
+/*p4*/
+.icon4{
+	background: url(icon/icon4.png);
+	display: inline-block;
+}
+.i-title4{
+	width: 610px;
+	height: 80px;
+	background-position: 0 0;
+}
+
+.i-cloud-big{
+	width: 944px;
+	height: 353px;
+	background-position: 0 -100px;
+}

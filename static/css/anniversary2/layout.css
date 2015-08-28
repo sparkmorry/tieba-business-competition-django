@@ -1,0 +1,245 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: black;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+body{
+	background-image: url(bg.jpg);
+	background-color: #242d32;
+}
+.m1{
+    position: relative;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s linear;
+}
+
+/*p1*/
+.icon1, .sky-circle1, .sky-circle2{
+	position: absolute;
+	left: 50%;
+}
+.i-small-star.star1{
+  top: 290px;
+  margin-left: 50px;
+}
+.i-small-star.star2{
+  top: 410px;
+  margin-left: 300px;
+}
+
+
+.sky-circle1, .sky-circle2{  
+  width: 470px;
+  height: 470px;
+  border-radius: 50%;
+  top: 488px;
+  margin-left: -235px;
+}
+.sky-circle1{
+  background: #0577bd;
+}
+.sky-circle2{
+	background: #27b6ee;
+	margin-top: 26px;
+  overflow: hidden;
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+.i-cloud{
+  position: relative;
+  margin-left: -182px;
+  /*left: auto;*/
+  top: 0px;
+}
+
+.i-title1{
+	margin-left: -180px;
+	top: 110px;
+}
+.i-title2{
+	margin-left: -325px;
+	top: 305px;
+}
+.i-hero{
+	left: 120px;
+	top: 115px;
+}
+.i-superman{
+  margin-left: -230px;
+  top: 512px;
+}
+.i-loading{
+	margin-left: -220px;
+	top: 1005px;
+}
+.loading-text{
+  color: white;
+  font-size: 32px;
+  width: 100px;
+  text-align: center;
+  position: absolute;
+  left: 192px;
+  top: 1062px;
+}
+
+/*p2*/
+.icon2{
+	position: absolute;
+}
+.p2-content-wrapper{
+	height: 1500px;
+	position: absolute;
+	bottom: 0px;
+	width: 750px;
+}
+.p2-star-big{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #ffd76b;
+	position: absolute;
+}
+.p2-star-small{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #ffd76b;
+	position: absolute;
+}
+.fire{
+	width: 120px;
+	height: 70px;
+	background-image:url('animation/fire.png') ;
+	background-position: 0 0;
+  position: absolute;
+  left: -80px;
+  top: 80px;
+}
+.i-sudden{
+	bottom: 400px;
+	left: 150px;
+}
+.i-trees{
+	bottom: 0px;
+	left: 0;
+}
+.i-moon{
+	left: 30px;
+	top: 310px;
+}
+.i-stars{
+	top: 60px;
+	right: 30px;
+}
+.i-black-cloud{
+	top: 320px;
+	right: 30px;
+}
+.ship-wrapper{
+	position: absolute;
+	width: 326px;
+	height: 300px;
+	left: 50%;
+	top: 500px;
+	margin-left: -200px;
+	-webkit-transform: translate(150px, 0px);
+}
+
+/*p3*/
+.icon3{
+	position: absolute;
+}
+.trees, .ufo{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.click-reminder{
+ position: absolute;
+  bottom: 160px;
+  right: 250px;
+  z-index: 900;
+}
+.cicle1{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	background: rgba(255,255,255,0.9);
+	margin-left: -25px;
+	margin-top: -25px;
+}
+.cicle2{
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.7);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -35px;
+	margin-top: -35px;
+}
+.cicle3{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.4);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -45px;
+	margin-top: -45px;
+}
+
+
+.trees{
+	bottom: 130px;
+}
+
+
+.i-invitation{
+	left: 50%;
+	margin-left: -300px;
+	top: 280px;
+}
+.i-black-cloud-big{
+	top: 20px;
+	right: -20px;
+}
+.i-moon-big, .i-stars2{
+	left: 0;
+	top: 0;
+}
+
+.i-go{
+	left: 50%;
+	margin-left: -100px;
+	top: 730px;
+}
+
+/*p4*/
+.line{
+	position: absolute;
+	right: 0;
+	top: 180px;
+}
+.i-title4{
+	position: absolute;
+	left: 50%;
+	top: 50px;
+	margin-left: -305px;
+}
+.i-cloud-big{
+	position: absolute;
+	bottom: -130px;
+	left: -50px;
+}
