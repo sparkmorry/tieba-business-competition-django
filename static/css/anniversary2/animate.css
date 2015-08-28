@@ -11,6 +11,11 @@
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0);  
 }
+.cloud-move-reverse{
+  -webkit-animation: move 1s ease-out infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);    
+}
 
 @-webkit-keyframes move {
   0% {
@@ -45,7 +50,7 @@
 }
 
 .movedown{
-  -webkit-animation: movedown 4s linear;
+  -webkit-animation: movedown 3.5s linear;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0); 
 }
@@ -99,6 +104,11 @@
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0);   
 }
+.moveupdown-fast{
+  -webkit-animation: moveupdown 1s ease-out infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);   
+}
 @-webkit-keyframes moveupdown {
   0% {
     -webkit-transform: translateY(0px);
@@ -148,17 +158,17 @@
 }
 
 .circle-scale1{
-  -webkit-animation: circle-scale 0.7s linear infinite;
+  -webkit-animation: circle-scale 1s linear infinite;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0)  ;   
 }
 .circle-scale2{
-  -webkit-animation: circle-scale 0.7s linear infinite;
+  -webkit-animation: circle-scale 1s linear infinite;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0)  ;   
 }
 .circle-scale3{
-  -webkit-animation: circle-scale 0.7s linear infinite;
+  -webkit-animation: circle-scale 1s linear infinite;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0)  ;   
 }

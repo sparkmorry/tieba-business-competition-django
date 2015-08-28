@@ -11,13 +11,16 @@ html,body {
     overflow: hidden;
 }
 body{
-	background-image: url(bg.jpg);
 	background-color: #242d32;
 }
 .m1{
     position: relative;
     opacity: 0;
     -webkit-transition: opacity 0.5s linear;
+}
+
+#p1{
+	background-image: url(bg.jpg);
 }
 
 /*p1*/
@@ -231,10 +234,12 @@ body{
   margin-left: -180px;
   z-index: 1000;
 }
+
 .i-go{
 	left: 50%;
 	margin-left: -100px;
-	top: 750px;
+	top: 740px;
+	z-index: 10000;
 }
 .shine-lines{
 	width: 200px;
@@ -243,14 +248,14 @@ body{
 	background-position: 0 0;
   position: absolute;
   left: 260px;
-  top: 625px;
+  top: 675px;
 
 }
 /*p4*/
 .line{
 	position: absolute;
 	right: 0;
-	top: 180px;
+	top: 0px;
 }
 .i-title4{
 	position: absolute;
@@ -263,3 +268,34 @@ body{
 	bottom: -130px;
 	left: -50px;
 }
+.arrow{
+  position: absolute;
+  left: 105px;
+  top: 840px;
+}
+.i-stars-white{
+  position: absolute;
+  top: 200px;
+  left: 60px;
+}
+.i-cloud2{
+   position: absolute;
+  top: 500px;
+  left: 300px
+ }
+
+.p4-star-big{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: white;
+	position: absolute;
+}
+.p4-star-small{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: white;
+	position: absolute;
+}
+

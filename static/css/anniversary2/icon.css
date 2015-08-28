@@ -117,7 +117,16 @@
 	height: 80px;
 	background-position: 0 0;
 }
-
+.i-stars-white{
+	width: 600px;
+	height: 500px;
+	background-position: -420px -480px;
+}
+.i-cloud2{
+	width: 230px;
+	height: 123px;
+	background-position: -30px -500px;
+}
 .i-cloud-big{
 	width: 944px;
 	height: 353px;

@@ -49,10 +49,10 @@ var p2Animate = function(){
 	$("#j-p2-content-wrapper").addClass('movedown')
 	keyframeAnimation('#j-fire', 70, 8, 70, 0, true);
 	$("#j-ship").addClass('moveright-slow')
-	$(".i-sudden").addClass('fadeIn animated delay3')
+	$(".i-sudden").addClass('fadeIn animated delay2')
 	setTimeout(function(){
 		swiper.slideNext();
-	}, 5000)
+	}, 4500)
 }
 
 var second = 0, loading=true;
@@ -72,20 +72,21 @@ $(window).load(function(){
 	}, 30);
 });
 
-var invClick = 0;
+var invClick = 1;
 var jQinvText=$("#j-inv-text");
 $(".click-reminder").bind('click', function(){
 	invClick++;
 	if(invClick==1){
 		jQinvText.text('你走狗屎运了！居然被来自K星球的邀请参加一个神秘的约会！');
 	}else if(invClick == 2){
-		jQinvText.text('是乡村变装大趴还是时尚媒体复古大趴，还是海天盛筵大趴?不管了，去了再说');	
+		jQinvText.text('是乡村变装大趴还是时尚媒体复古大趴，还是海天盛筵大趴?不管了，去了再说。');	
 	}else if(invClick == 3){
 		$("#j-go").show();
+		$(".click-reminder").remove();
 		keyframeAnimation('.shine-lines', 200, 15, 30, 0, true);		
 	}
 })
 
-$("#j-go").bind('click', function(){
+$(".i-go").bind('click', function(){
 	swiper.slideNext();
-})
+});
