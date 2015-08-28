@@ -161,9 +161,9 @@ body{
 	left: 0;
 }
 .click-reminder{
- position: absolute;
-  bottom: 160px;
-  right: 250px;
+  position: absolute;
+  bottom: 120px;
+  right: 210px;
   z-index: 900;
 }
 .cicle1{
@@ -219,13 +219,33 @@ body{
 	left: 0;
 	top: 0;
 }
-
+.inv-text{
+	color: #92e34a;
+  width: 380px;
+  height: 70px;
+  font-size: 26px;
+  position: absolute;
+  line-height: 40px;
+  bottom: 160px;
+  left: 50%;
+  margin-left: -180px;
+  z-index: 1000;
+}
 .i-go{
 	left: 50%;
 	margin-left: -100px;
-	top: 730px;
+	top: 750px;
 }
+.shine-lines{
+	width: 200px;
+	height: 200px;
+	background-image:url('animation/shines.png') ;
+	background-position: 0 0;
+  position: absolute;
+  left: 260px;
+  top: 625px;
 
+}
 /*p4*/
 .line{
 	position: absolute;
