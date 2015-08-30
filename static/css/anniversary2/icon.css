@@ -2,6 +2,11 @@
 	background: url(icon/icon1.png);
 	display: inline-block;
 }
+.i-speed{
+	width: 550px;
+	height: 240px;
+	background-position: -446px -525px;
+}
 .i-small-star{
 	width: 40px;
 	height: 45px;
@@ -105,6 +110,16 @@
 	width: 750px;
 	height: 350px;
 	background-position: -230px -620px;
+}
+.i-needle1{
+	width: 14px;
+	height: 28px;
+	background-position: -654px -234px;
+}
+.i-needle2{
+	width: 16px;
+	height: 22px;
+	background-position: -706px -240px;
 }
 
 /*p4*/

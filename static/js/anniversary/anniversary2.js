@@ -18,12 +18,13 @@ $('body').bind('touchmove',function(event){
 
 
 function keyframeAnimation(selector, height, keyNum, duration, delay, loop){
+	var timer;
 	var animation = setTimeout(function(){
 		var jQdom = $(selector);
 		var times = 1;
 		jQdom.show();
 		var p;
-		var timer = setInterval(function(){
+		timer = setInterval(function(){
 			if(times>(keyNum-1)){
 				if(loop == false){
 					clearInterval(timer);
@@ -43,15 +44,28 @@ function keyframeAnimation(selector, height, keyNum, duration, delay, loop){
 		}, duration);
 		clearTimeout(animation);
 	}, delay);
+
+	return timer;
 }
+
+function removeAnimation(selector, timer){
+	var jQdom = $(selector);
+	jQdom.remove();
+	clearInterval(timer);
+}
+
+//关键帧动画timer
+var goAnime, fireAnime;
 
 var p2Animate = function(){
 	$("#j-p2-content-wrapper").addClass('movedown')
-	keyframeAnimation('#j-fire', 70, 8, 70, 0, true);
+	fireAnime = keyframeAnimation('#j-fire', 70, 8, 70, 0, true);
 	$("#j-ship").addClass('moveright-slow')
 	$(".i-sudden").addClass('fadeIn animated delay2')
 	setTimeout(function(){
 		swiper.slideNext();
+		$(".i-invitation").addClass('rollIn animated');
+		$("#j-inv-text").addClass('flash animated delay1')
 	}, 4500)
 }
 
@@ -59,7 +73,7 @@ var second = 0, loading=true;
 var secondNum = $("#loading-num");
 $(window).load(function(){
 	var timer = setInterval(function(){
-		second++;
+		second = second+2;
 		if(second>100){
 			loading=false;
 			swiper.slideNext();
@@ -69,12 +83,12 @@ $(window).load(function(){
 			return;
 		}
 		secondNum.text(second);
-	}, 30);
+	}, 40);
 });
 
 var invClick = 1;
 var jQinvText=$("#j-inv-text");
-$(".click-reminder").bind('click', function(){
+$(".click").bind('click', function(){
 	invClick++;
 	if(invClick==1){
 		jQinvText.text('你走狗屎运了！居然被来自K星球的邀请参加一个神秘的约会！');
@@ -83,10 +97,12 @@ $(".click-reminder").bind('click', function(){
 	}else if(invClick == 3){
 		$("#j-go").show();
 		$(".click-reminder").remove();
-		keyframeAnimation('.shine-lines', 200, 15, 30, 0, true);		
+		goAnime = keyframeAnimation('.shine-lines', 200, 13, 30, 0, true);	
 	}
-})
+});
 
 $(".i-go").bind('click', function(){
 	swiper.slideNext();
+	removeAnimation('.shine-lines', goAnime)	
+
 });

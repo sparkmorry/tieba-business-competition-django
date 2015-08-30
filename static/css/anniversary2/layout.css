@@ -36,8 +36,12 @@ body{
   top: 410px;
   margin-left: 300px;
 }
-
-
+.i-speed{
+  position: relative;
+  margin-left: -292px;
+  /* left: auto; */
+  top: 50px;
+}
 .sky-circle1, .sky-circle2{  
   width: 470px;
   height: 470px;
@@ -56,9 +60,9 @@ body{
 }
 .i-cloud{
   position: relative;
-  margin-left: -182px;
-  /*left: auto;*/
-  top: 0px;
+  margin-left: -490px;
+  /* left: auto; */
+  top: 20px;
 }
 
 .i-title1{
@@ -81,6 +85,17 @@ body{
 	margin-left: -220px;
 	top: 1005px;
 }
+.loading-bg{
+	width: 142px;
+	height: 170px;
+	background-image:url('animation/loading.png') ;
+	background-position: 0 0;
+  position: absolute;
+  left: 180px;
+  bottom: 80px;
+}
+
+
 .loading-text{
   color: white;
   font-size: 32px;
@@ -163,6 +178,18 @@ body{
 	bottom: 0;
 	left: 0;
 }
+.i-needle1{
+  position: absolute;
+  left: 77px;
+  top: 150px;
+  -webkit-transform-origin: 50% 100%;
+}
+.i-needle2{
+  position: absolute;
+  right: 82px;
+  top: 165px;
+  -webkit-transform-origin: 50% 100%;
+}
 .click-reminder{
   position: absolute;
   bottom: 120px;
@@ -238,18 +265,25 @@ body{
 .i-go{
 	left: 50%;
 	margin-left: -100px;
-	top: 740px;
+	top: 720px;
 	z-index: 10000;
 }
 .shine-lines{
 	width: 200px;
 	height: 200px;
-	background-image:url('animation/shines.png') ;
+	background-image:url('animation/go.png') ;
 	background-position: 0 0;
   position: absolute;
   left: 260px;
-  top: 675px;
+  top: 635px;
 
+}
+
+.click{
+  height: 400px;
+  position: absolute;
+  bottom: 0;
+  width: 750px;
 }
 /*p4*/
 .line{
