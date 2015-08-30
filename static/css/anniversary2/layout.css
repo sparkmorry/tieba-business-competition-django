@@ -355,9 +355,9 @@ body{
 }
 #canvas{
   width: 450px;
-  height: 540px;
+  height: 580px;
   position: absolute;
-  bottom: 535px;
+  top: 205px;
   z-index: 100;
   left: 155px;
  }

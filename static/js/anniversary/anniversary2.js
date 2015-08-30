@@ -65,7 +65,7 @@ var p2Animate = function(){
 	setTimeout(function(){
 		swiper.slideNext();
 		$(".i-invitation").addClass('rollIn animated');
-		$("#j-inv-text").addClass('flash animated delay2')
+		$("#j-inv-text").addClass('flash animated delay1')
 	}, 4500)
 }
 
@@ -119,9 +119,9 @@ imgClip = new Image();
 imgClip.src = "/static/css/anniversary2/mask.png";
 
 var drawFace = function(){
-	ctx.drawImage(imgClip, 0, 0, 450, 540);
+	ctx.drawImage(imgClip, 0, 0, 450, 580);
 	ctx.globalCompositeOperation = "source-in";
-	ctx.drawImage(imgFace, 0, 0, 450, 540);
+	ctx.drawImage(imgFace, 0, 0, 450, 580);
 	var img = canvas.toDataURL("image/png"); 
 	$("#jd-avatar").attr('src', img);
 	return img;

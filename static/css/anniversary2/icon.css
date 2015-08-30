@@ -154,12 +154,14 @@
 	display: inline-block;
 }
 .i-people{ 
-	background: url('icon/people.png'); 
-	width: 90%; height: 90%; 
-	background-size: 100% auto; 
-	position: absolute; bottom: 0; 
-	left: 5%; 
-	z-index: 5; 
+  background: url('icon/people.png');
+  width: 678px;
+  height: 1288px;
+  background-size: 100% auto;
+  position: absolute;
+  top: 110px;
+  left: 35px;
+  z-index: 5;
 }
 .i-camera{ background: url('icon/camera.png'); 
 	background-size: cover; 
