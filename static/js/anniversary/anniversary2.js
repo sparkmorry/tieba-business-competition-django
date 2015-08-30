@@ -119,9 +119,25 @@ imgClip = new Image();
 imgClip.src = "/static/css/anniversary2/mask.png";
 
 var drawFace = function(){
-	ctx.drawImage(imgClip, 0, 0, 450, 580);
-	ctx.globalCompositeOperation = "source-in";
-	ctx.drawImage(imgFace, 0, 0, 450, 580);
+	if(imgFace.width>imgFace.height){
+		var x = canvas.width / 2;
+		var y = canvas.height / 2;
+		var width = imgFace.width;
+		var height = imgFace.height;
+		var angleInRadians=90;
+
+		ctx.translate(x, y);
+		ctx.rotate(angleInRadians);
+		ctx.drawImage(imgClip, 0, 0, 450, 580);
+		ctx.globalCompositeOperation = "source-in";
+		ctx.drawImage(imgFace, -width / 2, -height / 2, width, height);
+		ctx.rotate(-angleInRadians);
+		ctx.translate(-x, -y);
+	}else{
+		ctx.drawImage(imgClip, 0, 0, 450, 580);
+		ctx.globalCompositeOperation = "source-in";
+		ctx.drawImage(imgFace, 0, 0, 450, 580);
+	}
 	var img = canvas.toDataURL("image/png"); 
 	$("#jd-avatar").attr('src', img);
 	return img;
@@ -162,7 +178,6 @@ function readFile(){
 		}else {
 		   imgFace.onload = drawFace;
 		   imgClip.onload = drawFace;
-
 		}
     	$("#j-secury").show();
     	$("#j-retake").show();
