@@ -195,6 +195,7 @@ body{
   bottom: 120px;
   right: 210px;
   z-index: 900;
+ float:left;
 }
 .cicle1{
 	width: 50px;
@@ -360,12 +361,6 @@ body{
   z-index: 100;
   left: 155px;
  }
-
-/*p6*/
-#p6{
-	background-image: url(bg/p6.png);
-	background-size: 100% auto;
-}
 #j-secury{
 position: absolute;
   bottom: 130px;
@@ -378,5 +373,88 @@ position: absolute;
   z-index: 100;
   right: 0;
 }
+
+/*p6*/
+#p6{
+	background-image: url(bg/p6.png);
+	background-size: 100% auto;
 }
+.icon6{
+	position: absolute;
 }
+.i-jingdong-planet1{
+	top: 750px;
+	left: 550px;
+}
+.i-jingdong-planet2{
+	top: 80px;
+	left: 580px;
+}
+.i-jingdong-planet3{
+	top: 800px;
+	left: 40px;
+}
+.i-jingdong-planet4{
+	top: 20px;
+	left: 30px;
+}
+.i-jingdonghao{
+	top: 90px;
+	left: 80px;
+}
+.i-jingdonghao-light{
+  left: 180px;
+  top: 300px;
+}
+.small-sale1{
+	top: 390px;
+	left: 267px;
+}
+.small-sale2{
+	top: 470px;
+	left: 480px;
+}
+.small-sale3{
+	left: 140px;
+	top: 710px;
+}
+.small-sale4{
+	left: 430px;
+	top: 850px;
+}
+.big-sale1{
+	left: 145px;
+	top: 480px;
+}
+.big-sale2{
+	left: 425px;
+	top: 565px;
+}
+#j-shot1{
+	position: absolute;
+	left: 115px;
+	top: 435px;
+}
+#j-shot2{
+	position: absolute;
+	left: 395px;
+	top: 520px;
+}
+
+/*p7*/
+#p7{
+	background-image: url(bg/p7.jpg);
+	background-size: 100% auto;
+}
+.result-cloud{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.jingdong-result{
+	position: absolute;
+	top: 100px;
+	left: 70px;
+	z-index: 100;
+}
+

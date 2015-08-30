@@ -167,3 +167,55 @@
 	top: 75%; 
 	z-index: 10; 
 }
+
+/*p6*/
+.icon6{
+	background: url(icon/icon6.png);
+	display: inline-block;
+}
+.i-jingdonghao{
+	width: 474px;
+	height: 324px;
+	background-position: 0 0 ;
+}
+.i-sale-small{
+	width: 83px;
+	height: 81px;
+	background-position: -23px -360px;
+	opacity: 0.3;
+}
+.i-sale-big{
+	width: 190px;
+	height: 160px;
+	background-position: 0px -450px;
+}
+.i-shot{
+	width: 200px;
+	height: 200px;
+	background-position: -210px -347px;
+}
+.i-jingdong-planet1{
+	width: 132px;
+	height: 132px;
+	background-position: -24px -622px;
+}
+.i-jingdong-planet2{
+	width: 120px;
+	height: 90px;
+	background-position: -202px -648px;
+}
+.i-jingdong-planet3{
+	width: 200px;
+	height: 200px;
+	background-position: -18px -776px;
+}
+.i-jingdong-planet4{
+	width: 134px;
+	height: 134px;
+	background-position: -247px -835px;
+}
+.i-jingdonghao-light{
+	width: 440px;
+	height: 460px;
+	background-position: -530px 0px;
+}

@@ -115,9 +115,10 @@ $("#j-planet1").bind('click', function(){
 var canvas=document.getElementById("canvas");
 var ctx=canvas.getContext("2d");
 var imgClip, imgFace;
+imgClip = new Image();
+imgClip.src = "/static/css/anniversary2/mask.png";
+
 var drawFace = function(){
-	imgClip = new Image();
-	imgClip.src = "/static/css/anniversary2/mask.png";
 	ctx.drawImage(imgClip, 0, 0, 450, 540);
 	ctx.globalCompositeOperation = "source-in";
 	ctx.drawImage(imgFace, 0, 0, 450, 540);
@@ -137,7 +138,15 @@ function readFile(){
     	// jQprevImg.attr('src', this.result).show();
     	imgFace = new Image();
     	imgFace.src = this.result;
+    	if(imgFace.complete && imgClip.complete) { //check if image was already loaded by the browser
+		   drawFace();
+		}else {
+		   imgFace.onload = drawFace;
+		   imgClip.onload = drawFace;
+		}
+
     	drawFace();
+
     	$("#j-secury").show();
     	$("#j-retake").show();
     	$("#j-photo").hide();

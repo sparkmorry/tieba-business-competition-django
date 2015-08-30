@@ -209,7 +209,6 @@
   -webkit-transform: translateZ(0)  ;   
 }
 
-
 @-webkit-keyframes circle-scale {
   0% {
     -webkit-transform: scale(0.5)
@@ -264,9 +263,6 @@
     -webkit-transform: rotate(0deg);
   } 
 }
-.needle2{
-
-}
 @-webkit-keyframes rotate50 {
   0% {
     -webkit-transform: rotate(0deg);
@@ -280,4 +276,50 @@
   100% {
     -webkit-transform: rotate(0deg);
   } 
+}
+
+
+.floating{
+  -webkit-animation-name: floating;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes floating {
+  0% {
+    -webkit-transform: translate(0, 0px);
+  }
+  30% {
+    -webkit-transform: translate(0, 15px);
+  }
+  50% {
+    -webkit-transform: translate(0, 0px);
+  }
+  80% {
+    -webkit-transform: translate(0, -15px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0px);
+  } 
+}
+
+.flash.i-jingdonghao-light{
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;  
+}
+.shot-scale{
+  -webkit-animation-name: shotScale;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;  
+}
+@-webkit-keyframes shotScale {
+  0% {
+    -webkit-transform: scale(1)
+  }
+  50% {
+    -webkit-transform: scale(1.2)
+  }
+  100% {
+    -webkit-transform: scale(1)
+  }
 }
