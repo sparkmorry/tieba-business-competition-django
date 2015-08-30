@@ -189,7 +189,6 @@
 }
 
 /*p6*/
-
 .i-jingdonghao{
 	width: 474px;
 	height: 324px;
@@ -235,4 +234,16 @@
 	width: 440px;
 	height: 460px;
 	background-position: -530px 0px;
+}
+
+/*p7*/
+.metro{
+	width: 120px;
+	height: 137px;
+	background-position: -396px -558px;
+}
+.white-star-big{
+	width: 70px;
+	height: 84px;
+	background-position: -416px -712px;
 }
