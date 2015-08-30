@@ -106,3 +106,7 @@ $(".i-go").bind('click', function(){
 	removeAnimation('.shine-lines', goAnime)	
 
 });
+
+$("#j-planet1").bind('click', function(){
+	swiper.slideNext();
+});

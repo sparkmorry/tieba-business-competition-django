@@ -285,7 +285,7 @@ body{
   bottom: 0;
   width: 750px;
 }
-/*p4*/
+/*p4 地图*/
 .line{
 	position: absolute;
 	right: 0;
@@ -315,7 +315,7 @@ body{
 .i-cloud2{
    position: absolute;
   top: 500px;
-  left: 300px
+  left: 200px
  }
 
 .p4-star-big{
@@ -333,3 +333,16 @@ body{
 	position: absolute;
 }
 
+/*星球*/
+.planet1-unlock{
+	width: 250px;
+	height: 155px;
+	background-position: 0 -320px;
+}
+.planet1{
+  position: absolute;
+  width: 150px;
+  height: 180px;
+  top: 640px;
+  left: 75px;
+}
