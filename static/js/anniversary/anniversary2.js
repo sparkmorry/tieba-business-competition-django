@@ -65,7 +65,7 @@ var p2Animate = function(){
 	setTimeout(function(){
 		swiper.slideNext();
 		$(".i-invitation").addClass('rollIn animated');
-		$("#j-inv-text").addClass('flash animated delay1')
+		$("#j-inv-text").addClass('flash animated delay2')
 	}, 4500)
 }
 
@@ -109,4 +109,49 @@ $(".i-go").bind('click', function(){
 
 $("#j-planet1").bind('click', function(){
 	swiper.slideNext();
+});
+
+
+var canvas=document.getElementById("canvas");
+var ctx=canvas.getContext("2d");
+var imgClip, imgFace;
+var drawFace = function(){
+	imgClip = new Image();
+	imgClip.src = "/static/css/anniversary2/mask.png";
+	ctx.drawImage(imgClip, 0, 0, 450, 540);
+	ctx.globalCompositeOperation = "source-in";
+	ctx.drawImage(imgFace, 0, 0, 450, 540);
+}
+
+var jQcameraInput = $('#cameraInput');
+var jQprevImg = $(".uploaded-img");
+function readFile(){
+    file = jQcameraInput.get(0).files[0];
+    if(!/image\/\w+/.test(file.type)){
+        alert("请上传图片类型的文件~");
+        return false;
+    }
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(e){
+    	// jQprevImg.attr('src', this.result).show();
+    	imgFace = new Image();
+    	imgFace.src = this.result;
+    	drawFace();
+    	$("#j-secury").show();
+    	$("#j-retake").show();
+    	$("#j-photo").hide();
+    }
+}
+jQcameraInput.bind('change', readFile);
+$('#j-photo').bind('click', function(){
+	jQcameraInput.click();
+});
+
+$("#j-secury").bind('click', function(){
+	swiper.slideNext();
+});
+
+$("#j-retake").bind('click', function(){
+	jQcameraInput.click();
 });

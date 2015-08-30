@@ -346,3 +346,37 @@ body{
   top: 640px;
   left: 75px;
 }
+
+/*p5*/
+#p5{
+	background-image: url(bg/p5.png);
+	background-size: 100% auto;
+}
+#canvas{
+  width: 450px;
+  height: 540px;
+  position: absolute;
+  bottom: 535px;
+  z-index: 100;
+  left: 155px;
+ }
+
+/*p6*/
+#p6{
+	background-image: url(bg/p6.png);
+	background-size: 100% auto;
+}
+#j-secury{
+position: absolute;
+  bottom: 130px;
+  z-index: 100;
+  left: 0;
+}
+#j-retake{
+	position: absolute;
+  bottom: 130px;
+  z-index: 100;
+  right: 0;
+}
+}
+}

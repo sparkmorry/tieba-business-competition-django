@@ -147,3 +147,23 @@
 	height: 353px;
 	background-position: 0 -100px;
 }
+
+/*p5*/
+.i-people{ 
+	background: url('icon/people.png'); 
+	width: 90%; height: 90%; 
+	background-size: 100% auto; 
+	position: absolute; bottom: 0; 
+	left: 5%; 
+	z-index: 5; 
+}
+.i-camera{ background: url('icon/camera.png'); 
+	background-size: cover; 
+	width: 190px; 
+	height: 190px; 
+	position: absolute; 
+	left: 50%; 
+	margin-left: -95px; 
+	top: 75%; 
+	z-index: 10; 
+}
