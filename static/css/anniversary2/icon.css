@@ -149,6 +149,10 @@
 }
 
 /*p5*/
+.icon6{
+	background: url(icon/icon6.png);
+	display: inline-block;
+}
 .i-people{ 
 	background: url('icon/people.png'); 
 	width: 90%; height: 90%; 
@@ -167,12 +171,25 @@
 	top: 75%; 
 	z-index: 10; 
 }
+.i-secury-process{
+	width: 420px;
+	height: 100px;
+	background-position: -546px -760px;
+  opacity: 0.5;
+}
+.i-secury-arrow-ok{
+	width: 45px;
+	height: 50px;
+	background-position: -604px -682px;
+}
+.i-secury-arrow{
+	width: 45px;
+	height: 50px;
+	background-position: -683px -682px;
+}
 
 /*p6*/
-.icon6{
-	background: url(icon/icon6.png);
-	display: inline-block;
-}
+
 .i-jingdonghao{
 	width: 474px;
 	height: 324px;

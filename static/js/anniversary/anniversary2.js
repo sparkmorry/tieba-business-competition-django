@@ -124,6 +124,21 @@ var drawFace = function(){
 	ctx.drawImage(imgFace, 0, 0, 450, 540);
 }
 
+var arrowTimer;
+var aCount = 0;
+var securyProcess = function(){
+	var sArrow = $(".i-secury-arrow");
+	arrowTimer = setInterval(function(){
+		if(aCount==10){
+			clearInterval(arrowTimer);
+			aCount=0;
+			return;
+		}
+		$(sArrow[aCount]).removeClass('i-secury-arrow').addClass('i-secury-arrow-ok');
+		aCount++;
+	},200);
+}
+
 var jQcameraInput = $('#cameraInput');
 var jQprevImg = $(".uploaded-img");
 function readFile(){
@@ -144,9 +159,6 @@ function readFile(){
 		   imgFace.onload = drawFace;
 		   imgClip.onload = drawFace;
 		}
-
-    	drawFace();
-
     	$("#j-secury").show();
     	$("#j-retake").show();
     	$("#j-photo").hide();
@@ -158,9 +170,22 @@ $('#j-photo').bind('click', function(){
 });
 
 $("#j-secury").bind('click', function(){
-	swiper.slideNext();
+    $(".secury-process").show();
+    securyProcess();
+    setTimeout(function(){
+		swiper.slideNext();
+    }, 2000)
 });
 
 $("#j-retake").bind('click', function(){
 	jQcameraInput.click();
 });
+
+$("#j-shot1").bind('click', function(){
+	swiper.slideNext();
+});
+
+$("#j-shot2").bind('click', function(){
+	swiper.slideNext();
+})
+

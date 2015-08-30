@@ -373,6 +373,16 @@ position: absolute;
   z-index: 100;
   right: 0;
 }
+.secury-process{
+  position: absolute;
+  bottom: 560px;
+  z-index: 100;
+  left: 50%;
+  margin-left: -210px;
+  width: 420px;
+  height: 100px;
+  display: none;
+}
 
 /*p6*/
 #p6{
