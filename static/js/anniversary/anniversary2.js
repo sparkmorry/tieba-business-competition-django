@@ -122,6 +122,9 @@ var drawFace = function(){
 	ctx.drawImage(imgClip, 0, 0, 450, 540);
 	ctx.globalCompositeOperation = "source-in";
 	ctx.drawImage(imgFace, 0, 0, 450, 540);
+	var img = canvas.toDataURL("image/png"); 
+	$("#jd-avatar").attr('src', img);
+	return img;
 }
 
 var arrowTimer;
@@ -141,6 +144,7 @@ var securyProcess = function(){
 
 var jQcameraInput = $('#cameraInput');
 var jQprevImg = $(".uploaded-img");
+var avatar;
 function readFile(){
     file = jQcameraInput.get(0).files[0];
     if(!/image\/\w+/.test(file.type)){
@@ -158,6 +162,7 @@ function readFile(){
 		}else {
 		   imgFace.onload = drawFace;
 		   imgClip.onload = drawFace;
+
 		}
     	$("#j-secury").show();
     	$("#j-retake").show();

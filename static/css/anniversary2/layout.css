@@ -481,4 +481,12 @@ position: absolute;
 	left: 0;
 	top: 0;
 }
+.avatar{
+  position: absolute;
+  top: 95px;
+  left: 300px;
+  width: 130px;
+  height: 163px;
+  z-index: 1000;
+}
 
