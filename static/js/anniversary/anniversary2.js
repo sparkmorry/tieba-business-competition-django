@@ -118,21 +118,34 @@ var imgClip, imgFace;
 imgClip = new Image();
 imgClip.src = "/static/css/anniversary2/mask.png";
 
+var TO_RADIANS = Math.PI/180; 
+var photo=document.getElementById("photo");
+
+function drawRotatedImage(cvs, image, x, y, angle) { 
+	cvs.width = 450;
+	cvs.height = 580;
+	var context=cvs.getContext("2d");
+	// save the current co-ordinate system 
+	// before we screw with it
+	context.save(); 
+ 
+	// move to the middle of where we want to draw our image
+	context.translate(x, y);
+	context.rotate(angle * TO_RADIANS);
+	context.drawImage(image, -290, -225, 580, 450);
+	context.rotate(-angle * TO_RADIANS);
+	context.translate(-x, -y);
+	context.restore(); 
+	var img = cvs.toDataURL("image/png"); 
+	return img;
+}
 var drawFace = function(){
 	if(imgFace.width>imgFace.height){
-		var x = canvas.width / 2;
-		var y = canvas.height / 2;
-		var width = imgFace.width;
-		var height = imgFace.height;
-		var angleInRadians=90;
-
-		ctx.translate(x, y);
-		ctx.rotate(angleInRadians);
 		ctx.drawImage(imgClip, 0, 0, 450, 580);
+		// drawRotatedImage(ctx, imgClip, width, height, 90);
 		ctx.globalCompositeOperation = "source-in";
-		ctx.drawImage(imgFace, -width / 2, -height / 2, width, height);
-		ctx.rotate(-angleInRadians);
-		ctx.translate(-x, -y);
+		// drawRotatedImage(ctx, imgFace, width, height, 90);
+		drawImageRot(imgFace, width, height, width, height, 90);
 	}else{
 		ctx.drawImage(imgClip, 0, 0, 450, 580);
 		ctx.globalCompositeOperation = "source-in";
@@ -173,6 +186,7 @@ function readFile(){
     	// jQprevImg.attr('src', this.result).show();
     	imgFace = new Image();
     	imgFace.src = this.result;
+		imgFace.src = drawRotatedImage(photo, imgFace, 225, 290, 90);
     	if(imgFace.complete && imgClip.complete) { //check if image was already loaded by the browser
 		   drawFace();
 		}else {
