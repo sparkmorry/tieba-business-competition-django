@@ -139,13 +139,31 @@ function drawRotatedImage(cvs, image, x, y, angle) {
 	var img = cvs.toDataURL("image/png"); 
 	return img;
 }
+var drawFaceRotate = function(){
+	if(imgReader.width>imgReader.height){
+		imgFace.src = drawRotatedImage(photo, imgReader, 225, 290, 90);
+	}else{
+		imgFace.src = imgReader.src;
+	}
+}
+
 var drawFace = function(){
+	drawFaceRotate();
 	ctx.drawImage(imgClip, 0, 0, 450, 580);
 	ctx.globalCompositeOperation = "source-in";
 	// ctx.drawImage(imgFace, 0, 0, 450, 580);
-	ctx.drawImage(imgReader, 0, 0, 450, 580);	
-	var img = canvas.toDataURL("image/png"); 
-	$("#jd-avatar").attr('src', img);
+	// alert("aaa");
+	imgFace.onload = function(){
+		// alert("bbbb");
+		// alert(imgFace.src);
+		ctx.drawImage(imgFace, 0, 0, 450, 580);	
+		var img = canvas.toDataURL("image/png"); 
+		$("#jd-avatar").attr('src', img);
+    	$("#j-secury").show();
+    	$("#j-retake").show();
+    	$("#j-photo").hide();		
+	}
+
 	return img;
 }
 
@@ -175,18 +193,12 @@ function readFile(){
     }
     var reader = new FileReader();
     reader.readAsDataURL(file);
-    var drawFaceRotate = function(){
-    	if(imgReader.width>imgReader.height){
-    		imgFace.src = drawRotatedImage(photo, imgReader, 225, 290, 90);
-    	}else{
-    		imgFace.src = imgReader.src;
-    	}
-    }
     reader.onload = function(e){
     	// jQprevImg.attr('src', this.result).show();
     	imgReader = new Image();
     	imgReader.src = this.result;
-    	// imgFace = new Image();
+    	imgFace = new Image();
+    	// alert("ccc");
     	// if(imgReader.complete){
     	// 	drawFaceRotate();
     	// }else{
@@ -198,9 +210,6 @@ function readFile(){
 		   imgReader.onload = drawFace;
 		   imgClip.onload = drawFace;
 		}
-    	$("#j-secury").show();
-    	$("#j-retake").show();
-    	$("#j-photo").hide();
     }
 }
 jQcameraInput.bind('change', readFile);
