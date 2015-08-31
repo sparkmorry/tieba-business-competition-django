@@ -16,7 +16,7 @@ $('body').bind('touchmove',function(event){
 	event.preventDefault();
 });
 
-
+var currentStage = 1;
 function keyframeAnimation(selector, height, keyNum, duration, delay, loop){
 	var timer;
 	var animation = setTimeout(function(){
@@ -163,8 +163,6 @@ var drawFace = function(){
     	$("#j-retake").show();
     	$("#j-photo").hide();		
 	}
-
-	return img;
 }
 
 var arrowTimer;
@@ -217,32 +215,70 @@ $('#j-photo').bind('click', function(){
 	jQcameraInput.click();
 });
 
-$("#j-secury").bind('click', function(){
-    $(".secury-process").show();
-    securyProcess();
-    setTimeout(function(){
-		swiper.slideNext();
-    }, 2000)
-});
-
 $("#j-retake").bind('click', function(){
 	jQcameraInput.click();
 });
 
+var fmoveonTimer, amoveTimer;
+var shot = function(){
+	$('#metro1').addClass('metro1-anime animated0_7');
+	$('#metro2').addClass('metro2-anime animated0_7');
+	$('#metro3').addClass('metro3-anime animated0_7');
+	$('#metro4').addClass('metro4-anime animated0_7');
+	fmoveonTimer = keyframeAnimation('#j-fire-moveon', 70, 8, 70, 0, true);
+	amoveTimer = keyframeAnimation("#j-arrow-moveon", 70, 4, 200, 0, true)
+}
+
 $("#j-shot1").bind('click', function(){
 	swiper.slideNext();
-		$('#metro1').addClass('metro1-anime animated0_7');
-		$('#metro2').addClass('metro2-anime animated0_7');
-		$('#metro3').addClass('metro3-anime animated0_7');
-		$('#metro4').addClass('metro4-anime animated0_7');
-
+	shot();
 });
 
 $("#j-shot2").bind('click', function(){
 	swiper.slideNext();
-		$('#metro1').addClass('metro1-anime animated0_7');
-		$('#metro2').addClass('metro2-anime animated0_7');
-		$('#metro3').addClass('metro3-anime animated0_7');
-		$('#metro4').addClass('metro4-anime animated0_7');
+	shot();
+});
+
+// 关卡切换
+var jQarrow = $(".arrow");
+var goStage = function(stageNum){
+	$("#j-planet1").unbind();
+	$('.i-huixing').unbind();
+	$('.i-mani').unbind();
+	$('.i-gede').unbind();
+	$('.i-dawang').unbind();
+	$('.i-k').unbind();
+	if(stageNum==2){
+    	$(".i-huixing-lock").removeClass('i-huixing-lock').addClass('i-huixing');
+    	jQarrow.css({'top': '540px'});
+    	$('.i-huixing').bind('click', function(){
+    		swiper.slideTo(5);
+    	});
+	}else if(stageNum==3){
+    	$(".i-mani-lock").removeClass('i-mani-lock').addClass('i-mani');
+    	jQarrow.css({'top': '300px', 'left': '241px'});
+    	$('.i-mani').bind('click', function(){
+    		swiper.slideTo(7);
+    	});
+
+	}
+}
+// 安检完成
+$("#j-secury").bind('click', function(){
+    $(".secury-process").show();
+    securyProcess();
+    currentStage = 2;
+    setTimeout(function(){
+    	goStage(currentStage);
+		swiper.slideTo(3);
+    }, 2000)
+});
+
+$("#j-move-stage-3").bind('click', function(){
+    currentStage = 3;
+    goStage(currentStage);
+	swiper.slideTo(3);
+
 })
+
 

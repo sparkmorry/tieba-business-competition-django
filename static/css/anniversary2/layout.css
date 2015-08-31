@@ -347,6 +347,38 @@ body{
   top: 640px;
   left: 75px;
 }
+.i-planet{
+	position: absolute;
+}
+.i-huixing-lock{
+	left: 56px;
+	top: 380px;
+}
+.i-huixing{
+	left: 76px;
+	top: 380px;
+
+}
+.i-mani, .i-mani-lock{
+	left: 380px;
+	top: 160px;
+}
+.i-mani{
+	top: 150px;
+}
+.i-gede, .i-gede-lock{
+	left: 555px;
+	top: 407px;
+}
+.i-dawang, .i-dawang-lock{
+	left: 400px;
+	top: 650px;
+}
+.i-k, .i-k-lock{
+  left: 500px;
+  top: 883px;
+}
+
 
 /*p5 安检*/
 #p5{
@@ -488,5 +520,31 @@ position: absolute;
   width: 130px;
   height: 163px;
   z-index: 1000;
+}
+.moveon{
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  right: 0px;
+  top: 610px;
+  z-index: 1000;
+}
+.ship-moveon{
+	position: absolute;
+  width: 326px;
+  height: 300px;
+  right: 0px;
+  top: 0px;
+  -webkit-transform: scale(0.6);
+
+}
+.moveon-arrow{
+	background:url(icon/moveon.png);
+	width: 84px;
+	height: 70px;
+	background-position: 0 0;
+	position: absolute;
+	top: 90px;
+	right: 0;
 }
 

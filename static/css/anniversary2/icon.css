@@ -148,6 +148,66 @@
 	background-position: 0 -100px;
 }
 
+/*星球*/
+.i-planet{
+	background: url(icon/planet.png);
+	display: inline-block;
+  z-index: 10000;
+}
+.i-huixing-lock{
+	width: 187px;
+	height: 203px;
+	background-position: -181px -24px;
+}
+.i-mani-lock{
+	width: 175px;
+	height: 192px;
+	background-position: -187px -224px;
+}
+.i-gede-lock{
+	width: 137px;
+	height: 186px;
+	background-position: -199px -430px;
+}
+.i-dawang-lock{
+	width: 182px;
+	height: 166px;
+	background-position: -195px -624px;
+}
+.i-k-lock{
+	width: 143px;
+	height: 218px;
+	background-position: -201px -817px;
+}
+.i-huixing{
+	width: 187px;
+	height: 203px;
+	background-position: -419px -24px;
+}
+.i-mani{
+	width: 175px;
+	height: 192px;
+	background-position: -419px -224px;
+}
+.i-gede{
+	width: 137px;
+	height: 186px;
+	background-position: -419px -430px;
+}
+.i-dawang{
+	width: 182px;
+	height: 166px;
+	background-position: -419px -630px;
+}
+.i-k{
+	width: 143px;
+	height: 218px;
+	background-position: -409px -817px;
+}
+
+
+
+
 /*p5*/
 .icon6{
 	background: url(icon/icon6.png);
