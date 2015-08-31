@@ -37,6 +37,8 @@
 	position: absolute;
 	left: 76px;
 	top: 250px;
+  -webkit-transition: -webkit-transform 1.5s;
+
 }
 .i-card-arrow{
     -webkit-animation-iteration-count: infinite;

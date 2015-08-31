@@ -278,7 +278,23 @@ $("#j-move-stage-3").bind('click', function(){
     currentStage = 3;
     goStage(currentStage);
 	swiper.slideTo(3);
+});
 
-})
+touch.on('#j-swipe-card', 'touchstart', function(ev){
+	ev.preventDefault();
+});
+var target = document.getElementById("j-swipe-card");
 
-
+var swipe = function(){
+	$(target).css({'-webkit-transform': 'translateX(250px)'})
+	    setTimeout(function(){
+		$('#zx-metro1').addClass('metro1-anime animated0_7');
+		$('#zx-metro2').addClass('metro2-anime animated0_7');
+		$('#zx-metro3').addClass('metro3-anime animated0_7');
+		$('#zx-metro4').addClass('metro4-anime animated0_7');
+		swiper.slideTo(8);
+    }, 1500)
+}
+touch.on(target, 'swiperight', function(ev){
+	swipe();
+});
