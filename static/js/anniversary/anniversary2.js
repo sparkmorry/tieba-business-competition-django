@@ -114,7 +114,7 @@ $("#j-planet1").bind('click', function(){
 
 var canvas=document.getElementById("canvas");
 var ctx=canvas.getContext("2d");
-var imgClip, imgFace;
+var imgClip, imgFace, imgReader;
 imgClip = new Image();
 imgClip.src = "/static/css/anniversary2/mask.png";
 
@@ -140,17 +140,10 @@ function drawRotatedImage(cvs, image, x, y, angle) {
 	return img;
 }
 var drawFace = function(){
-	if(imgFace.width>imgFace.height){
-		ctx.drawImage(imgClip, 0, 0, 450, 580);
-		// drawRotatedImage(ctx, imgClip, width, height, 90);
-		ctx.globalCompositeOperation = "source-in";
-		// drawRotatedImage(ctx, imgFace, width, height, 90);
-		drawImageRot(imgFace, width, height, width, height, 90);
-	}else{
-		ctx.drawImage(imgClip, 0, 0, 450, 580);
-		ctx.globalCompositeOperation = "source-in";
-		ctx.drawImage(imgFace, 0, 0, 450, 580);
-	}
+	ctx.drawImage(imgClip, 0, 0, 450, 580);
+	ctx.globalCompositeOperation = "source-in";
+	// ctx.drawImage(imgFace, 0, 0, 450, 580);
+	ctx.drawImage(imgReader, 0, 0, 450, 580);	
 	var img = canvas.toDataURL("image/png"); 
 	$("#jd-avatar").attr('src', img);
 	return img;
@@ -182,15 +175,27 @@ function readFile(){
     }
     var reader = new FileReader();
     reader.readAsDataURL(file);
+    var drawFaceRotate = function(){
+    	if(imgReader.width>imgReader.height){
+    		imgFace.src = drawRotatedImage(photo, imgReader, 225, 290, 90);
+    	}else{
+    		imgFace.src = imgReader.src;
+    	}
+    }
     reader.onload = function(e){
     	// jQprevImg.attr('src', this.result).show();
-    	imgFace = new Image();
-    	imgFace.src = this.result;
-		imgFace.src = drawRotatedImage(photo, imgFace, 225, 290, 90);
-    	if(imgFace.complete && imgClip.complete) { //check if image was already loaded by the browser
+    	imgReader = new Image();
+    	imgReader.src = this.result;
+    	// imgFace = new Image();
+    	// if(imgReader.complete){
+    	// 	drawFaceRotate();
+    	// }else{
+    	// 	imgReader.onload = drawFaceRotate;
+    	// }
+    	if(imgReader.complete && imgClip.complete) { //check if image was already loaded by the browser
 		   drawFace();
 		}else {
-		   imgFace.onload = drawFace;
+		   imgReader.onload = drawFace;
 		   imgClip.onload = drawFace;
 		}
     	$("#j-secury").show();
@@ -217,9 +222,18 @@ $("#j-retake").bind('click', function(){
 
 $("#j-shot1").bind('click', function(){
 	swiper.slideNext();
+		$('#metro1').addClass('metro1-anime animated0_7');
+		$('#metro2').addClass('metro2-anime animated0_7');
+		$('#metro3').addClass('metro3-anime animated0_7');
+		$('#metro4').addClass('metro4-anime animated0_7');
+
 });
 
 $("#j-shot2").bind('click', function(){
 	swiper.slideNext();
+		$('#metro1').addClass('metro1-anime animated0_7');
+		$('#metro2').addClass('metro2-anime animated0_7');
+		$('#metro3').addClass('metro3-anime animated0_7');
+		$('#metro4').addClass('metro4-anime animated0_7');
 })
 

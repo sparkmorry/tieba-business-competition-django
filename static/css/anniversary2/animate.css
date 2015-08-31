@@ -337,3 +337,60 @@
     -webkit-transform: rotate(360deg);
   } 
 }
+
+.metro1-anime{
+  -webkit-animation-name: metro1;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;   
+}
+@-webkit-keyframes metro1 {
+  0% {
+    -webkit-transform: translate(200px, 200px) rotate(-90deg);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px) rotate(-90deg)  } 
+}
+
+.metro2-anime{
+  -webkit-animation-name: metro2;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;   
+}
+@-webkit-keyframes metro2 {
+  0% {
+    -webkit-transform: translate(-200px, 200px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px) 
+  } 
+}
+.metro3-anime{
+  -webkit-animation-name: metro3;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;   
+}
+@-webkit-keyframes metro3 {
+  0% {
+    -webkit-transform: translate(200px, -200px) rotate(190deg);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px) rotate(190deg)  } 
+}
+
+.metro4-anime{
+  -webkit-animation-name: metro4;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;   
+}
+@-webkit-keyframes metro4 {
+  0% {
+    -webkit-transform: translate(-200px, -200px) rotate(90deg);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px) rotate(90deg)  
+  } 
+
+}
+
+
+

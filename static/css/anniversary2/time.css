@@ -206,6 +206,20 @@ animation-delay:12.5s;
 }
 
 
+.animated0_7{
+  -webkit-animation-duration:0.7s;
+  animation-duration:0.7s;
+  -webkit-animation-fill-mode:both;
+  animation-fill-mode:both  
+}
+.animated1_5{
+  -webkit-animation-duration:1.5s;
+  animation-duration:1.5s;
+  -webkit-animation-fill-mode:both;
+  animation-fill-mode:both  
+}
+
+
 .animated2{
   -webkit-animation-duration:2s;
   animation-duration:2s;
