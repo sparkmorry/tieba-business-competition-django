@@ -249,3 +249,46 @@
 	height: 84px;
 	background-position: -416px -712px;
 }
+
+
+/*p8*/
+.icon8{
+	background: url(icon/icon8.png);
+	display: inline-block;
+}
+
+.i-car{
+	width: 304px;
+	height: 230px;
+	background-position: 0 0;
+}
+.i-wajue{
+	width: 250px;
+	height: 326px;
+	background-position: 0 -253px;
+}
+.i-fan{
+	width: 163px;
+	height: 260px;
+	background-position: 0 -590px;
+}
+.i-ring{
+	width: 177px;
+	height: 233px;
+	background-position: -352px 0;
+}
+.i-bear{
+	width: 170px;
+	height: 245px;
+	background-position: -350px -250px;
+}
+.i-card-arrow{
+	width: 120px;
+	height: 50px;
+	background-position: -375px -562px;
+}
+.i-pos{
+	width: 212px;
+	height: 360px;
+	background-position: -628px 0;
+}

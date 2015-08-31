@@ -1,0 +1,55 @@
+#p8{
+	background-image: url(bg/p8.png);
+}
+.icon8{
+	position: absolute;
+}
+.i-car{
+	left: 125px;
+	top: 151px;
+}
+.i-fan{
+	left: 55px;
+	top: 402px;
+}
+.i-ring{
+	left: 132px;
+	top: 662px;
+}
+.i-wajue{
+	left: 490px;
+	top: 541px;
+}
+
+.i-bear{
+	left: 529px;
+	top: 231px;
+}
+.i-pos{
+	left: 269px;
+	top: 397px;
+}
+.i-card-arrow{
+	left: 353px;
+	top: 343px;
+}
+.zhongxin-card{
+	position: absolute;
+	left: 76px;
+	top: 250px;
+}
+.i-card-arrow{
+    -webkit-animation-iteration-count: infinite;
+}
+
+#p9{
+	background-color: #ebebeb;
+}
+.zhongxin-result{
+	position: absolute;
+	bottom: 70px;
+	left: 70px;
+	z-index: 100;
+}
+
+
