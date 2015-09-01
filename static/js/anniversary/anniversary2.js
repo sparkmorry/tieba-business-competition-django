@@ -273,14 +273,20 @@ var goStage = function(stageNum){
     	});
 	}else if(stageNum==5){
     	$(".i-dawang-lock").removeClass('i-dawang-lock').addClass('i-dawang');
-    	// jQarrow.attr('src', '/static/css/anniversary2/icon/arrow-down.png')
     	jQarrow.css({'top': '600px', 'left': '582px'});
-    	jQlocation.css({'top': '630px', 'left': '440px'});
+    	jQlocation.css({'top': '390px', 'left': '600px'}); 	
+    	// jQlocation.css({'top': '630px', 'left': '440px'});
     	$('.i-dawang').bind('click', function(){
-    		swiper.slideTo(9);
+    		swiper.slideTo(11);
+    	});
+	}else if(stageNum==6){
+    	$(".i-k-lock").removeClass('i-k-lock').addClass('i-k');
+    	jQarrow.css({'top': '800px', 'left': '344px'});
+    	jQlocation.css({'top': '630px', 'left': '440px'});
+    	$('.i-k').bind('click', function(){
+    		swiper.slideTo(11);
     	});
 	}
-
 
 }
 // 安检完成
@@ -345,6 +351,17 @@ $(".j-geshou-btn").bind('click', function(){
 // 完成第5关
 $("#j-move-stage-5").bind('click', function(){
     currentStage = 5;
+    goStage(currentStage);
+	swiper.slideTo(3);
+});
+
+$(".book").bind('click', function(){
+	swiper.slideNext();
+});
+
+// 完成第6关
+$("#j-move-stage-6").bind('click', function(){
+    currentStage = 6;
     goStage(currentStage);
 	swiper.slideTo(3);
 });

@@ -91,3 +91,28 @@
   right: 90px;
 }
 
+/*一呼百应*/
+#p12{
+	background-color: #242d32;
+	background-image: url(bg/p12.png);
+}
+.sun{
+	position: absolute;
+	top: 50px;
+	left: 30px;
+}
+.book{
+	position: absolute;
+	top: 210;
+	left: 200px;
+}
+.gailou-text{
+  position: absolute;
+  top: 720px;
+  right: 75px;	
+}
+
+#p13{
+	background-color: #e4a835;
+}
+
