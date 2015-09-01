@@ -284,7 +284,7 @@ var goStage = function(stageNum){
     	jQarrow.css({'top': '800px', 'left': '344px'});
     	jQlocation.css({'top': '630px', 'left': '440px'});
     	$('.i-k').bind('click', function(){
-    		swiper.slideTo(11);
+    		swiper.slideTo(13);
     	});
 	}
 

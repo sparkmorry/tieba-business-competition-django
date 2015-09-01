@@ -116,3 +116,15 @@
 	background-color: #e4a835;
 }
 
+#p14{
+	background-color: #242d32;
+	background-image: url(bg/p13.png);
+	background-repeat: no-repeat;
+}
+.enter{  
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  margin-left: -125px;
+}
+
