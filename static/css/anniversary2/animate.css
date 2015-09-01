@@ -392,5 +392,43 @@
 
 }
 
+.flash1{
+  -webkit-animation-name: flash1;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;     
+}
+.flash2{
+  -webkit-animation-name: flash2;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;     
+}
+
+
+@-webkit-keyframes flash1 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  } 
+  100% {
+    opacity: 0;
+  } 
+
+}
+
+@-webkit-keyframes flash2 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  } 
+  100% {
+    opacity: 1;
+  }   
+}
+
+
 
 

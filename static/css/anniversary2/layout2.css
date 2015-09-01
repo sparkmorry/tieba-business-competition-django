@@ -54,4 +54,40 @@
 	z-index: 100;
 }
 
+/*p10 我是歌手*/
+#p10{
+	background-color: black;
+	background-image: url(bg/p10.png);
+}
+.geshou{
+	position: absolute;
+	top: 90px;
+	left: 50%;
+	margin-left: -375px;
+}
+.geshou-light1{
+  position: absolute;
+  top: -10px;
+  left: 18px;	
+  -webkit-animation-iteration-count:infinite;
+}
+
+.geshou-light2{
+  position: absolute;
+  top: -10px;
+  right: 17px;	
+  -webkit-animation-iteration-count:infinite;
+}
+
+.geshou-button1{
+  position: absolute;
+  top: 660px;
+  left: 60px;
+}
+
+.geshou-button2{
+  position: absolute;
+  top: 660px;
+  right: 90px;
+}
 

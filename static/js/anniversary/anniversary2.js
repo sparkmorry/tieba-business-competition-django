@@ -269,9 +269,18 @@ var goStage = function(stageNum){
     	jQarrow.css({'top': '300px', 'left': '582px'});
     	jQlocation.css({'top': '145px', 'left': '435px'});
     	$('.i-gede').bind('click', function(){
-    		swiper.slideTo(7);
+    		swiper.slideTo(9);
+    	});
+	}else if(stageNum==5){
+    	$(".i-dawang-lock").removeClass('i-dawang-lock').addClass('i-dawang');
+    	// jQarrow.attr('src', '/static/css/anniversary2/icon/arrow-down.png')
+    	jQarrow.css({'top': '600px', 'left': '582px'});
+    	jQlocation.css({'top': '630px', 'left': '440px'});
+    	$('.i-dawang').bind('click', function(){
+    		swiper.slideTo(9);
     	});
 	}
+
 
 }
 // 安检完成
@@ -322,5 +331,22 @@ $("#j-move-stage-4").bind('click', function(){
 	swiper.slideTo(3);
 });
 
+$(".j-geshou-btn").bind('click', function(){
+	$(this).attr('src', "/static/css/anniversary2/icon/button1.png");
+	setTimeout(function(){
+		$('#gs-metro1').addClass('metro1-anime animated0_7');
+		$('#gs-metro2').addClass('metro2-anime animated0_7');
+		$('#gs-metro3').addClass('metro3-anime animated0_7');
+		$('#gs-metro4').addClass('metro4-anime animated0_7');		
+		swiper.slideNext();
+	}, 500);
+});
+
+// 完成第5关
+$("#j-move-stage-5").bind('click', function(){
+    currentStage = 5;
+    goStage(currentStage);
+	swiper.slideTo(3);
+});
 
 
