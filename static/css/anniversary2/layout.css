@@ -378,6 +378,12 @@ body{
   left: 500px;
   top: 883px;
 }
+#j-location{
+  position: absolute;
+  top: 933px;
+  left: 120px;
+  z-index: 10000;
+}
 
 
 /*p5 安检*/

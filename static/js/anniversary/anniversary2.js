@@ -241,6 +241,7 @@ $("#j-shot2").bind('click', function(){
 
 // 关卡切换
 var jQarrow = $(".arrow");
+var jQlocation = $("#j-location");
 var goStage = function(stageNum){
 	$("#j-planet1").unbind();
 	$('.i-huixing').unbind();
@@ -251,17 +252,27 @@ var goStage = function(stageNum){
 	if(stageNum==2){
     	$(".i-huixing-lock").removeClass('i-huixing-lock').addClass('i-huixing');
     	jQarrow.css({'top': '540px'});
+    	jQlocation.css({'top': '675px'});
     	$('.i-huixing').bind('click', function(){
     		swiper.slideTo(5);
     	});
 	}else if(stageNum==3){
     	$(".i-mani-lock").removeClass('i-mani-lock').addClass('i-mani');
     	jQarrow.css({'top': '300px', 'left': '241px'});
+    	jQlocation.css({'top': '365px'});
     	$('.i-mani').bind('click', function(){
     		swiper.slideTo(7);
     	});
-
+	}else if(stageNum==4){
+    	$(".i-gede-lock").removeClass('i-gede-lock').addClass('i-gede');
+    	jQarrow.attr('src', '/static/css/anniversary2/icon/arrow-down.png')
+    	jQarrow.css({'top': '300px', 'left': '582px'});
+    	jQlocation.css({'top': '145px', 'left': '435px'});
+    	$('.i-gede').bind('click', function(){
+    		swiper.slideTo(7);
+    	});
 	}
+
 }
 // 安检完成
 $("#j-secury").bind('click', function(){
@@ -274,6 +285,7 @@ $("#j-secury").bind('click', function(){
     }, 2000)
 });
 
+// 完成第三关
 $("#j-move-stage-3").bind('click', function(){
     currentStage = 3;
     goStage(currentStage);
@@ -285,16 +297,30 @@ touch.on('#j-swipe-card', 'touchstart', function(ev){
 });
 var target = document.getElementById("j-swipe-card");
 
+var fmoveon4Timer, amoveon4Timer;
+
 var swipe = function(){
-	$(target).css({'-webkit-transform': 'translateX(250px)'})
-	    setTimeout(function(){
+	$(target).css({'-webkit-transform': 'translateX(250px)'});	
+	fmoveon4Timer = keyframeAnimation('#j-move-stage-4 .j-fire-moveon', 70, 8, 70, 0, true);
+	amove4Timer = keyframeAnimation("#j-move-stage-4 .j-arrow-moveon", 70, 4, 200, 0, true)
+	setTimeout(function(){
 		$('#zx-metro1').addClass('metro1-anime animated0_7');
 		$('#zx-metro2').addClass('metro2-anime animated0_7');
 		$('#zx-metro3').addClass('metro3-anime animated0_7');
 		$('#zx-metro4').addClass('metro4-anime animated0_7');
 		swiper.slideTo(8);
-    }, 1500)
+    }, 1500);
 }
 touch.on(target, 'swiperight', function(ev){
 	swipe();
 });
+
+// 完成第四关
+$("#j-move-stage-4").bind('click', function(){
+    currentStage = 4;
+    goStage(currentStage);
+	swiper.slideTo(3);
+});
+
+
+
