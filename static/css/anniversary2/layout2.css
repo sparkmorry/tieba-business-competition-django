@@ -29,9 +29,12 @@
 	left: 269px;
 	top: 397px;
 }
-.i-card-arrow{
+.i-card-arrow, .i-card-arrow-reverse{
 	left: 353px;
 	top: 343px;
+}
+.i-card-arrow-reverse{
+	display: none;
 }
 .zhongxin-card{
 	position: absolute;

@@ -99,6 +99,21 @@
     -webkit-transform: translate(50px, 0px);
   } 
 }
+
+.moveleft-slow{
+  -webkit-animation: moveleft 5s linear infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);   
+}
+
+@-webkit-keyframes moveleft{
+  0% {
+    -webkit-transform: translate(50px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(-50px, 0px);
+  } 
+}
 .moveleftback-slow{
   -webkit-animation: moveleftback 20s linear infinite;
   -webkit-backface-visibility: hidden;
@@ -453,6 +468,46 @@
   } 
 }
 
+.car-in{
+  -webkit-animation-name: carIn;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;       
+}
+
+@-webkit-keyframes carIn {
+  0% {
+    -webkit-transform: translate(-500px, 0px);
+  }
+  90% {
+    -webkit-transform: translate(0px, 0px);
+  } 
+  95% {
+    -webkit-transform: translate(50px, 0px);
+  } 
+  100% {
+    -webkit-transform: translate(0px, 0px);
+  } 
+}
+
+.star-rotate-anime{
+  -webkit-animation-name: starRotate;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;         
+}
+@-webkit-keyframes starRotate {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    -webkit-transform: rotate(0deg) scale(0.7);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1); 
+    opacity: 0.4; 
+  } 
+}
 
 
 

@@ -347,6 +347,12 @@
 	height: 50px;
 	background-position: -375px -562px;
 }
+.i-card-arrow-reverse{
+	width: 120px;
+	height: 50px;
+	background-position: -375px -627px;
+}
+
 .i-pos{
 	width: 212px;
 	height: 360px;
@@ -391,27 +397,27 @@
 	position: relative;
   margin-right: 20px;
 }
-.x11{
+.x41{
 	background-position: 0 0;
 }
-.x12{
+.x42{
 	background-position: -175px 0;
 }
-.x21{
+.x31{
 	background-position: 0 -172px;
 }
-.x22{
+.x32{
 	background-position: -175px -172px;
 }
-.x31{
+.x21{
 	background-position: 0 -336px;
 }
-.x32{
+.x22{
 	background-position: -175px -336px;
 }
-.x41{
+.x11{
 	background-position: 0 -500px;
 }
-.x42{
+.x12{
 	background-position: -175px -500px;
 }

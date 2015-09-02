@@ -21,7 +21,7 @@ var mParty = document.getElementById("music-party");
 var mLevel = document.getElementById("music-level");
 var mSwipe = document.getElementById("music-swipecard");
 
-mBg.play();
+// mBg.play();
 
 var currentStage = 1;
 function keyframeAnimation(selector, height, keyNum, duration, delay, loop){
@@ -326,22 +326,42 @@ var target = document.getElementById("j-swipe-card");
 
 var fmoveon4Timer, amoveon4Timer;
 
+var swipeTime = 0;
+var jQcardArrow = $('.i-card-arrow');
+var jQcardArrowR = $('.i-card-arrow-reverse');
 var swipe = function(){
-	$(target).css({'-webkit-transform': 'translateX(250px)'});	
-	fmoveon4Timer = keyframeAnimation('#j-move-stage-4 .j-fire-moveon', 70, 8, 70, 0, true);
-	amove4Timer = keyframeAnimation("#j-move-stage-4 .j-arrow-moveon", 70, 4, 200, 0, true)
-	setTimeout(function(){
-		mLevel.play();
-		$('#zx-metro1').addClass('metro1-anime animated0_7');
-		$('#zx-metro2').addClass('metro2-anime animated0_7');
-		$('#zx-metro3').addClass('metro3-anime animated0_7');
-		$('#zx-metro4').addClass('metro4-anime animated0_7');
-		swiper.slideTo(8);
-    }, 1500);
+	swipeTime++;
+	if(swipeTime==1){
+		$(target).css({'-webkit-transform': 'translateX(250px)'});	
+		jQcardArrow.hide().removeClass('moveright-slow animated1_5');
+		jQcardArrowR.show().addClass('moveleft-slow animated1_5');
+	}else if(swipeTime == 2){
+		jQcardArrow.show().addClass('moveright-slow animated1_5');
+		jQcardArrowR.hide().removeClass('moveleft-slow animated1_5');
+		$(target).css({'-webkit-transform': 'translateX(0px)'});
+	}else if(swipeTime == 3){
+		jQcardArrow.hide().removeClass('moveright-slow animated1_5');
+		$(target).css({'-webkit-transform': 'translateX(250px)'});	
+		setTimeout(function(){
+			mLevel.play();
+			fmoveon4Timer = keyframeAnimation('#j-move-stage-4 .j-fire-moveon', 70, 8, 70, 0, true);
+			amove4Timer = keyframeAnimation("#j-move-stage-4 .j-arrow-moveon", 70, 4, 200, 0, true)
+
+			$('#zx-metro1').addClass('metro1-anime animated0_7');
+			$('#zx-metro2').addClass('metro2-anime animated0_7');
+			$('#zx-metro3').addClass('metro3-anime animated0_7');
+			$('#zx-metro4').addClass('metro4-anime animated0_7');
+			swiper.slideTo(8);
+	    }, 1500);
+	}
 }
 touch.on(target, 'swiperight', function(ev){
 	swipe();
 });
+touch.on(target, 'swipeleft', function(ev){
+	swipe();
+});
+
 
 // 完成第四关
 $("#j-move-stage-4").bind('click', function(){
@@ -396,6 +416,21 @@ $("#j-move-stage-6").bind('click', function(){
 
 $("#j-enter").bind('click', function(){
 	swiper.slideNext();
-})
+	$('.result-car').addClass('car-in animated');
+	var jQxunzhang = $('.xunzhang');
+	var jQstars = $('.star-rotate');
+	$(jQstars[0]).addClass('star-rotate-anime animated');
+	$(jQstars[1]).addClass('star-rotate-anime animated delay2_3');
+	$(jQstars[2]).addClass('star-rotate-anime animated1_5');
+	$(jQstars[3]).addClass('star-rotate-anime animated delay0_5');
+	$(jQstars[4]).addClass('star-rotate-anime animated2 delay0_8');
+	$(jQstars[5]).addClass('star-rotate-anime animated1_5');
+
+	$(jQxunzhang[0]).addClass('fadeIn animated delay1');
+	$(jQxunzhang[1]).addClass('fadeIn animated delay1_1');
+	$(jQxunzhang[2]).addClass('fadeIn animated delay2');
+	$(jQxunzhang[3]).addClass('fadeIn animated delay2_1');
+	$('.result-text').addClass('fadeIn animated delay3');
+});
 
 
