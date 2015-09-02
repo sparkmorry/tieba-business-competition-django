@@ -21,7 +21,7 @@ var mParty = document.getElementById("music-party");
 var mLevel = document.getElementById("music-level");
 var mSwipe = document.getElementById("music-swipecard");
 
-// mBg.play();
+mBg.play();
 
 var currentStage = 1;
 function keyframeAnimation(selector, height, keyNum, duration, delay, loop){
@@ -112,7 +112,7 @@ $(".click").bind('click', function(){
 
 $(".i-go").bind('click', function(){
 	swiper.slideNext();
-	removeAnimation('#p13 .shine-lines', goAnime)	
+	removeAnimation('#p13 .shine-lines', goAnime);	
 
 });
 
@@ -406,16 +406,26 @@ $(".book").bind('click', function(){
 });
 
 // 完成第6关
+var fireworkTimer1, fireworkTimer2, fireworkTimer3, fireworkTimer4;
 $("#j-move-stage-6").bind('click', function(){
     currentStage = 6;
     goStage(currentStage);
 	swiper.slideTo(3);
 	enterTimer = keyframeAnimation('#p14 .shine-lines', 200, 13, 30, 0, true);	
+	fireworkTimer1 = keyframeAnimation('#firework1', 300, 20, 60, 1000, true);	
+	fireworkTimer2 = keyframeAnimation('#firework2', 300, 20, 70, 2000, true);	
+	fireworkTimer3 = keyframeAnimation('#firework3', 300, 20, 40, 3000, true);	
+
+	// fireworkTimer4 = keyframeAnimation('#firework1', 300, 20, 40, 8000, false);	
 
 });
 
 $("#j-enter").bind('click', function(){
 	swiper.slideNext();
+	removeAnimation('#firework1', fireworkTimer1);	
+	removeAnimation('#firework2', fireworkTimer2);	
+	removeAnimation('#firework3', fireworkTimer3);	
+
 	$('.result-car').addClass('car-in animated');
 	var jQxunzhang = $('.xunzhang');
 	var jQstars = $('.star-rotate');

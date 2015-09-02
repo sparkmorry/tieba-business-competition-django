@@ -173,6 +173,12 @@
   left: 275px;
   top: 535px;
 }
+.firework{
+	background-image: url(animation/firework.png);
+	width: 300px;
+	height: 300px;
+	position: absolute;
+}
 
 /*最终结果*/
 #p15{
