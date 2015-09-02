@@ -16,6 +16,13 @@ $('body').bind('touchmove',function(event){
 	event.preventDefault();
 });
 
+var mBg = document.getElementById("music-bg");
+var mParty = document.getElementById("music-party");
+var mLevel = document.getElementById("music-level");
+var mSwipe = document.getElementById("music-swipecard");
+
+mBg.play();
+
 var currentStage = 1;
 function keyframeAnimation(selector, height, keyNum, duration, delay, loop){
 	var timer;
@@ -223,6 +230,7 @@ $("#j-retake").bind('click', function(){
 
 var fmoveonTimer, amoveTimer;
 var shot = function(){
+	mLevel.play();
 	$('#metro1').addClass('metro1-anime animated0_7');
 	$('#metro2').addClass('metro2-anime animated0_7');
 	$('#metro3').addClass('metro3-anime animated0_7');
@@ -286,6 +294,8 @@ var goStage = function(stageNum){
     	jQarrow.css({'top': '800px', 'left': '344px'});
     	jQlocation.css({'top': '630px', 'left': '440px'});
     	$('.i-k').bind('click', function(){
+    		mBg.pause();
+			mParty.play();
     		swiper.slideTo(13);
     	});
 	}
@@ -321,6 +331,7 @@ var swipe = function(){
 	fmoveon4Timer = keyframeAnimation('#j-move-stage-4 .j-fire-moveon', 70, 8, 70, 0, true);
 	amove4Timer = keyframeAnimation("#j-move-stage-4 .j-arrow-moveon", 70, 4, 200, 0, true)
 	setTimeout(function(){
+		mLevel.play();
 		$('#zx-metro1').addClass('metro1-anime animated0_7');
 		$('#zx-metro2').addClass('metro2-anime animated0_7');
 		$('#zx-metro3').addClass('metro3-anime animated0_7');
@@ -342,6 +353,7 @@ $("#j-move-stage-4").bind('click', function(){
 $(".j-geshou-btn").bind('click', function(){
 	$(this).attr('src', "/static/css/anniversary2/icon/button1.png");
 	setTimeout(function(){
+		mLevel.play();
 		$('#gs-metro1').addClass('metro1-anime animated0_7');
 		$('#gs-metro2').addClass('metro2-anime animated0_7');
 		$('#gs-metro3').addClass('metro3-anime animated0_7');
@@ -359,6 +371,7 @@ $("#j-move-stage-5").bind('click', function(){
 
 var bookTimer, enterTimer;
 $(".book").bind('click', function(){
+	mLevel.play();
 	swiper.slideNext();
 	bookTimer = keyframeAnimation('#j-book-anime', 494, 5, 150, 200, false);
 
