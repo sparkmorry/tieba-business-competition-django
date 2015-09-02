@@ -69,7 +69,7 @@ var p2Animate = function(){
 	}, 4500)
 }
 
-var second = 0, loading=true;
+var second = 0, loading=true, loadingAnime;
 var secondNum = $("#loading-num");
 $(window).load(function(){
 	var timer = setInterval(function(){
@@ -84,6 +84,8 @@ $(window).load(function(){
 		}
 		secondNum.text(second);
 	}, 40);
+	loadingAnime = keyframeAnimation('.loading-bg', 170, 50, 50, 0, false);	
+
 });
 
 var invClick = 1;
@@ -97,13 +99,13 @@ $(".click").bind('click', function(){
 	}else if(invClick == 3){
 		$("#j-go").show();
 		$(".click-reminder").remove();
-		goAnime = keyframeAnimation('.shine-lines', 200, 13, 30, 0, true);	
+		goAnime = keyframeAnimation('#p3 .shine-lines', 200, 13, 30, 0, true);	
 	}
 });
 
 $(".i-go").bind('click', function(){
 	swiper.slideNext();
-	removeAnimation('.shine-lines', goAnime)	
+	removeAnimation('#p13 .shine-lines', goAnime)	
 
 });
 
@@ -355,7 +357,7 @@ $("#j-move-stage-5").bind('click', function(){
 	swiper.slideTo(3);
 });
 
-var bookTimer;
+var bookTimer, enterTimer;
 $(".book").bind('click', function(){
 	swiper.slideNext();
 	bookTimer = keyframeAnimation('#j-book-anime', 494, 5, 150, 200, false);
@@ -375,6 +377,12 @@ $("#j-move-stage-6").bind('click', function(){
     currentStage = 6;
     goStage(currentStage);
 	swiper.slideTo(3);
+	enterTimer = keyframeAnimation('#p14 .shine-lines', 200, 13, 30, 0, true);	
+
 });
+
+$("#j-enter").bind('click', function(){
+	swiper.slideNext();
+})
 
 

@@ -166,4 +166,44 @@
   left: 50%;
   margin-left: -125px;
 }
+#p14 .shine-lines{
+  left: 275px;
+  top: 435px;
+}
 
+/*最终结果*/
+#p15{
+	background-image: url(bg/p15.png);
+	background-repeat: no-repeat;
+}
+.result-people{
+	position: absolute;
+  top: 370px;
+  right: 65px;
+}
+.result-car{
+  position: absolute;
+  bottom: 360px;
+  right: 150px;
+}
+.result-car.car2{
+  right: 230px;
+}
+.final-text{
+	position: absolute;
+	width: 750px;
+	left: 0;
+	bottom: 0;
+	height: 450px; 
+}
+.result-text{
+	position: absolute;
+	bottom: 107px;
+	left: 90px;
+}
+
+.xunzhang-wrapper{
+	position: absolute;
+	top: 70px;
+	left: 90px;
+}

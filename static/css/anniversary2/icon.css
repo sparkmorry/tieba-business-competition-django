@@ -373,3 +373,45 @@
 	height: 342px;
 	background-position: -655px -368px;
 }
+
+/*p15*/
+.star-rotate{
+	background: url(icon/icon15.png);
+	display: inline-block;
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	background-position: -25px -700px;
+}
+.xunzhang{
+	width: 125px;
+	height: 150px;
+	background: url(icon/icon15.png);
+	display: inline-block;
+	position: relative;
+  margin-right: 20px;
+}
+.x11{
+	background-position: 0 0;
+}
+.x12{
+	background-position: -175px 0;
+}
+.x21{
+	background-position: 0 -172px;
+}
+.x22{
+	background-position: -175px -172px;
+}
+.x31{
+	background-position: 0 -336px;
+}
+.x32{
+	background-position: -175px -336px;
+}
+.x41{
+	background-position: 0 -500px;
+}
+.x42{
+	background-position: -175px -500px;
+}

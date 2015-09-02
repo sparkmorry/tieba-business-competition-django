@@ -91,8 +91,8 @@ body{
 	background-image:url('animation/loading.png') ;
 	background-position: 0 0;
   position: absolute;
-  left: 180px;
-  bottom: 80px;
+  left: 170px;
+  top: 1004px;
 }
 
 
@@ -350,7 +350,7 @@ body{
 .i-planet{
 	position: absolute;
 }
-.i-huixing-lock{
+.i-huixing-lock, .i-huixing{
 	left: 56px;
 	top: 380px;
 }
