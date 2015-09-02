@@ -65,7 +65,7 @@ background-size: auto 100% !important;
         animation-fill-mode: both;
 }
 
-.delay0_1{
+.delay0_5{
 animation-delay:0.5s;
 -webkit-animation-delay:0.5s;
 }
@@ -206,6 +206,12 @@ animation-delay:12.5s;
 }
 
 
+.animated0_5{
+  -webkit-animation-duration:0.5s;
+  animation-duration:0.5s;
+  -webkit-animation-fill-mode:both;
+  animation-fill-mode:both  
+}
 .animated0_7{
   -webkit-animation-duration:0.7s;
   animation-duration:0.7s;

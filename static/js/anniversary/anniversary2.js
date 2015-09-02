@@ -267,7 +267,7 @@ var goStage = function(stageNum){
     	$(".i-gede-lock").removeClass('i-gede-lock').addClass('i-gede');
     	jQarrow.attr('src', '/static/css/anniversary2/icon/arrow-down.png')
     	jQarrow.css({'top': '300px', 'left': '582px'});
-    	jQlocation.css({'top': '145px', 'left': '435px'});
+    	jQlocation.css({'top': '145px', 'left': '443px'});
     	$('.i-gede').bind('click', function(){
     		swiper.slideTo(9);
     	});
@@ -355,8 +355,19 @@ $("#j-move-stage-5").bind('click', function(){
 	swiper.slideTo(3);
 });
 
+var bookTimer;
 $(".book").bind('click', function(){
 	swiper.slideNext();
+	bookTimer = keyframeAnimation('#j-book-anime', 494, 5, 150, 200, false);
+
+	$('#hw-metro1').addClass('metro1-anime animated0_7');
+	$('#hw-metro2').addClass('metro2-anime animated0_7');
+	$('#hw-metro3').addClass('metro3-anime animated0_7');
+	$('#hw-metro4').addClass('metro4-anime animated0_7');		
+
+	$(".i-building3").addClass('dropdown animated0_5 delay0_5');
+	$(".i-building2").addClass('dropdown animated0_5 delay0_8');
+	$(".i-building1").addClass('dropdown animated0_5 delay1');
 });
 
 // 完成第6关

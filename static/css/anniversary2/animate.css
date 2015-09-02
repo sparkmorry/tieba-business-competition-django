@@ -429,6 +429,25 @@
   }   
 }
 
+.dropdown{
+  -webkit-animation-name: dropdown;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-out;       
+}
+
+@-webkit-keyframes dropdown {
+  0% {
+    -webkit-transform: translate(0px, -1000px);
+  }
+  50% {
+    -webkit-transform: translate(0px, -700px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+  } 
+
+}
+
 
 
 
