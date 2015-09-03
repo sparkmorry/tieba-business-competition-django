@@ -128,6 +128,21 @@
 	bottom: 0;
 	left: 0;
 }
+.book2-anime{
+	background-image: url(animation/book2.png);
+	width: 749px;
+	height: 494px;
+	background-position: 0 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.i-flat-building{
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  top: 200px;
+}
 .gailou-animation{
 	width: 750px;
 	height: 600px;
@@ -239,4 +254,14 @@
   top: 559px;
   left: 230px;
   font-size: 40px;
+}
+
+.music{
+	background-image: url(animation/music.png);
+	width: 70px;
+	height: 70px;
+	position: fixed;
+	top: 40px;
+	right: 40px;
+	z-index: 1000;
 }

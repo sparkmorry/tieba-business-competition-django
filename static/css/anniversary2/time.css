@@ -264,4 +264,11 @@ animation-delay:12.5s;
   animation-fill-mode:both  
 }
 
+.animated10{
+  -webkit-animation-duration:7s;
+  animation-duration:7s;
+  -webkit-animation-fill-mode:both;
+  animation-fill-mode:both  
+}
+
 

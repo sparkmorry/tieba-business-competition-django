@@ -61,6 +61,8 @@ function removeAnimation(selector, timer){
 	clearInterval(timer);
 }
 
+keyframeAnimation('.music', 70, 16, 200, 0, true);
+
 //关键帧动画timer
 var goAnime, fireAnime;
 
@@ -68,7 +70,7 @@ var p2Animate = function(){
 	$("#j-p2-content-wrapper").addClass('movedown')
 	fireAnime = keyframeAnimation('#j-fire', 70, 8, 70, 0, true);
 	$("#j-ship").addClass('moveright-slow')
-	$(".i-sudden").addClass('fadeIn animated delay2')
+	$(".i-sudden").addClass('fadeIn animated delay2');
 	setTimeout(function(){
 		swiper.slideNext();
 		$(".i-invitation").addClass('rollIn animated');
@@ -231,7 +233,9 @@ $("#j-retake").bind('click', function(){
 // 游戏逻辑变量
 var jingdongLevel=1, zhongxinLevel=1, geshouLevel=1, huaweiLevel=1;
 var finalLevel=1, jQfinalResult=$("#j-final-result"), jQxunzhang=$('.xunzhang');
-var jQcar = $("#j-car"), jQpeople=$("#j-people");
+var jQcar = $("#j-car"), jQpeople=$("#j-people"), jQbook=$("#j-book");
+var jQshareText = $("#j-share-text"), jQbookAnime=$("#j-book-anime");
+var jQgailou=$("#j-gailou-animation");
 var jQjdResult=$("#j-jd-result"), jQzxResult=$("#j-zx-result");
 var jQgsResult = $("#j-gs-result"), jQhwResult = $("#j-hw-result");
 
@@ -260,7 +264,7 @@ $("#j-shot1").bind('click', function(){
 
 $("#j-shot2").bind('click', function(){
 	swiper.slideNext(2);
-	shot();
+	shot(2);
 });
 
 // 关卡切换
@@ -283,7 +287,7 @@ var goStage = function(stageNum){
     	});
 	}else if(stageNum==3){
     	$(".i-mani-lock").removeClass('i-mani-lock').addClass('i-mani');
-    	jQarrow.css({'top': '300px', 'left': '241px'});
+    	jQarrow.css({'top': '190px', 'left': '340px'}).removeClass('moveupdown').addClass('moveleftright');
     	jQlocation.css({'top': '365px'});
     	$('.i-mani').bind('click', function(){
     		swiper.slideTo(7);
@@ -302,6 +306,7 @@ var goStage = function(stageNum){
     	jQlocation.css({'top': '390px', 'left': '600px'}); 	
     	// jQlocation.css({'top': '630px', 'left': '440px'});
     	$('.i-dawang').bind('click', function(){
+    		jQbook.addClass('shake animated');
     		swiper.slideTo(11);
     	});
 	}else if(stageNum==6){
@@ -314,7 +319,7 @@ var goStage = function(stageNum){
     		swiper.slideTo(13);
     	});
 	}
-
+	swiper.slideTo(3);
 }
 // 安检完成
 $("#j-secury").bind('click', function(){
@@ -323,7 +328,6 @@ $("#j-secury").bind('click', function(){
     currentStage = 2;
     setTimeout(function(){
     	goStage(currentStage);
-		swiper.slideTo(3);
     }, 2000)
 });
 
@@ -331,7 +335,6 @@ $("#j-secury").bind('click', function(){
 $("#j-move-stage-3").bind('click', function(){
     currentStage = 3;
     goStage(currentStage);
-	swiper.slideTo(3);
 });
 
 touch.on('#j-swipe-card', 'touchstart', function(ev){
@@ -389,7 +392,6 @@ touch.on(target, 'swipeleft', function(ev){
 $("#j-move-stage-4").bind('click', function(){
     currentStage = 4;
     goStage(currentStage);
-	swiper.slideTo(3);
 });
 
 var showFinal=function(jingdongLevel, zhongxinLevel){
@@ -421,13 +423,26 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[1]).addClass('x21');
 		$(jQxunzhang[2]).addClass('x31');
 		$(jQxunzhang[3]).addClass('x41');
-		jQpeople.attr('src', '/static/css/anniversary2/result/final/p1.png');
+		jQbook.attr('src', '/static/css/anniversary2/icon/book1.png');
+		jQbookAnime.addClass('book1-anime');
+	    jQgailou.append('<i class="icon12 i-building3"></i>');
+	    jQgailou.append('<i class="icon12 i-building2"></i>');
+	    jQgailou.append('<i class="icon12 i-building1"></i>');
+
+		jQpeople.attr('src', '/static/css/anniversary2/result/final/p11.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png');
 		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/1.png');		
+		jQshareText.attr('src','/static/css/anniversary2/result/final/share2.png');
 	}else if(finalLevel==2){
+		jQbook.attr('src', '/static/css/anniversary2/icon/book1.png');
+		jQbookAnime.addClass('book1-anime');
+	    jQgailou.append('<i class="icon12 i-building3"></i>');
+	    jQgailou.append('<i class="icon12 i-building2"></i>');
+	    jQgailou.append('<i class="icon12 i-building1"></i>');
+
 		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/2.png');
-		jQpeople.attr('src', '/static/css/anniversary2/result/final/p1.png');
+		jQpeople.attr('src', '/static/css/anniversary2/result/final/p11.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car2.png').addClass('car2');
 		$(jQxunzhang[0]).addClass('x11');
 		$(jQxunzhang[1]).addClass('x22');
@@ -435,10 +450,15 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[3]).addClass('x41');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png');
 		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/1.png');		
+		jQshareText.attr('src','/static/css/anniversary2/result/final/share2.png');
+
 	}else if(finalLevel==3){
 		// 好金 土豪粉丝
+		jQbook.attr('src', '/static/css/anniversary2/icon/book2.png');
+		jQbookAnime.addClass('book2-anime');
+	    jQgailou.append('<i class="icon12 i-flat-building"></i>');
 		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/3.png');
-		jQpeople.attr('src', '/static/css/anniversary2/result/final/p2.png');
+		jQpeople.attr('src', '/static/css/anniversary2/result/final/p22.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
 		$(jQxunzhang[0]).addClass('x12');
 		$(jQxunzhang[1]).addClass('x21');
@@ -446,9 +466,15 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[3]).addClass('x42');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png');
 		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/2.png');		
+		jQshareText.attr('src','/static/css/anniversary2/result/final/share1.png');
+
 	}else if(finalLevel==4){
+		jQbook.attr('src', '/static/css/anniversary2/icon/book2.png');
+		jQbookAnime.addClass('book2-anime');
+	    jQgailou.append('<i class="icon12 i-flat-building"></i>');
+
 		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/4.png');
-		jQpeople.attr('src', '/static/css/anniversary2/result/final/p2.png');
+		jQpeople.attr('src', '/static/css/anniversary2/result/final/p22.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car2.png').addClass('car2');
 		$(jQxunzhang[0]).addClass('x12');
 		$(jQxunzhang[1]).addClass('x22');
@@ -456,6 +482,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[3]).addClass('x42');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png');
 		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/2.png');		
+		jQshareText.attr('src','/static/css/anniversary2/result/final/share1.png');
 
 	}
 
@@ -477,7 +504,6 @@ $(".j-geshou-btn").bind('click', function(){
 $("#j-move-stage-5").bind('click', function(){
     currentStage = 5;
     goStage(currentStage);
-	swiper.slideTo(3);
 });
 
 var bookTimer, enterTimer;
@@ -491,9 +517,13 @@ $(".book").bind('click', function(){
 	$('#hw-metro3').addClass('metro3-anime animated0_7');
 	$('#hw-metro4').addClass('metro4-anime animated0_7');		
 
-	$(".i-building3").addClass('dropdown animated0_5 delay0_5');
-	$(".i-building2").addClass('dropdown animated0_5 delay0_8');
-	$(".i-building1").addClass('dropdown animated0_5 delay1');
+	if(huaweiLevel==1){
+		$(".i-building3").addClass('dropdown animated0_5 delay0_5');
+		$(".i-building2").addClass('dropdown animated0_5 delay0_8');
+		$(".i-building1").addClass('dropdown animated0_5 delay1');
+	}else{
+		$(".i-flat-building").addClass('dropdown animated0_5 delay0_5');
+	}
 });
 
 // 完成第6关
@@ -501,7 +531,6 @@ var fireworkTimer1, fireworkTimer2, fireworkTimer3, fireworkTimer4;
 $("#j-move-stage-6").bind('click', function(){
     currentStage = 6;
     goStage(currentStage);
-	swiper.slideTo(3);
 	enterTimer = keyframeAnimation('#p14 .shine-lines', 200, 13, 30, 0, true);	
 	fireworkTimer1 = keyframeAnimation('#firework1', 300, 20, 60, 1000, true);	
 	fireworkTimer2 = keyframeAnimation('#firework2', 300, 20, 70, 2000, true);	
@@ -533,6 +562,7 @@ $("#j-enter").bind('click', function(){
 	$('.result-text').addClass('fadeIn animated delay3');
 	setTimeout(function(){
 		$('.share').show();
+		$(".share-light").addClass('flash1 animated0_5');
 	}, 6000);
 });
 

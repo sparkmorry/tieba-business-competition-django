@@ -355,7 +355,8 @@ body{
 	top: 380px;
 }
 .i-mani, .i-mani-lock{
-	left: 380px;
+	/*left: 380px;*/
+	left: 480px;
 	top: 160px;
 }
 .i-mani{
