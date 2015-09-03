@@ -18,9 +18,12 @@
 </head>
 <body>
 	<img src="/static/css/anniversary2/cover.jpg" style="height:0px;">
+
+
 	<div class="swiper-container">
+
 	    <div class="swiper-wrapper">
-	    	<!-- 0 -->
+	    	<!-- 0loading -->
 	        <div class="swiper-slide m1" id="p1" style="opacity:1">
 	        	<i class="icon1 i-title1"></i>
 	        	<i class="icon1 i-title2"></i>
@@ -38,6 +41,7 @@
 				<div class="loading-bg"></div>
 				<p class="loading-text"><span id="loading-num">0</span>%</p>
 	        </div>
+	        <!-- 印子 -->
 	        <div class="swiper-slide m1" id="p2">
 	        	<div id="j-p2-content-wrapper" class="p2-content-wrapper">
 		        	<i class="icon2 i-moon"></i>
@@ -56,7 +60,7 @@
 					<i class="icon2 i-trees"></i> 		
 	        	</div>
 	        </div>
-	        <!-- 2 -->
+	        <!-- 2邀请函 -->
 	        <div class="swiper-slide m1" id="p3">
 	        	<i class="icon3 i-invitation"></i>
 				<div class="p2-star-big star-shine" style="left:380px;top:20px;"></div>
@@ -153,8 +157,8 @@
 				<i class="icon1 i-small-star star-shink1" style="  top:420px;"></i>
 	        	<i class="icon6 i-sale-big big-sale1"></i>
 	        	<i class="icon6 i-sale-big big-sale2"></i>
-	        	<img src="/static/css/anniversary2/icon/shot.png" class="shot-scale animated" id="j-shot1">
-	        	<img src="/static/css/anniversary2/icon/shot.png" class="shot-scale animated" id="j-shot2">
+	        	<img src="/static/css/anniversary2/icon/shot.png" class="" id="j-shot1">
+	        	<img src="/static/css/anniversary2/icon/shot.png" class="" id="j-shot2">
 				<p id="j-jingdong-text" class="inv-text">点击其中一个红包，看看强哥和老板娘为你准备了什么酷炫装备</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1 needle1-anime"></i>
@@ -165,7 +169,7 @@
  	        </div>
  	        <!-- 6京东结果 -->
 	        <div class="swiper-slide m1" id="p7">
-	        	<img class="jingdong-result" src="/static/css/anniversary2/result/jingdong/1.png">
+	        	<img class="jingdong-result" id="j-jd-result" src="">
 	        	<img class="jingdong-round rotate360 animated5" src="/static/css/anniversary2/result/jingdong/round.png">
 	        	<img class="jingdong-metro" src="/static/css/anniversary2/result/p7.png">
 	        	<i class="icon6 white-star-big star-shink1" style="left:238px;top:70px"></i>
@@ -209,7 +213,7 @@
  	        </div>
  	        <!-- 8中信结果 -->
 	        <div class="swiper-slide m1" id="p9">
-	        	<img class="zhongxin-result" src="/static/css/anniversary2/result/zhongxin/1.png">
+	        	<img class="zhongxin-result" id="j-zx-result" src="">
 	        	<img class="jingdong-round rotate360 animated5" src="/static/css/anniversary2/result/zhongxin/round.png">
 	        	<img class="jingdong-metro" src="/static/css/anniversary2/result/zhongxin/zhongxin.png">
 	        	<i class="icon6 white-star-big star-shink1" style="left:238px;top:70px"></i>
@@ -256,7 +260,7 @@
 
  	        <!-- 10歌手结果 -->
 	        <div class="swiper-slide m1" id="p11">
-	        	<img class="zhongxin-result" src="/static/css/anniversary2/result/geshou/1.png">
+	        	<img class="zhongxin-result" id="j-gs-result" src="">
 	        	<img class="jingdong-round rotate360 animated5" src="/static/css/anniversary2/result/jingdong/round.png">
 	        	<img class="jingdong-metro" src="/static/css/anniversary2/result/p7.png">
 	        	<i class="icon6 white-star-big star-shink1" style="left:238px;top:70px"></i>
@@ -283,7 +287,7 @@
 			<!-- 11一呼百应 -->
 	        <div class="swiper-slide m1" id="p12">
 	        	<img class="sun rotate360 animated7" src="/static/css/anniversary2/icon/sun.png">
-	        	<img class="book" src="/static/css/anniversary2/icon/book1.png">
+	        	<img class="book" id="j-book" src="/static/css/anniversary2/icon/book1.png">
 	        	<img class="gailou-text" src="/static/css/anniversary2/icon/gailou-text.png">
 				<p id="j-geshou-text" class="inv-text">点击偶像送你的《成名秘笈》，看看在大王星能发挥多少威力～</p>
 				<div class="ufo">
@@ -294,7 +298,7 @@
 	        </div>
  	        <!-- 12一呼百应结果 -->
 	        <div class="swiper-slide m1" id="p13">
-	        	<img class="zhongxin-result" src="/static/css/anniversary2/result/huawei/1.png">
+	        	<img class="zhongxin-result" id="j-hw-result" src="">
 	        	<img class="jingdong-round rotate360 animated5" src="/static/css/anniversary2/result/zhongxin/round.png">
 	        	<img class="jingdong-metro" src="/static/css/anniversary2/result/zhongxin/zhongxin.png">
 	        	<i class="icon6 white-star-big star-shink1" style="left:238px;top:70px"></i>
@@ -341,8 +345,8 @@
 	        </div>
 			<!-- 14最终结果 -->
 	        <div class="swiper-slide m1" id="p15">	
-	        	<img class="result-people" src="/static/css/anniversary2/result/final/p2.png">
-	        	<img class="result-car car2" src="/static/css/anniversary2/result/final/car1.png">
+	        	<img class="result-people" id="j-people" src="">
+	        	<img class="result-car" id="j-car" src="/static/css/anniversary2/result/final/car1.png">
         		<!-- 闪亮 -->
         		<div>
         			<i class="star-rotate" style="left:290px;top:140px;"></i>
@@ -355,20 +359,29 @@
 	        	<div class="final-text">
 	        		<!-- 云 -->
 	        		<img class="result-cloud" src="/static/css/anniversary2/result/cloud.png"> 	
-	        		<img class="result-text" src="/static/css/anniversary2/result/final/1.png">
+	        		<img class="result-text" id="j-final-result" src="">
 	        		<div class="xunzhang-wrapper">
-	        			<i class="xunzhang x11"></i>  
-	        			<i class="xunzhang x21"></i>
-	        			<i class="xunzhang x31"></i>
-	        			<i class="xunzhang x41"></i>        
-	        		</div>
-	        		
+	        			<i class="xunzhang"></i>  
+	        			<i class="xunzhang"></i>
+	        			<i class="xunzhang"></i>
+	        			<i class="xunzhang"></i>        
+	        		</div>	
 	        	</div>
+
+	        	<div class="share">
+					<img class="share-mask" src="/static/css/anniversary2/result/share.png">
+					<img class="share-text" src="/static/css/anniversary2/result/final/share1.png">
+					<img class="share-light" src="/static/css/anniversary2/result/final/light.png">	
+					<input type="text" id="user-name">    
+				</div>
 
 	        </div>
 
+
 	    </div>
+
 	</div>
+
 
 	<audio id="music-bg" autoplay="autoplay" loop src="/media/anniversary/bg.mp3"></audio>
 	<audio id="music-level" src="/media/anniversary/levelup.mp3"></audio>

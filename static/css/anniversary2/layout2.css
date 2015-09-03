@@ -40,7 +40,7 @@
 	position: absolute;
 	left: 76px;
 	top: 250px;
-  -webkit-transition: -webkit-transform 1.5s;
+  -webkit-transition: -webkit-transform 1s;
 
 }
 .i-card-arrow{
@@ -215,4 +215,28 @@
 	position: absolute;
 	top: 70px;
 	left: 90px;
+}
+.share{
+	display: none;
+	position: absolute;
+
+}
+.share-text{
+  position: absolute;
+  top: 450px;
+  left: 230px;
+}
+.share-light{
+  position: absolute;
+  top: 387px;
+  left: 183px;
+}
+#user-name{
+	border: 0;
+	width: 220px;
+  padding: 5px;
+  position: absolute;
+  top: 559px;
+  left: 230px;
+  font-size: 40px;
 }

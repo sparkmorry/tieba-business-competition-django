@@ -228,8 +228,17 @@ $("#j-retake").bind('click', function(){
 	jQcameraInput.click();
 });
 
+// 游戏逻辑变量
+var jingdongLevel=1, zhongxinLevel=1, geshouLevel=1, huaweiLevel=1;
+var finalLevel=1, jQfinalResult=$("#j-final-result"), jQxunzhang=$('.xunzhang');
+var jQcar = $("#j-car"), jQpeople=$("#j-people");
+var jQjdResult=$("#j-jd-result"), jQzxResult=$("#j-zx-result");
+var jQgsResult = $("#j-gs-result"), jQhwResult = $("#j-hw-result");
+
 var fmoveonTimer, amoveTimer;
-var shot = function(){
+var shot = function(shotNum){
+	jingdongLevel=shotNum;
+
 	mLevel.play();
 	$('#metro1').addClass('metro1-anime animated0_7');
 	$('#metro2').addClass('metro2-anime animated0_7');
@@ -237,15 +246,20 @@ var shot = function(){
 	$('#metro4').addClass('metro4-anime animated0_7');
 	fmoveonTimer = keyframeAnimation('#j-fire-moveon', 70, 8, 70, 0, true);
 	amoveTimer = keyframeAnimation("#j-arrow-moveon", 70, 4, 200, 0, true)
+	if(jingdongLevel==1){
+		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/1.png');
+	}else{
+		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/2.png');
+	}
 }
 
 $("#j-shot1").bind('click', function(){
 	swiper.slideNext();
-	shot();
+	shot(1);
 });
 
 $("#j-shot2").bind('click', function(){
-	swiper.slideNext();
+	swiper.slideNext(2);
 	shot();
 });
 
@@ -264,6 +278,7 @@ var goStage = function(stageNum){
     	jQarrow.css({'top': '540px'});
     	jQlocation.css({'top': '675px'});
     	$('.i-huixing').bind('click', function(){
+    		$(".i-sale-big").addClass('shot-scale animated');
     		swiper.slideTo(5);
     	});
 	}else if(stageNum==3){
@@ -341,6 +356,13 @@ var swipe = function(){
 		$(target).css({'-webkit-transform': 'translateX(0px)'});
 	}else if(swipeTime == 3){
 		jQcardArrow.hide().removeClass('moveright-slow animated1_5');
+		zhongxinLevel = parseInt(Math.random()*2)+1;
+		if(zhongxinLevel==1){
+			jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/1.png');
+		}else{
+			jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/2.png');
+		}
+		showFinal(jingdongLevel, zhongxinLevel);
 		$(target).css({'-webkit-transform': 'translateX(250px)'});	
 		setTimeout(function(){
 			mLevel.play();
@@ -369,6 +391,75 @@ $("#j-move-stage-4").bind('click', function(){
     goStage(currentStage);
 	swiper.slideTo(3);
 });
+
+var showFinal=function(jingdongLevel, zhongxinLevel){
+	if(jingdongLevel==1 && zhongxinLevel==1){
+		// 潮金 土豪明星 杀千陌
+		geshouLevel = 1; //星
+		huaweiLevel=1; //火
+		finalLevel=1;
+	}else if(jingdongLevel==1 && zhongxinLevel==2){
+		// 潮挖 接地气的明星
+		geshouLevel = 1;
+		huaweiLevel = 1;
+		finalLevel=2;
+	}else if(jingdongLevel==2 && zhongxinLevel==1){
+		// 好金 土豪粉丝
+		geshouLevel = 2; //粉
+		huaweiLevel=2; //沉
+		finalLevel=3;
+	}else if(jingdongLevel==2 && zhongxinLevel==2){
+		// 好挖 赤诚
+		geshouLevel = 2;
+		huaweiLevel=2; //沉
+		finalLevel=4;
+	}
+
+	if(finalLevel==1){
+		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/1.png');
+		$(jQxunzhang[0]).addClass('x11');
+		$(jQxunzhang[1]).addClass('x21');
+		$(jQxunzhang[2]).addClass('x31');
+		$(jQxunzhang[3]).addClass('x41');
+		jQpeople.attr('src', '/static/css/anniversary2/result/final/p1.png');
+		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
+		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png');
+		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/1.png');		
+	}else if(finalLevel==2){
+		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/2.png');
+		jQpeople.attr('src', '/static/css/anniversary2/result/final/p1.png');
+		jQcar.attr('src', '/static/css/anniversary2/result/final/car2.png').addClass('car2');
+		$(jQxunzhang[0]).addClass('x11');
+		$(jQxunzhang[1]).addClass('x22');
+		$(jQxunzhang[2]).addClass('x31');
+		$(jQxunzhang[3]).addClass('x41');
+		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png');
+		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/1.png');		
+	}else if(finalLevel==3){
+		// 好金 土豪粉丝
+		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/3.png');
+		jQpeople.attr('src', '/static/css/anniversary2/result/final/p2.png');
+		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
+		$(jQxunzhang[0]).addClass('x12');
+		$(jQxunzhang[1]).addClass('x21');
+		$(jQxunzhang[2]).addClass('x32');
+		$(jQxunzhang[3]).addClass('x42');
+		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png');
+		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/2.png');		
+	}else if(finalLevel==4){
+		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/4.png');
+		jQpeople.attr('src', '/static/css/anniversary2/result/final/p2.png');
+		jQcar.attr('src', '/static/css/anniversary2/result/final/car2.png').addClass('car2');
+		$(jQxunzhang[0]).addClass('x12');
+		$(jQxunzhang[1]).addClass('x22');
+		$(jQxunzhang[2]).addClass('x32');
+		$(jQxunzhang[3]).addClass('x42');
+		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png');
+		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/2.png');		
+
+	}
+
+}
 
 $(".j-geshou-btn").bind('click', function(){
 	$(this).attr('src', "/static/css/anniversary2/icon/button1.png");
@@ -427,7 +518,6 @@ $("#j-enter").bind('click', function(){
 	removeAnimation('#firework3', fireworkTimer3);	
 
 	$('.result-car').addClass('car-in animated');
-	var jQxunzhang = $('.xunzhang');
 	var jQstars = $('.star-rotate');
 	$(jQstars[0]).addClass('star-rotate-anime animated');
 	$(jQstars[1]).addClass('star-rotate-anime animated delay2_3');
@@ -441,6 +531,12 @@ $("#j-enter").bind('click', function(){
 	$(jQxunzhang[2]).addClass('fadeIn animated delay2');
 	$(jQxunzhang[3]).addClass('fadeIn animated delay2_1');
 	$('.result-text').addClass('fadeIn animated delay3');
+	setTimeout(function(){
+		$('.share').show();
+	}, 6000);
 });
+
+
+// 游戏逻辑
 
 
