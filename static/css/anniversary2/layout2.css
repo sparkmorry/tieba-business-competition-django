@@ -234,8 +234,18 @@
 .share{
 	display: none;
 	position: absolute;
+	z-index: 100;
 
 }
+.final-avatar{
+  position: absolute;
+  top: 360px;
+  left: 550px;
+  width: 130px;
+  height: 163px;
+  z-index: 1;
+}
+
 .share-text{
   position: absolute;
   top: 450px;

@@ -143,6 +143,11 @@ body{
 	bottom: 400px;
 	left: 150px;
 }
+.sudden{
+	bottom: 400px;
+	left: 120px;
+	position: absolute;
+}
 .i-trees{
 	bottom: 0px;
 	left: 0;
@@ -318,6 +323,10 @@ body{
   top: 500px;
   left: 200px
  }
+ .map-tip{
+ 	position: absolute;
+ 	bottom: 60px;
+ }
 
 .p4-star-big{
 	width: 20px;
@@ -460,19 +469,23 @@ position: absolute;
 }
 .small-sale3{
 	left: 140px;
-	top: 710px;
+	/*top: 710px;*/
+	top: 680px;
 }
 .small-sale4{
 	left: 430px;
 	top: 850px;
 }
-.big-sale1{
+.big-sale1, .small-sale5{
 	left: 145px;
 	top: 480px;
 }
-.big-sale2{
+.big-sale2, .small-sale6{
 	left: 425px;
 	top: 565px;
+}
+.i-sale-big{
+	z-index: 10000;
 }
 #j-shot1{
 	position: absolute;
@@ -549,4 +562,3 @@ position: absolute;
 	top: 90px;
 	right: 0;
 }
-

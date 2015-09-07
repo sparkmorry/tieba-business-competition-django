@@ -21,6 +21,11 @@ var mParty = document.getElementById("music-party");
 var mLevel = document.getElementById("music-level");
 var mSwipe = document.getElementById("music-swipecard");
 
+mBg.loop=true;
+mBg.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
 mBg.play();
 
 var currentStage = 1;
@@ -70,7 +75,9 @@ var p2Animate = function(){
 	$("#j-p2-content-wrapper").addClass('movedown')
 	fireAnime = keyframeAnimation('#j-fire', 70, 8, 70, 0, true);
 	$("#j-ship").addClass('moveright-slow')
-	$(".i-sudden").addClass('fadeIn animated delay2');
+	// $(".i-sudden").addClass('fadeIn animated delay2');
+	$(".sudden").addClass('fadeIn animated delay2');
+
 	setTimeout(function(){
 		swiper.slideNext();
 		$(".i-invitation").addClass('rollIn animated');
@@ -170,6 +177,7 @@ var drawFace = function(){
 		ctx.drawImage(imgFace, 0, 0, 450, 580);	
 		var img = canvas.toDataURL("image/png"); 
 		$("#jd-avatar").attr('src', img);
+		$("#final-avatar").attr('src', img);
     	$("#j-secury").show();
     	$("#j-retake").show();
     	$("#j-photo").hide();		
@@ -195,6 +203,7 @@ var jQcameraInput = $('#cameraInput');
 var jQprevImg = $(".uploaded-img");
 var avatar;
 function readFile(){
+	mBg.play();
     file = jQcameraInput.get(0).files[0];
     if(!/image\/\w+/.test(file.type)){
         alert("请上传图片类型的文件~");
@@ -255,6 +264,7 @@ var shot = function(shotNum){
 	}else{
 		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/2.png');
 	}
+	swiper.slideNext();
 }
 
 $("#j-shot1").bind('click', function(){
@@ -270,6 +280,31 @@ $("#j-shot2").bind('click', function(){
 // 关卡切换
 var jQarrow = $(".arrow");
 var jQlocation = $("#j-location");
+var jQmapTip = $("#j-map-tip");
+var game = function(num, delay){
+	var jQsale = $('.small-sale'+num);
+	var left = parseInt(jQsale.position().left);
+	var newleft = parseInt(jQsale.position().left)-70;
+
+	var leftPx = left+'px';
+	setTimeout(function(){
+		jQsale.removeClass('i-sale-small').addClass('i-sale-big')
+		.css({'left': newleft+'px'} );
+	}, delay);
+	setTimeout(function(){
+		jQsale.addClass('i-sale-small').removeClass('i-sale-big')
+		.css({'left': left+'px'} );
+	}, delay+700);
+}
+var luckyTimes=0;
+$('body').delegate('.i-sale-big', 'click', function(){
+	var clicked = $(this).data('clicked');
+	if(clicked){
+		return;
+	}
+	$(this).data('clicked', true);
+	luckyTimes++;
+});
 var goStage = function(stageNum){
 	$("#j-planet1").unbind();
 	$('.i-huixing').unbind();
@@ -283,8 +318,26 @@ var goStage = function(stageNum){
     	jQlocation.css({'top': '675px'});
     	$('.i-huixing').bind('click', function(){
     		$(".i-sale-big").addClass('shot-scale animated');
+    		$('.i-jd-planet').addClass('floating');
+    		$('.i-sale-small').addClass('floating');
     		swiper.slideTo(5);
+    		//todo:敲松鼠游戏
+    		game(1, 1300);
+    		game(3, 2600);
+    		game(2, 3900);
+    		game(6, 5200);
+    		game(4, 6500);
+    		game(5, 7800);
+    		setTimeout(function(){
+    			if(luckyTimes>2){
+    				shot(1);
+    			}else{
+    				shot(2);
+    			}
+
+    		}, 8500);
     	});
+    	jQmapTip.attr('src', '/static/css/anniversary2/map/2.png');
 	}else if(stageNum==3){
     	$(".i-mani-lock").removeClass('i-mani-lock').addClass('i-mani');
     	jQarrow.css({'top': '190px', 'left': '340px'}).removeClass('moveupdown').addClass('moveleftright');
@@ -292,14 +345,19 @@ var goStage = function(stageNum){
     	$('.i-mani').bind('click', function(){
     		swiper.slideTo(7);
     	});
+    	jQmapTip.attr('src', '/static/css/anniversary2/map/3.png');
+
 	}else if(stageNum==4){
     	$(".i-gede-lock").removeClass('i-gede-lock').addClass('i-gede');
-    	jQarrow.attr('src', '/static/css/anniversary2/icon/arrow-down.png')
+    	jQarrow.attr('src', '/static/css/anniversary2/icon/arrow-down.png');
+    	jQarrow.addClass('moveupdown').removeClass('moveleftright');
     	jQarrow.css({'top': '300px', 'left': '582px'});
     	jQlocation.css({'top': '145px', 'left': '443px'});
     	$('.i-gede').bind('click', function(){
     		swiper.slideTo(9);
     	});
+    	jQmapTip.attr('src', '/static/css/anniversary2/map/4.png');
+
 	}else if(stageNum==5){
     	$(".i-dawang-lock").removeClass('i-dawang-lock').addClass('i-dawang');
     	jQarrow.css({'top': '600px', 'left': '582px'});
@@ -309,6 +367,8 @@ var goStage = function(stageNum){
     		jQbook.addClass('shake animated');
     		swiper.slideTo(11);
     	});
+    	jQmapTip.attr('src', '/static/css/anniversary2/map/5.png');
+
 	}else if(stageNum==6){
     	$(".i-k-lock").removeClass('i-k-lock').addClass('i-k');
     	jQarrow.css({'top': '800px', 'left': '344px'});
@@ -318,6 +378,8 @@ var goStage = function(stageNum){
 			mParty.play();
     		swiper.slideTo(13);
     	});
+    	jQmapTip.attr('src', '/static/css/anniversary2/map/6.png');
+
 	}
 	swiper.slideTo(3);
 }

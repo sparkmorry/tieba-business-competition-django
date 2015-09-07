@@ -10,8 +10,8 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary2/animate.css">
-	<link rel="stylesheet" type="text/css" href="/static/css/anniversary2/layout.css?v=1.0">
-	<link rel="stylesheet" type="text/css" href="/static/css/anniversary2/layout2.css?v=1.0">
+	<link rel="stylesheet" type="text/css" href="/static/css/anniversary2/layout.css?v=1.1">
+	<link rel="stylesheet" type="text/css" href="/static/css/anniversary2/layout2.css?v=1.1">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary2/icon.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/lib/animate.css">
 	<link rel="stylesheet" type="text/css" href="/static/css/anniversary2/time.css">
@@ -55,7 +55,8 @@
 		        		<div id="j-fire" class="fire moveupdown"></div>
 		        		<i class="icon2 i-ship moveupdown"></i>
 		        	</div>
-		        	<i class="icon2 i-sudden"></i>
+		        	<!-- <i class="icon2 i-sudden"></i> -->
+		        	<img class="sudden" src="/static/css/anniversary2/icon/sudden.png">
 					<i class="icon2 i-black-cloud moveleftback-slow"></i>
 					<i class="icon2 i-trees"></i> 		
 	        	</div>
@@ -110,7 +111,7 @@
 	        	<div class="p4-star-small star-shine-fast" style="left:200px;top:600px;"></div>
 	        	<div class="p4-star-small star-shine" style="left:500px;top:500px;"></div>        	
 	        	<div class="p4-star-big star-shine-fast" style="left:360px;top:460px;"></div>
-
+	        	<img id="j-map-tip" class="map-tip" src="/static/css/anniversary2/map/1.png">
 	        </div>
 	        <!-- 4安检 -->
 	        <div class="swiper-slide m1" id="p5">	
@@ -140,25 +141,29 @@
 	        </div>
 	        <!-- 5京东 -->
 	        <div class="swiper-slide m1" id="p6">
-	        	<i class="icon6 i-sale-small small-sale1  floating animated5"></i>
-	        	<i class="icon6 i-sale-small small-sale2"></i>
-	        	<i class="icon6 i-sale-small small-sale3"></i>
-	        	<i class="icon6 i-sale-small small-sale4"></i>
+	        	<i class="icon6 i-sale-small small-sale1 animated5"></i>
+	        	<i class="icon6 i-sale-small small-sale2 animated3"></i>
+	        	<i class="icon6 i-sale-small small-sale3 animated4"></i>
+	        	<i class="icon6 i-sale-small small-sale4 animated6"></i>
+	        	<i class="icon6 i-sale-small small-sale5 animated5"></i>
+	        	<i class="icon6 i-sale-small small-sale6 animated4"></i>
 
 	        	<i class="icon6 i-jingdonghao-light flash animated3"></i>
 	        	<i class="icon6 i-jingdonghao floating animated3"></i>
-	        	<i class="icon6 i-jingdong-planet1 floating animated5"></i>
-	        	<i class="icon6 i-jingdong-planet2 floating animated5"></i>
-	        	<i class="icon6 i-jingdong-planet3 floating animated3"></i>
-	        	<i class="icon6 i-jingdong-planet4 floating animated4"></i>
-	        	<i class="icon1 i-small-star star-shink1" style="  top:550px;margin-left: 150px;"></i>
+	        	<i class="icon6 i-jingdong-planet1 i-jd-planet animated5"></i>
+	        	<i class="icon6 i-jingdong-planet2 i-jd-planet animated5"></i>
+	        	<i class="icon6 i-jingdong-planet3 i-jd-planet animated3"></i>
+	        	<i class="icon6 i-jingdong-planet4 i-jd-planet animated4"></i>
+	        	<!-- <i class="icon1 i-small-star star-shink1" style="  top:550px;margin-left: 150px;"></i>
 	        	<i class="icon1 i-small-star star-shink2" style="  top:730px;margin-left: 200px;"></i>
 	        	<i class="icon1 i-small-star star-shink2" style="  top:630px;margin-left: -200px;"></i>
 				<i class="icon1 i-small-star star-shink1" style="  top:420px;"></i>
-	        	<i class="icon6 i-sale-big big-sale1"></i>
-	        	<i class="icon6 i-sale-big big-sale2"></i>
-	        	<img src="/static/css/anniversary2/icon/shot.png" class="" id="j-shot1">
+ -->	        	
+<!--  				<i class="icon6 i-sale-big big-sale1"></i>
+	        	<i class="icon6 i-sale-big big-sale2"></i> -->
+<!-- 	        	<img src="/static/css/anniversary2/icon/shot.png" class="" id="j-shot1">
 	        	<img src="/static/css/anniversary2/icon/shot.png" class="" id="j-shot2">
+ -->				
 				<p id="j-jingdong-text" class="inv-text">点击其中一个红包，看看强哥和老板娘为你准备了什么酷炫装备</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1 needle1-anime"></i>
@@ -250,7 +255,7 @@
 	        	<i class="icon1 i-small-star star-shink2" style="  top:630px;margin-left: -200px;"></i>
 				<i class="icon1 i-small-star star-shink1" style="  top:420px;"></i>
 
-				<p id="j-geshou-text" class="inv-text">现在你身在歌德星球歌手大赛决赛现场，点亮你最欣赏的歌者身前的红灯,为他／她投出一票。</p>
+				<p id="j-geshou-text" class="inv-text">现在你身在歌德星球歌手大赛决赛现场，投票给喜欢的选手获得成长经验～</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1 needle1-anime"></i>
 					<i class="icon3 i-needle2 needle2-anime"></i>
@@ -342,6 +347,8 @@
 	        </div>
 			<!-- 14最终结果 -->
 	        <div class="swiper-slide m1" id="p15">	
+	        	<img class="final-avatar" id="final-avatar" src="">
+
 	        	<img class="result-people" id="j-people" src="">
 	        	<img class="result-car" id="j-car" src="/static/css/anniversary2/result/final/car1.png">
         		<!-- 闪亮 -->
@@ -389,7 +396,7 @@
 	<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="/static/js/swiper.jquery.min.js"></script>
 	<script type="text/javascript" src="/static/js/touch.js"></script>	
-	<script type="text/javascript" src="/static/js/anniversary/anniversary2.js?v=1.2"></script>
+	<script type="text/javascript" src="/static/js/anniversary/anniversary2.js?v=1.4"></script>
 
 </body>
 </html>
