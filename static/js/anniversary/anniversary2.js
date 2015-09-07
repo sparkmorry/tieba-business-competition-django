@@ -380,9 +380,9 @@ var goStage = function(stageNum){
     		swiper.slideTo(11);
     	});
     	if(geshouLevel==1){
-    		jQmapTip.attr('src', '/static/css/anniversary2/result/map/geshou/1.png');
+    		jQmapTip.removeClass('map-tip3').addClass('map-tip4').attr('src', '/static/css/anniversary2/result/map/geshou/1.png');
     	}else{
-			jQmapTip.attr('src', '/static/css/anniversary2/result/map/geshou/2.png');
+			jQmapTip.removeClass('map-tip3').addClass('map-tip4').attr('src', '/static/css/anniversary2/result/map/geshou/2.png');
     	}
 
 	}else if(stageNum==6){
@@ -395,11 +395,10 @@ var goStage = function(stageNum){
     		swiper.slideTo(13);
     	});
     	if(huaweiLevel==1){
-    		jQmapTip.attr('src', '/static/css/anniversary2/result/map/huawei/1.png');
+    		jQmapTip.removeClass('map-tip4').addClass('map-tip5').attr('src', '/static/css/anniversary2/result/map/huawei/1.png');
     	}else{
-			jQmapTip.attr('src', '/static/css/anniversary2/result/map/huawei/2.png');
+			jQmapTip.removeClass('map-tip4').addClass('map-tip5').attr('src', '/static/css/anniversary2/result/map/huawei/2.png');
     	}    	
-    	jQmapTip.attr('src', '/static/css/anniversary2/map/6.png');
 
 	}
 	swiper.slideTo(3);

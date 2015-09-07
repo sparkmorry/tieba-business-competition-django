@@ -313,7 +313,7 @@
 
 /*p8*/
 .icon8{
-	background: url(icon/icon8.png);
+	background: url(icon/icon8new.png);
 	display: inline-block;
 }
 
@@ -342,6 +342,22 @@
 	height: 245px;
 	background-position: -350px -250px;
 }
+.i-huojian{
+	width: 188px;
+	height: 217px;
+	background-position: -600px -717px;
+}
+.i-saoba{
+	width: 198px;
+	height: 280px;
+	background-position: -600px -406px;
+}
+.i-qiqiu{
+	width: 180px;
+	height: 291px;
+	background-position: -820px -390px;
+}
+
 .i-card-arrow{
 	width: 120px;
 	height: 50px;
@@ -426,3 +442,5 @@
 .x12{
 	background-position: -175px -500px;
 }
+
+
