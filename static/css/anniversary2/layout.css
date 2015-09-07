@@ -20,7 +20,8 @@ body{
 }
 
 #p1{
-	background-image: url(bg.jpg);
+	background-image: url(bg/p1.png);
+	background-repeat: no-repeat;
 }
 
 /*p1*/
@@ -30,11 +31,11 @@ body{
 }
 .i-small-star.star1{
   top: 290px;
-  margin-left: 50px;
+  margin-left: 10px;
 }
 .i-small-star.star2{
   top: 410px;
-  margin-left: 300px;
+  margin-left: 210px;
 }
 .i-speed{
   position: relative;
@@ -46,7 +47,7 @@ body{
   width: 470px;
   height: 470px;
   border-radius: 50%;
-  top: 488px;
+  top: 448px;
   margin-left: -235px;
 }
 .sky-circle1{
@@ -79,7 +80,7 @@ body{
 }
 .i-superman{
   margin-left: -230px;
-  top: 512px;
+  top: 472px;
 }
 .i-loading{
 	margin-left: -220px;
@@ -91,8 +92,8 @@ body{
 	background-image:url('animation/loading.png') ;
 	background-position: 0 0;
   position: absolute;
-  left: 170px;
-  top: 1004px;
+  left: 300px;
+  top: 954px;
 }
 
 
@@ -102,8 +103,8 @@ body{
   width: 100px;
   text-align: center;
   position: absolute;
-  left: 192px;
-  top: 1062px;
+  left: 322px;
+  top: 1012px;
 }
 
 /*p2*/
@@ -325,8 +326,30 @@ body{
  }
  .map-tip{
  	position: absolute;
- 	bottom: 60px;
+ 	/*bottom: 60px;*/
  }
+.map-tip1{
+	left: 184px;
+	top: 540px;
+}
+.map-tip2{
+	left: 184px;
+	top: 270px;
+}
+.map-tip3{
+	left: 210px;
+	top: 347px;
+}
+.map-tip4{
+	left: 210px;
+	top: 347px;
+}
+.map-tip5{
+	left: 210px;
+	top: 347px;
+}
+
+
 
 .p4-star-big{
 	width: 20px;

@@ -120,15 +120,10 @@ $(".click").bind('click', function(){
 });
 
 $(".i-go").bind('click', function(){
-	swiper.slideNext();
+	goStage(1);
 	removeAnimation('#p13 .shine-lines', goAnime);	
 
 });
-
-$("#j-planet1").bind('click', function(){
-	swiper.slideNext();
-});
-
 
 var canvas=document.getElementById("canvas");
 var ctx=canvas.getContext("2d");
@@ -240,7 +235,7 @@ $("#j-retake").bind('click', function(){
 });
 
 // 游戏逻辑变量
-var jingdongLevel=1, zhongxinLevel=1, geshouLevel=1, huaweiLevel=1;
+var anjianLevel=1, jingdongLevel=1, zhongxinLevel=1, geshouLevel=1, huaweiLevel=1;
 var finalLevel=1, jQfinalResult=$("#j-final-result"), jQxunzhang=$('.xunzhang');
 var jQcar = $("#j-car"), jQpeople=$("#j-people"), jQbook=$("#j-book");
 var jQshareText = $("#j-share-text"), jQbookAnime=$("#j-book-anime");
@@ -312,10 +307,21 @@ var goStage = function(stageNum){
 	$('.i-gede').unbind();
 	$('.i-dawang').unbind();
 	$('.i-k').unbind();
-	if(stageNum==2){
+	if(stageNum==1){	
+		$("#j-planet1").bind('click', function(){
+			swiper.slideNext();
+		});
+	}else if(stageNum==2){
     	$(".i-huixing-lock").removeClass('i-huixing-lock').addClass('i-huixing');
     	jQarrow.css({'top': '540px'});
     	jQlocation.css({'top': '675px'});
+    	// 文案显示
+    	anjianLevel = parseInt(Math.random()*2)+1;
+    	if(anjianLevel==1){
+    		jQmapTip.addClass('map-tip1').attr('src', '/static/css/anniversary2/result/map/anjian/1.png');
+    	}else{
+			jQmapTip.addClass('map-tip1').attr('src', '/static/css/anniversary2/result/map/anjian/2.png');
+    	}	
     	$('.i-huixing').bind('click', function(){
     		$(".i-sale-big").addClass('shot-scale animated');
     		$('.i-jd-planet').addClass('floating');
@@ -329,15 +335,14 @@ var goStage = function(stageNum){
     		game(4, 6500);
     		game(5, 7800);
     		setTimeout(function(){
-    			if(luckyTimes>2){
+    			if(luckyTimes>1){
     				shot(1);
     			}else{
     				shot(2);
     			}
 
     		}, 8500);
-    	});
-    	jQmapTip.attr('src', '/static/css/anniversary2/map/2.png');
+    	});    	
 	}else if(stageNum==3){
     	$(".i-mani-lock").removeClass('i-mani-lock').addClass('i-mani');
     	jQarrow.css({'top': '190px', 'left': '340px'}).removeClass('moveupdown').addClass('moveleftright');
@@ -345,8 +350,11 @@ var goStage = function(stageNum){
     	$('.i-mani').bind('click', function(){
     		swiper.slideTo(7);
     	});
-    	jQmapTip.attr('src', '/static/css/anniversary2/map/3.png');
-
+    	if(jingdongLevel==1){
+    		jQmapTip.removeClass('map-tip1').addClass('map-tip2').attr('src', '/static/css/anniversary2/result/map/jingdong/1.png');
+    	}else{
+			jQmapTip.removeClass('map-tip1').addClass('map-tip2').attr('src', '/static/css/anniversary2/result/map/jingdong/2.png');
+    	}
 	}else if(stageNum==4){
     	$(".i-gede-lock").removeClass('i-gede-lock').addClass('i-gede');
     	jQarrow.attr('src', '/static/css/anniversary2/icon/arrow-down.png');
@@ -356,8 +364,12 @@ var goStage = function(stageNum){
     	$('.i-gede').bind('click', function(){
     		swiper.slideTo(9);
     	});
-    	jQmapTip.attr('src', '/static/css/anniversary2/map/4.png');
 
+    	if(zhongxinLevel==1){
+    		jQmapTip.removeClass('map-tip2').addClass('map-tip3').attr('src', '/static/css/anniversary2/result/map/zhongxin/1.png');
+    	}else{
+			jQmapTip.removeClass('map-tip2').addClass('map-tip3').attr('src', '/static/css/anniversary2/result/map/zhongxin/2.png');
+    	}    	
 	}else if(stageNum==5){
     	$(".i-dawang-lock").removeClass('i-dawang-lock').addClass('i-dawang');
     	jQarrow.css({'top': '600px', 'left': '582px'});
@@ -367,7 +379,11 @@ var goStage = function(stageNum){
     		jQbook.addClass('shake animated');
     		swiper.slideTo(11);
     	});
-    	jQmapTip.attr('src', '/static/css/anniversary2/map/5.png');
+    	if(geshouLevel==1){
+    		jQmapTip.attr('src', '/static/css/anniversary2/result/map/geshou/1.png');
+    	}else{
+			jQmapTip.attr('src', '/static/css/anniversary2/result/map/geshou/2.png');
+    	}
 
 	}else if(stageNum==6){
     	$(".i-k-lock").removeClass('i-k-lock').addClass('i-k');
@@ -378,6 +394,11 @@ var goStage = function(stageNum){
 			mParty.play();
     		swiper.slideTo(13);
     	});
+    	if(huaweiLevel==1){
+    		jQmapTip.attr('src', '/static/css/anniversary2/result/map/huawei/1.png');
+    	}else{
+			jQmapTip.attr('src', '/static/css/anniversary2/result/map/huawei/2.png');
+    	}    	
     	jQmapTip.attr('src', '/static/css/anniversary2/map/6.png');
 
 	}
