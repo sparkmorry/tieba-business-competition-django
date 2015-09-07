@@ -1,3 +1,26 @@
+.music-status {
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  right: 30px;
+  top: 30px;
+  background: transparent url("icon/on.png") no-repeat left top;
+  z-index: 9999;
+}
+.music-status-on {
+  -webkit-animation: music 1s 0s linear infinite both;
+  animation: music 1s 0s linear infinite both;
+}
+.music-status {
+  background-size: auto 100% !important;
+}
+.m_off {
+  background: transparent url("icon/off.png") no-repeat left top!important;
+  background-size: auto 100%!important;
+}
+@-webkit-keyframes music{100%{-webkit-transform:rotate(360deg)}}
+
+@keyframes music{100%{transform:rotate(360deg)}}
 
 /*p5 安检*/
 #p5{

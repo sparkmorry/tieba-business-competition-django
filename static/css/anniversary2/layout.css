@@ -81,6 +81,13 @@ body{
 .i-superman{
   margin-left: -230px;
   top: 472px;
+  opacity: 0;
+}
+.diaosi{
+  position: absolute;
+  left: 50%;
+    margin-left: -165px;
+  top: 508px;
 }
 .i-loading{
 	margin-left: -220px;

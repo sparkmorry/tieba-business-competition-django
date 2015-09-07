@@ -65,8 +65,36 @@ function removeAnimation(selector, timer){
 	jQdom.remove();
 	clearInterval(timer);
 }
+function clearAnimation(timer){
+	clearInterval(timer);
+}
 
-keyframeAnimation('.music', 70, 16, 200, 0, true);
+
+// 音乐控制
+var musicPlay=true;
+var inParty=false;
+var musicTimer;
+var jQmusic = $("#audio_pan");
+// musicTimer = keyframeAnimation('.music', 70, 16, 150, 0, true);
+jQmusic.bind('click', function(){
+	if(musicPlay){
+		musicPlay=false;
+		mBg.pause();
+		mParty.pause();
+        jQmusic.addClass("m_off").removeClass("music-status-on"); 
+	}else{
+		musicPlay=true;
+		mBg.play();
+		jQmusic.removeClass("m_off").addClass("music-status-on"); 
+		// todo 播放party
+	}
+
+});
+var levelMusic=function(){
+	if(musicPlay){
+		mLevel.play();
+	}
+}
 
 //关键帧动画timer
 var goAnime, fireAnime;
@@ -101,7 +129,8 @@ $(window).load(function(){
 		secondNum.text(second);
 	}, 40);
 	loadingAnime = keyframeAnimation('.loading-bg', 170, 50, 50, 0, false);	
-
+	$('.diaosi').addClass('fadeOut animated delay0_5');
+	$('.i-superman').addClass('fadeIn animated delay1');
 });
 
 var invClick = 1;
@@ -247,7 +276,7 @@ var fmoveonTimer, amoveTimer;
 var shot = function(shotNum){
 	jingdongLevel=shotNum;
 
-	mLevel.play();
+	levelMusic();	
 	$('#metro1').addClass('metro1-anime animated0_7');
 	$('#metro2').addClass('metro2-anime animated0_7');
 	$('#metro3').addClass('metro3-anime animated0_7');
@@ -450,7 +479,7 @@ var swipe = function(){
 		showFinal(jingdongLevel, zhongxinLevel);
 		$(target).css({'-webkit-transform': 'translateX(250px)'});	
 		setTimeout(function(){
-			mLevel.play();
+			levelMusic();
 			fmoveon4Timer = keyframeAnimation('#j-move-stage-4 .j-fire-moveon', 70, 8, 70, 0, true);
 			amove4Timer = keyframeAnimation("#j-move-stage-4 .j-arrow-moveon", 70, 4, 200, 0, true)
 
@@ -573,7 +602,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 $(".j-geshou-btn").bind('click', function(){
 	$(this).attr('src', "/static/css/anniversary2/icon/button1.png");
 	setTimeout(function(){
-		mLevel.play();
+		levelMusic();		
 		$('#gs-metro1').addClass('metro1-anime animated0_7');
 		$('#gs-metro2').addClass('metro2-anime animated0_7');
 		$('#gs-metro3').addClass('metro3-anime animated0_7');
@@ -590,7 +619,7 @@ $("#j-move-stage-5").bind('click', function(){
 
 var bookTimer, enterTimer;
 $(".book").bind('click', function(){
-	mLevel.play();
+	levelMusic();
 	swiper.slideNext();
 	bookTimer = keyframeAnimation('#j-book-anime', 494, 5, 150, 200, false);
 
