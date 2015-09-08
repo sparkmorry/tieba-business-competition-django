@@ -19,7 +19,7 @@ $('body').bind('touchmove',function(event){
 var mBg = document.getElementById("music-bg");
 var mParty = document.getElementById("music-party");
 var mLevel = document.getElementById("music-level");
-var mSwipe = document.getElementById("music-swipecard");
+// var mSwipe = document.getElementById("music-swipecard");
 
 mBg.loop=true;
 mBg.addEventListener('ended', function() {
@@ -544,7 +544,8 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png');
 		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/1.png');		
-		jQshareText.attr('src','/static/css/anniversary2/result/final/share2.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/share1.png');
+
 	}else if(finalLevel==2){
 		jQbook.attr('src', '/static/css/anniversary2/icon/book1.png');
 		jQbookAnime.addClass('book1-anime');
@@ -577,7 +578,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[3]).addClass('x42');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png');
 		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/2.png');		
-		jQshareText.attr('src','/static/css/anniversary2/result/final/share1.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/share3.png');
 
 	}else if(finalLevel==4){
 		jQbook.attr('src', '/static/css/anniversary2/icon/book2.png');
@@ -593,7 +594,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[3]).addClass('x42');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png');
 		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/2.png');		
-		jQshareText.attr('src','/static/css/anniversary2/result/final/share1.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/share4.png');
 
 	}
 
@@ -651,11 +652,14 @@ $("#j-move-stage-6").bind('click', function(){
 
 });
 
+var fmoveon5Timer, amove5Timer;
 $("#j-enter").bind('click', function(){
 	swiper.slideNext();
 	removeAnimation('#firework1', fireworkTimer1);	
 	removeAnimation('#firework2', fireworkTimer2);	
 	removeAnimation('#firework3', fireworkTimer3);	
+	fmoveon5Timer = keyframeAnimation('#j-move-stage-7 .j-fire-moveon', 70, 8, 70, 0, true);
+	amove5Timer = keyframeAnimation("#j-move-stage-7 .j-arrow-moveon", 70, 4, 200, 0, true)
 
 	$('.result-car').addClass('car-in animated');
 	var jQstars = $('.star-rotate');
@@ -671,13 +675,31 @@ $("#j-enter").bind('click', function(){
 	$(jQxunzhang[2]).addClass('fadeIn animated delay2');
 	$(jQxunzhang[3]).addClass('fadeIn animated delay2_1');
 	$('.result-text').addClass('fadeIn animated delay3');
-	setTimeout(function(){
-		$('.share').show();
-		$(".share-light").addClass('flash1 animated0_5');
-	}, 6000);
+	// setTimeout(function(){
+	// 	$('.share').show();
+	// 	$(".share-light").addClass('flash1 animated0_5');
+	// }, 6000);
 });
 
 
 // 游戏逻辑
+$("#j-move-stage-7").bind('click', function(){
+	swiper.slideNext();
+	$(".share-light").addClass('flash1 animated0_5');
+});
 
+$("#fill").bind('click', function(){
+	$(".share-light").removeClass('flash1 animated0_5');
+	$(".share-light2").addClass('flash1 animated0_5');	
+	// 隐藏输入框
+	$('#user-name').hide();
+	$('.input').hide();
+	$('.fill').hide();
+	// 显示结果
+	$('#j-share-text').show();
+	// 显示按钮
+	$("#j-send-btn").show();
+	$("#j-share-btn").show();
+
+})
 

@@ -209,10 +209,15 @@ position: absolute;
 	left: 55px;
 	top: 402px;
 }
-.i-ring, .i-huojian{
+.i-ring{
 	left: 132px;
 	top: 662px;
 }
+.i-huojian{
+	left: 32px;
+	top: 702px;
+}
+
 .i-wajue{
 	left: 490px;
 	top: 541px;
@@ -443,25 +448,6 @@ position: absolute;
   z-index: 1;
 }
 
-.share-text{
-  position: absolute;
-  top: 450px;
-  left: 230px;
-}
-.share-light{
-  position: absolute;
-  top: 387px;
-  left: 183px;
-}
-#user-name{
-	border: 0;
-	width: 220px;
-  padding: 5px;
-  position: absolute;
-  top: 559px;
-  left: 230px;
-  font-size: 40px;
-}
 
 .music{
 	background-image: url(animation/music.png);
@@ -471,4 +457,61 @@ position: absolute;
 	top: 40px;
 	right: 40px;
 	z-index: 1000;
+}
+
+/*p16*/
+#p16{
+	background-image: url(bg/p16.png);
+	background-repeat: no-repeat;
+}
+
+.share-text{
+  position: absolute;
+  top: 500px;
+  left: 210px;
+  display: none;
+}
+.share-light{
+position: absolute;
+  top: 443px;
+  left: 153px;
+}
+.share-light2{
+position: absolute;
+  top: 43px;
+  left: 510px;
+  display: none;
+}
+
+
+#user-name{
+	border: 0;
+  width: 250px;
+  padding: 7px;
+  position: absolute;
+  top: 645px;
+  left: 210px;
+  font-size: 40px;
+}
+#fill{
+	position: absolute;
+	top: 645px;
+	left: 460px;
+}
+.input{
+	position: absolute;
+	top: 600px;
+	left: 200px;
+}
+#j-send-btn{
+  position: absolute;
+  top: 600px;
+  left: 150px;
+  display: none;
+}
+#j-share-btn{
+  position: absolute;
+  top: 600px;
+  left: 390px;
+  display: none;
 }
