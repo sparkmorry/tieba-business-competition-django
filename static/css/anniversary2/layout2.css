@@ -458,7 +458,9 @@ position: absolute;
 	right: 40px;
 	z-index: 1000;
 }
-
+#j-move-stage-7 .moveon{
+	top: 630px;
+}
 /*p16*/
 #p16{
 	background-image: url(bg/p16.png);
@@ -479,7 +481,7 @@ position: absolute;
 .share-light2{
 position: absolute;
   top: 43px;
-  left: 510px;
+  left: 513px;
   display: none;
 }
 
@@ -494,14 +496,14 @@ position: absolute;
   font-size: 40px;
 }
 #fill{
-	position: absolute;
-	top: 645px;
-	left: 460px;
+  position: absolute;
+  top: 617px;
+  left: 454px;
 }
 .input{
-	position: absolute;
-	top: 600px;
-	left: 200px;
+  position: absolute;
+  top: 510px;
+  left: 180px;
 }
 #j-send-btn{
   position: absolute;

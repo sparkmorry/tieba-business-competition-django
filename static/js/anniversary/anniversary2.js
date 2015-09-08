@@ -688,18 +688,24 @@ $("#j-move-stage-7").bind('click', function(){
 	$(".share-light").addClass('flash1 animated0_5');
 });
 
-$("#fill").bind('click', function(){
-	$(".share-light").removeClass('flash1 animated0_5');
-	$(".share-light2").addClass('flash1 animated0_5');	
+$("#fill").bind('click', function(){	
 	// 隐藏输入框
 	$('#user-name').hide();
 	$('.input').hide();
-	$('.fill').hide();
+	$('#fill').hide();
 	// 显示结果
 	$('#j-share-text').show();
 	// 显示按钮
 	$("#j-send-btn").show();
 	$("#j-share-btn").show();
 
-})
+});
 
+$("#j-share-btn").bind('click', function(){
+	$(".share-light").removeClass('flash1 animated0_5');
+	$(".share-light2").show().addClass('flash1 animated0_5');
+});
+$("#j-send-btn").bind('click', function(){
+	$(".share-light").removeClass('flash1 animated0_5');
+	$(".share-light2").show().addClass('flash1 animated0_5');
+});
