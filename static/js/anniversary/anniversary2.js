@@ -274,8 +274,8 @@ var jQgsResult = $("#j-gs-result"), jQhwResult = $("#j-hw-result");
 
 var fmoveonTimer, amoveTimer;
 var shot = function(shotNum){
-	jingdongLevel=shotNum;
-
+	// jingdongLevel=shotNum;
+	jingdongLevel = parseInt(Math.random()*2)+1;
 	levelMusic();	
 	$('#metro1').addClass('metro1-anime animated0_7');
 	$('#metro2').addClass('metro2-anime animated0_7');
