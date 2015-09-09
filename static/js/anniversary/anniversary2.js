@@ -529,7 +529,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 	}
 
 	if(finalLevel==1){
-		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/1.png');
+		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/11.png');
 		$(jQxunzhang[0]).addClass('x11');
 		$(jQxunzhang[1]).addClass('x21');
 		$(jQxunzhang[2]).addClass('x31');
@@ -553,7 +553,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 	    jQgailou.append('<i class="icon12 i-building2"></i>');
 	    jQgailou.append('<i class="icon12 i-building1"></i>');
 
-		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/2.png');
+		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/21.png');
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p11.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car2.png').addClass('car2');
 		$(jQxunzhang[0]).addClass('x11');
@@ -569,7 +569,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		jQbook.attr('src', '/static/css/anniversary2/icon/book2.png');
 		jQbookAnime.addClass('book2-anime');
 	    jQgailou.append('<i class="icon12 i-flat-building"></i>');
-		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/3.png');
+		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/31.png');
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p22.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
 		$(jQxunzhang[0]).addClass('x12');
@@ -585,7 +585,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		jQbookAnime.addClass('book2-anime');
 	    jQgailou.append('<i class="icon12 i-flat-building"></i>');
 
-		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/4.png');
+		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/41.png');
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p22.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car2.png').addClass('car2');
 		$(jQxunzhang[0]).addClass('x12');
