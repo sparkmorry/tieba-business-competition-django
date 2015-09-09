@@ -374,7 +374,7 @@ var goStage = function(stageNum){
     	});    	
 	}else if(stageNum==3){
     	$(".i-mani-lock").removeClass('i-mani-lock').addClass('i-mani');
-    	jQarrow.css({'top': '190px', 'left': '340px'}).removeClass('moveupdown').addClass('moveleftright');
+    	jQarrow.css({'top': '190px', 'left': '370px'}).removeClass('moveupdown').addClass('moveleftright');
     	jQlocation.css({'top': '365px'});
     	$('.i-mani').bind('click', function(){
     		swiper.slideTo(7);

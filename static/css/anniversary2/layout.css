@@ -79,8 +79,8 @@ body{
 	top: 115px;
 }
 .i-superman{
-  margin-left: -230px;
-  top: 472px;
+  margin-left: -225px;
+  top: 477px;
   opacity: 0;
 }
 .diaosi{
@@ -395,7 +395,7 @@ body{
 }
 .i-mani, .i-mani-lock{
 	/*left: 380px;*/
-	left: 480px;
+	left: 530px;
 	top: 160px;
 }
 .i-mani{
