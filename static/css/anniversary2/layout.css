@@ -96,7 +96,9 @@ body{
 .loading-bg{
 	width: 142px;
 	height: 170px;
-	background-image:url('animation/loading.png') ;
+	/*background-image:url('animation/loading.png') ;*/
+	background-image:url('animation/loading2.png') ;
+	
 	background-position: 0 0;
   position: absolute;
   left: 300px;

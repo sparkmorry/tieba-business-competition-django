@@ -63,7 +63,7 @@
 .movedown{
   -webkit-animation: movedown 3.5s linear;
   -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0); 
+  -webkit-transform: translateZ(0)  ;
 }
 @-webkit-keyframes movedown {
   0% {
@@ -79,8 +79,7 @@
 
 .moveright-slow{
   -webkit-animation: moveright 5s linear;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);   
+
 }
 
 @-webkit-keyframes moveright {
@@ -108,8 +107,7 @@
 }
 .moveleftback-slow{
   -webkit-animation: moveleftback 20s linear infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);   
+
 }
 
 @-webkit-keyframes moveleftback {
@@ -126,8 +124,7 @@
 }
 .moverightback-slow{
   -webkit-animation: moverightback 10s linear infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);   
+  
 }
 
 @-webkit-keyframes moverightback {
@@ -144,13 +141,10 @@
 }
 .moveupdown{
   -webkit-animation: moveupdown 5s linear infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);   
+
 }
 .moveupdown-fast{
   -webkit-animation: moveupdown 1s ease-out infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);   
 }
 @-webkit-keyframes moveupdown {
   0% {
@@ -172,8 +166,7 @@
 
 .moveleftright{
   -webkit-animation: moveleftright 0.8s ease-out infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);   
+
 }
 @-webkit-keyframes moveleftright {
   0% {
@@ -200,13 +193,11 @@
 
 .star-shine-fast{
   -webkit-animation: shine 1s linear infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);     
+
 }
 .star-shine{
   -webkit-animation: shine 1.5s linear infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0);     
+
 }
 
 
@@ -276,13 +267,10 @@
 
 .needle1-anime{
   -webkit-animation:rotate20 1.5s ease-out infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0)  ; 
+
 }
 .needle2-anime{
   -webkit-animation:rotate50 2s ease-out infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0)  ; 
 }
 @-webkit-keyframes rotate20 {
   0% {

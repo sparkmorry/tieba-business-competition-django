@@ -8,7 +8,7 @@
   z-index: 9999;
 }
 .music-status-on {
-  -webkit-animation: music 1s 0s linear infinite both;
+  /*-webkit-animation: music 1s 0s linear infinite both;*/
   animation: music 1s 0s linear infinite both;
 }
 .music-status {
@@ -211,7 +211,7 @@ position: absolute;
 	position: absolute;
   left: 60px;
   top: 40px;
-  
+
 }
 
 /*中信*/
@@ -486,7 +486,7 @@ position: absolute;
 }
 /*p16*/
 #p16{
-	background-image: url(bg/p16.png);
+	background-image: url(bg/p16n.jpg);
 	background-repeat: no-repeat;
 }
 
@@ -525,7 +525,7 @@ position: absolute;
 
 /*p17*/
 #p17{
-	background-image: url(bg/p17.png);
+	background-image: url(bg/p17.jpg);
 	background-repeat: no-repeat;
 }
 .share-text{

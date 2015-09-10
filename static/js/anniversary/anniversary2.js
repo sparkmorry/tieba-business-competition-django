@@ -1,6 +1,5 @@
 var swiper = new Swiper('.swiper-container',{
 	direction: 'vertical',  //vertical,horizontal
-	// effect : 'fade',
 	speed: 0,
 	onlyExternal: true,
 	onSlideChangeStart: function(swiper){
@@ -136,7 +135,7 @@ $(window).load(function(){
 		}
 		secondNum.text(second);
 	}, 40);
-	loadingAnime = keyframeAnimation('.loading-bg', 170, 50, 50, 0, false);	
+	// loadingAnime = keyframeAnimation('.loading-bg', 170, 50, 50, 0, false);	
 	$('.diaosi').addClass('fadeOut animated delay0_5');
 	$('.i-superman').addClass('fadeIn animated delay1');
 });
@@ -235,7 +234,6 @@ var jQcameraInput = $('#cameraInput');
 var jQprevImg = $(".uploaded-img");
 var avatar;
 function readFile(){
-	mBg.play();
     file = jQcameraInput.get(0).files[0];
     if(!/image\/\w+/.test(file.type)){
         alert("请上传图片类型的文件~");
@@ -245,16 +243,9 @@ function readFile(){
     reader.readAsDataURL(file);
     reader.onload = function(e){
     	mBg.play();
-    	// jQprevImg.attr('src', this.result).show();
     	imgReader = new Image();
     	imgReader.src = this.result;
     	imgFace = new Image();
-    	// alert("ccc");
-    	// if(imgReader.complete){
-    	// 	drawFaceRotate();
-    	// }else{
-    	// 	imgReader.onload = drawFaceRotate;
-    	// }
     	if(imgReader.complete && imgClip.complete) { //check if image was already loaded by the browser
 		   drawFace();
 		}else {
@@ -350,6 +341,10 @@ var goStage = function(stageNum){
 	$('.i-k').unbind();
 	if(stageNum==1){	
 		$("#p2").empty();
+		$("#p3").empty();
+    	jQarrow.addClass('moveupdown-fast');
+    	$('.i-cloud2').addClass("moverightback-slow");
+
 		$("#j-planet1").bind('click', function(){
 			swiper.slideNext();
 		});
@@ -357,7 +352,6 @@ var goStage = function(stageNum){
     	$(".i-huixing-lock").removeClass('i-huixing-lock').addClass('i-huixing');
     	jQarrow.css({'top': '540px'});
     	jQlocation.css({'top': '675px'});
-		$("#p3").empty();
 		$(".i-jingdonghao-light").addClass("flash animated3");
 		$(".i-jingdonghao").addClass("floating animated3");
 		$(".i-jingdong-planet1").addClass("floating animated3");
@@ -431,6 +425,12 @@ var goStage = function(stageNum){
 			$(".geshou-light1").addClass("flash1 animated1_5");
 			$(".geshou-light2").addClass("flash2 animated1_5");
 
+			$("#p10 .shink1").addClass('star-shink1');
+			$("#p10 .shink2").addClass('star-shink2');
+
+			$("#p10 i-needle1").addClass('needle1-anime');
+			$("#p10 i-needle2").addClass('needle2-anime');
+
     		swiper.slideTo(9);
     	});
 
@@ -448,8 +448,14 @@ var goStage = function(stageNum){
     				// 清空京东
 			$("#p10").empty();
 			$("#p11").empty();
+			$(".sun").addClass("rotate360 animated10");
 
-    		jQbook.addClass('shake animated');
+			$("#p12 .shink1").addClass('star-shink1');
+			$("#p12 .shink2").addClass('star-shink2');
+ 			$("#p12 i-needle1").addClass('needle1-anime');
+			$("#p12 i-needle2").addClass('needle2-anime');
+
+   		jQbook.addClass('shake animated');
     		swiper.slideTo(11);
     	});
     	if(geshouLevel==1){
