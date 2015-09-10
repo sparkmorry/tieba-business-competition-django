@@ -286,6 +286,10 @@ var shot = function(shotNum){
 	// jingdongLevel=shotNum;
 	jingdongLevel = parseInt(Math.random()*2)+1;
 	levelMusic();	
+	$('#jd-round').addClass("rotate360 animated5");
+	$("#p7 .shink1").addClass('star-shink1');
+	$("#p7 .shink2").addClass('star-shink1');
+	
 	$('#metro1').addClass('metro1-anime animated0_7');
 	$('#metro2').addClass('metro2-anime animated0_7');
 	$('#metro3').addClass('metro3-anime animated0_7');
@@ -354,6 +358,11 @@ var goStage = function(stageNum){
     	jQarrow.css({'top': '540px'});
     	jQlocation.css({'top': '675px'});
 		$("#p3").empty();
+		$(".i-jingdonghao-light").addClass("flash animated3");
+		$(".i-jingdonghao").addClass("floating animated3");
+		$(".i-jingdong-planet1").addClass("floating animated3");
+		$("#p6 .i-needle1").addClass("needle1-anime");
+		$("#p6 .i-needle2").addClass("needle2-anime");
 
     	// 文案显示
     	anjianLevel = parseInt(Math.random()*2)+1;
@@ -394,6 +403,14 @@ var goStage = function(stageNum){
     		// 清空京东
 			$("#p6").empty();
 			$("#p7").empty();
+			$(".i-car").addClass('floating animated5');
+			$(".i-wajue").addClass('floating animated5');
+			$(".i-saoba").addClass('floating animated7');
+			$(".i-huojian").addClass('floating animated4');
+			$(".i-qiqiu").addClass('floating animated6');
+			$("#p8 .i-needle1").addClass("needle1-anime");
+			$("#p8 .i-needle2").addClass("needle2-anime");
+
     		swiper.slideTo(7);
     	});
     	if(jingdongLevel==1){
@@ -411,6 +428,8 @@ var goStage = function(stageNum){
     				// 清空京东
 			$("#p8").empty();
 			$("#p9").empty();
+			$(".geshou-light1").addClass("flash1 animated1_5");
+			$(".geshou-light2").addClass("flash2 animated1_5");
 
     		swiper.slideTo(9);
     	});
@@ -509,6 +528,9 @@ var swipe = function(){
 		setTimeout(function(){
 			levelMusic();
 			$("#j-move-stage-4 .flyarrow").addClass('moveleftright-nor')
+			$('#zx-round').addClass("rotate360 animated5");
+			$("#p9 .shink1").addClass('star-shink1');
+			$("#p9 .shink2").addClass('star-shink1');
 
 			$('#zx-metro1').addClass('metro1-anime animated0_7');
 			$('#zx-metro2').addClass('metro2-anime animated0_7');
@@ -701,10 +723,6 @@ $("#j-enter").bind('click', function(){
 	$(jQxunzhang[2]).addClass('fadeIn animated delay2');
 	$(jQxunzhang[3]).addClass('fadeIn animated delay2_1');
 	$('.result-text').addClass('fadeIn animated delay3');
-	// setTimeout(function(){
-	// 	$('.share').show();
-	// 	$(".share-light").addClass('flash1 animated0_5');
-	// }, 6000);
 });
 
 

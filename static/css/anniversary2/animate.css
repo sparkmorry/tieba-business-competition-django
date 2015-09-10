@@ -7,22 +7,18 @@
 .cloud-move{
   -webkit-transform: translate(-500px, -500px);
   -webkit-animation: move 1s ease-out infinite;
-  -webkit-backface-visibility: hidden;
-  /*-webkit-transform: translateZ(0) scale(1.0, 1.0);  */
+
 }
 .cloud-move-reverse{
   -webkit-transform: translate(-500px, -500px);
   -webkit-animation-name: move;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: ease-out;
-  -webkit-backface-visibility: hidden;
-  /*-webkit-transform: translateZ(0) scale(1.0, 1.0);    */
 }
 
 .speed-move{
   -webkit-animation: moveNear 1s ease-out infinite;
-  -webkit-backface-visibility: hidden;
-  /*-webkit-transform: translateZ(0) scale(1.0, 1.0);   */
+
 }
 
 @-webkit-keyframes move {
@@ -47,13 +43,9 @@
 
 .star-shink1{
   -webkit-animation: shink 0.5s ease-out infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0); 
 }
 .star-shink2{
   -webkit-animation: shink 0.7s ease-out infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1.0, 1.0); 
 }
 
 @-webkit-keyframes shink {
