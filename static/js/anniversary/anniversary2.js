@@ -109,7 +109,14 @@ var p2Animate = function(){
 	setTimeout(function(){
 		swiper.slideNext();
 		$(".i-invitation").addClass('rollIn animated');
-		$("#j-inv-text").addClass('flash animated delay1')
+		$("#j-inv-text").addClass('flash animated delay1');
+		setTimeout(function(){
+			$('.click').click();
+			$("#j-inv-text").removeClass('flash animated delay1').addClass('flash animated delay0_5');
+			setTimeout(function(){
+				$('.click').click();
+			}, 2000)
+		}, 2000);
 	}, 4500)
 }
 
@@ -281,8 +288,7 @@ var shot = function(shotNum){
 	$('#metro2').addClass('metro2-anime animated0_7');
 	$('#metro3').addClass('metro3-anime animated0_7');
 	$('#metro4').addClass('metro4-anime animated0_7');
-	fmoveonTimer = keyframeAnimation('#j-fire-moveon', 70, 8, 70, 0, true);
-	amoveTimer = keyframeAnimation("#j-arrow-moveon", 70, 4, 200, 0, true)
+	$("#j-move-stage-3 .flyarrow").addClass('moveleftright-nor')
 	if(jingdongLevel==1){
 		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/1.png');
 	}else{
@@ -652,14 +658,11 @@ $("#j-move-stage-6").bind('click', function(){
 
 });
 
-var fmoveon5Timer, amove5Timer;
 $("#j-enter").bind('click', function(){
 	swiper.slideNext();
 	removeAnimation('#firework1', fireworkTimer1);	
 	removeAnimation('#firework2', fireworkTimer2);	
 	removeAnimation('#firework3', fireworkTimer3);	
-	fmoveon5Timer = keyframeAnimation('#j-move-stage-7 .j-fire-moveon', 70, 8, 70, 0, true);
-	amove5Timer = keyframeAnimation("#j-move-stage-7 .j-arrow-moveon", 70, 4, 200, 0, true)
 
 	$('.result-car').addClass('car-in animated');
 	var jQstars = $('.star-rotate');
@@ -690,22 +693,20 @@ $("#j-move-stage-7").bind('click', function(){
 
 $("#fill").bind('click', function(){	
 	// 隐藏输入框
-	$('#user-name').hide();
-	$('.input').hide();
-	$('#fill').hide();
-	// 显示结果
-	$('#j-share-text').show();
-	// 显示按钮
-	$("#j-send-btn").show();
-	$("#j-share-btn").show();
+	// $('#user-name').hide();
+	// $('.input').hide();
+	// $('#fill').hide();
+	// // 显示结果
+	// $('#j-share-text').show();
+	// // 显示按钮
+	// $("#j-send-btn").show();
+	// $("#j-share-btn").show();
 
+	var usrName = $('#user-name').val();
+	swiper.slideNext();
 });
 
 $("#j-share-btn").bind('click', function(){
-	$(".share-light").removeClass('flash1 animated0_5');
-	$(".share-light2").show().addClass('flash1 animated0_5');
-});
-$("#j-send-btn").bind('click', function(){
 	$(".share-light").removeClass('flash1 animated0_5');
 	$(".share-light2").show().addClass('flash1 animated0_5');
 });

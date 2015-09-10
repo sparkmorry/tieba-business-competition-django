@@ -191,6 +191,19 @@
     -webkit-transform: translateX(40px) rotate(90deg);
   } 
 }
+.moveleftright-nor{
+  -webkit-animation: moveleftrightNor 0.8s ease-out infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);   
+}
+@-webkit-keyframes moveleftrightNor {
+  0% {
+    -webkit-transform: translateX(-13px);
+  }
+  100% {
+    -webkit-transform: translateX(7px);
+  } 
+}
 
 
 .star-shine-fast{

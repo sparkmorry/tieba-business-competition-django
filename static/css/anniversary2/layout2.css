@@ -167,14 +167,6 @@ position: absolute;
   height: 163px;
   z-index: 1000;
 }
-.moveon{
-  position: absolute;
-  width: 400px;
-  height: 300px;
-  right: 0px;
-  top: 610px;
-  z-index: 1000;
-}
 .ship-moveon{
 	position: absolute;
   width: 326px;
@@ -192,6 +184,28 @@ position: absolute;
 	position: absolute;
 	top: 90px;
 	right: 0;
+
+}
+.moveon{
+  position: absolute;
+  width: 120px;
+  height: 200px;
+  right: 0px;
+  top: 660px;
+  z-index: 1000;
+  background-image: url(icon/fly.png);
+  background-repeat: no-repeat;
+  padding-right: 100px;
+  text-align: center;
+}
+.moveon p{
+	
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: 700;
+}
+.flyarrow{
+
 }
 
 /*中信*/
@@ -467,12 +481,6 @@ position: absolute;
 	background-repeat: no-repeat;
 }
 
-.share-text{
-  position: absolute;
-  top: 500px;
-  left: 210px;
-  display: none;
-}
 .share-light{
 position: absolute;
   top: 443px;
@@ -505,15 +513,26 @@ position: absolute;
   top: 510px;
   left: 180px;
 }
+
+/*p17*/
+#p17{
+	background-image: url(bg/p17.png);
+	background-repeat: no-repeat;
+}
+.share-text{
+  position: absolute;
+  top: 590px;
+  left: 210px;
+  /*display: none;*/
+}
 #j-send-btn{
   position: absolute;
-  top: 600px;
-  left: 150px;
-  display: none;
+  top: 840px;
+  left: 160px;  /*display: none;*/
 }
 #j-share-btn{
-  position: absolute;
-  top: 600px;
-  left: 390px;
-  display: none;
+position: absolute;
+  top: 840px;
+  left: 415px;
 }
+
