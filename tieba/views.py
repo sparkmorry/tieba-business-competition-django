@@ -429,4 +429,7 @@ def anniversary(request):
 def anniversary2(request):
 	return render_to_response('anniversary2.html')
 
+def anni(request):
+	return render_to_response('annimin.html')
+
 	
