@@ -96,7 +96,6 @@ body{
 .loading-bg{
 	width: 142px;
 	height: 170px;
-	/*background-image:url('animation/loading.png') ;*/
 	background-image:url('animation/loading2.png') ;
 	
 	background-position: 0 0;
@@ -316,17 +315,7 @@ body{
 	right: 0;
 	top: 0px;
 }
-.i-title4{
-	position: absolute;
-	left: 50%;
-	top: 50px;
-	margin-left: -305px;
-}
-.i-cloud-big{
-	position: absolute;
-	bottom: -130px;
-	left: -50px;
-}
+
 .arrow{
   position: absolute;
   left: 105px;
@@ -610,16 +599,7 @@ position: absolute;
   -webkit-transform: scale(0.6);
 
 }
-.moveon-arrow{
-	background:url(icon/moveon.png);
-	width: 84px;
-	height: 70px;
-	background-position: 0 0;
-	position: absolute;
-	top: 90px;
-	right: 0;
 
-}
 .moveon{
   position: absolute;
   width: 200px;
@@ -906,24 +886,16 @@ position: absolute;
 }
 
 
-.music{
-	background-image: url(animation/music.png);
-	width: 70px;
-	height: 70px;
-	position: fixed;
-	top: 40px;
-	right: 40px;
-	z-index: 1000;
-}
+
 #j-move-stage-7 .moveon{
 	top: 600px;
 }
 /*p16*/
-/*#p16{
-	background-image: url(bg/p16n.jpg);
+#p16{
+	/*background-image: url(bg/p16n.jpg);*/
 	background-repeat: no-repeat;
 }
-*/
+
 .share-light{
 position: absolute;
   top: 443px;
@@ -934,6 +906,7 @@ position: absolute;
   top: 43px;
   left: 513px;
   display: none;
+  z-index: 100000;
 }
 
 
@@ -958,11 +931,11 @@ position: absolute;
 }
 
 /*p17*/
-/*#p17{
-	background-image: url(bg/p17.jpg);
+#p17{
+	/*background-image: url(bg/p17.jpg);*/
 	background-repeat: no-repeat;
 }
-*/.share-text{
+.share-text{
   position: absolute;
   top: 590px;
   left: 210px;

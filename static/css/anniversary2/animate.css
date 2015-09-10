@@ -244,22 +244,6 @@
   }
 }
 
-
-.fadeIn{
-  /*-webkit-animation: fadeIn 1s linear;*/
-  -webkit-animation-name:fadeIn;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0)  ;     
-}
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0
-  }
-  100% {
-    opacity: 1  
-  } 
-}
-
 .delay0_5{
   animation-delay:0.5s;
   -webkit-animation-delay:0.5s;

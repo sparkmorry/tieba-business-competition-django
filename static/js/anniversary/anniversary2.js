@@ -99,25 +99,6 @@ function clearAnimation(timer){
 	clearInterval(timer);
 }
 
-
-// 音乐控制
-
-// var jQmusic = $("#audio_pan");
-// // musicTimer = keyframeAnimation('.music', 70, 16, 150, 0, true);
-// jQmusic.bind('click', function(){
-// 	if(musicPlay){
-// 		musicPlay=false;
-// 		mBg.pause();
-// 		// mParty.pause();
-//         jQmusic.addClass("m_off").removeClass("music-status-on"); 
-// 	}else{
-// 		musicPlay=true;
-// 		mBg.play();
-// 		jQmusic.removeClass("m_off").addClass("music-status-on"); 
-// 		// todo 播放party
-// 	}
-
-// });
 var levelMusic=function(){
 	if(!mLevel){
 		levelupMusic();
@@ -139,7 +120,7 @@ var p2Animate = function(){
 	$(".sudden").addClass('fadeIn animated delay2');
 
 	setTimeout(function(){
-		$("#p1").empty();
+		$("#p1").css('background', 'transparent').empty();
 		swiper.slideNext();
 		$(".i-invitation").addClass('rollIn animated');
 		$("#j-inv-text").addClass('flash animated delay1');
@@ -188,9 +169,7 @@ $(".click").bind('click', function(){
 });
 
 $(".i-go").bind('click', function(){
-	goStage(1);
-	removeAnimation('#p13 .shine-lines', goAnime);	
-
+	goStage(1);	
 });
 
 var canvas=document.getElementById("canvas");
@@ -227,16 +206,14 @@ var drawFaceRotate = function(){
 		imgFace.src = imgReader.src;
 	}
 }
-
+var faceImg;
 var drawFace = function(){
 	drawFaceRotate();
 	ctx.drawImage(imgClip, 0, 0, 450, 580);
 	ctx.globalCompositeOperation = "source-in";
 	imgFace.onload = function(){
 		ctx.drawImage(imgFace, 0, 0, 450, 580);	
-		var img = canvas.toDataURL("image/png"); 
-		$("#jd-avatar").attr('src', img);
-		$("#final-avatar").attr('src', img);
+		faceImg = canvas.toDataURL("image/png", 0.5); 
     	$("#j-secury").show();
     	$("#j-retake").show();
     	$("#j-photo").hide();	
@@ -305,7 +282,7 @@ var shot = function(shotNum){
 	// jingdongLevel=shotNum;
 	jingdongLevel = parseInt(Math.random()*2)+1;
 	levelMusic();	
-	// $('#jd-round').addClass("rotate360 animated5");
+	$('#jd-round').addClass("rotate360 animated5");
 	$("#p7 .shink1").addClass('star-shink1');
 	$("#p7 .shink2").addClass('star-shink1');
 	
@@ -313,6 +290,8 @@ var shot = function(shotNum){
 	$('#metro2').addClass('metro2-anime animated0_7');
 	$('#metro3').addClass('metro3-anime animated0_7');
 	$('#metro4').addClass('metro4-anime animated0_7');
+
+	$("#jd-avatar").attr('src', faceImg);
 	if(jingdongLevel==1){
 		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/1.png');
 	}else{
@@ -320,16 +299,6 @@ var shot = function(shotNum){
 	}
 	swiper.slideNext();
 }
-
-$("#j-shot1").bind('click', function(){
-	swiper.slideNext();
-	shot(1);
-});
-
-$("#j-shot2").bind('click', function(){
-	swiper.slideNext(2);
-	shot(2);
-});
 
 // 关卡切换
 var jQarrow = $(".arrow");
@@ -351,13 +320,13 @@ var game = function(num, delay){
 	}, delay+700);
 }
 var luckyTimes=0;
-$('body').delegate('.i-sale-big', 'click', function(){
+// touch.on('.i-sale-big', 'tap', function(){
+// 	alert("ab");
+// 	luckyTimes++;
+// });
+
+$('#p6').delegate('.i-sale-big', 'click', function(){
 	alert("a");
-	var clicked = $(this).data('clicked');
-	if(clicked){
-		return;
-	}
-	$(this).data('clicked', true);
 	luckyTimes++;
 });
 var goStage = function(stageNum){
@@ -368,8 +337,6 @@ var goStage = function(stageNum){
 	$('.i-dawang').unbind();
 	$('.i-k').unbind();
 	if(stageNum==1){	
-		$("#p2").empty();
-		$("#p3").empty();
     	jQarrow.addClass('moveupdown-fast');
     	$('.i-cloud2').addClass("moverightback-slow");
 
@@ -380,12 +347,6 @@ var goStage = function(stageNum){
     	$(".i-huixing-lock").removeClass('i-huixing-lock').addClass('i-huixing');
     	jQarrow.css({'top': '540px'});
     	jQlocation.css({'top': '675px'});
-		// $(".i-jingdonghao-light").addClass("flash animated3");
-		// $(".i-jingdonghao").addClass("floating animated3");
-		// $(".i-jingdong-planet1").addClass("floating animated3");
-		// $("#p6 .i-needle1").addClass("needle1-anime");
-		// $("#p6 .i-needle2").addClass("needle2-anime");
-
     	// 文案显示
     	anjianLevel = parseInt(Math.random()*2)+1;
     	if(anjianLevel==1){
@@ -396,10 +357,9 @@ var goStage = function(stageNum){
     	$('.i-huixing').bind('click', function(){
     		// 清空安检
 			$("#p5").empty();
+			$(".i-jingdonghao-light").addClass("flash animated3");
+			$(".i-jingdonghao").addClass("floating animated3");
 
-    		$(".i-sale-big").addClass('shot-scale animated');
-    		// $('.i-jd-planet').addClass('floating');
-    		// $('.i-sale-small').addClass('floating');
     		swiper.slideTo(5);
     		//todo:敲松鼠游戏
     		game(1, 1300);
@@ -432,6 +392,8 @@ var goStage = function(stageNum){
 			$(".i-qiqiu").addClass('floating animated6');
 			$("#p8 .i-needle1").addClass("needle1-anime");
 			$("#p8 .i-needle2").addClass("needle2-anime");
+			$(".i-card-arrow").addClass("moveright-slow animated1_5");
+			$(".i-card-arrow-reverse").addClass("moveleft-slow animated1_5");
 
     		swiper.slideTo(7);
     	});
@@ -517,6 +479,8 @@ var goStage = function(stageNum){
 $("#j-secury").bind('click', function(){
     $(".secury-process").show();
     securyProcess();
+		$("#p2").css('background', 'transparent').empty();
+		$("#p3").css('background', 'transparent').empty();
     currentStage = 2;
     setTimeout(function(){
     	goStage(currentStage);
@@ -561,7 +525,7 @@ var swipe = function(){
 		$(target).css({'-webkit-transform': 'translateX(250px)'});	
 		setTimeout(function(){
 			levelMusic();
-			// $('#zx-round').addClass("rotate360 animated5");
+			$('#zx-round').addClass("rotate360 animated5");
 			$("#p9 .shink1").addClass('star-shink1');
 			$("#p9 .shink2").addClass('star-shink1');
 
@@ -690,6 +654,7 @@ $(".j-geshou-btn").bind('click', function(){
 		$('#gs-metro2').addClass('metro2-anime animated0_7');
 		$('#gs-metro3').addClass('metro3-anime animated0_7');
 		$('#gs-metro4').addClass('metro4-anime animated0_7');		
+		$("#gs-round").addClass("rotate360 animated5");
 		swiper.slideNext();
 	}, 500);
 });
@@ -710,6 +675,7 @@ $(".book").bind('click', function(){
 	$('#hw-metro2').addClass('metro2-anime animated0_7');
 	$('#hw-metro3').addClass('metro3-anime animated0_7');
 	$('#hw-metro4').addClass('metro4-anime animated0_7');		
+	$("#hw-round").addClass("rotate360 animated5");
 
 	if(huaweiLevel==1){
 		$(".i-building3").addClass('dropdown animated0_5 delay0_5');
@@ -741,6 +707,7 @@ $("#j-enter").bind('click', function(){
 	removeAnimation('#firework2', fireworkTimer2);	
 	removeAnimation('#firework3', fireworkTimer3);	
 	$('.result-car').addClass('car-in animated');
+	$("#final-avatar").attr('src', faceImg);
 	var jQstars = $('.star-rotate');
 	$(jQstars[0]).addClass('star-rotate-anime animated');
 	$(jQstars[1]).addClass('star-rotate-anime animated delay2_3');
@@ -754,6 +721,9 @@ $("#j-enter").bind('click', function(){
 	$(jQxunzhang[2]).addClass('fadeIn animated delay2');
 	$(jQxunzhang[3]).addClass('fadeIn animated delay2_1');
 	$('.result-text').addClass('fadeIn animated delay3');
+	$('#p16').css({'background-image': 'url("bg/p16n.jpg")'});
+	$('#p17').css({'background-image': 'url("bg/p17.jpg")'});
+
 });
 
 
@@ -774,7 +744,9 @@ $("#fill").bind('click', function(){
 
 $("#j-share-btn").bind('click', function(){
 	$("#p16").empty();
-	$("#p17").append('<img class="final-arrow" src="/static/css/anniversary2/icon/finalarrow.png">');
+	if($('.final-arrow').length<=0){
+		$("#p17").append('<img class="final-arrow" src="/static/css/anniversary2/icon/finalarrow.png">');
+	}
 	$(".share-light").removeClass('flash1 animated0_5');
 	$(".share-light2").show().addClass('flash1 animated0_5');
 });
