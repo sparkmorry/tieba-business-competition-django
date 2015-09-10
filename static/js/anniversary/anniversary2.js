@@ -107,6 +107,7 @@ var p2Animate = function(){
 	$(".sudden").addClass('fadeIn animated delay2');
 
 	setTimeout(function(){
+		$("#p1").empty();
 		swiper.slideNext();
 		$(".i-invitation").addClass('rollIn animated');
 		$("#j-inv-text").addClass('flash animated delay1');
@@ -115,8 +116,8 @@ var p2Animate = function(){
 			$("#j-inv-text").removeClass('flash animated delay1').addClass('flash animated delay0_5');
 			setTimeout(function(){
 				$('.click').click();
-			}, 2000)
-		}, 2000);
+			}, 1000)
+		}, 2500);
 	}, 4500)
 }
 
@@ -243,6 +244,7 @@ function readFile(){
     var reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function(e){
+    	mBg.play();
     	// jQprevImg.attr('src', this.result).show();
     	imgReader = new Image();
     	imgReader.src = this.result;
@@ -343,6 +345,7 @@ var goStage = function(stageNum){
 	$('.i-dawang').unbind();
 	$('.i-k').unbind();
 	if(stageNum==1){	
+		$("#p2").empty();
 		$("#j-planet1").bind('click', function(){
 			swiper.slideNext();
 		});
@@ -350,6 +353,8 @@ var goStage = function(stageNum){
     	$(".i-huixing-lock").removeClass('i-huixing-lock').addClass('i-huixing');
     	jQarrow.css({'top': '540px'});
     	jQlocation.css({'top': '675px'});
+		$("#p3").empty();
+
     	// 文案显示
     	anjianLevel = parseInt(Math.random()*2)+1;
     	if(anjianLevel==1){
@@ -358,6 +363,9 @@ var goStage = function(stageNum){
 			jQmapTip.addClass('map-tip1').attr('src', '/static/css/anniversary2/result/map/anjian/2.png');
     	}	
     	$('.i-huixing').bind('click', function(){
+    		// 清空安检
+			$("#p5").empty();
+
     		$(".i-sale-big").addClass('shot-scale animated');
     		$('.i-jd-planet').addClass('floating');
     		$('.i-sale-small').addClass('floating');
@@ -383,6 +391,9 @@ var goStage = function(stageNum){
     	jQarrow.css({'top': '190px', 'left': '370px'}).removeClass('moveupdown').addClass('moveleftright');
     	jQlocation.css({'top': '365px'});
     	$('.i-mani').bind('click', function(){
+    		// 清空京东
+			$("#p6").empty();
+			$("#p7").empty();
     		swiper.slideTo(7);
     	});
     	if(jingdongLevel==1){
@@ -397,6 +408,10 @@ var goStage = function(stageNum){
     	jQarrow.css({'top': '300px', 'left': '582px'});
     	jQlocation.css({'top': '145px', 'left': '443px'});
     	$('.i-gede').bind('click', function(){
+    				// 清空京东
+			$("#p8").empty();
+			$("#p9").empty();
+
     		swiper.slideTo(9);
     	});
 
@@ -411,6 +426,10 @@ var goStage = function(stageNum){
     	jQlocation.css({'top': '390px', 'left': '600px'}); 	
     	// jQlocation.css({'top': '630px', 'left': '440px'});
     	$('.i-dawang').bind('click', function(){
+    				// 清空京东
+			$("#p10").empty();
+			$("#p11").empty();
+
     		jQbook.addClass('shake animated');
     		swiper.slideTo(11);
     	});
@@ -425,6 +444,9 @@ var goStage = function(stageNum){
     	jQarrow.css({'top': '800px', 'left': '344px'});
     	jQlocation.css({'top': '630px', 'left': '440px'});
     	$('.i-k').bind('click', function(){
+			$("#p12").empty();
+			$("#p13").empty();
+
     		mBg.pause();
 			mParty.play();
     		swiper.slideTo(13);
@@ -486,8 +508,7 @@ var swipe = function(){
 		$(target).css({'-webkit-transform': 'translateX(250px)'});	
 		setTimeout(function(){
 			levelMusic();
-			fmoveon4Timer = keyframeAnimation('#j-move-stage-4 .j-fire-moveon', 70, 8, 70, 0, true);
-			amove4Timer = keyframeAnimation("#j-move-stage-4 .j-arrow-moveon", 70, 4, 200, 0, true)
+			$("#j-move-stage-4 .flyarrow").addClass('moveleftright-nor')
 
 			$('#zx-metro1').addClass('metro1-anime animated0_7');
 			$('#zx-metro2').addClass('metro2-anime animated0_7');
@@ -659,10 +680,12 @@ $("#j-move-stage-6").bind('click', function(){
 });
 
 $("#j-enter").bind('click', function(){
+	$("#p4").empty();
 	swiper.slideNext();
 	removeAnimation('#firework1', fireworkTimer1);	
 	removeAnimation('#firework2', fireworkTimer2);	
 	removeAnimation('#firework3', fireworkTimer3);	
+	$("#j-move-stage-7 .flyarrow").addClass('moveleftright-nor')
 
 	$('.result-car').addClass('car-in animated');
 	var jQstars = $('.star-rotate');
@@ -688,6 +711,8 @@ $("#j-enter").bind('click', function(){
 // 游戏逻辑
 $("#j-move-stage-7").bind('click', function(){
 	swiper.slideNext();
+	$("#p14").empty();
+
 	$(".share-light").addClass('flash1 animated0_5');
 });
 
@@ -701,12 +726,14 @@ $("#fill").bind('click', function(){
 	// // 显示按钮
 	// $("#j-send-btn").show();
 	// $("#j-share-btn").show();
+	$("#p15").empty();
 
 	var usrName = $('#user-name').val();
 	swiper.slideNext();
 });
 
 $("#j-share-btn").bind('click', function(){
+	$("#p16").empty();
 	$(".share-light").removeClass('flash1 animated0_5');
 	$(".share-light2").show().addClass('flash1 animated0_5');
 });

@@ -188,24 +188,30 @@ position: absolute;
 }
 .moveon{
   position: absolute;
-  width: 120px;
-  height: 200px;
+  width: 200px;
+  height: 300px;
   right: 0px;
-  top: 660px;
-  z-index: 1000;
-  background-image: url(icon/fly.png);
-  background-repeat: no-repeat;
-  padding-right: 100px;
-  text-align: center;
+  top: 560px;
+  z-index: 10000;
 }
 .moveon p{
-	
-  margin-top: 20px;
-  font-size: 28px;
+    font-size: 28px;
   font-weight: 700;
+  position: absolute;
+  left: 60px;
+  top: 220;
 }
 .flyarrow{
+	position: absolute;
+  left: 60px;
+  top: 40px;
 
+}
+.flyfly{
+	position: absolute;
+  left: 60px;
+  top: 40px;
+  
 }
 
 /*中信*/
@@ -302,12 +308,15 @@ position: absolute;
   position: absolute;
   top: 660px;
   left: 60px;
+  z-index: 1000;
 }
 
 .geshou-button2{
   position: absolute;
   top: 660px;
   right: 90px;
+  z-index: 1000;
+
 }
 
 /*一呼百应*/
@@ -473,7 +482,7 @@ position: absolute;
 	z-index: 1000;
 }
 #j-move-stage-7 .moveon{
-	top: 630px;
+	top: 600px;
 }
 /*p16*/
 #p16{
