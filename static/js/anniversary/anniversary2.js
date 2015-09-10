@@ -15,17 +15,48 @@ $('body').bind('touchmove',function(event){
 	event.preventDefault();
 });
 
-var mBg = document.getElementById("music-bg");
-var mParty = document.getElementById("music-party");
-var mLevel = document.getElementById("music-level");
-// var mSwipe = document.getElementById("music-swipecard");
+var mBg;
+var musicPlay=true;
+var inParty=false;
 
-mBg.loop=true;
-mBg.addEventListener('ended', function() {
-    this.currentTime = 0;
-    this.play();
-}, false);
-mBg.play();
+// var newBgMusic = function(){
+// 	mBg = new Audio();
+// 	mBg.loop=true;
+// 	mBg.src = "/media/anniversary/bg.mp3";
+// 	mBg.play();	
+// 	setInterval(function(){
+// 		if(musicPlay){
+// 			mBg.pause();
+// 			mBg.play();				
+// 		}
+// 	}, 20000);
+// }
+var audio0 = document.getElementById("audio1");
+audio0.play();
+$("#audio_pan").click(function() {
+    audio1 = document.getElementById("audio1");
+    stats = audio1.paused;
+
+  if (stats == true) {
+        audio1.play();
+        $("#audio_pan").removeClass("m_off");
+        $("#audio_pan").addClass("music-status-on");    
+    }
+    if (stats == false) {  
+        audio1.pause();
+        $("#audio_pan").addClass("m_off"); 
+        $("#audio_pan").removeClass("music-status-on"); 
+    }
+});
+
+// newBgMusic();
+var mLevel;
+var levelupMusic = function(){
+	mLevel = new Audio();
+	mLevel.src="/media/anniversary/levelup.mp3"	
+}
+
+
 
 var currentStage = 1;
 function keyframeAnimation(selector, height, keyNum, duration, delay, loop){
@@ -70,27 +101,29 @@ function clearAnimation(timer){
 
 
 // 音乐控制
-var musicPlay=true;
-var inParty=false;
-var musicTimer;
-var jQmusic = $("#audio_pan");
-// musicTimer = keyframeAnimation('.music', 70, 16, 150, 0, true);
-jQmusic.bind('click', function(){
-	if(musicPlay){
-		musicPlay=false;
-		mBg.pause();
-		mParty.pause();
-        jQmusic.addClass("m_off").removeClass("music-status-on"); 
-	}else{
-		musicPlay=true;
-		mBg.play();
-		jQmusic.removeClass("m_off").addClass("music-status-on"); 
-		// todo 播放party
-	}
 
-});
+// var jQmusic = $("#audio_pan");
+// // musicTimer = keyframeAnimation('.music', 70, 16, 150, 0, true);
+// jQmusic.bind('click', function(){
+// 	if(musicPlay){
+// 		musicPlay=false;
+// 		mBg.pause();
+// 		// mParty.pause();
+//         jQmusic.addClass("m_off").removeClass("music-status-on"); 
+// 	}else{
+// 		musicPlay=true;
+// 		mBg.play();
+// 		jQmusic.removeClass("m_off").addClass("music-status-on"); 
+// 		// todo 播放party
+// 	}
+
+// });
 var levelMusic=function(){
+	if(!mLevel){
+		levelupMusic();
+	}
 	if(musicPlay){
+
 		mLevel.play();
 	}
 }
@@ -150,7 +183,6 @@ $(".click").bind('click', function(){
 		jQinvText.text('是乡村变装大趴还是时尚媒体复古大趴，还是海天盛筵大趴?不管了，去了再说。');	
 	}else if(invClick == 3){
 		$("#j-go").show();
-		$(".click-reminder").remove();
 		goAnime = keyframeAnimation('#p3 .shine-lines', 200, 13, 30, 0, true);	
 	}
 });
@@ -200,18 +232,15 @@ var drawFace = function(){
 	drawFaceRotate();
 	ctx.drawImage(imgClip, 0, 0, 450, 580);
 	ctx.globalCompositeOperation = "source-in";
-	// ctx.drawImage(imgFace, 0, 0, 450, 580);
-	// alert("aaa");
 	imgFace.onload = function(){
-		// alert("bbbb");
-		// alert(imgFace.src);
 		ctx.drawImage(imgFace, 0, 0, 450, 580);	
 		var img = canvas.toDataURL("image/png"); 
 		$("#jd-avatar").attr('src', img);
 		$("#final-avatar").attr('src', img);
     	$("#j-secury").show();
     	$("#j-retake").show();
-    	$("#j-photo").hide();		
+    	$("#j-photo").hide();	
+
 	}
 }
 
@@ -242,7 +271,6 @@ function readFile(){
     var reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function(e){
-    	mBg.play();
     	imgReader = new Image();
     	imgReader.src = this.result;
     	imgFace = new Image();
@@ -277,7 +305,7 @@ var shot = function(shotNum){
 	// jingdongLevel=shotNum;
 	jingdongLevel = parseInt(Math.random()*2)+1;
 	levelMusic();	
-	$('#jd-round').addClass("rotate360 animated5");
+	// $('#jd-round').addClass("rotate360 animated5");
 	$("#p7 .shink1").addClass('star-shink1');
 	$("#p7 .shink2").addClass('star-shink1');
 	
@@ -285,7 +313,6 @@ var shot = function(shotNum){
 	$('#metro2').addClass('metro2-anime animated0_7');
 	$('#metro3').addClass('metro3-anime animated0_7');
 	$('#metro4').addClass('metro4-anime animated0_7');
-	$("#j-move-stage-3 .flyarrow").addClass('moveleftright-nor')
 	if(jingdongLevel==1){
 		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/1.png');
 	}else{
@@ -325,6 +352,7 @@ var game = function(num, delay){
 }
 var luckyTimes=0;
 $('body').delegate('.i-sale-big', 'click', function(){
+	alert("a");
 	var clicked = $(this).data('clicked');
 	if(clicked){
 		return;
@@ -352,11 +380,11 @@ var goStage = function(stageNum){
     	$(".i-huixing-lock").removeClass('i-huixing-lock').addClass('i-huixing');
     	jQarrow.css({'top': '540px'});
     	jQlocation.css({'top': '675px'});
-		$(".i-jingdonghao-light").addClass("flash animated3");
-		$(".i-jingdonghao").addClass("floating animated3");
-		$(".i-jingdong-planet1").addClass("floating animated3");
-		$("#p6 .i-needle1").addClass("needle1-anime");
-		$("#p6 .i-needle2").addClass("needle2-anime");
+		// $(".i-jingdonghao-light").addClass("flash animated3");
+		// $(".i-jingdonghao").addClass("floating animated3");
+		// $(".i-jingdong-planet1").addClass("floating animated3");
+		// $("#p6 .i-needle1").addClass("needle1-anime");
+		// $("#p6 .i-needle2").addClass("needle2-anime");
 
     	// 文案显示
     	anjianLevel = parseInt(Math.random()*2)+1;
@@ -370,8 +398,8 @@ var goStage = function(stageNum){
 			$("#p5").empty();
 
     		$(".i-sale-big").addClass('shot-scale animated');
-    		$('.i-jd-planet').addClass('floating');
-    		$('.i-sale-small').addClass('floating');
+    		// $('.i-jd-planet').addClass('floating');
+    		// $('.i-sale-small').addClass('floating');
     		swiper.slideTo(5);
     		//todo:敲松鼠游戏
     		game(1, 1300);
@@ -448,7 +476,6 @@ var goStage = function(stageNum){
     				// 清空京东
 			$("#p10").empty();
 			$("#p11").empty();
-			$(".sun").addClass("rotate360 animated10");
 
 			$("#p12 .shink1").addClass('star-shink1');
 			$("#p12 .shink2").addClass('star-shink2');
@@ -472,8 +499,9 @@ var goStage = function(stageNum){
 			$("#p12").empty();
 			$("#p13").empty();
 
-    		mBg.pause();
-			mParty.play();
+    		// mBg.pause();
+    		// mBg.src="/media/anniversary/party.mp3"
+			// mParty.play();
     		swiper.slideTo(13);
     	});
     	if(huaweiLevel==1){
@@ -533,8 +561,7 @@ var swipe = function(){
 		$(target).css({'-webkit-transform': 'translateX(250px)'});	
 		setTimeout(function(){
 			levelMusic();
-			$("#j-move-stage-4 .flyarrow").addClass('moveleftright-nor')
-			$('#zx-round').addClass("rotate360 animated5");
+			// $('#zx-round').addClass("rotate360 animated5");
 			$("#p9 .shink1").addClass('star-shink1');
 			$("#p9 .shink2").addClass('star-shink1');
 
@@ -713,8 +740,6 @@ $("#j-enter").bind('click', function(){
 	removeAnimation('#firework1', fireworkTimer1);	
 	removeAnimation('#firework2', fireworkTimer2);	
 	removeAnimation('#firework3', fireworkTimer3);	
-	$("#j-move-stage-7 .flyarrow").addClass('moveleftright-nor')
-
 	$('.result-car').addClass('car-in animated');
 	var jQstars = $('.star-rotate');
 	$(jQstars[0]).addClass('star-rotate-anime animated');
@@ -741,15 +766,6 @@ $("#j-move-stage-7").bind('click', function(){
 });
 
 $("#fill").bind('click', function(){	
-	// 隐藏输入框
-	// $('#user-name').hide();
-	// $('.input').hide();
-	// $('#fill').hide();
-	// // 显示结果
-	// $('#j-share-text').show();
-	// // 显示按钮
-	// $("#j-send-btn").show();
-	// $("#j-share-btn").show();
 	$("#p15").empty();
 
 	var usrName = $('#user-name').val();
@@ -758,6 +774,7 @@ $("#fill").bind('click', function(){
 
 $("#j-share-btn").bind('click', function(){
 	$("#p16").empty();
+	$("#p17").append('<img class="final-arrow" src="/static/css/anniversary2/icon/finalarrow.png">');
 	$(".share-light").removeClass('flash1 animated0_5');
 	$(".share-light2").show().addClass('flash1 animated0_5');
 });

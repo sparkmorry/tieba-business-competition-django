@@ -5,27 +5,13 @@
 .i-speed{
 	width: 550px;
 	height: 240px;
-	background-position: -446px -525px;
+	background-position: -446px -445px;
 }
 .i-small-star{
 	width: 40px;
 	height: 45px;
-	background-position: -140px -506px;
-}
-.i-title1{
-	width: 360px;
-	height: 180px;
-	background-position: 0 -680px;
-}
-.i-title2{
-	width: 650px;
-	height: 130px;
-	background-position: 0 -870px;
-}
-.i-hero{
-	width: 100px;
-	height: 170px;
-	background-position: 0 -504px;
+	/*background-position: -140px -506px;*/
+	background-image: url(icon/shinkstar.png);
 }
 
 .i-superman{
@@ -42,7 +28,7 @@
 .i-cloud{
 	width: 465px;
 	height: 360px;
-	background-position: -535px -160px;
+	background-position: -535px 0px;
 }
 
 /*p2*/
@@ -123,24 +109,13 @@
 }
 
 /*p4*/
-.icon4{
-	background: url(icon/icon4.png);
-	display: inline-block;
-}
-.i-title4{
-	width: 610px;
-	height: 80px;
-	background-position: 0 0;
-}
-.i-stars-white{
-	width: 600px;
-	height: 500px;
-	background-position: -420px -480px;
-}
+
 .i-cloud2{
-	width: 230px;
-	height: 123px;
-	background-position: -30px -500px;
+	width: 220px;
+	height: 113px;
+	/*background-position: -30px -500px;*/
+	background-image: url(icon/cloud2.png);
+	background-repeat: no-repeat;
 }
 .i-cloud-big{
 	width: 944px;
@@ -213,16 +188,7 @@
 	background: url(icon/icon6.png);
 	display: inline-block;
 }
-.i-people{ 
-  background: url('icon/people.png');
-  width: 678px;
-  height: 1288px;
-  background-size: 100% auto;
-  position: absolute;
-  top: 110px;
-  left: 35px;
-  z-index: 5;
-}
+
 .i-camera{ background: url('icon/camera.png'); 
 	background-size: cover; 
 	width: 190px; 
@@ -309,6 +275,142 @@
 	height: 84px;
 	background-position: -416px -712px;
 }
+
+
+/*p8*/
+.icon8{
+	background: url(icon/icon8new.png);
+	display: inline-block;
+}
+
+.i-car{
+	width: 304px;
+	height: 230px;
+	background-position: 0 0;
+}
+.i-wajue{
+	width: 250px;
+	height: 326px;
+	background-position: 0 -253px;
+}
+.i-fan{
+	width: 163px;
+	height: 260px;
+	background-position: 0 -590px;
+}
+.i-ring{
+	width: 177px;
+	height: 233px;
+	background-position: -352px 0;
+}
+.i-bear{
+	width: 170px;
+	height: 245px;
+	background-position: -350px -250px;
+}
+.i-huojian{
+	width: 188px;
+	height: 217px;
+	background-position: -600px -717px;
+}
+.i-saoba{
+	width: 198px;
+	height: 280px;
+	background-position: -600px -406px;
+}
+.i-qiqiu{
+	width: 180px;
+	height: 291px;
+	background-position: -820px -390px;
+}
+
+.i-card-arrow{
+	width: 120px;
+	height: 50px;
+	background-position: -375px -562px;
+}
+.i-card-arrow-reverse{
+	width: 120px;
+	height: 50px;
+	background-position: -375px -627px;
+}
+
+.i-pos{
+	width: 212px;
+	height: 360px;
+	background-position: -628px 0;
+}
+
+/*p12*/
+.icon12{
+	background: url(icon/icon12.png);
+	display: inline-block;
+}
+.i-building1{
+	width: 97px;
+	height: 132px;
+	background-position: -655px -21px;
+}
+.i-building2{
+	width: 153px;
+	height: 193px;
+	background-position: -655px -160px;
+}
+.i-building3{
+	width: 203px;
+	height: 342px;
+	background-position: -655px -368px;
+}
+.i-flat-building{
+	width: 300px;
+	height: 267px;
+	background-position: 0 0;
+}
+
+/*p15*/
+.star-rotate{
+	background: url(icon/icon15.png);
+	display: inline-block;
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	background-position: -25px -700px;
+}
+.xunzhang{
+	width: 125px;
+	height: 150px;
+	background: url(icon/icon15.png);
+	display: inline-block;
+	position: relative;
+  margin-right: 20px;
+}
+.x41{
+	background-position: 0 0;
+}
+.x42{
+	background-position: -175px 0;
+}
+.x31{
+	background-position: 0 -172px;
+}
+.x32{
+	background-position: -175px -172px;
+}
+.x21{
+	background-position: 0 -336px;
+}
+.x22{
+	background-position: -175px -336px;
+}
+.x11{
+	background-position: 0 -500px;
+}
+.x12{
+	background-position: -175px -500px;
+}
+
+
+
 
 
 
