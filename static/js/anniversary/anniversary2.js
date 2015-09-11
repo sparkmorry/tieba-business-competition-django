@@ -174,6 +174,7 @@ function drawRotatedImage(cvs, image, angle) {
 	cvs.width = wToDraw;
 	cvs.height = hToDraw;
 
+	alert("wToDraw:"+wToDraw+","+hToDraw)
 	var context=cvs.getContext("2d");
 
 	context.save(); 
@@ -194,8 +195,8 @@ var drawFaceRotate = function(){
 	}
 }
 var faceImg;
-var drawFace = function(){
-	drawFaceRotate();
+var drawFace = function(imgReader){
+	drawFaceRotate(imgReader);
 	var w = imgFace.width, h=imgFace.height; //此时应该肯定是竖构图
 	var wToDraw, hToDraw;
 	wToDraw = w;
@@ -204,8 +205,7 @@ var drawFace = function(){
 	ctx.drawImage(imgClip, 0, 0, 450, 580);
 	ctx.globalCompositeOperation = "source-in";
 	imgFace.onload = function(){
-		// drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight,
-        // destX, destY, destWidth, destHeight)
+		alert("??");
 		ctx.drawImage(imgFace, 0, 0, wToDraw, hToDraw, 0, 0, 450, 580);	
 		faceImg = canvas.toDataURL("image/png", 0.5); 
     	$("#j-secury").show();
@@ -244,12 +244,13 @@ function readFile(){
     reader.onload = function(e){
     	imgReader = new Image();
     	imgReader.src = this.result;
-    	imgFace = new Image();
     	if(imgReader.complete && imgClip.complete) { //check if image was already loaded by the browser
-		   drawFace();
+		   drawFace(imgReader);
 		}else {
-		   imgReader.onload = drawFace;
-		   imgClip.onload = drawFace;
+		   imgReader.onload = function(){
+		   	  drawFace(imgReader);
+		   };
+		   // imgClip.onload = drawFace;
 		}
     }
 }
@@ -787,18 +788,18 @@ $("#fill").bind('click', function(){
 	}
 	var usrName = $('#user-name').val();
 	finalMsg = usrName+finalMsg;
-	swiper.slideNext();
-});
-
-$("#j-share-btn").bind('click', function(){
-	$("#p16").css('background-image', 'transparent').empty();
-	$(".share").show();
 	wx.onMenuShareAppMessage({		    
 		title: '居然有人在贴吧里玩出了豪华跑车，到底是谁送的？！去试试自己的运气！', // 分享标题
 	    link: 'http://ssld-vi.com/tieba/anniversary', // 分享链接		
 	    imgUrl: 'http://7xjv0c.com1.z0.glb.clouddn.com/cover2.jpg' ,  
 	    desc: finalMsg,
 	});	
+	swiper.slideNext();
+});
+
+$("#j-share-btn").bind('click', function(){
+	$("#p16").css('background-image', 'transparent').empty();
+	$(".share").show();
 });
 
 touch.on('body', 'tap', '.share', function(){
