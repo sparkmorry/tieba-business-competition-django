@@ -318,8 +318,9 @@ var goStage = function(stageNum){
 	$('.i-gede').unbind();
 	$('.i-dawang').unbind();
 	$('.i-k').unbind();
+	jQarrow.addClass('flash animated delay1');
 	if(stageNum==1){	
-    	jQarrow.addClass('moveupdown-fast');
+    	// jQarrow.addClass('flash animated');
     	$('.i-cloud2').addClass("moverightback-slow");
 
 		$("#j-planet1").bind('click', function(){
@@ -327,7 +328,7 @@ var goStage = function(stageNum){
 		});
 	}else if(stageNum==2){
     	$(".i-huixing-lock").removeClass('i-huixing-lock').addClass('i-huixing');
-    	jQarrow.css({'top': '540px'});
+    	jQarrow.css({'top': '460px', 'left':'185px'});
     	jQlocation.css({'top': '675px'});
     	// 文案显示
     	anjianLevel = parseInt(Math.random()*2)+1;
@@ -341,6 +342,7 @@ var goStage = function(stageNum){
 			$("#p5").css('background', 'transparent').empty();
 			$(".i-jingdonghao-light").addClass("flash animated3");
 			$(".i-jingdonghao").addClass("floating animated3");
+			jQarrow.removeClass("flash animated delay0_8");
 
     		swiper.slideTo(5);
     		//todo:敲松鼠游戏
@@ -363,7 +365,7 @@ var goStage = function(stageNum){
     	});    	
 	}else if(stageNum==3){
     	$(".i-mani-lock").removeClass('i-mani-lock').addClass('i-mani');
-    	jQarrow.css({'top': '190px', 'left': '370px'}).removeClass('moveupdown').addClass('moveleftright');
+    	jQarrow.addClass('flash animated').css({'top': '250px', 'left': '645px'});
     	jQlocation.css({'top': '365px'});
     	$('.i-mani').bind('click', function(){
     		// 清空京东
@@ -378,6 +380,8 @@ var goStage = function(stageNum){
 			$("#p8 .i-needle2").addClass("needle2-anime");
 			$(".i-card-arrow").addClass("moveright-slow animated1_5");
 			$(".i-card-arrow-reverse").addClass("moveleft-slow animated1_5");
+			jQarrow.removeClass("flash animated delay0_8");
+
 			// jQcardArrow.hide().removeClass('moveright-slow animated1_5');
 			zhongxinLevel = parseInt(Math.random()*2)+1;
 			if(zhongxinLevel==1){
@@ -394,9 +398,7 @@ var goStage = function(stageNum){
     	}
 	}else if(stageNum==4){
     	$(".i-gede-lock").removeClass('i-gede-lock').addClass('i-gede');
-    	jQarrow.attr('src', '/static/css/anniversary2/icon/arrow-down.png');
-    	jQarrow.addClass('moveupdown').removeClass('moveleftright');
-    	jQarrow.css({'top': '300px', 'left': '582px'});
+    	jQarrow.css({'top': '500px', 'left': '560px'});
     	jQlocation.css({'top': '145px', 'left': '443px'});
     	$('.i-gede').bind('click', function(){
     				// 清空京东
@@ -411,6 +413,7 @@ var goStage = function(stageNum){
 			$("#p10 i-needle1").addClass('needle1-anime');
 			$("#p10 i-needle2").addClass('needle2-anime');
 			showFinal(jingdongLevel, zhongxinLevel);
+			jQarrow.removeClass("flash animated delay0_8");
 
     		swiper.slideTo(9);
     	});
@@ -422,7 +425,7 @@ var goStage = function(stageNum){
     	}    	
 	}else if(stageNum==5){
     	$(".i-dawang-lock").removeClass('i-dawang-lock').addClass('i-dawang');
-    	jQarrow.css({'top': '600px', 'left': '582px'});
+    	jQarrow.css({'top': '750px', 'left': '490px'});
     	jQlocation.css({'top': '390px', 'left': '600px'}); 	
     	// jQlocation.css({'top': '630px', 'left': '440px'});
     	$('.i-dawang').bind('click', function(){
@@ -434,6 +437,8 @@ var goStage = function(stageNum){
 			$("#p12 .shink2").addClass('star-shink2');
  			$("#p12 i-needle1").addClass('needle1-anime');
 			$("#p12 i-needle2").addClass('needle2-anime');
+			jQarrow.removeClass("flash animated delay0_8");
+
 
    		jQbook.addClass('shake animated');
     		swiper.slideTo(11);
@@ -445,12 +450,14 @@ var goStage = function(stageNum){
     	}
 
 	}else if(stageNum==6){
+
     	$(".i-k-lock").removeClass('i-k-lock').addClass('i-k');
-    	jQarrow.css({'top': '800px', 'left': '344px'});
+    	jQarrow.css({'top': '1000px', 'left': '590px'});
     	jQlocation.css({'top': '630px', 'left': '440px'});
     	$('.i-k').bind('click', function(){
 			$("#p12").css('background', 'transparent').empty();
 			$("#p13").css('background', 'transparent').empty();
+			jQarrow.removeClass("flash animated delay0_8");
     		swiper.slideTo(13);
     	});
     	if(huaweiLevel==1){

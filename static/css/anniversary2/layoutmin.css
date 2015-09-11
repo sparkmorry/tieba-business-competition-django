@@ -318,8 +318,9 @@ body{
 
 .arrow{
   position: absolute;
-  left: 105px;
-  top: 840px;
+  left: 175px;
+  top: 750px;
+  z-index: 90000;
 }
 .i-stars-white{
   position: absolute;
