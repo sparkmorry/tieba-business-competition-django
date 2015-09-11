@@ -156,6 +156,24 @@ $(".click").bind('click', function(){
 $(".i-go").bind('click', function(){
 	goStage(1);	
 });
+var arrowTimer;
+var aCount = 0;
+var securyProcess = function(){
+	imgReader = null;
+	imgClip = null;
+	imgFace = null;
+	var sArrow = $(".i-secury-arrow");
+	arrowTimer = setInterval(function(){
+		if(aCount==10){
+			clearInterval(arrowTimer);
+			aCount=0;
+			return;
+		}
+		$(sArrow[aCount]).removeClass('i-secury-arrow').addClass('i-secury-arrow-ok');
+		aCount++;
+	},200);
+}
+
 
 var canvas=document.getElementById("canvas");
 var ctx=canvas.getContext("2d");
@@ -167,7 +185,6 @@ var TO_RADIANS = Math.PI/180;
 var photo=document.getElementById("photo");
 
 function drawRotatedImage(cvs, image, angle) { 
-	alert(image);
 	var w = image.width, h=image.height; //此时应该肯定是竖构图
 	var wToDraw, hToDraw;
 	wToDraw = 450;
@@ -175,7 +192,6 @@ function drawRotatedImage(cvs, image, angle) {
 	cvs.width = wToDraw;
 	cvs.height = hToDraw;
 
-	// alert("wToDraw:"+wToDraw+","+hToDraw);
 	var context=cvs.getContext("2d");
 
 	context.save(); 
@@ -186,54 +202,29 @@ function drawRotatedImage(cvs, image, angle) {
 	context.translate(-wToDraw/2, -hToDraw/2);
 	context.restore(); 
 	var img = cvs.toDataURL("image/jpeg", 0.5); 
-	alert("??");
 
 	return img;
 }
-var drawFaceRotate = function(imgReader){
+var drawFaceRotate = function(){
 	if(imgReader.width>imgReader.height){
-		var img = drawRotatedImage(photo, imgReader, 90);
-		alert("img"+img);
-		imgFace.src = img;
-		alert("retur");
+		imgFace.src = drawRotatedImage(photo, imgReader, 90);
 	}else{
 		imgFace.src = imgReader.src;
 	}
 }
 var faceImg;
-var drawFace = function(imgReader){
-	drawFaceRotate(imgReader);
-
+var drawFace = function(){
+	drawFaceRotate();
 	ctx.drawImage(imgClip, 0, 0, 450, 580);
 	ctx.globalCompositeOperation = "source-in";
 	imgFace.onload = function(){
-		alert("??");
-		var w = imgFace.width, h=imgFace.height; //此时应该肯定是竖构图
-		var wToDraw, hToDraw;
-		wToDraw = w;
-		hToDraw = wToDraw*580/450;
-		ctx.drawImage(imgFace, 0, 0, wToDraw, hToDraw, 0, 0, 450, 580);	
+		ctx.drawImage(imgFace, 0, 0, 450, 580);	
 		faceImg = canvas.toDataURL("image/png", 0.5); 
     	$("#j-secury").show();
     	$("#j-retake").show();
     	$("#j-photo").hide();	
 
 	}
-}
-
-var arrowTimer;
-var aCount = 0;
-var securyProcess = function(){
-	var sArrow = $(".i-secury-arrow");
-	arrowTimer = setInterval(function(){
-		if(aCount==10){
-			clearInterval(arrowTimer);
-			aCount=0;
-			return;
-		}
-		$(sArrow[aCount]).removeClass('i-secury-arrow').addClass('i-secury-arrow-ok');
-		aCount++;
-	},200);
 }
 
 var jQcameraInput = $('#cameraInput');
@@ -250,19 +241,16 @@ function readFile(){
     reader.onload = function(e){
     	imgReader = new Image();
     	imgReader.src = this.result;
-    	if(imgReader.complete && imgClip.complete) { //check if image was already loaded by the browser
-    		alert("drawFace");
-		   drawFace(imgReader);
+    	imgFace = new Image();
+		if(imgReader.complete && imgClip.complete) { //check if image was already loaded by the browser
+		   drawFace();
 		}else {
-			alert("reader1");
-		   imgReader.onload = function(){
-		   	alert("readerload");
-		   	  drawFace(imgReader);
-		   };
-		   // imgClip.onload = drawFace;
+		   imgReader.onload = drawFace;
+		   imgClip.onload = drawFace;
 		}
     }
 }
+
 jQcameraInput.bind('change', readFile);
 $('#j-photo').bind('click', function(){
 	jQcameraInput.click();
@@ -271,6 +259,9 @@ $('#j-photo').bind('click', function(){
 $("#j-retake").bind('click', function(){
 	jQcameraInput.click();
 });
+
+
+
 
 // 游戏逻辑变量
 var anjianLevel=1, jingdongLevel=1, zhongxinLevel=1, geshouLevel=1, huaweiLevel=1;
