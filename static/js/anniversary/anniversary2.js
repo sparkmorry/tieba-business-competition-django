@@ -166,27 +166,29 @@ imgClip.src = "/static/css/anniversary2/mask.png";
 var TO_RADIANS = Math.PI/180; 
 var photo=document.getElementById("photo");
 
-function drawRotatedImage(cvs, image, x, y, angle) { 
-	cvs.width = 450;
-	cvs.height = 580;
+function drawRotatedImage(cvs, image, angle) { 
+	var w = image.width, h=image.height; //此时应该肯定是竖构图
+	var wToDraw, hToDraw;
+	wToDraw = 450;
+	hToDraw = (w/h)*wToDraw;
+	cvs.width = wToDraw;
+	cvs.height = hToDraw;
+
 	var context=cvs.getContext("2d");
-	// save the current co-ordinate system 
-	// before we screw with it
+
 	context.save(); 
- 
-	// move to the middle of where we want to draw our image
-	context.translate(x, y);
+	context.translate(wToDraw/2, hToDraw/2);
 	context.rotate(angle * TO_RADIANS);
-	context.drawImage(image, -290, -225, 580, 450);
+	context.drawImage(image, -hToDraw/2, -wToDraw/2, hToDraw, wToDraw);
 	context.rotate(-angle * TO_RADIANS);
-	context.translate(-x, -y);
+	context.translate(-wToDraw/2, -hToDraw/2);
 	context.restore(); 
-	var img = cvs.toDataURL("image/png"); 
+	var img = cvs.toDataURL("image/jpeg", 0.5); 
 	return img;
 }
 var drawFaceRotate = function(){
 	if(imgReader.width>imgReader.height){
-		imgFace.src = drawRotatedImage(photo, imgReader, 225, 290, 90);
+		imgFace.src = drawRotatedImage(photo, imgReader, 90);
 	}else{
 		imgFace.src = imgReader.src;
 	}
@@ -194,10 +196,17 @@ var drawFaceRotate = function(){
 var faceImg;
 var drawFace = function(){
 	drawFaceRotate();
+	var w = imgFace.width, h=imgFace.height; //此时应该肯定是竖构图
+	var wToDraw, hToDraw;
+	wToDraw = w;
+	hToDraw = wToDraw*580/450;
+
 	ctx.drawImage(imgClip, 0, 0, 450, 580);
 	ctx.globalCompositeOperation = "source-in";
 	imgFace.onload = function(){
-		ctx.drawImage(imgFace, 0, 0, 450, 580);	
+		// drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight,
+        // destX, destY, destWidth, destHeight)
+		ctx.drawImage(imgFace, 0, 0, wToDraw, hToDraw, 0, 0, 450, 580);	
 		faceImg = canvas.toDataURL("image/png", 0.5); 
     	$("#j-secury").show();
     	$("#j-retake").show();
@@ -318,17 +327,18 @@ var goStage = function(stageNum){
 	$('.i-gede').unbind();
 	$('.i-dawang').unbind();
 	$('.i-k').unbind();
-	jQarrow.addClass('flash animated delay1');
+	jQarrow.addClass('flash animated delay0_8');
 	if(stageNum==1){	
     	// jQarrow.addClass('flash animated');
     	$('.i-cloud2').addClass("moverightback-slow");
 
 		$("#j-planet1").bind('click', function(){
+			jQarrow.removeClass("flash animated delay0_8");
 			swiper.slideNext();
 		});
 	}else if(stageNum==2){
     	$(".i-huixing-lock").removeClass('i-huixing-lock').addClass('i-huixing');
-    	jQarrow.css({'top': '460px', 'left':'185px'});
+    	jQarrow.css({'top': '455px', 'left':'145px'});
     	jQlocation.css({'top': '675px'});
     	// 文案显示
     	anjianLevel = parseInt(Math.random()*2)+1;
@@ -398,7 +408,7 @@ var goStage = function(stageNum){
     	}
 	}else if(stageNum==4){
     	$(".i-gede-lock").removeClass('i-gede-lock').addClass('i-gede');
-    	jQarrow.css({'top': '500px', 'left': '560px'});
+    	jQarrow.css({'top': '500px', 'left': '645px'});
     	jQlocation.css({'top': '145px', 'left': '443px'});
     	$('.i-gede').bind('click', function(){
     				// 清空京东
@@ -432,7 +442,9 @@ var goStage = function(stageNum){
     				// 清空京东
 			$("#p10").css('background-image', 'transparent').empty();
 			$("#p11").css('background-image', 'transparent').empty();
-
+			if(huaweiLevel==2){
+				$("#j-book-name").text("《落选之后》");
+			}
 			$("#p12 .shink1").addClass('star-shink1');
 			$("#p12 .shink2").addClass('star-shink2');
  			$("#p12 i-needle1").addClass('needle1-anime');
@@ -615,7 +627,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p11.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png');
-		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/1.png');		
+		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/1.png?v=1.1');		
 		jQshareText.attr('src','/static/css/anniversary2/result/final/share1.png');
 
 	}else if(finalLevel==2){
@@ -633,7 +645,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[2]).addClass('x31');
 		$(jQxunzhang[3]).addClass('x41');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png');
-		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/1.png');		
+		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/1.png?v=1.1');		
 		jQshareText.attr('src','/static/css/anniversary2/result/final/share2.png');
 
 	}else if(finalLevel==3){
@@ -649,7 +661,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[2]).addClass('x32');
 		$(jQxunzhang[3]).addClass('x42');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png');
-		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/2.png');		
+		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/2.png?v=1.1');		
 		jQshareText.attr('src','/static/css/anniversary2/result/final/share3.png');
 
 	}else if(finalLevel==4){
@@ -665,7 +677,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[2]).addClass('x32');
 		$(jQxunzhang[3]).addClass('x42');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png');
-		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/2.png');		
+		jQhwResult.attr('src', '/static/css/anniversary2/result/huawei/2.png?v=1.1');		
 		jQshareText.attr('src','/static/css/anniversary2/result/final/share4.png');
 
 	}
@@ -728,7 +740,8 @@ touch.on('#j-move-stage-6', 'tap', function(ev){
 
 $("#j-enter").bind('click', function(){
 	$("#p4").empty();
-	$('#p16').css('background-image', 'url("/static/css/anniversary2/bg/p16n.jpg")');
+	$('#p16').css('background-image', 'url("/static/css/anniversary2/bg/p16n.jpg?v=1.1")');
+	$('#p17').css('background-image', 'url("/static/css/anniversary2/bg/p17.jpg?v=1.1")');
 
 	swiper.slideNext();
 	removeAnimation('#firework1', fireworkTimer1);	
@@ -756,15 +769,13 @@ $("#j-enter").bind('click', function(){
 touch.on('#p15', 'tap', '#j-move-stage-7', function(ev){
 	swiper.slideNext();
 	$("#p14").css('background-image', 'transparent').empty();
-	$('#p17').css('background-image', 'url("/static/css/anniversary2/bg/p17.jpg")');
-
 	$(".share-light").addClass('flash1 animated0_5');
 });
 
 $("#fill").bind('click', function(){	
 	$("#p15").empty();
 	if( $(".share").length<=0 ){
-		$("#p17").append('<img class="share" src="/static/css/anniversary2/bg/share.png">');
+		$("#p17").append('<img class="share" src="/static/css/anniversary2/bg/share.png?v=1.2">');
 	}
 	var usrName = $('#user-name').val();
 	swiper.slideNext();
