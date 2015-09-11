@@ -378,8 +378,13 @@ var goStage = function(stageNum){
 			$("#p8 .i-needle2").addClass("needle2-anime");
 			$(".i-card-arrow").addClass("moveright-slow animated1_5");
 			$(".i-card-arrow-reverse").addClass("moveleft-slow animated1_5");
-
-
+			// jQcardArrow.hide().removeClass('moveright-slow animated1_5');
+			zhongxinLevel = parseInt(Math.random()*2)+1;
+			if(zhongxinLevel==1){
+				jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/1.png?v=1.1');
+			}else{
+				jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/2.png?v=1.1');
+			}
     		swiper.slideTo(7);
     	});
     	if(jingdongLevel==1){
@@ -405,6 +410,7 @@ var goStage = function(stageNum){
 
 			$("#p10 i-needle1").addClass('needle1-anime');
 			$("#p10 i-needle2").addClass('needle2-anime');
+			showFinal(jingdongLevel, zhongxinLevel);
 
     		swiper.slideTo(9);
     	});
@@ -474,9 +480,6 @@ touch.on('#p7', 'tap', '#j-move-stage-3', function(ev){
     goStage(currentStage);
 });
 
-touch.on('#j-swipe-card', 'touchstart', function(ev){
-	ev.preventDefault();
-});
 var target = document.getElementById("j-swipe-card");
 
 var fmoveon4Timer, amoveon4Timer;
@@ -520,15 +523,9 @@ var swipe = function(){
 }
 
 var swipeResult = function(){
-	jQcardArrow.hide().removeClass('moveright-slow animated1_5');
-	zhongxinLevel = parseInt(Math.random()*2)+1;
-	if(zhongxinLevel==1){
-		jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/1.png?v=1.1');
-	}else{
-		jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/2.png?v=1.1');
-	}
-	showFinal(jingdongLevel, zhongxinLevel);
+
 	setTimeout(function(){
+
 		levelMusic();
 		$('#zx-round').addClass("rotate360 animated5");
 		$("#p9 .shink1").addClass('star-shink1');
