@@ -622,10 +622,9 @@ position: absolute;
 
 }
 .flyfly{
-	position: absolute;
-  left: 60px;
-  top: 40px;
-
+  position: absolute;
+  left: 30px;
+  top: 20px;
 }
 
 /*中信*/
@@ -676,7 +675,7 @@ position: absolute;
 	position: absolute;
 	left: 76px;
 	top: 250px;
-  -webkit-transition: -webkit-transform 1s;
+  /*-webkit-transition: -webkit-transform 1s;*/
 
 }
 .i-card-arrow{
@@ -956,4 +955,10 @@ position: absolute;
   position: absolute;
   top: 32px;
   left: 495px;
+}
+
+.lucky{
+  position: absolute;
+  top: 650px;
+  left: 200px;
 }

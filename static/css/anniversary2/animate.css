@@ -316,18 +316,23 @@
 }
 .shot-scale{
   -webkit-animation-name: shotScale;
-  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;  
 }
 @-webkit-keyframes shotScale {
   0% {
-    -webkit-transform: scale(0.8)
+    -webkit-transform: scale(1);
+    opacity: 0;
   }
   50% {
-    -webkit-transform: scale(1)
+    -webkit-transform: scale(2);
+    opacity: 1;
+
   }
   100% {
-    -webkit-transform: scale(0.8)
+    -webkit-transform: scale(1);
+    opacity: 0;
+
   }
 }
 

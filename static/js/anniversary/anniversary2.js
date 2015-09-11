@@ -19,18 +19,6 @@ var mBg;
 var musicPlay=true;
 var inParty=false;
 
-// var newBgMusic = function(){
-// 	mBg = new Audio();
-// 	mBg.loop=true;
-// 	mBg.src = "/media/anniversary/bg.mp3";
-// 	mBg.play();	
-// 	setInterval(function(){
-// 		if(musicPlay){
-// 			mBg.pause();
-// 			mBg.play();				
-// 		}
-// 	}, 20000);
-// }
 var audio0 = document.getElementById("audio1");
 audio0.play();
 $("#audio_pan").click(function() {
@@ -103,10 +91,7 @@ var levelMusic=function(){
 	if(!mLevel){
 		levelupMusic();
 	}
-	if(musicPlay){
-
-		mLevel.play();
-	}
+	mLevel.play();
 }
 
 //关键帧动画timer
@@ -317,18 +302,15 @@ var game = function(num, delay){
 	setTimeout(function(){
 		jQsale.addClass('i-sale-small').removeClass('i-sale-big')
 		.css({'left': left+'px'} );
-	}, delay+700);
+	}, delay+1200);
 }
 var luckyTimes=0;
-// touch.on('.i-sale-big', 'tap', function(){
-// 	alert("ab");
-// 	luckyTimes++;
-// });
-
-$('#p6').delegate('.i-sale-big', 'click', function(){
-	alert("a");
+touch.on('#p6', 'tap','.i-sale-big', function(){
+	// alert("ab");
+	$(this).addClass('shot-scale animated0_5');
 	luckyTimes++;
 });
+
 var goStage = function(stageNum){
 	$("#j-planet1").unbind();
 	$('.i-huixing').unbind();
@@ -356,26 +338,28 @@ var goStage = function(stageNum){
     	}	
     	$('.i-huixing').bind('click', function(){
     		// 清空安检
-			$("#p5").empty();
+			$("#p5").css('background', 'transparent').empty();
 			$(".i-jingdonghao-light").addClass("flash animated3");
 			$(".i-jingdonghao").addClass("floating animated3");
 
     		swiper.slideTo(5);
     		//todo:敲松鼠游戏
-    		game(1, 1300);
-    		game(3, 2600);
-    		game(2, 3900);
-    		game(6, 5200);
-    		game(4, 6500);
-    		game(5, 7800);
-    		setTimeout(function(){
-    			if(luckyTimes>1){
-    				shot(1);
-    			}else{
-    				shot(2);
-    			}
+    		touch.on('.lucky', 'tap',function(){
+    			$(this).hide();
+	    		game(1, 600);
+	    		game(3, 1800);
+	    		game(2, 3000);
+	    		game(6, 4200);
+	    		game(4, 5400);
+	    		setTimeout(function(){
+	    			if(luckyTimes>1){
+	    				shot(1);
+	    			}else{
+	    				shot(2);
+	    			}
 
-    		}, 8500);
+	    		}, 6000);
+    		});
     	});    	
 	}else if(stageNum==3){
     	$(".i-mani-lock").removeClass('i-mani-lock').addClass('i-mani');
@@ -383,8 +367,8 @@ var goStage = function(stageNum){
     	jQlocation.css({'top': '365px'});
     	$('.i-mani').bind('click', function(){
     		// 清空京东
-			$("#p6").empty();
-			$("#p7").empty();
+			$("#p6").css('background', 'transparent').empty();
+			$("#p7").css('background', 'transparent').empty();
 			$(".i-car").addClass('floating animated5');
 			$(".i-wajue").addClass('floating animated5');
 			$(".i-saoba").addClass('floating animated7');
@@ -394,6 +378,7 @@ var goStage = function(stageNum){
 			$("#p8 .i-needle2").addClass("needle2-anime");
 			$(".i-card-arrow").addClass("moveright-slow animated1_5");
 			$(".i-card-arrow-reverse").addClass("moveleft-slow animated1_5");
+
 
     		swiper.slideTo(7);
     	});
@@ -410,8 +395,8 @@ var goStage = function(stageNum){
     	jQlocation.css({'top': '145px', 'left': '443px'});
     	$('.i-gede').bind('click', function(){
     				// 清空京东
-			$("#p8").empty();
-			$("#p9").empty();
+			$("#p8").css('background-image', 'transparent').empty();
+			$("#p9").css('background-image', 'transparent').empty();
 			$(".geshou-light1").addClass("flash1 animated1_5");
 			$(".geshou-light2").addClass("flash2 animated1_5");
 
@@ -436,8 +421,8 @@ var goStage = function(stageNum){
     	// jQlocation.css({'top': '630px', 'left': '440px'});
     	$('.i-dawang').bind('click', function(){
     				// 清空京东
-			$("#p10").empty();
-			$("#p11").empty();
+			$("#p10").css('background-image', 'transparent').empty();
+			$("#p11").css('background-image', 'transparent').empty();
 
 			$("#p12 .shink1").addClass('star-shink1');
 			$("#p12 .shink2").addClass('star-shink2');
@@ -448,9 +433,9 @@ var goStage = function(stageNum){
     		swiper.slideTo(11);
     	});
     	if(geshouLevel==1){
-    		jQmapTip.removeClass('map-tip3').addClass('map-tip4').attr('src', '/static/css/anniversary2/result/map/geshou/1.png');
+    		jQmapTip.removeClass('map-tip3').addClass('map-tip4').attr('src', '/static/css/anniversary2/result/map/geshou/1.png?v=1.1');
     	}else{
-			jQmapTip.removeClass('map-tip3').addClass('map-tip4').attr('src', '/static/css/anniversary2/result/map/geshou/2.png');
+			jQmapTip.removeClass('map-tip3').addClass('map-tip4').attr('src', '/static/css/anniversary2/result/map/geshou/2.png?v=1.1');
     	}
 
 	}else if(stageNum==6){
@@ -458,12 +443,8 @@ var goStage = function(stageNum){
     	jQarrow.css({'top': '800px', 'left': '344px'});
     	jQlocation.css({'top': '630px', 'left': '440px'});
     	$('.i-k').bind('click', function(){
-			$("#p12").empty();
-			$("#p13").empty();
-
-    		// mBg.pause();
-    		// mBg.src="/media/anniversary/party.mp3"
-			// mParty.play();
+			$("#p12").css('background', 'transparent').empty();
+			$("#p13").css('background', 'transparent').empty();
     		swiper.slideTo(13);
     	});
     	if(huaweiLevel==1){
@@ -488,7 +469,7 @@ $("#j-secury").bind('click', function(){
 });
 
 // 完成第三关
-$("#j-move-stage-3").bind('click', function(){
+touch.on('#p7', 'tap', '#j-move-stage-3', function(ev){
     currentStage = 3;
     goStage(currentStage);
 });
@@ -517,9 +498,9 @@ var swipe = function(){
 		jQcardArrow.hide().removeClass('moveright-slow animated1_5');
 		zhongxinLevel = parseInt(Math.random()*2)+1;
 		if(zhongxinLevel==1){
-			jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/1.png');
+			jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/1.png?v=1.1');
 		}else{
-			jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/2.png');
+			jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/2.png?v=1.1');
 		}
 		showFinal(jingdongLevel, zhongxinLevel);
 		$(target).css({'-webkit-transform': 'translateX(250px)'});	
@@ -537,16 +518,58 @@ var swipe = function(){
 	    }, 1500);
 	}
 }
-touch.on(target, 'swiperight', function(ev){
-	swipe();
+
+var swipeResult = function(){
+	jQcardArrow.hide().removeClass('moveright-slow animated1_5');
+	zhongxinLevel = parseInt(Math.random()*2)+1;
+	if(zhongxinLevel==1){
+		jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/1.png?v=1.1');
+	}else{
+		jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/2.png?v=1.1');
+	}
+	showFinal(jingdongLevel, zhongxinLevel);
+	setTimeout(function(){
+		levelMusic();
+		$('#zx-round').addClass("rotate360 animated5");
+		$("#p9 .shink1").addClass('star-shink1');
+		$("#p9 .shink2").addClass('star-shink1');
+
+		$('#zx-metro1').addClass('metro1-anime animated0_7');
+		$('#zx-metro2').addClass('metro2-anime animated0_7');
+		$('#zx-metro3').addClass('metro3-anime animated0_7');
+		$('#zx-metro4').addClass('metro4-anime animated0_7');
+		swiper.slideTo(8);
+    }, 2000);
+}
+// touch.on(target, 'swiperight', function(ev){
+// 	swipe();
+// });
+// touch.on(target, 'swipeleft', function(ev){
+// 	swipe();
+// });
+touch.on('#j-swipe-card', 'touchstart', function(ev){
+	ev.preventDefault();
+	swipeResult();
 });
-touch.on(target, 'swipeleft', function(ev){
-	swipe();
+var dx, dy;
+
+touch.on('#j-swipe-card', 'drag', function(ev){
+	dx = dx || 0;
+	dy = dy || 0;
+	// log("当前x值为:" + dx + ", 当前y值为:" + dy +".");
+	var offx = dx + ev.x + "px";
+	var offy = dy + ev.y + "px";
+	this.style.webkitTransform = "translate3d(" + offx + ",0,0)";
+});
+
+touch.on('#j-swipe-card', 'dragend', function(ev){
+	dx += ev.x;
+	dy += ev.y;
 });
 
 
-// 完成第四关
-$("#j-move-stage-4").bind('click', function(){
+// 完成第四关中信
+touch.on('#p9', 'tap', '#j-move-stage-4', function(ev){
     currentStage = 4;
     goStage(currentStage);
 });
@@ -659,8 +682,8 @@ $(".j-geshou-btn").bind('click', function(){
 	}, 500);
 });
 
-// 完成第5关
-$("#j-move-stage-5").bind('click', function(){
+// 完成第5关我事歌手
+touch.on('#j-move-stage-5', 'tap', function(ev){
     currentStage = 5;
     goStage(currentStage);
 });
@@ -686,9 +709,9 @@ $(".book").bind('click', function(){
 	}
 });
 
-// 完成第6关
+// 完成第6关一呼百应
 var fireworkTimer1, fireworkTimer2, fireworkTimer3, fireworkTimer4;
-$("#j-move-stage-6").bind('click', function(){
+touch.on('#j-move-stage-6', 'tap', function(ev){
     currentStage = 6;
     goStage(currentStage);
 	enterTimer = keyframeAnimation('#p14 .shine-lines', 200, 13, 30, 0, true);	
@@ -702,6 +725,8 @@ $("#j-move-stage-6").bind('click', function(){
 
 $("#j-enter").bind('click', function(){
 	$("#p4").empty();
+	$('#p16').css('background-image', 'url("/static/css/anniversary2/bg/p16n.jpg")');
+
 	swiper.slideNext();
 	removeAnimation('#firework1', fireworkTimer1);	
 	removeAnimation('#firework2', fireworkTimer2);	
@@ -721,16 +746,14 @@ $("#j-enter").bind('click', function(){
 	$(jQxunzhang[2]).addClass('fadeIn animated delay2');
 	$(jQxunzhang[3]).addClass('fadeIn animated delay2_1');
 	$('.result-text').addClass('fadeIn animated delay3');
-	$('#p16').css({'background-image': 'url("bg/p16n.jpg")'});
-	$('#p17').css({'background-image': 'url("bg/p17.jpg")'});
-
 });
 
 
 // 游戏逻辑
-$("#j-move-stage-7").bind('click', function(){
+touch.on('#p15', 'tap', '#j-move-stage-7', function(ev){
 	swiper.slideNext();
-	$("#p14").empty();
+	$("#p14").css('background-image', 'transparent').empty();
+	$('#p17').css('background-image', 'url("/static/css/anniversary2/bg/p17.jpg")');
 
 	$(".share-light").addClass('flash1 animated0_5');
 });
