@@ -225,7 +225,7 @@ var jQcameraInput = $('#cameraInput');
 var jQprevImg = $(".uploaded-img");
 var avatar;
 function readFile(){
-    file = jQcameraInput.get(0).files[0];
+    var file = jQcameraInput.get(0).files[0];
     if(!/image\/\w+/.test(file.type)){
         alert("请上传图片类型的文件~");
         return false;
@@ -523,7 +523,6 @@ var swipe = function(){
 }
 
 var swipeResult = function(){
-
 	setTimeout(function(){
 
 		levelMusic();
@@ -757,16 +756,18 @@ touch.on('#p15', 'tap', '#j-move-stage-7', function(ev){
 
 $("#fill").bind('click', function(){	
 	$("#p15").empty();
-
+	if( $(".share").length<=0 ){
+		$("#p17").append('<img class="share" src="/static/css/anniversary2/bg/share.png">');
+	}
 	var usrName = $('#user-name').val();
 	swiper.slideNext();
 });
 
 $("#j-share-btn").bind('click', function(){
-	$("#p16").empty();
-	if($('.final-arrow').length<=0){
-		$("#p17").append('<img class="final-arrow" src="/static/css/anniversary2/icon/finalarrow.png">');
-	}
-	$(".share-light").removeClass('flash1 animated0_5');
-	$(".share-light2").show().addClass('flash1 animated0_5');
+	$("#p16").css('background-image', 'transparent').empty();
+	$(".share").show();
 });
+
+touch.on('body', 'tap', '.share', function(){
+	$(".share").hide();
+})
