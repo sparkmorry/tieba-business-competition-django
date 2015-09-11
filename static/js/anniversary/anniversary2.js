@@ -167,6 +167,7 @@ var TO_RADIANS = Math.PI/180;
 var photo=document.getElementById("photo");
 
 function drawRotatedImage(cvs, image, angle) { 
+	alert(image);
 	var w = image.width, h=image.height; //此时应该肯定是竖构图
 	var wToDraw, hToDraw;
 	wToDraw = 450;
@@ -174,7 +175,7 @@ function drawRotatedImage(cvs, image, angle) {
 	cvs.width = wToDraw;
 	cvs.height = hToDraw;
 
-	alert("wToDraw:"+wToDraw+","+hToDraw)
+	// alert("wToDraw:"+wToDraw+","+hToDraw);
 	var context=cvs.getContext("2d");
 
 	context.save(); 
@@ -185,11 +186,16 @@ function drawRotatedImage(cvs, image, angle) {
 	context.translate(-wToDraw/2, -hToDraw/2);
 	context.restore(); 
 	var img = cvs.toDataURL("image/jpeg", 0.5); 
+	alert("??");
+
 	return img;
 }
-var drawFaceRotate = function(){
+var drawFaceRotate = function(imgReader){
 	if(imgReader.width>imgReader.height){
-		imgFace.src = drawRotatedImage(photo, imgReader, 90);
+		var img = drawRotatedImage(photo, imgReader, 90);
+		alert("img"+img);
+		imgFace.src = img;
+		alert("retur");
 	}else{
 		imgFace.src = imgReader.src;
 	}
@@ -197,15 +203,15 @@ var drawFaceRotate = function(){
 var faceImg;
 var drawFace = function(imgReader){
 	drawFaceRotate(imgReader);
-	var w = imgFace.width, h=imgFace.height; //此时应该肯定是竖构图
-	var wToDraw, hToDraw;
-	wToDraw = w;
-	hToDraw = wToDraw*580/450;
 
 	ctx.drawImage(imgClip, 0, 0, 450, 580);
 	ctx.globalCompositeOperation = "source-in";
 	imgFace.onload = function(){
 		alert("??");
+		var w = imgFace.width, h=imgFace.height; //此时应该肯定是竖构图
+		var wToDraw, hToDraw;
+		wToDraw = w;
+		hToDraw = wToDraw*580/450;
 		ctx.drawImage(imgFace, 0, 0, wToDraw, hToDraw, 0, 0, 450, 580);	
 		faceImg = canvas.toDataURL("image/png", 0.5); 
     	$("#j-secury").show();
@@ -245,9 +251,12 @@ function readFile(){
     	imgReader = new Image();
     	imgReader.src = this.result;
     	if(imgReader.complete && imgClip.complete) { //check if image was already loaded by the browser
+    		alert("drawFace");
 		   drawFace(imgReader);
 		}else {
+			alert("reader1");
 		   imgReader.onload = function(){
+		   	alert("readerload");
 		   	  drawFace(imgReader);
 		   };
 		   // imgClip.onload = drawFace;
