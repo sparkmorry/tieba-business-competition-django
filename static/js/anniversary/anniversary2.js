@@ -589,27 +589,35 @@ touch.on('#p9', 'tap', '#j-move-stage-4', function(ev){
     goStage(currentStage);
 });
 
+var finalMsg = '';
 var showFinal=function(jingdongLevel, zhongxinLevel){
 	if(jingdongLevel==1 && zhongxinLevel==1){
 		// 潮金 土豪明星 杀千陌
 		geshouLevel = 1; //星
 		huaweiLevel=1; //火
 		finalLevel=1;
+		finalMsg = '鸿运当头，居然在贴吧获得百万粉丝“盖楼”应援，被封为"最闪耀明星"';
 	}else if(jingdongLevel==1 && zhongxinLevel==2){
 		// 潮挖 接地气的明星
 		geshouLevel = 1;
 		huaweiLevel = 1;
 		finalLevel=2;
+		finalMsg = '时来运转，居然在贴吧赢得了一辆豪华小跑，被封为"最土豪粉丝"';
+
 	}else if(jingdongLevel==2 && zhongxinLevel==1){
 		// 好金 土豪粉丝
 		geshouLevel = 2; //粉
 		huaweiLevel=2; //沉
 		finalLevel=3;
+		finalMsg = '否极泰来，居然在贴吧开走了蓝翔高级挖掘机，被封为“最原生态明星”';
+
 	}else if(jingdongLevel==2 && zhongxinLevel==2){
 		// 好挖 赤诚
 		geshouLevel = 2;
 		huaweiLevel=2; //沉
 		finalLevel=4;
+		finalMsg = '顺水顺风，居然在贴吧获得偶像自传《落选之后》，被封为“最挽尊粉丝”';
+
 	}
 
 	if(finalLevel==1){
@@ -778,12 +786,19 @@ $("#fill").bind('click', function(){
 		$("#p17").append('<img class="share" src="/static/css/anniversary2/bg/share.png?v=1.2">');
 	}
 	var usrName = $('#user-name').val();
+	finalMsg = usrName+finalMsg;
 	swiper.slideNext();
 });
 
 $("#j-share-btn").bind('click', function(){
 	$("#p16").css('background-image', 'transparent').empty();
 	$(".share").show();
+	wx.onMenuShareAppMessage({		    
+		title: '居然有人在贴吧里玩出了豪华跑车，到底是谁送的？！去试试自己的运气！', // 分享标题
+	    link: 'http://ssld-vi.com/tieba/anniversary', // 分享链接		
+	    imgUrl: 'http://7xjv0c.com1.z0.glb.clouddn.com/cover2.jpg' ,  
+	    desc: finalMsg,
+	});	
 });
 
 touch.on('body', 'tap', '.share', function(){
