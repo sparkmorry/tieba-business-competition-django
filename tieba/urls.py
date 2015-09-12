@@ -21,7 +21,7 @@ urlpatterns = patterns('',
     url(r'^tieba/invitation2$', 'tieba.views.invitation2', name='invitation2'),
     url(r'^tieba/anniversary$', 'tieba.views.anniversary', name='anniversary'),
     url(r'^tieba/anniversary2$', 'tieba.views.anniversary2', name='anniversary2'),
-    url(r'^tieba/anni$', 'tieba.views.anni', name='anni'),
+    url(r'^tieba/anni3$', 'tieba.views.anni', name='anni'),
 
     # url(r'^blog/', include('blog.urls')),
 

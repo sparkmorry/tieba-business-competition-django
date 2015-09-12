@@ -369,7 +369,7 @@
 
 /*p15*/
 .star-rotate{
-	background: url(icon/icon15.png);
+	/*background: url(icon/icon15.png);*/
 	display: inline-block;
 	position: absolute;
 	width: 70px;
@@ -379,7 +379,7 @@
 .xunzhang{
 	width: 125px;
 	height: 150px;
-	background: url(icon/icon15.png);
+	/*background: url(icon/icon15.png);*/
 	display: inline-block;
 	position: relative;
   margin-right: 20px;

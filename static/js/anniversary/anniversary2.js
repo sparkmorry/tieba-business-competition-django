@@ -6,7 +6,18 @@ var swiper = new Swiper('.swiper-container',{
 		var dom = $('.swiper-slide')[swiper.activeIndex];
 		var domPrev = $('.swiper-slide')[swiper.activeIndex-1];
 		domPrev.style.opacity = 0;
-		dom.style.opacity = 1
+		dom.style.opacity = 1;
+
+		if(swiper.activeIndex == 5){
+			$('#p8').css('background-image', 'url("/static/css/anniversary2/bg/p8.png?v=1.1")');
+		}else if(swiper.activeIndex == 8){
+			$('#p12').css('background-image', 'url("/static/css/anniversary2/bg/p12.jpg?v=1.1")');
+
+		}else if(swiper.activeIndex == 10){
+			$('#p15').css('background-image', 'url("/static/css/anniversary2/bg/p15.png?v=1.1")');
+			$(".xunzhang").css('background-image', 'url("/static/css/anniversary2/icon/icon15.png?v=1.1")');
+			$(".star-rotate").css('background-image', 'url("/static/css/anniversary2/icon/icon15.png?v=1.1")');
+		}
 	}
 
 });	
@@ -110,12 +121,9 @@ var p2Animate = function(){
 		$(".i-invitation").addClass('rollIn animated');
 		$("#j-inv-text").addClass('flash animated delay1');
 		setTimeout(function(){
-			$('.click').click();
-			$("#j-inv-text").removeClass('flash animated delay1').addClass('flash animated delay0_5');
-			setTimeout(function(){
-				$('.click').click();
-			}, 1000)
-		}, 2500);
+			$("#j-go").show();
+			goAnime = keyframeAnimation('#p3 .shine-lines', 200, 13, 30, 0, true);	
+		}, 2000);
 	}, 4500)
 }
 

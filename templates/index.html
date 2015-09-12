@@ -1,19 +1,20 @@
+
 <html>
 <head>
-	<title>贴吧合伙人商业挑战赛</title>
+	<title>西游新记－趣味互联网大数据带你降妖除魔</title>
 	<meta charset="utf-8">
     <meta name="viewport"  content="target-densitydpi=device-dpi, width=640, height=1009, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Expires" content="0">
-	<link rel="stylesheet" type="text/css" href="static/css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="static/css/lib/animate.css">
-	<link rel="stylesheet" type="text/css" href="static/css/animate.css">
-	<!-- <link rel="stylesheet" type="text/css" href="static/css/index.css"> -->
-	<link rel="stylesheet" type="text/css" href="static/css/index1.css">
-	<link rel="stylesheet" type="text/css" href="static/css/icons.css">
-	<link rel="stylesheet" type="text/css" href="static/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/lib/animate.css">
+	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/animate.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/index.css"> -->
+	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/index1.css?v=1.0">
+	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/icons.css?v=1.1">
+	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/layout.css?v=1.1">
 
 	<style type="text/css">
     html, body {
@@ -100,13 +101,30 @@
 
 
 	</style>
+<!--script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?856bd77c6b4d1ecd79338d443a018a9d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script-->
+
 </head>
 <body>
 	<div id="audio_pan" class="music-status music-status-on"></div>
+	<img src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/cover.jpg" style="height:0px">
 	<div class="swiper-container">
 	    <!-- Additional required wrapper -->
 	    <div class="swiper-wrapper">
 	        <!-- Slides -->
+	        <div class="swiper-slide m1" id="p0">
+	        	<div id="planet-loading">
+	        		<!-- <p><i class="icon i-planet-loading"></i></p> -->
+	        		<p id="loading-text"><span id="loading-num">0</span>%</p>
+	        	</div>
+	        </div>	        
 	        <div class="swiper-slide m1" id="p1">
 	        	<div id="titles">
 	        		<i class="icon2 i-circle-in"></i>
@@ -126,8 +144,8 @@
  			<div class="swiper-slide m1" id="p2">
  				<div id="gaolaozhuang"></div>
  				<div id="bajie"></div>
-				<i class="text t-kouwei"></i>
-				<i class="text t-pie"></i>
+				<i class="text2 t-kouwei"></i>
+				<i class="text2 t-pie"></i>
  				<!-- <div id="gaobing"></div> -->
  				<div id="waimai-text1">
 	        		<i class="text t-waimai1"></i>
@@ -240,14 +258,14 @@
  			<div class="swiper-slide m1" id="p6">
  				<div class="zhenjing">
  					<i class="icon i-cover"></i>
- 					<i class="text t-zhenjing"></i>
- 					<i class="text t-title1"></i>
- 					<i class="text t-title2"></i>
- 					<i class="text t-title3"></i>
- 					<i class="text t-title4"></i>
+ 					<i class="text2 t-zhenjing"></i>
+ 					<i class="text2 t-title1"></i>
+ 					<i class="text2 t-title2"></i>
+ 					<i class="text2 t-title3"></i>
+ 					<i class="text2 t-title4"></i>
  				</div>
  				<div class="btns">
- 					<p><i class="icon i-btn1"></i></p>
+ 					<p><a href="http://tieba.baidu.com/p/3847076459"><i class="icon i-btn1"></i></a></p>
  					<p><i id="j-share" class="icon i-btn2"></i></p>
  				</div>
  				<div class="xitian-dialog">
@@ -255,44 +273,63 @@
 	        		<i class="icon i-arrow-top-left"></i>
  				</div>
  			 	<div class="share" id="j-share-mask">
- 					<img src="static/images/share.png" style="width:100%">
+ 					<img src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/share.png" style="width:100%">
  				</div>		
 
  			</div> 	
- 			<img src="static/images/p3/bai4.gif" style="height:0px">
-	    </div>
+ 		</div>
 	</div>
 	<audio id='audio1' src="http://7xjv0c.com1.z0.glb.clouddn.com/bg_music.mp3" autoplay="autoplay" loop class="audio"></audio>
 
-	<script type="text/javascript" src="static/js/jquery-1.10.2.min.js"></script>
-	<script type="text/javascript" src="static/js/swiper.jquery.min.js"></script>
-	<script type="text/javascript" src="static/js/touch.js"></script>
+	<script type="text/javascript" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/js/swiper.jquery.min.js"></script>
+	<script type="text/javascript" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/js/touch.js"></script>
 	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script type="text/javascript">
 		wx.config({
 		    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-		    appId: 'wx69a1f910a2c01361', // 必填，公众号的唯一标识
+		    appId: 'wxfb2f5ab1e2f95ee5', // 必填，公众号的唯一标识
 		    timestamp: '{{ jsticket.timestamp }}', // 必填，生成签名的时间戳
 		    nonceStr: '{{ jsticket.nonceStr }}', // 必填，生成签名的随机串
-		    signature: '{{ sig }}',// 必填，签名，见附录1
-		    jsApiList: ['onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+		    signature: '{{sig}}',// 必填，签名，见附录1
+		    jsApiList: ['onMenuShareAppMessage','onMenuShareTimeline'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
 		});
+	     wx.ready(function () {
+
 		wx.onMenuShareAppMessage({		    
 			title: '西游新记－趣味互联网大数据带你降妖除魔', // 分享标题
 		    link: 'http://ssld-vi.com/', // 分享链接
 		    imgUrl: 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/images/cover.jpg', // 分享图标
-		    desc: '吧啦啦啦啊'
+		    desc: '吃货每天居然吃掉相当于2000只猪八戒的肉，新西游告诉你行业大数据如何改变世界！',
 		    success: function () { 
-		        // 用户确认分享后执行的回调函数
+		       // alert('??');
+			// 用户确认分享后执行的回调函数
+			//$.get('/send', function(){});
 		    },
 		    cancel: function () { 
+			//alert('cancel');
 		        // 用户取消分享后执行的回调函数
 		    }
 		});
-		$.post('/share', {}, function(){
-			alert('send!')
-		})
+//      wx.onMenuShareAppMessage({
+//        success: function(){
+	//	$.get('/share/',function(){});
+//	},
+//      });
+	});
 	</script>
-	<script type="text/javascript" src="static/js/index.js"></script>
+	<script type="text/javascript" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/js/index.js?v=1.21"></script>
+	<!--script type="text/javascript"-->
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48160253-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 </body>
 </html>

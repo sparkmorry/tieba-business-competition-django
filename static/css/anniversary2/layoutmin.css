@@ -630,7 +630,7 @@ position: absolute;
 
 /*中信*/
 #p8{
-	background-image: url(bg/p8.png?v=1.1);
+	/*background-image: url(bg/p8.png?v=1.1);*/
 }
 .icon8{
 	position: absolute;
@@ -736,7 +736,7 @@ position: absolute;
 /*一呼百应*/
 #p12{
 	background-color: #242d32;
-	background-image: url(bg/p12.jpg);
+	/*background-image: url(bg/p12.jpg);*/
 }
 .sun{
 	position: absolute;
@@ -836,7 +836,7 @@ position: absolute;
 
 /*最终结果*/
 #p15{
-	background-image: url(bg/p15.png);
+	/*background-image: url(bg/p15.png);*/
 	background-repeat: no-repeat;
 }
 .result-people{
