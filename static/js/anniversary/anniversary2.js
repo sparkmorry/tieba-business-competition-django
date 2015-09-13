@@ -226,7 +226,21 @@ var drawFace = function(){
 	ctx.drawImage(imgClip, 0, 0, 450, 580);
 	ctx.globalCompositeOperation = "source-in";
 	imgFace.onload = function(){
-		ctx.drawImage(imgFace, 0, 0, 450, 580);	
+		var w = imgFace.width, h=imgFace.height; //此时应该肯定是竖构图
+		var wToDraw, hToDraw, leftCo;
+		wToDraw = w;
+		hToDraw = (580/450)*wToDraw;
+		if(h<hToDraw){
+			hToDraw=h;
+			wToDraw = 450/580*hToDraw;
+			leftCo = (w - wToDraw)/2;
+			ctx.drawImage(imgFace, leftCo, 0, wToDraw, hToDraw, 0, 0, 450, 580);	
+		}else{
+			ctx.drawImage(imgFace, 0, 0, wToDraw, hToDraw, 0, 0, 450, 580);	
+		}
+
+
+		ctx.drawImage(imgFace, 0, 0, wToDraw, hToDraw, 0, 0, 450, 580);	
 		faceImg = canvas.toDataURL("image/png", 0.5); 
     	$("#j-secury").show();
     	$("#j-retake").show();
@@ -301,6 +315,11 @@ var shot = function(shotNum){
 		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/2.png');
 	}
 	swiper.slideNext();
+}
+
+var gameResult=function(){
+    anjianLevel = parseInt(Math.random()*2)+1;
+
 }
 
 // 关卡切换
@@ -798,7 +817,7 @@ $("#fill").bind('click', function(){
 	finalMsg = usrName+finalMsg;
 	wx.onMenuShareAppMessage({		    
 		title: '居然有人在贴吧里玩出了豪华跑车，到底是谁送的？！去试试自己的运气！', // 分享标题
-	    link: 'http://ssld-vi.com/tieba/anniversary', // 分享链接		
+	    link: 'http://ssld-vi.com/tieba/anni3', // 分享链接		
 	    imgUrl: 'http://7xjv0c.com1.z0.glb.clouddn.com/cover2.jpg' ,  
 	    desc: finalMsg,
 	});	
