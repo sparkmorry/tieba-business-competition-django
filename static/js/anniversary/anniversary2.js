@@ -317,10 +317,11 @@ var shot = function(shotNum){
 	swiper.slideNext();
 }
 
-var gameResult=function(){
-    anjianLevel = parseInt(Math.random()*2)+1;
+// var gameResult=function(){
+//     anjianLevel = parseInt(Math.random()*2)+1;
 
-}
+
+// }
 
 // 关卡切换
 var jQarrow = $(".arrow");
@@ -630,14 +631,14 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		geshouLevel = 1;
 		huaweiLevel = 1;
 		finalLevel=2;
-		finalMsg = '时来运转，居然在贴吧赢得了一辆豪华小跑，被封为"最土豪粉丝"';
-
+		finalMsg = '否极泰来，居然在贴吧开走了蓝翔高级挖掘机，被封为“最原生态明星”';
+		
 	}else if(jingdongLevel==2 && zhongxinLevel==1){
 		// 好金 土豪粉丝
 		geshouLevel = 2; //粉
 		huaweiLevel=2; //沉
 		finalLevel=3;
-		finalMsg = '否极泰来，居然在贴吧开走了蓝翔高级挖掘机，被封为“最原生态明星”';
+		finalMsg = '时来运转，居然在贴吧赢得了一辆豪华小跑，被封为"最土豪粉丝"';
 
 	}else if(jingdongLevel==2 && zhongxinLevel==2){
 		// 好挖 赤诚
