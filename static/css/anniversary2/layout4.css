@@ -308,7 +308,7 @@ body{
 }
 /*p4 地图*/
 #p4{
-	background-image: url(bg/p4new.jpg);
+	background-image: url(/static/css/anniversary2/bg/p4new.jpg);
 	background-size: 100% auto;
 }
 .line{
@@ -744,7 +744,7 @@ position: absolute;
 
 #p14{
 	background-color: #242d32;
-	background-image: url(bg/p13.png);
+	background-image: url(/static/css/anniversary2/bg/p13.png);
 	background-repeat: no-repeat;
 }
 .enter{  

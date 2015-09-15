@@ -45,7 +45,6 @@ $("#audio_pan").click(function() {
     }
 });
 
-// newBgMusic();
 var mLevel;
 var levelupMusic = function(){
 	mLevel = new Audio();
@@ -126,16 +125,15 @@ var p3Animate = function(){
 	$("#p1").css('background', 'transparent').empty();
     setTimeout(function(){
     	goStage(1);
-    }, 4000)
+    }, 4000);
 }
 
-var second = 0, loading=true, loadingAnime;
+var second = 0, loadingAnime;
 var secondNum = $("#loading-num");
 $(window).load(function(){
 	var timer = setInterval(function(){
 		second = second+2;
 		if(second>100){
-			loading=false;
 			p2Animate();
 			second = 0;
 			clearInterval(timer);
@@ -143,12 +141,10 @@ $(window).load(function(){
 		}
 		secondNum.text(second);
 	}, 40);
-	// loadingAnime = keyframeAnimation('.loading-bg', 170, 50, 50, 0, false);	
 	$('.diaosi').addClass('fadeOut animated delay0_5');
 	$('.i-superman').addClass('fadeIn animated delay1');
 });
 
-var invClick = 1;
 var jQinvText=$("#j-inv-text");
 
 $(".i-go").bind('click', function(){
@@ -229,8 +225,6 @@ var drawFace = function(){
 			ctx.drawImage(imgFace, 0, 0, wToDraw, hToDraw, 0, 0, 450, 580);	
 		}
 
-
-		ctx.drawImage(imgFace, 0, 0, wToDraw, hToDraw, 0, 0, 450, 580);	
 		faceImg = canvas.toDataURL("image/png", 0.5); 
     	$("#j-secury").show();
     	$("#j-retake").show();
@@ -238,6 +232,8 @@ var drawFace = function(){
 
 	}
 }
+
+
 
 var jQcameraInput = $('#cameraInput');
 var jQprevImg = $(".uploaded-img");
@@ -299,11 +295,11 @@ var shot = function(shotNum){
 
 	$("#jd-avatar").attr('src', faceImg);
 	if(jingdongLevel==1){
-		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/1.png');
+		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/1.png?v=1.5');
     	jQmapTip.removeClass('map-tip1').addClass('map-tip2').attr('src', 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/result/map/jingdong/1.png');
 
 	}else{
-		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/2.png');
+		jQjdResult.attr('src', '/static/css/anniversary2/result/jingdong/2.png?v=1.5');
     	jQmapTip.removeClass('map-tip1').addClass('map-tip2').attr('src', 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/result/map/jingdong/2.png');
 
 	}
@@ -417,9 +413,9 @@ var goStage = function(stageNum){
 			// jQcardArrow.hide().removeClass('moveright-slow animated1_5');
 			zhongxinLevel = parseInt(Math.random()*2)+1;
 			if(zhongxinLevel==1){
-				jQzxResult.attr('src', 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/result/zhongxin/1.png?v=1.1');
+				jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/1.png?v=1.1');
 			}else{
-				jQzxResult.attr('src', 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/result/zhongxin/2.png?v=1.1');
+				jQzxResult.attr('src', '/static/css/anniversary/result/zhongxin/2.png?v=1.1');
 			}
     		swiper.slideTo(7);
     	});
@@ -563,7 +559,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p11.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
-		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png');
+		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png?v=1.5');
 		jQshareText.attr('src','/static/css/anniversary2/result/final/share1.png');
 
 	}else if(finalLevel==2){
@@ -573,7 +569,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[0]).addClass('x11');
 		$(jQxunzhang[1]).addClass('x22');
 		$(jQxunzhang[2]).addClass('x31');
-		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png');
+		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png?v=1.5');
 		jQshareText.attr('src','/static/css/anniversary2/result/final/share2.png');
 
 	}else if(finalLevel==3){
@@ -584,7 +580,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[0]).addClass('x12');
 		$(jQxunzhang[1]).addClass('x21');
 		$(jQxunzhang[2]).addClass('x32');
-		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png');
+		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png?v=1.5');
 		jQshareText.attr('src','/static/css/anniversary2/result/final/share3.png');
 
 	}else if(finalLevel==4){
@@ -594,7 +590,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[0]).addClass('x12');
 		$(jQxunzhang[1]).addClass('x22');
 		$(jQxunzhang[2]).addClass('x32');
-		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png');
+		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png?v=1.5');
 		jQshareText.attr('src','/static/css/anniversary2/result/final/share4.png');
 	}
 
