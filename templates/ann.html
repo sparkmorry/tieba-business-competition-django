@@ -6,21 +6,27 @@
 	<meta name="format-detection" content="telephone=no,address=no">
 	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/animate.css">
-	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon2.css">
-	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/layout4.css">
-
+	
+	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/layout6.css">
+	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon3.css">
 	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/lib/animate.css">	
 	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/time.css">
+
 	<style type="text/css">
 	.i-gede, .i-gede-lock{
 		left: 555px;
 		top: 607px;
 	}
-	.inv-text{
-		font-size: 30px;
+	.xunzhang{
+		margin-right: 70px;
 	}
-
+	.result-text {
+	  position: absolute;
+	  bottom: 37px;
+	  left: 60px;
+	}
 	</style>
+	
 </head>
 <body>
 	<div id="audio_pan" class="music-status music-status-on"></div>
@@ -103,7 +109,7 @@
 	        	<div class="p4-star-small star-shine-fast" style="left:200px;top:600px;"></div>
 	        	<div class="p4-star-small star-shine" style="left:500px;top:500px;"></div>        	
 	        	<div class="p4-star-big star-shine-fast" style="left:270px;top:510px;"></div>
-	        	<img id="j-map-tip" class="map-tip" src="">
+	        	<img id="j-map-tip" class="map-tip" style="  display: none;"src="">
 	        </div>
 	        <!-- 4安检 -->
 	        <div class="swiper-slide m1" id="p5">	
@@ -142,7 +148,7 @@
 	        	<i class="icon6 i-jingdonghao-light"></i>
 	        	<i class="icon6 i-jingdonghao"></i>
 	        	<img class="lucky" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/lucky.png">
-				<p id="j-jingdong-text" class="inv-text">Hello惠星boss就爱给粉丝发优惠券！挑战抢红包，抢得越多将得到越酷炫的装备，从衣装开始改变你命运。</p>
+				<p id="j-jingdong-text" class="inv-text" style="  bottom: 180px;">Hello惠星boss就爱给粉丝发优惠券！挑战抢红包，抢得越多将得到越酷炫的装备，从衣装开始改变你命运。</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1"></i>
 					<i class="icon3 i-needle2"></i>
@@ -181,9 +187,10 @@
 	        	<i class="icon8 i-qiqiu"></i>
 	        	<img class="zhongxin-card" id="j-swipe-card" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/card.png">
 	        	<i class="icon8 i-pos"></i>
+	        	<p class="money-wrapper">M. <span id="money">0</span></p>
 	        	<i class="icon8 i-card-arrow"></i>
 	        	<i class="icon8 i-card-arrow-reverse" style="display:none"></i>
-				<p id="j-zhongxin-text" class="inv-text">玛尼星就是有钱任性，刷壕卡送壕礼！手速越快刷出的金额越高，奖励你的座驾就越拉风，从出行改变你的命运。</p>
+				<p style=" bottom: 185px;" id="j-zhongxin-text" class="inv-text">玛尼星就是有钱任性,刷壕卡送壕礼!手速越快刷出的金额越高,奖励你的座驾就越拉风,从出行改变你的命运。</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1"></i>
 					<i class="icon3 i-needle2"></i>
@@ -221,7 +228,7 @@
 	        	<img class="geshou-button1 j-geshou-btn" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/button2.png">
 	        	<img class="geshou-button2 j-geshou-btn" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/button2.png">
 
-				<p id="j-geshou-text" class="inv-text">综艺星的镇星之宝就是粉丝互动投票，你有幸进入综艺星歌手大赛决赛现场，投票给你喜欢的歌手赢取人气秘籍，提升魅力改变你的命运！</p>
+				<p id="j-geshou-text" class="inv-text" style="width:390px;bottom:180px;margin-left:-195px;">综艺星的镇星之宝就是粉丝互动投票,你有幸进入综艺星歌手大赛决赛现场,投票给你喜欢的歌手赢取人气秘籍,提升魅力改变你的命运!</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1"></i>
 					<i class="icon3 i-needle2"></i>
@@ -341,7 +348,7 @@
 			});
 		});		
 	</script>	
-	<script type="text/javascript" src="/static/js/anniversary/ann.js?v=5.5"></script>
+	<script type="text/javascript" src="/static/js/anniversary/ann.js?v=5.6"></script>
 
 
 </body>

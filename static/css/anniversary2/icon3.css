@@ -69,7 +69,7 @@
 }
 
 .icon3{
-	background: url(icon/icon3.png);
+	background: url(icon/icon3new.png);
 	display: inline-block;
 }
 .i-invitation{
@@ -125,7 +125,7 @@
 
 /*星球*/
 .i-planet{
-	background: url(icon/planet.png);
+	background: url(icon/planet2.png);
 	display: inline-block;
   z-index: 10000;
 }

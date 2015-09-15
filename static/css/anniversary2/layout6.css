@@ -154,11 +154,6 @@ body{
 	bottom: 400px;
 	left: 150px;
 }
-.sudden{
-	bottom: 400px;
-	left: 120px;
-	position: absolute;
-}
 .i-trees{
 	bottom: 0px;
 	left: 0;
@@ -307,8 +302,29 @@ body{
   width: 750px;
 }
 /*p4 地图*/
+
+.sudden {
+  bottom: 300px;
+  left: 170px;
+  position: absolute;
+}
+.result-text {
+  position: absolute;
+  bottom: 37px;
+  left: 60px;
+}
+.share-text {
+  position: absolute;
+  top: 530px;
+  left: 170px;
+}
+
+.inv-text{
+	bottom: 170px;
+}
+
 #p4{
-	background-image: url(/static/css/anniversary2/bg/p4new.jpg);
+	background-image: url(bg/p4new.jpg);
 	background-size: 100% auto;
 }
 .line{
@@ -335,6 +351,7 @@ body{
  }
  .map-tip{
  	position: absolute;
+ 	width: 240px;
  	/*bottom: 60px;*/
  }
 .map-tip1{
@@ -690,7 +707,22 @@ position: absolute;
   left: 200px;
 }
 
-
+.money-wrapper{
+  position: absolute;
+  width: 145px;
+  background: rgb(38, 38, 38);
+  color: white;
+  font-size: 34px;
+  height: 50px;
+  left: 300px;
+  top: 500px;
+  line-height: 50px;
+}
+#money{
+  text-align: right;
+  width: 80px;
+  display: inline-block;
+}
 
 #p9{
 	background-color: #ebebeb;
@@ -744,7 +776,7 @@ position: absolute;
 
 #p14{
 	background-color: #242d32;
-	background-image: url(/static/css/anniversary2/bg/p13.png);
+	background-image: url(bg/p13new.png);
 	background-repeat: no-repeat;
 }
 .enter{  

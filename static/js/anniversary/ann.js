@@ -121,11 +121,11 @@ var p3Animate = function(){
 	$("#j-p2-content-wrapper").addClass('movedown')
 	fireAnime = keyframeAnimation('#j-fire', 70, 8, 70, 0, true);
 	$("#j-ship").addClass('moveright-slow')
-	$(".sudden").addClass('fadeIn animated delay2');
+	$(".sudden").addClass('fadeIn animated delay1');
 	$("#p1").css('background', 'transparent').empty();
     setTimeout(function(){
     	goStage(1);
-    }, 4000);
+    }, 5000);
 }
 
 var second = 0, loadingAnime;
@@ -367,9 +367,9 @@ var goStage = function(stageNum){
     	// 文案显示
     	anjianLevel = parseInt(Math.random()*2)+1;
     	if(anjianLevel==1){
-    		jQmapTip.addClass('map-tip1').attr('src', '/static/css/anniversary2/result/map/anjian/1.png');
+    		jQmapTip.show().addClass('map-tip1').attr('src', '/static/css/anniversary2/result/map/anjian/1.png');
     	}else{
-			jQmapTip.addClass('map-tip1').attr('src', '/static/css/anniversary2/result/map/anjian/2.png');
+			jQmapTip.show().addClass('map-tip1').attr('src', '/static/css/anniversary2/result/map/anjian/2.png');
     	}	
     	$('.i-huixing').bind('click', function(){
     		// 清空安检
@@ -415,7 +415,7 @@ var goStage = function(stageNum){
 			if(zhongxinLevel==1){
 				jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/1.png?v=1.1');
 			}else{
-				jQzxResult.attr('src', '/static/css/anniversary/result/zhongxin/2.png?v=1.1');
+				jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/2.png?v=1.1');
 			}
     		swiper.slideTo(7);
     	});
@@ -497,15 +497,21 @@ touch.on('#j-swipe-card', 'touchstart', function(ev){
 	ev.preventDefault();
 	swipeResult();
 });
-var dx, dy;
+var dx, dy, swiperTime=0;
+var jQmoney = $("#money");
 
 touch.on('#j-swipe-card', 'drag', function(ev){
 	dx = dx || 0;
 	dy = dy || 0;
 	// log("当前x值为:" + dx + ", 当前y值为:" + dy +".");
-	var offx = dx + ev.x + "px";
-	var offy = dy + ev.y + "px";
-	this.style.webkitTransform = "translate3d(" + offx + ",0,0)";
+	var offx = dx + ev.x;
+	// console.log(offx);
+	if(Math.abs(offx)>200){
+		swiperTime++;
+		jQmoney.text(swiperTime*1000);
+
+	}
+	this.style.webkitTransform = "translate3d(" + offx + "px, 0,0)";
 });
 
 touch.on('#j-swipe-card', 'dragend', function(ev){
@@ -552,7 +558,6 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 	}
 
 	if(finalLevel==1){
-		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/11.png');
 		$(jQxunzhang[0]).addClass('x11');
 		$(jQxunzhang[1]).addClass('x21');
 		$(jQxunzhang[2]).addClass('x31');
@@ -560,39 +565,37 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p11.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png?v=1.5');
-		jQshareText.attr('src','/static/css/anniversary2/result/final/share1.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/1.png');
 
 	}else if(finalLevel==2){
-		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/21.png');
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p11.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car2.png').addClass('car2');
 		$(jQxunzhang[0]).addClass('x11');
 		$(jQxunzhang[1]).addClass('x22');
 		$(jQxunzhang[2]).addClass('x31');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png?v=1.5');
-		jQshareText.attr('src','/static/css/anniversary2/result/final/share2.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/2.png');
 
 	}else if(finalLevel==3){
 		// 好金 土豪粉丝
-		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/31.png');
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p22.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
 		$(jQxunzhang[0]).addClass('x12');
 		$(jQxunzhang[1]).addClass('x21');
 		$(jQxunzhang[2]).addClass('x32');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png?v=1.5');
-		jQshareText.attr('src','/static/css/anniversary2/result/final/share3.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/3.png');
 
 	}else if(finalLevel==4){
-		jQfinalResult.attr('src', '/static/css/anniversary2/result/final/41.png');
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p22.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car2.png').addClass('car2');
 		$(jQxunzhang[0]).addClass('x12');
 		$(jQxunzhang[1]).addClass('x22');
 		$(jQxunzhang[2]).addClass('x32');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png?v=1.5');
-		jQshareText.attr('src','/static/css/anniversary2/result/final/share4.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/4.png');
 	}
+	jQfinalResult.attr('src', '/static/css/anniversary2/result/final/final.png');
 
 }
 
