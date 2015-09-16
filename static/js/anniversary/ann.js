@@ -9,7 +9,7 @@ var swiper = new Swiper('.swiper-container',{
 		dom.style.opacity = 1;
 
 		if(swiper.activeIndex == 5){
-			$('#p8').css('background-image', 'url("/static/css/anniversary2/bg/p8.png?v=1.1")');
+			$('#p8').css('background-image', 'url("http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/bg/p8.png?v=1.1")');
 		}else if(swiper.activeIndex == 10){
 			$('#p15').css('background-image', 'url("/static/css/anniversary2/bg/p15.png?v=1.1")');
 			$(".xunzhang").css('background-image', 'url("/static/css/anniversary2/icon/icon15.png?v=1.1")');
@@ -125,7 +125,7 @@ var p3Animate = function(){
 	$("#p1").css('background', 'transparent').empty();
     setTimeout(function(){
     	goStage(1);
-    }, 5000);
+    }, 7000);
 }
 
 var second = 0, loadingAnime;
@@ -281,8 +281,8 @@ var jQjdResult=$("#j-jd-result"), jQzxResult=$("#j-zx-result");
 var jQgsResult = $("#j-gs-result"), jQhwResult = $("#j-hw-result");
 
 var shot = function(shotNum){
-	// jingdongLevel=shotNum;
-	jingdongLevel = parseInt(Math.random()*2)+1;
+	jingdongLevel=shotNum;
+	// jingdongLevel = parseInt(Math.random()*2)+1;
 	levelMusic();	
 	$('#jd-round').addClass("rotate360 animated5");
 	$("#p7 .shink1").addClass('star-shink1');
@@ -374,8 +374,10 @@ var goStage = function(stageNum){
     	$('.i-huixing').bind('click', function(){
     		// 清空安检
 			$("#p5").css('background', 'transparent').empty();
-			$(".i-jingdonghao-light").addClass("flash animated3");
+			// $(".i-jingdonghao-light").addClass("flash animated3");
 			$(".i-jingdonghao").addClass("floating animated3");
+			$(".i-jingdonghao-light").addClass("flash animated3");
+
 			jQarrow.removeClass("flash animated delay0_8");
 
     		swiper.slideTo(5);
@@ -387,7 +389,11 @@ var goStage = function(stageNum){
 	    		game(2, 3600);
 	    		game(6, 5100);
 	    		setTimeout(function(){
-	    			shot(1);
+	    			if(luckyTimes>2){
+	    				shot(1);
+	    			}else{
+	    				shot(2);
+	    			}
 	    		}, 6000);
     		});
     	});    	
@@ -411,12 +417,6 @@ var goStage = function(stageNum){
 			jQarrow.removeClass("flash animated delay0_8");
 
 			// jQcardArrow.hide().removeClass('moveright-slow animated1_5');
-			zhongxinLevel = parseInt(Math.random()*2)+1;
-			if(zhongxinLevel==1){
-				jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/1.png?v=1.1');
-			}else{
-				jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/2.png?v=1.1');
-			}
     		swiper.slideTo(7);
     	});
 	}else if(stageNum==4){
@@ -430,11 +430,9 @@ var goStage = function(stageNum){
 			$(".geshou-light1").addClass("flash1 animated1_5");
 			$(".geshou-light2").addClass("flash2 animated1_5");
 
-			$("#p10 .shink1").addClass('star-shink1');
-			$("#p10 .shink2").addClass('star-shink2');
+			// $("#p10 i-needle1").addClass('needle1-anime');
+			// $("#p10 i-needle2").addClass('needle2-anime');
 
-			$("#p10 i-needle1").addClass('needle1-anime');
-			$("#p10 i-needle2").addClass('needle2-anime');
 			showFinal(jingdongLevel, zhongxinLevel);
 			jQarrow.removeClass("flash animated delay0_8");
 
@@ -470,16 +468,30 @@ $("#j-secury").bind('click', function(){
 });
 
 // 完成第三关
-touch.on('#p7', 'tap', function(ev){
+touch.on('#p7', 'tap', '#j-move-stage-3', function(ev){
     currentStage = 3;
+    goStage(currentStage);
+});
+
+// 完成第四关中信
+touch.on('#j-move-stage-4', 'tap',  function(ev){
+    currentStage = 4;
     goStage(currentStage);
 });
 
 var target = document.getElementById("j-swipe-card");
 
 var swipeResult = function(){
-	setTimeout(function(){
 
+	setTimeout(function(){
+		if(swiperTime>13){
+			zhongxinLevel=1;
+			jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/1.png?v=1.1');
+
+		}else{
+			zhongxinLevel=2;
+			jQzxResult.attr('src', '/static/css/anniversary2/result/zhongxin/2.png?v=1.1');
+		}
 		levelMusic();
 		$('#zx-round').addClass("rotate360 animated5");
 		$("#p9 .shink1").addClass('star-shink1');
@@ -495,36 +507,43 @@ var swipeResult = function(){
 
 touch.on('#j-swipe-card', 'touchstart', function(ev){
 	ev.preventDefault();
-	swipeResult();
 });
+var swipeStart=false;
+touch.on('#j-swipe-btn', 'tap', function(ev){
+	$(this).hide();
+	swipeResult();
+	swipeStart=true;
+
+});
+
 var dx, dy, swiperTime=0;
 var jQmoney = $("#money");
 
 touch.on('#j-swipe-card', 'drag', function(ev){
-	dx = dx || 0;
-	dy = dy || 0;
-	// log("当前x值为:" + dx + ", 当前y值为:" + dy +".");
-	var offx = dx + ev.x;
-	// console.log(offx);
-	if(Math.abs(offx)>200){
-		swiperTime++;
-		jQmoney.text(swiperTime*1000);
+	if(swipeStart){
+		dx = dx || 0;
+		dy = dy || 0;
+		// log("当前x值为:" + dx + ", 当前y值为:" + dy +".");
+		var offx = dx + ev.x;
+		// console.log(offx);
+		if(Math.abs(offx)>200){
+			if(swipeStart){
+				swiperTime++;
+				jQmoney.text(swiperTime*500);
+			}
 
+		}
+		this.style.webkitTransform = "translate3d(" + offx + "px, 0,0)";
 	}
-	this.style.webkitTransform = "translate3d(" + offx + "px, 0,0)";
 });
 
 touch.on('#j-swipe-card', 'dragend', function(ev){
-	dx += ev.x;
-	dy += ev.y;
+	if(swipeStart){
+		dx += ev.x;
+		dy += ev.y;
+	}	
 });
 
-
-// 完成第四关中信
-touch.on('#p9', 'tap', function(ev){
-    currentStage = 4;
-    goStage(currentStage);
-});
 
 var finalMsg = '';
 var showFinal=function(jingdongLevel, zhongxinLevel){
@@ -565,7 +584,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p11.png');
 		jQcar.attr('src', '/static/css/anniversary2/result/final/car1.png');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png?v=1.5');
-		jQshareText.attr('src','/static/css/anniversary2/result/final/1.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/1.png?v=1.1');
 
 	}else if(finalLevel==2){
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p11.png');
@@ -574,7 +593,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[1]).addClass('x22');
 		$(jQxunzhang[2]).addClass('x31');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/1.png?v=1.5');
-		jQshareText.attr('src','/static/css/anniversary2/result/final/2.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/2.png?v=1.1');
 
 	}else if(finalLevel==3){
 		// 好金 土豪粉丝
@@ -584,7 +603,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[1]).addClass('x21');
 		$(jQxunzhang[2]).addClass('x32');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png?v=1.5');
-		jQshareText.attr('src','/static/css/anniversary2/result/final/3.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/3.png?v=1.1');
 
 	}else if(finalLevel==4){
 		jQpeople.attr('src', '/static/css/anniversary2/result/final/p22.png');
@@ -593,7 +612,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		$(jQxunzhang[1]).addClass('x22');
 		$(jQxunzhang[2]).addClass('x32');
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png?v=1.5');
-		jQshareText.attr('src','/static/css/anniversary2/result/final/4.png');
+		jQshareText.attr('src','/static/css/anniversary2/result/final/4.png?v=1.1');
 	}
 	jQfinalResult.attr('src', '/static/css/anniversary2/result/final/final.png');
 
@@ -613,7 +632,7 @@ $(".j-geshou-btn").bind('click', function(){
 });
 
 // 完成第5关我事歌手
-touch.on('#p11', 'tap', function(ev){
+touch.on('#p11', 'tap', '#j-move-stage-5', function(ev){
     currentStage = 5;
     goStage(currentStage);
 	enterTimer = keyframeAnimation('#p14 .shine-lines', 200, 13, 30, 0, true);	
@@ -662,7 +681,7 @@ $("#fill").bind('click', function(){
 	var usrName = $('#user-name').val();
 	finalMsg = usrName+finalMsg;
 	wx.onMenuShareAppMessage({		    
-		title: '居然有人在贴吧里玩出了豪华跑车，到底是谁送的？！去试试自己的运气！', // 分享标题
+		title: '居然有人在贴吧玩出挖掘机变成大明星，据说还有更多能改变你未来命运的酷炫装备，快去试试！', // 分享标题
 	    link: 'http://ssld-vi.com/tieba/ann', // 分享链接		
 	    imgUrl: 'http://7xjv0c.com1.z0.glb.clouddn.com/cover2.jpg' ,  
 	    desc: finalMsg,

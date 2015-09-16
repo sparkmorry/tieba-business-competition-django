@@ -1,11 +1,11 @@
 <html>
 <head>
-	<title>居然有人在贴吧里玩出了豪华跑车，到底是谁送的？！去试试自己的运气！</title>
+	<title>居然有人在贴吧玩出挖掘机变成大明星，据说还有更多能改变你未来命运的酷炫装备，快去试试！</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=750, user-scalable=no" />
 	<meta name="format-detection" content="telephone=no,address=no">
 	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/swiper.min.css">
-	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/animate.css">
+	<link rel="stylesheet" type="text/css" href="http://ssldh5.oss-cn-beijing.aliyuncs.com/tieba/css/ann/animate2.css">
 	
 	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/layout6.css">
 	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon3.css">
@@ -24,6 +24,17 @@
 	  position: absolute;
 	  bottom: 37px;
 	  left: 60px;
+	}
+	.share-text {
+	  position: absolute;
+	  top: 530px;
+	  left: 170px;
+	}
+	.map-tip{
+		width: 270px;
+	}
+	.moveon{
+		z-index: 1000000;
 	}
 	</style>
 	
@@ -85,7 +96,7 @@
 		        		<i class="icon2 i-ship moveupdown"></i>
 		        	</div>
 		        	<!-- <i class="icon2 i-sudden"></i> -->
-		        	<img class="sudden" src="/static/css/anniversary2/icon/sudden.png">
+		        	<img class="sudden" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/sudden2.png">
 					<i class="icon2 i-black-cloud moveleftback-slow"></i>
 					<i class="icon2 i-trees"></i> 		
 	        	</div>
@@ -147,7 +158,7 @@
 
 	        	<i class="icon6 i-jingdonghao-light"></i>
 	        	<i class="icon6 i-jingdonghao"></i>
-	        	<img class="lucky" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/lucky.png">
+	        	<img class="lucky" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/lucky2.png">
 				<p id="j-jingdong-text" class="inv-text" style="  bottom: 180px;">Hello惠星boss就爱给粉丝发优惠券！挑战抢红包，抢得越多将得到越酷炫的装备，从衣装开始改变你命运。</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1"></i>
@@ -190,6 +201,7 @@
 	        	<p class="money-wrapper">M. <span id="money">0</span></p>
 	        	<i class="icon8 i-card-arrow"></i>
 	        	<i class="icon8 i-card-arrow-reverse" style="display:none"></i>
+	        	<img style="position:absolute; top: 370px; left: 210px;" id="j-swipe-btn" src="http://ssldh5.oss-cn-beijing.aliyuncs.com/tieba/css/ann/icon/swipe2.png">
 				<p style=" bottom: 185px;" id="j-zhongxin-text" class="inv-text">玛尼星就是有钱任性,刷壕卡送壕礼!手速越快刷出的金额越高,奖励你的座驾就越拉风,从出行改变你的命运。</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1"></i>
@@ -227,7 +239,8 @@
 	        	<img class="geshou" src="/static/css/anniversary2/icon/geshou.png">
 	        	<img class="geshou-button1 j-geshou-btn" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/button2.png">
 	        	<img class="geshou-button2 j-geshou-btn" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/button2.png">
-
+	        	<img class="point" style="position: absolute;top: 820px;left: 255px;z-index:10000;" src="http://ssldh5.oss-cn-beijing.aliyuncs.com/tieba/css/ann/icon/vote1.png">
+	        	
 				<p id="j-geshou-text" class="inv-text" style="width:390px;bottom:180px;margin-left:-195px;">综艺星的镇星之宝就是粉丝互动投票,你有幸进入综艺星歌手大赛决赛现场,投票给你喜欢的歌手赢取人气秘籍,提升魅力改变你的命运!</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1"></i>
@@ -341,14 +354,14 @@
 
 		wx.ready(function () {
 			wx.onMenuShareAppMessage({		    
-				title: '居然有人在贴吧里玩出了豪华跑车，到底是谁送的？！去试试自己的运气！', // 分享标题
+				title: '居然有人在贴吧玩出挖掘机变成大明星，据说还有更多能改变你未来命运的酷炫装备，快去试试！', // 分享标题
 			    link: 'http://ssld-vi.com/tieba/ann', // 分享链接		
 			    imgUrl: 'http://7xjv0c.com1.z0.glb.clouddn.com/cover2.jpg' ,  
-			    desc: '居然有人在贴吧里玩出了豪华跑车，到底是谁送的？！去试试自己的运气！',
+			    desc: '居然有人在贴吧玩出挖掘机变成大明星，据说还有更多能改变你未来命运的酷炫装备，快去试试！',
 			});
 		});		
 	</script>	
-	<script type="text/javascript" src="/static/js/anniversary/ann.js?v=5.6"></script>
+	<script type="text/javascript" src="/static/js/anniversary/ann.js?v=6.1"></script>
 
 
 </body>

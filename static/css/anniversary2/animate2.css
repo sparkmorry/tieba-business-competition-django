@@ -78,7 +78,7 @@
 }
 
 .moveright-slow{
-  -webkit-animation: moveright 5s linear;
+  -webkit-animation: moveright 7s linear;
 
 }
 
@@ -87,7 +87,7 @@
     -webkit-transform: translate(-50px, 0px);
   }
   100% {
-    -webkit-transform: translate(50px, 0px);
+    -webkit-transform: translate(150px, 0px);
   } 
 }
 

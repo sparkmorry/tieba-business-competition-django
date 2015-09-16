@@ -477,7 +477,7 @@ def ann(request):
 		print EXPIRETIME
 		print TICKET
 
-	url = 'http://ssld-vi.com/tieba/ann'
+	url = 'http://h5.ssld-vi.com/tieba/ann'
 	if len(request.GET) > 0:
 		url = url + "?" + urllib.urlencode(request.GET)
 	sign = Sign(TICKET, url)
