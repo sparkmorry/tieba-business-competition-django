@@ -125,7 +125,7 @@
 
 /*星球*/
 .i-planet{
-	background: url(icon/planet2.png);
+	background: url(icon/planet3.png);
 	display: inline-block;
   z-index: 10000;
 }

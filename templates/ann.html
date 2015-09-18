@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="http://ssldh5.oss-cn-beijing.aliyuncs.com/tieba/css/ann/animate2.css">
 	
 	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/layout6.css">
-	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon3.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/anniversary2/icon3.css">
 	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/lib/animate.css">	
 	<link rel="stylesheet" type="text/css" href="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/time.css">
 
@@ -35,6 +35,31 @@
 	}
 	.moveon{
 		z-index: 1000000;
+	}
+	.flyfly{
+		z-index: 10000;
+		width: 200px;
+		  position: absolute;
+	  left: 15px;
+	  top: -20px;
+	}
+	.anjian-result{
+		  position: absolute;
+	  bottom: 100px;
+	  left: 70px;
+	}
+	.map-tip1 {
+	  left: 284px;
+	  top: 140px;}
+	.map-tip3.map-tip {
+	  left: 270px;
+	  top: 470px;
+	  width: 300px;
+	}
+	.map-tip4 {
+	  left: 230px;
+	  top: 670px;
+	  width: 300px;
 	}
 	</style>
 	
@@ -71,7 +96,7 @@
 	        		<i class="icon3 i-go"></i>
 	        	</div>
 	        	<div class="click">
-					<p id="j-inv-text" class="inv-text">不想继续平庸？点击"go"按钮接受邀请，跟贴吧超人哥一起去改变未来的命运吧！</p>
+					<p id="j-inv-text" class="inv-text">不想继续当平凡的地球人？接受邀请开始改变命运。GO！GO！GO！</p>
 					<div class="ufo">
 						<i class="icon3 i-needle1 needle1-anime"></i>
 						<i class="icon3 i-needle2 needle2-anime"></i>
@@ -95,8 +120,7 @@
 		        		<div id="j-fire" class="fire moveupdown"></div>
 		        		<i class="icon2 i-ship moveupdown"></i>
 		        	</div>
-		        	<!-- <i class="icon2 i-sudden"></i> -->
-		        	<img class="sudden" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/sudden2.png">
+		        	<img class="sudden" src="/static/css/anniversary2/icon/sudden3.png">
 					<i class="icon2 i-black-cloud moveleftback-slow"></i>
 					<i class="icon2 i-trees"></i> 		
 	        	</div>
@@ -159,7 +183,7 @@
 	        	<i class="icon6 i-jingdonghao-light"></i>
 	        	<i class="icon6 i-jingdonghao"></i>
 	        	<img class="lucky" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/lucky2.png">
-				<p id="j-jingdong-text" class="inv-text" style="  bottom: 180px;">Hello惠星boss就爱给粉丝发优惠券！挑战抢红包，抢得越多将得到越酷炫的装备，从衣装开始改变你命运。</p>
+				<p id="j-jingdong-text" class="inv-text" style="  bottom: 180px;">强哥喜获娇妻，在You惠星狂撒红包!想要获得改变命运的行头猛戳收集爱心。</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1"></i>
 					<i class="icon3 i-needle2"></i>
@@ -196,13 +220,13 @@
 	        	<i class="icon8 i-saoba"></i>
 	        	<i class="icon8 i-huojian"></i>
 	        	<i class="icon8 i-qiqiu"></i>
-	        	<img class="zhongxin-card" id="j-swipe-card" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/card.png">
+	        	<img class="zhongxin-card" id="j-swipe-card" src="/static/css/anniversary2/icon/card2.png">
 	        	<i class="icon8 i-pos"></i>
 	        	<p class="money-wrapper">M. <span id="money">0</span></p>
 	        	<i class="icon8 i-card-arrow"></i>
 	        	<i class="icon8 i-card-arrow-reverse" style="display:none"></i>
-	        	<img style="position:absolute; top: 370px; left: 210px;" id="j-swipe-btn" src="http://ssldh5.oss-cn-beijing.aliyuncs.com/tieba/css/ann/icon/swipe2.png">
-				<p style=" bottom: 185px;" id="j-zhongxin-text" class="inv-text">玛尼星就是有钱任性,刷壕卡送壕礼!手速越快刷出的金额越高,奖励你的座驾就越拉风,从出行改变你的命运。</p>
+	        	<img style="position:absolute; top: 760px; left: 210px;" id="j-swipe-btn" src="/static/css/anniversary2/icon/swipe3.png">
+				<p style=" bottom: 185px;" id="j-zhongxin-text" class="inv-text">玛尼星有钱任性大酬宾，刷中信贴吧壕卡送福利!想要获得增加"壕"气的拉轰座驾？拼手速去吧</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1"></i>
 					<i class="icon3 i-needle2"></i>
@@ -236,12 +260,11 @@
 	        <div class="swiper-slide m1" id="p10">
 	        	<img class="geshou-light1" src="/static/css/anniversary2/icon/geshou-light.png">
 	        	<img class="geshou-light2" src="/static/css/anniversary2/icon/geshou-light.png">
-	        	<img class="geshou" src="/static/css/anniversary2/icon/geshou.png">
+	        	<img class="geshou" src="/static/css/anniversary2/icon/geshou2.png">
 	        	<img class="geshou-button1 j-geshou-btn" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/button2.png">
 	        	<img class="geshou-button2 j-geshou-btn" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/icon/button2.png">
-	        	<img class="point" style="position: absolute;top: 820px;left: 255px;z-index:10000;" src="http://ssldh5.oss-cn-beijing.aliyuncs.com/tieba/css/ann/icon/vote1.png">
 	        	
-				<p id="j-geshou-text" class="inv-text" style="width:390px;bottom:180px;margin-left:-195px;">综艺星的镇星之宝就是粉丝互动投票,你有幸进入综艺星歌手大赛决赛现场,投票给你喜欢的歌手赢取人气秘籍,提升魅力改变你的命运!</p>
+				<p id="j-geshou-text" class="inv-text" style="width:390px;bottom:180px;margin-left:-195px;">综艺星正在搞粉丝投票活动，支持率决定谁能夺冠，请投出你的一票，看看你对人气的掌控力！</p>
 				<div class="ufo">
 					<i class="icon3 i-needle1"></i>
 					<i class="icon3 i-needle2"></i>
@@ -327,8 +350,8 @@
 	        <div class="swiper-slide m1" id="p17">	
 	        	<img class="share-text" id="j-share-text" src="">
 	        	<img class="share-light" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/result/final/light.png">
-	        	<a href="http://tieba.baidu.com/f?kw=贴吧企业平台&ie=utf-8"><img id="j-send-btn" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/result/final/btn11.png"></a>
-	        	<img id="j-share-btn" src="http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/result/final/btn22.png">
+	        	<a href="http://tieba.baidu.com/f?kw=贴吧企业平台&ie=utf-8"><img id="j-send-btn" src="/static/css/anniversary2/result/final/bt1.png"></a>
+	        	<img id="j-share-btn" src="/static/css/anniversary2/result/final/bt2.png">
 	        </div>
 
 	    </div>
@@ -354,11 +377,17 @@
 
 		wx.ready(function () {
 			wx.onMenuShareAppMessage({		    
-				title: '居然有人在贴吧玩出挖掘机变成大明星，据说还有更多能改变你未来命运的酷炫装备，快去试试！', // 分享标题
+				title: '那一夜我上了ta，之后的人生…', // 分享标题
 			    link: 'http://h5.ssld-vi.com/tieba/ann', // 分享链接		
 			    imgUrl: 'http://7xjv0c.com1.z0.glb.clouddn.com/cover2.jpg' ,  
-			    desc: '居然有人在贴吧玩出挖掘机变成大明星，据说还有更多能改变你未来命运的酷炫装备，快去试试！',
-			});
+			    desc: '那一夜我上了ta，之后的人生…',
+			});	
+			wx.onMenuShareTimeline({		    
+				title: '那一夜我上了ta，之后的人生…', // 分享标题
+			    link: 'http://h5.ssld-vi.com/tieba/ann', // 分享链接		
+			    imgUrl: 'http://7xjv0c.com1.z0.glb.clouddn.com/cover2.jpg' ,  
+			});	
+			
 		});		
 	</script>	
 	<script type="text/javascript" src="/static/js/anniversary/ann.js?v=6.1"></script>

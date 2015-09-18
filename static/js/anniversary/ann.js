@@ -160,6 +160,15 @@ var securyProcess = function(){
 	arrowTimer = setInterval(function(){
 		if(aCount==10){
 			clearInterval(arrowTimer);
+    		anjianLevel = parseInt(Math.random()*2)+1;
+    		if(anjianLevel==1){
+				$("#p5").append('<img class="anjian-result" src="/static/css/anniversary2/result/mapr/a1.png">')
+			}else{
+				$("#p5").append('<img class="anjian-result" src="/static/css/anniversary2/result/mapr/a2.png">')
+			}
+	    	$("#j-secury").hide();
+	    	$("#j-retake").hide();
+
 			aCount=0;
 			return;
 		}
@@ -365,11 +374,10 @@ var goStage = function(stageNum){
     	jQarrow.css({'top': '385px', 'left':'315px'});
     	jQlocation.css({'top': '675px'});
     	// 文案显示
-    	anjianLevel = parseInt(Math.random()*2)+1;
     	if(anjianLevel==1){
-    		jQmapTip.show().addClass('map-tip1').attr('src', '/static/css/anniversary2/result/map/anjian/1.png');
+    		jQmapTip.show().addClass('map-tip1').attr('src', '/static/css/anniversary2/result/mapr/j1.png');
     	}else{
-			jQmapTip.show().addClass('map-tip1').attr('src', '/static/css/anniversary2/result/map/anjian/2.png');
+			jQmapTip.show().addClass('map-tip1').attr('src', '/static/css/anniversary2/result/mapr/j2.png');
     	}	
     	$('.i-huixing').bind('click', function(){
     		// 清空安检
@@ -401,6 +409,11 @@ var goStage = function(stageNum){
     	$(".i-mani-lock").removeClass('i-mani-lock').addClass('i-mani');
     	jQarrow.addClass('flash animated').css({'top': '250px', 'left': '645px'});
     	jQlocation.css({'top': '275px','left':'260px'});
+    	if(jingdongLevel==1){
+    		jQmapTip.show().removeClass('map-tip1').addClass('map-tip2').attr('src', '/static/css/anniversary2/result/mapr/z1.png');
+    	}else{
+			jQmapTip.show().removeClass('map-tip1').addClass('map-tip2').attr('src', '/static/css/anniversary2/result/mapr/z2.png');
+    	}	
     	$('.i-mani').bind('click', function(){
     		// 清空京东
 			$("#p6").css('background', 'transparent').empty();
@@ -438,16 +451,15 @@ var goStage = function(stageNum){
 
     		swiper.slideTo(9);
     	});
+    	jQmapTip.removeClass('map-tip2').addClass('map-tip3').attr('src', '/static/css/anniversary2/result/mapr/g1.png');
 
-    	if(zhongxinLevel==1){
-    		jQmapTip.removeClass('map-tip2').addClass('map-tip3').attr('src', 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/result/map/zhongxin/1.png');
-    	}else{
-			jQmapTip.removeClass('map-tip2').addClass('map-tip3').attr('src', 'http://morry.oss-cn-beijing.aliyuncs.com/tieba/css/anniversary/result/map/zhongxin/2.png');
-    	}    	
+  	
 	}else if(stageNum==5){
     	$(".i-k-lock").removeClass('i-k-lock').addClass('i-k');
     	jQarrow.css({'top': '1000px', 'left': '590px'});
     	jQlocation.css({'top': '610px', 'left': '600px'});
+    	jQmapTip.removeClass('map-tip3').addClass('map-tip4').attr('src', '/static/css/anniversary2/result/mapr/t1.png');
+
     	$('.i-k').bind('click', function(){
 			jQarrow.removeClass("flash animated delay0_8");
     		swiper.slideTo(11);
@@ -464,7 +476,7 @@ $("#j-secury").bind('click', function(){
     currentStage = 2;
     setTimeout(function(){
     	goStage(currentStage);
-    }, 2000)
+    }, 4000)
 });
 
 // 完成第三关
@@ -614,7 +626,7 @@ var showFinal=function(jingdongLevel, zhongxinLevel){
 		jQgsResult.attr('src', '/static/css/anniversary2/result/geshou/2.png?v=1.5');
 		jQshareText.attr('src','/static/css/anniversary2/result/final/4.png?v=1.1');
 	}
-	jQfinalResult.attr('src', '/static/css/anniversary2/result/final/final.png');
+	jQfinalResult.attr('src', '/static/css/anniversary2/result/final/final2.png');
 
 }
 
@@ -644,8 +656,8 @@ touch.on('#p11', 'tap', '#j-move-stage-5', function(ev){
 
 $("#j-enter").bind('click', function(){
 	$("#p4").empty();
-	$('#p16').css('background-image', 'url("/static/css/anniversary2/bg/p16n.jpg?v=1.1")');
-	$('#p17').css('background-image', 'url("/static/css/anniversary2/bg/p17.jpg?v=1.1")');
+	$('#p16').css('background-image', 'url("/static/css/anniversary2/bg/p16n.jpg?v=1.2")');
+	$('#p17').css('background-image', 'url("/static/css/anniversary2/bg/p17.jpg?v=1.2")');
 
 	swiper.slideNext();
 	removeAnimation('#firework1', fireworkTimer1);	
@@ -673,6 +685,7 @@ touch.on('#p15', 'tap', function(ev){
 	$(".share-light").addClass('flash1 animated0_5');
 });
 
+var finalMsg2 = '';
 $("#fill").bind('click', function(){	
 	$("#p15").empty();
 	if( $(".share").length<=0 ){
@@ -680,8 +693,9 @@ $("#fill").bind('click', function(){
 	}
 	var usrName = $('#user-name').val();
 	finalMsg = usrName+finalMsg;
+	finalMsg2 = usrName+'和ta发生亲密关系后，整个人居然变成了这样！'
 	wx.onMenuShareAppMessage({		    
-		title: '居然有人在贴吧玩出挖掘机变成大明星，据说还有更多能改变你未来命运的酷炫装备，快去试试！', // 分享标题
+		title: '那一夜我上了ta，之后的人生…', // 分享标题
 	    link: 'http://h5.ssld-vi.com/tieba/ann', // 分享链接		
 	    imgUrl: 'http://7xjv0c.com1.z0.glb.clouddn.com/cover2.jpg' ,  
 	    desc: finalMsg,
